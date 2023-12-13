@@ -1,0 +1,1003 @@
+INFO - 2023-08-15 08:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:07:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:20:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:21:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:45:13 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:45:13 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:45:58 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:45:58 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:46:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:46:41 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:46:41 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:46:42 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:46:42 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:46:42 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:46:42 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:46:42 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:46:42 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:46:42 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:46:42 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:46:42 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:46:42 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `buyer_details`.`cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:46:51 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:46:51 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:46:51 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:46:51 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 10:46:52 --> mysqli_sql_exception: Unknown column 'buyer_details' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_n...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_n...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_n...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_n...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 10:46:52 --> Unknown column 'buyer_details' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `buyer_name`, `buyer_details`.`cc` as `cc`, SUM(buyer_details.buyer_qty) as total_qty, `buy_cost`, buy_cost * SUM(buyer_details.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+GROUP BY `cc`', [], false)
+ 5 APPPATH/Models/BuyerModel.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1817): App\Models\BuyerModel->getCCUsage()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-15 10:47:19 --> Undefined property: stdClass::$qty
+in APPPATH/Views/admin/dashboard.php on line 1253.
+ 1 APPPATH/Views/admin/dashboard.php(1253): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$qty', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/dashboard.php', 1253)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH/Controllers/Home.php(1841): view('admin/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 10:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:48:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:50:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:52:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:53:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:54:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 10:59:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:02:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:07:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:08:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:13:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:13:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:14:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:14:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:19:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-15 11:19:40 --> Undefined variable $startTempCC
+in APPPATH/Controllers/Home.php on line 1861.
+ 1 APPPATH/Controllers/Home.php(1861): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $startTempCC', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1861)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 11:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-08-15 11:20:13 --> [DEPRECATED] explode(): Passing null to parameter #2 ($string) of type string is deprecated in APPPATH/Controllers/Home.php on line 1824.
+ 1 APPPATH/Controllers/Home.php(1824): explode('to', null)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-08-15 11:20:13 --> Undefined variable $temp
+in APPPATH/Controllers/Home.php on line 1825.
+ 1 APPPATH/Controllers/Home.php(1825): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $temp', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1825)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 11:20:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-15 11:20:40 --> Undefined variable $temp
+in APPPATH/Controllers/Home.php on line 1834.
+ 1 APPPATH/Controllers/Home.php(1834): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $temp', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1834)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 11:21:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:26:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 11:29:33 --> mysqli_sql_exception: Invalid use of group function in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(buye...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(buye...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(buye...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(buye...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1843): App\Models\BuyerModel->getTotalCCUsage('2023-08-01', '2023-08-25')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 11:29:33 --> Invalid use of group function
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())', [], false)
+ 5 APPPATH/Models/BuyerModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1843): App\Models\BuyerModel->getTotalCCUsage('2023-08-01', '2023-08-25')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 11:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 11:30:10 --> mysqli_sql_exception: Invalid use of group function in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(buye...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(buye...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(buye...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(buye...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1843): App\Models\BuyerModel->getTotalCCUsage('2023-08-01', '2023-08-15')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 11:30:10 --> Invalid use of group function
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())', [], false)
+ 5 APPPATH/Models/BuyerModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1843): App\Models\BuyerModel->getTotalCCUsage('2023-08-01', '2023-08-15')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 11:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 11:30:11 --> mysqli_sql_exception: Invalid use of group function in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(buye...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(buye...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(buye...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(buye...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1843): App\Models\BuyerModel->getTotalCCUsage('2023-08-01', '2023-08-15')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 11:30:11 --> Invalid use of group function
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * SUM(buyer_details.buyer_qty)) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE MONTH(purchase_items.created_at) = MONTH(CURDATE())', [], false)
+ 5 APPPATH/Models/BuyerModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1843): App\Models\BuyerModel->getTotalCCUsage('2023-08-01', '2023-08-15')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 11:30:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:31:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-08-15 11:33:05 --> mysqli_sql_exception: Unknown column 'purchase_items.buyer_qty' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(buye...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(buye...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(buye...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(buye...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/BuyerModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1843): App\Models\BuyerModel->getTotalCCUsage('2023-08-01', '2023-08-15')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-08-15 11:33:05 --> Unknown column 'purchase_items.buyer_qty' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * purchase_items.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`created_at` >= \'2023-08-01 00:00:00\'
+AND `purchase_items`.`created_at` <= \'2023-08-15 23:59:59\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * purchase_items.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`created_at` >= \'2023-08-01 00:00:00\'
+AND `purchase_items`.`created_at` <= \'2023-08-15 23:59:59\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * purchase_items.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`created_at` >= \'2023-08-01 00:00:00\'
+AND `purchase_items`.`created_at` <= \'2023-08-15 23:59:59\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(buyer_details.buyer_qty) as total_qty, SUM(buy_cost * purchase_items.buyer_qty) as total_buy_cost
+FROM `buyer_details`
+JOIN `buyers` ON `buyers`.`id` = `buyer_details`.`buyer`
+JOIN `purchase_items` ON `purchase_items`.`id` = `buyer_details`.`purchase_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`created_at` >= :purchase_items.created_at:
+AND `purchase_items`.`created_at` <= :purchase_items.created_at.1:', [...], false)
+ 5 APPPATH/Models/BuyerModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1843): App\Models\BuyerModel->getTotalCCUsage('2023-08-01', '2023-08-15')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 11:33:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-15 11:33:49 --> Call to undefined method stdClass::getResultObject()
+in APPPATH/Controllers/Home.php on line 1844.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 11:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:35:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:35:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:36:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:37:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 11:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-15 11:59:39 --> Attempt to read property "total_buy_cost" on array
+in APPPATH/Views/admin/dashboard.php on line 1245.
+ 1 APPPATH/Views/admin/dashboard.php(1245): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "total_buy_cost" on array', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/dashboard.php', 1245)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH/Controllers/Home.php(1872): view('admin/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 11:59:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:04:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-15 12:04:53 --> Undefined variable $totalCCUsage
+in APPPATH/Views/admin/dashboard.php on line 1245.
+ 1 APPPATH/Views/admin/dashboard.php(1245): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalCCUsage', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/dashboard.php', 1245)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH/Controllers/Home.php(1879): view('admin/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-08-15 12:05:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:06:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:08:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:08:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:11:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:11:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:11:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:12:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:12:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:13:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:13:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:14:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:14:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:14:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:14:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:15:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:16:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:16:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:17:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:17:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:18:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:18:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 12:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:47:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:53:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:53:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:56:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:56:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:56:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:56:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:59:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 15:59:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:00:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:00:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:30:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:41:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 16:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 17:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 17:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 17:58:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 17:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 17:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:01:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:03:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:03:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:06:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:11:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-15 18:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

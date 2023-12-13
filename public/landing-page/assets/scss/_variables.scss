@@ -1,0 +1,40 @@
+/* -------------------------------------------------------------- */
+/* Default Colors
+----------------------------------------------------------------- */
+$primary-color: 						                  #2a41e8;
+$secondary-color: 						                  #f1f3f4;
+$body-font-color: 						                     #666;
+$body-heading-color: 				   	                  #323b4b;
+$body-background-color: 				                  #ffffff;
+$global-container-width: 		  		                     1110px;
+$header-text-color: 						              #9b3b5a;
+$blue: 						                              #377DFF; 
+$blue-hover: 						                      #1366ff; 
+$blue-light: 						                      #E5F1FF; 
+$blue-light-hover: 						                  #cce3ff; 
+$white: 						                          #ffffff;
+
+
+/* -------------------------------------------------------------- */
+/* Typography
+----------------------------------------------------------------- */ 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+$primary-font:	            Inter , "Open Sans", sans-serif !important;
+$body-font-size:		                                          18px;
+$body-line-height:		                                          1.75;
+$body-sub-line-height: 		                                      26px; 
+$homepage-heading-font-size: 	                                  26px;
+$single-page-heading-font-size: 			             		  20px;
+$listing-heading-font-size: 			                   	      18px;
+$global-border-radius:											  12px;
+ 
+/* -------------------------------------------------------------- */
+/* Header Settings for Desktop Devices
+----------------------------------------------------------------- */
+$header-height: 						                       80px;
+$header-box-shadow: 0 1px 0 0 rgba(139, 141, 157, 0.05), 10px 1px 7px 0 rgba(65, 71, 108, 0.15);
+$logo-height: 		                               		 	   32px;
+$header-bg: 							                    white;
+ 

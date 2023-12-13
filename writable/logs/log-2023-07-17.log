@@ -1,0 +1,722 @@
+INFO - 2023-07-17 14:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:24:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:24:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:24:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 14:25:29 --> Invalid argument supplied for foreach()
+in APPPATH/Views/admin/assignments.php on line 82.
+ 1 APPPATH/Views/admin/assignments.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/assignments.php', 82, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/assignments.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/assignments', [], true)
+ 5 APPPATH/Controllers/Home.php(1061): view('admin/assignments', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->assignments()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 14:25:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:25:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:25:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:26:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:27:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:29:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:30:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:30:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:30:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:32:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:33:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:36:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 14:40:37 --> Undefined variable: now
+in APPPATH/Views/admin/needtoupload.php on line 10.
+ 1 APPPATH/Views/admin/needtoupload.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: now', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/needtoupload.php', 10, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/needtoupload.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/needtoupload', [], true)
+ 5 APPPATH/Controllers/Home.php(1212): view('admin/needtoupload', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 14:40:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:41:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:41:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:42:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:42:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:44:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:44:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:45:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 14:45:23 --> Undefined variable: week
+in APPPATH/Views/admin/needtoupload.php on line 11.
+ 1 APPPATH/Views/admin/needtoupload.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: week', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/needtoupload.php', 11, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/needtoupload.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/needtoupload', [], true)
+ 5 APPPATH/Controllers/Home.php(1212): view('admin/needtoupload', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 14:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:47:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:48:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:49:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:50:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:52:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:55:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:55:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:57:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 14:59:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:00:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:00:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:00:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:01:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 15:01:01 --> Too few arguments to function App\Controllers\Home::needToUpload(), 0 passed in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH/Controllers/Home.php on line 1135.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:03:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 15:06:41 --> syntax error, unexpected '}'
+in APPPATH/Controllers/Home.php on line 1149.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Home')
+ 5 SYSTEMPATH/CodeIgniter.php(892): class_exists('\\App\\Controllers\\Home', true)
+ 6 SYSTEMPATH/CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:06:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:06:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 15:06:57 --> Undefined offset: 1
+in APPPATH/Controllers/Home.php on line 1146.
+ 1 APPPATH/Controllers/Home.php(1146): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 1', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1146, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 15:07:24 --> Undefined offset: 1
+in APPPATH/Controllers/Home.php on line 1148.
+ 1 APPPATH/Controllers/Home.php(1148): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 1', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1148, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 15:07:29 --> Undefined offset: 1
+in APPPATH/Controllers/Home.php on line 1148.
+ 1 APPPATH/Controllers/Home.php(1148): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 1', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1148, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:07:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-17 15:10:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '07-10-2023'
+AND `assigned_items`.`assigned_date` <= '07-17-2023'
+GROUP BY `or' at line 8 in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1153): App\Models\AssignModel->getAssignedData('07-10-2023', '07-17-2023')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-17 15:10:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '07-10-2023'
+AND `assigned_items`.`assigned_date` <= '07-17-2023'
+GROUP BY `or' at line 8
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'07-10-2023\'
+AND `assigned_items`.`assigned_date` <= \'07-17-2023\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'07-10-2023\'
+AND `assigned_items`.`assigned_date` <= \'07-17-2023\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'07-10-2023\'
+AND `assigned_items`.`assigned_date` <= \'07-17-2023\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > :assigned_items.assigned_date =:
+AND `assigned_items`.`assigned_date` <= :assigned_items.assigned_date:
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1153): App\Models\AssignModel->getAssignedData('07-10-2023', '07-17-2023')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:11:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:11:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-17 15:11:38 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '07-10-2023'
+AND `assigned_items`.`assigned_date` <= '07-17-2023'
+GROUP BY `or' at line 8 in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1153): App\Models\AssignModel->getAssignedData('07-10-2023', '07-17-2023')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-17 15:11:38 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '07-10-2023'
+AND `assigned_items`.`assigned_date` <= '07-17-2023'
+GROUP BY `or' at line 8
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'07-10-2023\'
+AND `assigned_items`.`assigned_date` <= \'07-17-2023\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'07-10-2023\'
+AND `assigned_items`.`assigned_date` <= \'07-17-2023\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'07-10-2023\'
+AND `assigned_items`.`assigned_date` <= \'07-17-2023\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > :assigned_items.assigned_date =:
+AND `assigned_items`.`assigned_date` <= :assigned_items.assigned_date:
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1153): App\Models\AssignModel->getAssignedData('07-10-2023', '07-17-2023')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:13:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:14:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:16:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:17:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:17:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:17:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:21:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:21:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:25:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:27:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:28:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:28:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-17 15:29:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '2023-07-01 00:00:00'
+AND `assigned_items`.`assigned_date` <= '2023-07-01 23:0' at line 8 in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(61): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1163): App\Models\AssignModel->getAssignedData('2023-06-01 00:0...', '2023-06-15 23:5...')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-17 15:29:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '2023-07-01 00:00:00'
+AND `assigned_items`.`assigned_date` <= '2023-07-01 23:0' at line 8
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'2023-07-01 00:00:00\'
+AND `assigned_items`.`assigned_date` <= \'2023-07-01 23:00:00\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'2023-07-01 00:00:00\'
+AND `assigned_items`.`assigned_date` <= \'2023-07-01 23:00:00\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'2023-07-01 00:00:00\'
+AND `assigned_items`.`assigned_date` <= \'2023-07-01 23:00:00\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > :assigned_items.assigned_date =:
+AND `assigned_items`.`assigned_date` <= :assigned_items.assigned_date:
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(61): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1163): App\Models\AssignModel->getAssignedData('2023-06-01 00:00:00', '2023-06-15 23:59:59')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:30:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:31:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-17 15:31:17 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '2023-07-10 00:00:00'
+AND `assigned_items`.`assigned_date` < IS NULL
+GROUP BY ' at line 8 in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1163): App\Models\AssignModel->getAssignedData('2023-07-10 00:0...', NULL)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-17 15:31:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '2023-07-10 00:00:00'
+AND `assigned_items`.`assigned_date` < IS NULL
+GROUP BY ' at line 8
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'2023-07-10 00:00:00\'
+AND `assigned_items`.`assigned_date` < IS NULL
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'2023-07-10 00:00:00\'
+AND `assigned_items`.`assigned_date` < IS NULL
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'2023-07-10 00:00:00\'
+AND `assigned_items`.`assigned_date` < IS NULL
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > :assigned_items.assigned_date =:
+AND `assigned_items`.`assigned_date` < IS NULL
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(47): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1163): App\Models\AssignModel->getAssignedData('2023-07-10 00:00:00', null)
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:31:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-17 15:31:54 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '2023-06-01 00:00:00'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(order' at line 8 in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1163): App\Models\AssignModel->getAssignedData('2023-06-01 00:0...', '2023-07-17 23:5...')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-17 15:31:54 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> '2023-06-01 00:00:00'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(order' at line 8
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'2023-06-01 00:00:00\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'2023-06-01 00:00:00\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > \'2023-06-01 00:00:00\'
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = > :assigned_items.assigned_date =:
+GROUP BY `orders_status`.`purchased_item_id`, DATE(orders_status.purchased_date)
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1163): App\Models\AssignModel->getAssignedData('2023-06-01 00:00:00', '2023-07-17 23:59:59')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:33:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:34:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 15:34:44 --> Undefined offset: 2
+in APPPATH/Controllers/Home.php on line 1151.
+ 1 APPPATH/Controllers/Home.php(1151): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 2', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1151, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:37:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:41:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-17 15:42:07 --> Undefined offset: 2
+in APPPATH/Controllers/Home.php on line 1151.
+ 1 APPPATH/Controllers/Home.php(1151): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 2', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1151, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:44:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:44:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:44:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:45:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-17 15:46:25 --> mysqli_sql_exception: Not unique table/alias: 'assigned_items' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1163): App\Models\AssignModel->getAssignedData(NULL, NULL)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-17 15:46:25 --> Not unique table/alias: 'assigned_items'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `assigned_items`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = \'2023-06-07\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `assigned_items`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = \'2023-06-07\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `assigned_items`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = \'2023-06-07\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*
+FROM `assigned_items`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `assigned_items`.`assigned_date` = :assigned_items.assigned_date:', [...], false)
+ 5 APPPATH/Models/AssignModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1163): App\Models\AssignModel->getAssignedData(null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-17 15:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:49:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:49:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:49:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:49:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-17 15:49:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

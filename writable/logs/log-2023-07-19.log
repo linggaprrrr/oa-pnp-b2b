@@ -1,0 +1,1147 @@
+INFO - 2023-07-19 00:00:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:00:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:00:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 00:01:14 --> mysqli_sql_exception: Unknown column 'qty_assigned' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT DATE(pur...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE(pur...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE(pur...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DATE(pur...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(168): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1312): App\Models\AssignModel->getTotalAssignWeek()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->admin()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-19 00:01:14 --> Unknown column 'qty_assigned' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT DATE(purchase_items.created_at) as day, SUM(qty_assigned) as total_assigned
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE YEARWEEK(purchase_items.created_at, 1) = YEARWEEK(CURDATE(), 1)
+GROUP BY DATE(purchase_items.created_at)
+ORDER BY `purchase_items`.`created_at` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE(purchase_items.created_at) as day, SUM(qty_assigned) as total_assigned
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE YEARWEEK(purchase_items.created_at, 1) = YEARWEEK(CURDATE(), 1)
+GROUP BY DATE(purchase_items.created_at)
+ORDER BY `purchase_items`.`created_at` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE(purchase_items.created_at) as day, SUM(qty_assigned) as total_assigned
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE YEARWEEK(purchase_items.created_at, 1) = YEARWEEK(CURDATE(), 1)
+GROUP BY DATE(purchase_items.created_at)
+ORDER BY `purchase_items`.`created_at` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DATE(purchase_items.created_at) as day, SUM(qty_assigned) as total_assigned
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE YEARWEEK(purchase_items.created_at, 1) = YEARWEEK(CURDATE(), 1)
+GROUP BY DATE(purchase_items.created_at)
+ORDER BY `purchase_items`.`created_at` DESC', [], false)
+ 5 APPPATH/Models/AssignModel.php(168): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1312): App\Models\AssignModel->getTotalAssignWeek()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->admin()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 00:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:01:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 00:01:29 --> Undefined variable: end
+in APPPATH/Controllers/Home.php on line 979.
+ 1 APPPATH/Controllers/Home.php(979): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: end', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 979, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->assignments()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 00:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:14:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 00:14:38 --> Undefined offset: 2
+in APPPATH/Controllers/Home.php on line 975.
+ 1 APPPATH/Controllers/Home.php(975): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 2', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 975, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->assignments()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 00:14:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:14:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:18:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:20:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:30:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 00:30:44 --> Undefined property: stdClass::$qty_assigned
+in APPPATH/Controllers/Home.php on line 1123.
+ 1 APPPATH/Controllers/Home.php(1123): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$qty_assigned', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1123, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->inventories()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 00:32:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 00:35:04 --> Undefined property: stdClass::$qty_assigned
+in APPPATH/Controllers/Home.php on line 881.
+ 1 APPPATH/Controllers/Home.php(881): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$qty_assigned', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 881, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->masterLists()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 00:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:36:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 00:36:59 --> Undefined property: stdClass::$qty_assigned
+in APPPATH/Controllers/Home.php on line 1219.
+ 1 APPPATH/Controllers/Home.php(1219): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$qty_assigned', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1219, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 00:37:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 00:37:35 --> Undefined property: stdClass::$qty_assigned
+in APPPATH/Controllers/Home.php on line 1234.
+ 1 APPPATH/Controllers/Home.php(1234): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$qty_assigned', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1234, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 00:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 00:38:11 --> Undefined property: stdClass::$qty_assigned
+in APPPATH/Controllers/Home.php on line 1235.
+ 1 APPPATH/Controllers/Home.php(1235): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$qty_assigned', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1235, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 00:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 00:38:14 --> Undefined property: stdClass::$qty_assigned
+in APPPATH/Controllers/Home.php on line 1235.
+ 1 APPPATH/Controllers/Home.php(1235): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$qty_assigned', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1235, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 00:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:39:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 00:41:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 07:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 07:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 07:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 07:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 07:58:03 --> mysqli_sql_exception: Unknown column 'qty_assigned' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT DATE(pur...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE(pur...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE(pur...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DATE(pur...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(168): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1321): App\Models\AssignModel->getTotalAssignWeek()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->admin()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-19 07:58:03 --> Unknown column 'qty_assigned' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT DATE(purchase_items.created_at) as day, SUM(qty_assigned) as total_assigned
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE YEARWEEK(purchase_items.created_at, 1) = YEARWEEK(CURDATE(), 1)
+GROUP BY DATE(purchase_items.created_at)
+ORDER BY `purchase_items`.`created_at` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE(purchase_items.created_at) as day, SUM(qty_assigned) as total_assigned
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE YEARWEEK(purchase_items.created_at, 1) = YEARWEEK(CURDATE(), 1)
+GROUP BY DATE(purchase_items.created_at)
+ORDER BY `purchase_items`.`created_at` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE(purchase_items.created_at) as day, SUM(qty_assigned) as total_assigned
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE YEARWEEK(purchase_items.created_at, 1) = YEARWEEK(CURDATE(), 1)
+GROUP BY DATE(purchase_items.created_at)
+ORDER BY `purchase_items`.`created_at` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT DATE(purchase_items.created_at) as day, SUM(qty_assigned) as total_assigned
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE YEARWEEK(purchase_items.created_at, 1) = YEARWEEK(CURDATE(), 1)
+GROUP BY DATE(purchase_items.created_at)
+ORDER BY `purchase_items`.`created_at` DESC', [], false)
+ 5 APPPATH/Models/AssignModel.php(168): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(1321): App\Models\AssignModel->getTotalAssignWeek()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->admin()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 08:02:20 --> mysqli_sql_exception: Unknown column 'orders_status.qty_assigned' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(orde...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(orde...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(orde...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(orde...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/OrderStatusModel.php(80): CodeIgniter\Model->__call('get', Array)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1422): App\Models\OrderStatusModel->totalUnassigned()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->admin()
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2023-07-19 08:02:20 --> Unknown column 'orders_status.qty_assigned' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT SUM(orders_status.qty_received - orders_status.qty_assigned) as total
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+WHERE `orders_status`.`status` != \'delivered\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(orders_status.qty_received - orders_status.qty_assigned) as total
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+WHERE `orders_status`.`status` != \'delivered\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(orders_status.qty_received - orders_status.qty_assigned) as total
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+WHERE `orders_status`.`status` != \'delivered\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(orders_status.qty_received - orders_status.qty_assigned) as total
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+WHERE `orders_status`.`status` != :orders_status.status:', [...], false)
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Models/OrderStatusModel.php(80): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH/Controllers/Home.php(1422): App\Models\OrderStatusModel->totalUnassigned()
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->admin()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:03:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:32:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:49:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:50:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:51:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:51:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 08:53:01 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(111): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(982): App\Models\AssignModel->getAssignedData2('2023-07-18', '2023-07-19')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->assignments()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-19 08:53:01 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-18 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-18 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-18 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= :orders_status.allocated_date:
+AND `orders_status`.`allocated_date` <= :orders_status.allocated_date.1:
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(111): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(982): App\Models\AssignModel->getAssignedData2('2023-07-18', '2023-07-19')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->assignments()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:58:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 08:58:01 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(111): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(982): App\Models\AssignModel->getAssignedData2('2023-07-18', '2023-07-19')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->assignments()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-19 08:58:01 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-18 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-18 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-18 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= :orders_status.allocated_date:
+AND `orders_status`.`allocated_date` <= :orders_status.allocated_date.1:
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(111): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(982): App\Models\AssignModel->getAssignedData2('2023-07-18', '2023-07-19')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->assignments()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 08:58:03 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(965): App\Models\AssignModel->getAssignedData2('2023-07-19')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->assignments()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-19 08:58:03 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-19 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-19 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-19 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= :orders_status.allocated_date:
+AND `orders_status`.`allocated_date` <= :orders_status.allocated_date.1:
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(965): App\Models\AssignModel->getAssignedData2('2023-07-19')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->assignments()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 08:58:03 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/OrderStatusModel.php(93): CodeIgniter\Model->__call('get', Array)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1430): App\Models\OrderStatusModel->shippedNoClient()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->admin()
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2023-07-19 08:58:03 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = :orders_status.status:', [...], false)
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Models/OrderStatusModel.php(93): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH/Controllers/Home.php(1430): App\Models\OrderStatusModel->shippedNoClient()
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->admin()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 08:58:05 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/OrderStatusModel.php(93): CodeIgniter\Model->__call('get', Array)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1430): App\Models\OrderStatusModel->shippedNoClient()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->admin()
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2023-07-19 08:58:05 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = :orders_status.status:', [...], false)
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Models/OrderStatusModel.php(93): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH/Controllers/Home.php(1430): App\Models\OrderStatusModel->shippedNoClient()
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->admin()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 08:58:06 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(965): App\Models\AssignModel->getAssignedData2('2023-07-19')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->assignments()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-19 08:58:06 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-19 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-19 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-19 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-19 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= :orders_status.allocated_date:
+AND `orders_status`.`allocated_date` <= :orders_status.allocated_date.1:
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(965): App\Models\AssignModel->getAssignedData2('2023-07-19')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->assignments()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:58:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 08:58:08 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/AssignModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(982): App\Models\AssignModel->getAssignedData2('2023-07-18', NULL)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->assignments()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-07-19 08:58:08 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-18 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-18 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-18 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-18 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= \'2023-07-18 00:00:00\'
+AND `orders_status`.`allocated_date` <= \'2023-07-18 23:59:59\'
+ORDER BY `orders_status`.`order_id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`id` as `lid`, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`, `client_name`, `company`, `assigned_items`.*, `assigned_items`.`id` as `aid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+LEFT JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `orders_status`.`allocated_date` >= :orders_status.allocated_date:
+AND `orders_status`.`allocated_date` <= :orders_status.allocated_date.1:
+ORDER BY `orders_status`.`order_id` DESC', [...], false)
+ 5 APPPATH/Models/AssignModel.php(97): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(982): App\Models\AssignModel->getAssignedData2('2023-07-18', null)
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->assignments()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 08:58:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 08:58:55 --> Call to a member function getResultObject() on null
+in APPPATH/Controllers/Home.php on line 1100.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->inventories()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:59:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 08:59:10 --> Undefined variable: masterList
+in APPPATH/Controllers/Home.php on line 1138.
+ 1 APPPATH/Controllers/Home.php(1138): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: masterList', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1138, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->inventories()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 08:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:00:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 09:00:24 --> Undefined property: stdClass::$order_id
+in APPPATH/Controllers/Home.php on line 1126.
+ 1 APPPATH/Controllers/Home.php(1126): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$order_id', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 1126, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->inventories()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 09:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 09:00:48 --> Undefined property: stdClass::$order_id
+in APPPATH/Controllers/Home.php on line 885.
+ 1 APPPATH/Controllers/Home.php(885): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$order_id', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 885, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->masterLists()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 09:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 09:01:47 --> Call to undefined method App\Models\OrderStatusModel::getAssignedData2
+in SYSTEMPATH/Model.php on line 842.
+ 1 APPPATH/Controllers/Home.php(855): CodeIgniter\Model->__call('getAssignedData2', [])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->masterLists()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 09:01:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 09:01:55 --> Undefined variable: masterList
+in APPPATH/Controllers/Home.php on line 904.
+ 1 APPPATH/Controllers/Home.php(904): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: masterList', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php', 904, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->masterLists()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 09:02:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:04:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:05:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:12:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:21:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:30:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:30:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 09:30:26 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/OrderStatusModel.php(92): CodeIgniter\Model->__call('get', Array)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1428): App\Models\OrderStatusModel->shippedNoClient()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->admin()
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2023-07-19 09:30:26 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = :orders_status.status:', [...], false)
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Models/OrderStatusModel.php(92): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH/Controllers/Home.php(1428): App\Models\OrderStatusModel->shippedNoClient()
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->admin()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 09:30:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 09:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 10:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 10:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 10:16:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 10:16:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 10:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 11:09:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 11:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 15:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 15:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 15:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 15:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 15:53:39 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/OrderStatusModel.php(92): CodeIgniter\Model->__call('get', Array)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1428): App\Models\OrderStatusModel->shippedNoClient()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->admin()
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2023-07-19 15:53:39 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = :orders_status.status:', [...], false)
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Models/OrderStatusModel.php(92): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH/Controllers/Home.php(1428): App\Models\OrderStatusModel->shippedNoClient()
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->admin()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 15:53:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 15:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 16:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 16:09:33 --> A non-numeric value encountered
+in APPPATH/Controllers/Order.php on line 492.
+ 1 APPPATH/Controllers/Order.php(492): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric value encountered', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Order.php', 492, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Order->saveQtyAssigned()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 16:22:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 17:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 17:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 17:24:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 17:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 17:24:56 --> syntax error, unexpected 'public' (T_PUBLIC), expecting end of file
+in APPPATH/Controllers/Order.php on line 569.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Order.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Order')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Order')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Order')
+ 5 SYSTEMPATH/CodeIgniter.php(892): class_exists('\\App\\Controllers\\Order', true)
+ 6 SYSTEMPATH/CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 17:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 17:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 17:31:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 17:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-19 20:50:34 --> mysqli_sql_exception: Unknown column 'orders_status.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/OrderStatusModel.php(92): CodeIgniter\Model->__call('get', Array)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Home.php(1428): App\Models\OrderStatusModel->shippedNoClient()
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->admin()
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2023-07-19 20:50:34 --> Unknown column 'orders_status.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `clients` ON `clients`.`order_id` = `orders_status`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = :orders_status.status:', [...], false)
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Models/OrderStatusModel.php(92): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH/Controllers/Home.php(1428): App\Models\OrderStatusModel->shippedNoClient()
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->admin()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 20:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:55:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 20:59:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:02:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 21:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:07:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:20:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:21:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:22:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:28:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:29:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:29:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-19 22:37:13 --> Undefined index: pid
+in APPPATH/Views/admin/assignments.php on line 108.
+ 1 APPPATH/Views/admin/assignments.php(108): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: pid', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/assignments.php', 108, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/admin/assignments.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/assignments', [], true)
+ 5 APPPATH/Controllers/Home.php(1082): view('admin/assignments', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->assignments()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-07-19 22:37:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:37:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:42:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:43:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:43:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:43:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:44:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:47:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:47:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:52:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:55:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 22:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:02:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:02:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:02:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:08:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:11:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:13:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:27:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:27:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:30:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:31:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:31:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:31:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:31:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:32:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:33:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:35:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:47:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:49:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:51:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-19 23:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

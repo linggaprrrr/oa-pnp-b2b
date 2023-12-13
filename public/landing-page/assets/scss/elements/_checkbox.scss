@@ -1,0 +1,70 @@
+
+/* ---------------------------------- */
+/* Checkbox
+------------------------------------- */
+
+.checkbox {
+  display: inline-block;
+  margin-bottom: 0;
+  input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+  label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 45px;
+    line-height: 25px;
+    span.checkbox-icon {
+      content: '';
+      -webkit-appearance: none;
+      background-color: transparent;
+      border: 2px solid #E5F1FF;
+      height: 34px;
+      width: 34px;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      cursor: pointer;
+      margin-right: 5px;
+      border-radius: 7px;
+      transition: 0.3s;
+      position: absolute;
+      left: 0;
+      top: 1px; 
+    }
+    span.checkbox-icon:hover{
+      background-color:#E5F1FF;
+    }
+  }
+  input {
+    + label span.checkbox-icon:after {
+      position: absolute;
+      top: 4.5px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      opacity: 0;
+      content: '';
+      display: block;
+      width: 10px;
+      height: 16px;
+      border: solid $primary-color;
+      border-width: 0 3px 3px 0;
+      transform: scale(0.5) rotate(45deg);
+      transition: all 0.35s cubic-bezier(0.3, -0.41, 0.19, 2), opacity 0.3s;
+    }
+    &:checked + label span.checkbox-icon {
+      border-color: #E5F1FF;
+      background-color: #E5F1FF;
+      &:after {
+        transform: scale(1) rotate(45deg);
+        opacity: 1;
+      }
+    }
+  }
+}

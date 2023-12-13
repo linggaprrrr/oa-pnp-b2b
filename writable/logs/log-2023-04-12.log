@@ -1,0 +1,97 @@
+INFO - 2023-04-12 00:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 00:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 00:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 08:50:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 08:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 08:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 08:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 08:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 08:50:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 08:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:04:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:05:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-12 09:05:04 --> Undefined property: stdClass::$buyer_name
+in APPPATH/Views/purchase/selections.php on line 207.
+ 1 APPPATH/Views/purchase/selections.php(207): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$buyer_name', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/selections.php', 207, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/selections.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('purchase/selections', [], true)
+ 5 APPPATH/Controllers/Home.php(106): view('purchase/selections', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->selections()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-04-12 09:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:06:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:14:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:18:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:18:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:32:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-12 09:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-04-12 09:48:19 --> mysqli_sql_exception: Unknown column 'purchase_items.purchased_date' in 'group statement' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/OrderStatusModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Order.php(244): App\Models\OrderStatusModel->getOrderedData()
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Order->openMasterFile('1')
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-04-12 09:48:19 --> Unknown column 'purchase_items.purchased_date' in 'group statement'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.*, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`lead_id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `orders_status`.`purchased_item_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+GROUP BY DATE(purchase_items.purchased_date)
+ORDER BY `orders_status`.`purchased_date` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.*, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`lead_id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `orders_status`.`purchased_item_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+GROUP BY DATE(purchase_items.purchased_date)
+ORDER BY `orders_status`.`purchased_date` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.*, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`lead_id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `orders_status`.`purchased_item_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+GROUP BY DATE(purchase_items.purchased_date)
+ORDER BY `orders_status`.`purchased_date` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.*, `lead_lists`.`title`, `lead_lists`.`asin`, `price`, `purchase_items`.`qty` as `qty_ordered`, `buy_cost`, `purchase_items`.`lead_id` as `uid`, `purchase_items`.`id` as `pid`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`lead_id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `orders_status`.`purchased_item_id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+GROUP BY DATE(purchase_items.purchased_date)
+ORDER BY `orders_status`.`purchased_date` DESC', [], false)
+ 5 APPPATH/Models/OrderStatusModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Order.php(244): App\Models\OrderStatusModel->getOrderedData()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Order->openMasterFile('1')
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')

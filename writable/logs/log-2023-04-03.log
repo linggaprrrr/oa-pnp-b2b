@@ -1,0 +1,118 @@
+CRITICAL - 2023-04-03 02:11:07 --> Undefined offset: 12
+in APPPATH/Controllers/Purchase.php on line 94.
+ 1 APPPATH/Controllers/Purchase.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 12', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Purchase.php', 94, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->uploadFiles()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-04-03 02:11:07 --> Allowed memory size of 134217728 bytes exhausted (tried to allocate 98570240 bytes)
+【Previous Exception】
+ErrorException
+Undefined offset: 12
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Purchase.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Applications/M...', 94, Array)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Purchase->uploadFiles()
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#6 {main}
+in APPPATH/Views/errors/html/error_exception.php on line 101.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-04-03 02:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-03 02:29:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-03 02:29:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-03 02:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-03 02:35:32 --> Undefined property: stdClass::$promocode
+in APPPATH/Views/purchase/open_selections.php on line 52.
+ 1 APPPATH/Views/purchase/open_selections.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$promocode', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/open_selections.php', 52, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/open_selections.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('purchase/open_selections', [], true)
+ 5 APPPATH/Controllers/Purchase.php(126): view('purchase/open_selections', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('25')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-04-03 02:50:42 --> count(): Parameter must be an array or an object that implements Countable
+in APPPATH/Controllers/Order.php on line 29.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parameter must be an array or an object that implements Countable', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Order.php', 29, [...])
+ 2 APPPATH/Controllers/Order.php(29): count(null)
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Order->savePurchaseList()
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order))
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-04-03 03:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-03 03:49:19 --> Undefined property: stdClass::$retail_link
+in APPPATH/Views/purchase/open_selections.php on line 109.
+ 1 APPPATH/Views/purchase/open_selections.php(109): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$retail_link', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/open_selections.php', 109, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/open_selections.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('purchase/open_selections', [], true)
+ 5 APPPATH/Controllers/Purchase.php(127): view('purchase/open_selections', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('25')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+ERROR - 2023-04-03 05:22:19 --> mysqli_sql_exception: Unknown column 'purchase_items.order_staff' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `purchas...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `purchas...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `purchas...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `purchas...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/OrderModel.php(27): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Purchase.php(123): App\Models\OrderModel->getPurchaseData('25')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Purchase->openFile('25')
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-04-03 05:22:19 --> Unknown column 'purchase_items.order_staff' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `purchase_items`.*, `lead_lists`.*, `scan_unlimited`.*, `purchase_items`.`id` as `uid`
+FROM `lead_lists`
+JOIN `purchase_items` ON `purchase_items`.`lead_id` = `lead_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+JOIN `staffs` ON `staffs`.`id` = `purchase_items`.`order_staff`
+WHERE `lead_lists`.`purchase_id` = \'25\'
+GROUP BY `purchase_items`.`id`
+ORDER BY `purchase_items`.`id` DESC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `purchase_items`.*, `lead_lists`.*, `scan_unlimited`.*, `purchase_items`.`id` as `uid`
+FROM `lead_lists`
+JOIN `purchase_items` ON `purchase_items`.`lead_id` = `lead_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+JOIN `staffs` ON `staffs`.`id` = `purchase_items`.`order_staff`
+WHERE `lead_lists`.`purchase_id` = \'25\'
+GROUP BY `purchase_items`.`id`
+ORDER BY `purchase_items`.`id` DESC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `purchase_items`.*, `lead_lists`.*, `scan_unlimited`.*, `purchase_items`.`id` as `uid`
+FROM `lead_lists`
+JOIN `purchase_items` ON `purchase_items`.`lead_id` = `lead_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+JOIN `staffs` ON `staffs`.`id` = `purchase_items`.`order_staff`
+WHERE `lead_lists`.`purchase_id` = \'25\'
+GROUP BY `purchase_items`.`id`
+ORDER BY `purchase_items`.`id` DESC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `purchase_items`.*, `lead_lists`.*, `scan_unlimited`.*, `purchase_items`.`id` as `uid`
+FROM `lead_lists`
+JOIN `purchase_items` ON `purchase_items`.`lead_id` = `lead_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+JOIN `staffs` ON `staffs`.`id` = `purchase_items`.`order_staff`
+WHERE `lead_lists`.`purchase_id` = :lead_lists.purchase_id:
+GROUP BY `purchase_items`.`id`
+ORDER BY `purchase_items`.`id` DESC', [...], false)
+ 5 APPPATH/Models/OrderModel.php(27): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Purchase.php(123): App\Models\OrderModel->getPurchaseData('25')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('25')
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-04-03 10:25:30 --> Cannot declare class App\Models\OrderModel, because the name is already in use
+in APPPATH/Models/BuyerStaffModel.php on line 0.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-04-03 16:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

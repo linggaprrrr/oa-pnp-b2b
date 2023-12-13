@@ -1,0 +1,74 @@
+INFO - 2023-10-02 07:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-02 08:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-02 08:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-02 13:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-02 13:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-02 13:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-10-02 13:54:04 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/Home.php on line 1863.
+ 1 APPPATH/Controllers/Home.php(1863): strtotime(null)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app/public/index.php')
+ERROR - 2023-10-02 13:54:04 --> mysqli_sql_exception: Unknown column 'clients.order_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app/app/Models/OrderStatusModel.php(96): CodeIgniter\Model->__call('get', Array)
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app/app/Controllers/Home.php(2004): App\Models\OrderStatusModel->shippedNoClient()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/smartwholesale/oa-app/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2023-10-02 13:54:04 --> Unknown column 'clients.order_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+LEFT JOIN `clients` ON `clients`.`order_id` = `assigned_items`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'
+GROUP BY `purchase_items`.`id`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+LEFT JOIN `clients` ON `clients`.`order_id` = `assigned_items`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'
+GROUP BY `purchase_items`.`id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+LEFT JOIN `clients` ON `clients`.`order_id` = `assigned_items`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = \'shipped\'
+GROUP BY `purchase_items`.`id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `orders_status`.`purchased_item_id`, `lead_lists`.`title`, `orders_status`.`purchased_date`
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+JOIN `assigned_items` ON `assigned_items`.`item_id` = `purchase_items`.`id`
+LEFT JOIN `clients` ON `clients`.`order_id` = `assigned_items`.`order_id`
+WHERE `clients`.`client_name` IS NULL
+AND `orders_status`.`status` = :orders_status.status:
+GROUP BY `purchase_items`.`id`', [...], false)
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Models/OrderStatusModel.php(96): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH/Controllers/Home.php(2004): App\Models\OrderStatusModel->shippedNoClient()
+ 8 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->dashboard()
+ 9 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app/public/index.php')

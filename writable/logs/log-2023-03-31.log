@@ -1,0 +1,328 @@
+INFO - 2023-03-31 02:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-31 02:56:14 --> Class 'App\Controllers\PurchaseModel' not found
+in APPPATH/Controllers/Home.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(906): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 03:00:28 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$getResultObject
+in APPPATH/Views/purchase/leads-list.php on line 111.
+ 1 APPPATH/Views/purchase/leads-list.php(111): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\Database\\MySQLi\\Result::$getResultObject', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/leads-list.php', 111, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/leads-list.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('purchase/leads-list', [], true)
+ 5 APPPATH/Controllers/Home.php(34): view('purchase/leads-list', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->leadsList()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 03:00:51 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$getResultObject
+in APPPATH/Views/purchase/leads-list.php on line 111.
+ 1 APPPATH/Views/purchase/leads-list.php(111): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: CodeIgniter\\Database\\MySQLi\\Result::$getResultObject', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/leads-list.php', 111, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/leads-list.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('purchase/leads-list', [], true)
+ 5 APPPATH/Controllers/Home.php(34): view('purchase/leads-list', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->leadsList()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+ERROR - 2023-03-31 03:05:30 --> mysqli_sql_exception: Unknown column 'color' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `sc...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `sc...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `sc...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `sc...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Purchase.php(105): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Purchase->uploadFiles()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+#11 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#14 {main}
+CRITICAL - 2023-03-31 03:05:30 --> Unknown column 'color' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `scan_unlimited` (`cost`, `asin`, `sales_rank`, `title`, `brand`, `price`, `offers`, `category`, `color`, `estimated_sales`, `profit`, `roi`, `purchase_id`) VALUES (\'3.45\', \'B00BDEQ9G6\', \'663590\', \'Yummy Earth Fruit Pop Pc Lollipop (6x3 OZ)\', \'YumEarth\', \'35.90000153\', \'5\', \'Grocery\', NULL, \'0\', \'21.37\', \'619.42\', 2)', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `scan_unlimited` (`cost`, `asin`, `sales_rank`, `title`, `brand`, `price`, `offers`, `category`, `color`, `estimated_sales`, `profit`, `roi`, `purchase_id`) VALUES (\'3.45\', \'B00BDEQ9G6\', \'663590\', \'Yummy Earth Fruit Pop Pc Lollipop (6x3 OZ)\', \'YumEarth\', \'35.90000153\', \'5\', \'Grocery\', NULL, \'0\', \'21.37\', \'619.42\', 2)')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `scan_unlimited` (`cost`, `asin`, `sales_rank`, `title`, `brand`, `price`, `offers`, `category`, `color`, `estimated_sales`, `profit`, `roi`, `purchase_id`) VALUES (\'3.45\', \'B00BDEQ9G6\', \'663590\', \'Yummy Earth Fruit Pop Pc Lollipop (6x3 OZ)\', \'YumEarth\', \'35.90000153\', \'5\', \'Grocery\', NULL, \'0\', \'21.37\', \'619.42\', 2)')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `scan_unlimited` (`cost`, `asin`, `sales_rank`, `title`, `brand`, `price`, `offers`, `category`, `color`, `estimated_sales`, `profit`, `roi`, `purchase_id`) VALUES (:cost:, :asin:, :sales_rank:, :title:, :brand:, :price:, :offers:, :category:, :color:, :estimated_sales:, :profit:, :roi:, :purchase_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/Purchase.php(105): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->uploadFiles()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-03-31 03:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-31 03:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-31 03:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-31 06:11:52 --> Call to undefined method App\Models\PurchaseModel::getSelectionData
+in SYSTEMPATH/Model.php on line 842.
+ 1 APPPATH/Controllers/Purchase.php(116): CodeIgniter\Model->__call('getSelectionData', [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+ERROR - 2023-03-31 06:12:11 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `' at line 2 in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/PurchaseModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Purchase.php(116): App\Models\PurchaseModel->getSelectionData('4')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-03-31 06:12:11 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `' at line 2
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *
+FROM `purchase_lists`.*
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`purchase_id` = `purchase_lists`.`id`
+WHERE `purchase_lists`.`id` = \'4\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `purchase_lists`.*
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`purchase_id` = `purchase_lists`.`id`
+WHERE `purchase_lists`.`id` = \'4\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `purchase_lists`.*
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`purchase_id` = `purchase_lists`.`id`
+WHERE `purchase_lists`.`id` = \'4\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `purchase_lists`.*
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`purchase_id` = `purchase_lists`.`id`
+WHERE `purchase_lists`.`id` = :purchase_lists.id:', [...], false)
+ 5 APPPATH/Models/PurchaseModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Purchase.php(116): App\Models\PurchaseModel->getSelectionData('4')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+ERROR - 2023-03-31 06:12:41 --> mysqli_sql_exception: Table 'oaclient.leads_list' doesn't exist in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/PurchaseModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Purchase.php(116): App\Models\PurchaseModel->getSelectionData('4')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-03-31 06:12:41 --> Table 'oaclient.leads_list' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *
+FROM `purchase_lists`
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`purchase_id` = `purchase_lists`.`id`
+WHERE `purchase_lists`.`id` = \'4\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `purchase_lists`
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`purchase_id` = `purchase_lists`.`id`
+WHERE `purchase_lists`.`id` = \'4\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `purchase_lists`
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`purchase_id` = `purchase_lists`.`id`
+WHERE `purchase_lists`.`id` = \'4\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `purchase_lists`
+JOIN `leads_list` ON `leads_list`.`purchase_id` = `purchase_lists`.`id`
+JOIN `scan_unlimited` ON `scan_unlimited`.`purchase_id` = `purchase_lists`.`id`
+WHERE `purchase_lists`.`id` = :purchase_lists.id:', [...], false)
+ 5 APPPATH/Models/PurchaseModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Purchase.php(116): App\Models\PurchaseModel->getSelectionData('4')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+ERROR - 2023-03-31 06:14:24 --> mysqli_sql_exception: Unknown column 'purchase_lists.id' in 'where clause' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/PurchaseModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Purchase.php(116): App\Models\PurchaseModel->getSelectionData('4')
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-03-31 06:14:24 --> Unknown column 'purchase_lists.id' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *
+FROM `lead_lists`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE `purchase_lists`.`id` = \'4\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `lead_lists`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE `purchase_lists`.`id` = \'4\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `lead_lists`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE `purchase_lists`.`id` = \'4\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `lead_lists`
+JOIN `scan_unlimited` ON `scan_unlimited`.`asin` = `lead_lists`.`asin`
+WHERE `purchase_lists`.`id` = :purchase_lists.id:', [...], false)
+ 5 APPPATH/Models/PurchaseModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Purchase.php(116): App\Models\PurchaseModel->getSelectionData('4')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 06:21:56 --> Invalid file: "admin/open_selections.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/open_selections.php')
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/open_selections', [], true)
+ 3 APPPATH/Controllers/Purchase.php(121): view('admin/open_selections', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 07:01:22 --> Undefined property: stdClass::$no
+in APPPATH/Views/purchase/open_selections.php on line 77.
+ 1 APPPATH/Views/purchase/open_selections.php(77): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$no', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/open_selections.php', 77, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/open_selections.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('purchase/open_selections', [], true)
+ 5 APPPATH/Controllers/Purchase.php(121): view('purchase/open_selections', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 07:03:39 --> Too few arguments to function CodeIgniter\Database\BaseBuilder::groupBy(), 0 passed in /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Models/PurchaseModel.php on line 23 and at least 1 expected
+in SYSTEMPATH/Database/BaseBuilder.php on line 1381.
+ 1 APPPATH/Models/PurchaseModel.php(23): CodeIgniter\Database\BaseBuilder->groupBy()
+ 2 APPPATH/Controllers/Purchase.php(116): App\Models\PurchaseModel->getSelectionData('4')
+ 3 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('4')
+ 4 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 08:11:27 --> Result!A2 -> Formula Error: Wrong number of arguments for IFERROR() function: 13 given, 2 expected
+in VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Cell/Cell.php on line 393.
+ 1 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Worksheet.php(3034): PhpOffice\PhpSpreadsheet\Cell\Cell->getCalculatedValue()
+ 2 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Worksheet.php(3146): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->rangeToArray('A1:L141', null, true, true, false)
+ 3 APPPATH/Controllers/Purchase.php(79): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->toArray()
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->uploadFiles()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-03-31 08:12:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-31 09:16:40 --> Undefined variable: list
+in APPPATH/Controllers/Order.php on line 29.
+ 1 APPPATH/Controllers/Order.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: list', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Order.php', 29, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Order->savePurchaseList()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 09:43:44 --> syntax error, unexpected '}', expecting ';' or ','
+in APPPATH/Controllers/Purchase.php on line 152.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Purchase.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Purchase')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Purchase')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\Purchase')
+ 5 SYSTEMPATH/CodeIgniter.php(892): class_exists('\\App\\Controllers\\Purchase', true)
+ 6 SYSTEMPATH/CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 10:06:56 --> Invalid argument supplied for foreach()
+in APPPATH/Controllers/Order.php on line 29.
+ 1 APPPATH/Controllers/Order.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Order.php', 29, [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Order->savePurchaseList()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+ERROR - 2023-03-31 10:08:39 --> mysqli_sql_exception: Duplicate entry '1316' for key 'lead_id' in /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `pu...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pu...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pu...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pu...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, false)
+#7 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/BaseModel.php(692): CodeIgniter\Model->insert(Array, false)
+#8 /Applications/MAMP/htdocs/smartwholesale/oaclients/app/Controllers/Order.php(31): CodeIgniter\BaseModel->save(Array)
+#9 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Order->savePurchaseList()
+#10 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order))
+#11 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/smartwholesale/oaclients/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#14 {main}
+CRITICAL - 2023-03-31 10:08:39 --> Duplicate entry '1316' for key 'lead_id'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `purchase_items` (`lead_id`) VALUES (\'1316\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `purchase_items` (`lead_id`) VALUES (\'1316\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `purchase_items` (`lead_id`) VALUES (\'1316\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `purchase_items` (`lead_id`) VALUES (:lead_id:)', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], false)
+ 8 SYSTEMPATH/BaseModel.php(692): CodeIgniter\Model->insert([...], false)
+ 9 APPPATH/Controllers/Order.php(31): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Order->savePurchaseList()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order))
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 10:09:18 --> Call to undefined method App\Models\OrderModel::gnore
+in SYSTEMPATH/Model.php on line 842.
+ 1 APPPATH/Controllers/Order.php(30): CodeIgniter\Model->__call('gnore', [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Order->savePurchaseList()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Order))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-31 10:43:09 --> Undefined property: mysqli::$asin
+in APPPATH/Views/purchase/open_selections.php on line 157.
+ 1 APPPATH/Views/purchase/open_selections.php(157): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: mysqli::$asin', '/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/open_selections.php', 157, [...])
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oaclients/app/Views/purchase/open_selections.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('purchase/open_selections', [], true)
+ 5 APPPATH/Controllers/Purchase.php(126): view('purchase/open_selections', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->openFile('6')
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+INFO - 2023-03-31 23:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,31 @@
+INFO - 2023-03-30 03:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-30 03:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-30 08:34:00 --> File "xlsx" does not exist.
+in VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Shared/File.php on line 149.
+ 1 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/Xlsx.php(412): PhpOffice\PhpSpreadsheet\Shared\File::assertFile('xlsx', '_rels/.rels')
+ 2 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/BaseReader.php(182): PhpOffice\PhpSpreadsheet\Reader\Xlsx->loadSpreadsheetFromFile('xlsx')
+ 3 APPPATH/Controllers/Purchase.php(35): PhpOffice\PhpSpreadsheet\Reader\BaseReader->load('xlsx')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->uploadFiles()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-30 08:35:27 --> File "xlsx" does not exist.
+in VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Shared/File.php on line 149.
+ 1 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/Xlsx.php(412): PhpOffice\PhpSpreadsheet\Shared\File::assertFile('xlsx', '_rels/.rels')
+ 2 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/BaseReader.php(182): PhpOffice\PhpSpreadsheet\Reader\Xlsx->loadSpreadsheetFromFile('xlsx')
+ 3 APPPATH/Controllers/Purchase.php(38): PhpOffice\PhpSpreadsheet\Reader\BaseReader->load('xlsx')
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Purchase->uploadFiles()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Purchase))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oaclients/public/index.php')
+CRITICAL - 2023-03-30 08:35:45 --> Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes)
+in SYSTEMPATH/ThirdParty/Kint/Zval/Value.php on line 72.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-03-30 08:35:59 --> Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes)
+in SYSTEMPATH/ThirdParty/Kint/Parser/Parser.php on line 362.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-03-30 08:38:24 --> Allowed memory size of 134217728 bytes exhausted (tried to allocate 4096 bytes)
+in SYSTEMPATH/ThirdParty/Kint/Parser/TimestampPlugin.php on line 65.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
