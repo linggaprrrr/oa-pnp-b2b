@@ -176,7 +176,8 @@ class Auth extends BaseController
                     'user_id' => $user->id,
                     'title' => 'login',
                     'description' => '['. strtoupper($user->role) .'] '. $user->username. ' has logged in using IP: '. $ip,
-                    'level' => '1'
+                    'level' => '1',
+                    'created_at' => date('Y-m-d H:i:s')
                 ]);
 
                 if ($user->role == 'superadministrator') {

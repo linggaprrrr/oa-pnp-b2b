@@ -525,11 +525,32 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                            
-                                                <label class="block">
+                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                    <label class="block">
                                                     <span>Shipping Number</span>
-                                                    <textarea rows="4" placeholder="Shipping Number.." name="shipping1" class="notes1 form-textarea notes1 mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"></textarea>
-                                                </label>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <input name="shipping1" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                            <i class="fas fa-shipping-fast text-base"></i>
+                                                        </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block">
+                                                        <span>Attachment</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <div class="filepond fp-bordered">
+                                                            <input type="file" class="attachment1" accept="application/pdf,image/png,image/jpeg"  name="attachment1"/>
+                                                            <input type="text" id="fileValue1" name="fileValue1" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            
+                                                            <span class="fileTemp1" style="display: none;">
+                                                                <a id="fileShow1" style="width: 100%;" download></a>    
+                                                                <button type="button" id="fileDelete1"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                            </span>
+
+                                                        </div>
+                                                        </span>
+                                                    </label>
+                                                </div>
                                                 
                                             </div>
                                         
@@ -607,11 +628,30 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                            
-                                                <label class="block">
+                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                    <label class="block">
                                                     <span>Shipping Number</span>
-                                                    <textarea rows="4" placeholder="Shipping Number.." name="shipping2" class="notes2 form-textarea mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"></textarea>
-                                                </label>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <input name="shipping2" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                            <i class="fas fa-shipping-fast text-base"></i>
+                                                        </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block">
+                                                        <span>Attachment</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <div class="filepond fp-bordered">
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment2"/>
+                                                            <input type="text" id="fileValue2" name="fileValue2" style="font-size: 10px; width: 100%; display:none" readonly>                                                                
+                                                            <span class="fileTemp2" style="display: none;">
+                                                                <a id="fileShow2" style="width: 100%;" download></a>    
+                                                                <button type="button" id="fileDelete2"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                            </span>
+                                                        </div>
+                                                        </span>
+                                                    </label>
+                                                </div>
                                                 
                                             </div>
                                         </div>
@@ -689,11 +729,32 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                            
-                                                <label class="block">
+                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                    <label class="block">
                                                     <span>Shipping Number</span>
-                                                    <textarea rows="4" placeholder="Shipping Number.." name="shipping3" class="notes3 form-textarea mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"></textarea>
-                                                </label>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <input name="shipping3" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                            <i class="fas fa-shipping-fast text-base"></i>
+                                                        </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block">
+                                                        <span>Attachment</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <div class="filepond fp-bordered">
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment3"/>
+                                                            <input type="text" id="fileValue3" name="fileValue3" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            
+                                                            <span class="fileTemp3" style="display: none;">
+                                                                <a id="fileShow3" style="width: 100%;" download></a>    
+                                                                <button type="button" id="fileDelete3"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                            </span>
+                                                        </div>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                
                                                 
                                             </div>
                                         </div>
@@ -771,11 +832,32 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                            
-                                                <label class="block">
+                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                    <label class="block">
                                                     <span>Shipping Number</span>
-                                                    <textarea rows="4" placeholder="Shipping Number.." name="shipping4" class="notes4 form-textarea mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"></textarea>
-                                                </label>                                            
+                                                        <span class="relative mt-1.5 flex">
+                                                        <input name="shipping4" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                            <i class="fas fa-shipping-fast text-base"></i>
+                                                        </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block">
+                                                        <span>Attachment</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <div class="filepond fp-bordered">
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment4"/>
+                                                            <input type="text" id="fileValue4" name="fileValue4" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            
+                                                            <span class="fileTemp4" style="display: none;">
+                                                                <a id="fileShow4" style="width: 100%;" download></a>    
+                                                                <button type="button" id="fileDelete4"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                            </span>
+                                                        </div>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                                                    
                                             </div>
                                         
                                         </div>
@@ -853,11 +935,31 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                            
-                                                <label class="block">
+                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                    <label class="block">
                                                     <span>Shipping Number</span>
-                                                    <textarea rows="4" placeholder="Shipping Number.." name="shipping5" class="notes5 form-textarea mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"></textarea>
-                                                </label>                                            
+                                                        <span class="relative mt-1.5 flex">
+                                                        <input name="shipping5" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                            <i class="fas fa-shipping-fast text-base"></i>
+                                                        </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block">
+                                                        <span>Attachment</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <div class="filepond fp-bordered">
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment5"/>
+                                                            <input type="text" id="fileValue5" name="fileValue5" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            
+                                                            <span class="fileTemp5" style="display: none;">
+                                                                <a id="fileShow5" style="width: 100%;" download></a>    
+                                                                <button type="button" id="fileDelete5"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                            </span>
+                                                        </div>
+                                                        </span>
+                                                    </label>
+                                                </div>                                      
                                             </div>                                    
                                         </div>
                                     </div>
@@ -933,11 +1035,31 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                            
-                                                <label class="block">
+                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                    <label class="block">
                                                     <span>Shipping Number</span>
-                                                    <textarea rows="4" placeholder="Shipping Number.." name="shipping6" class="notes6 form-textarea mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"></textarea>
-                                                </label>                                            
+                                                        <span class="relative mt-1.5 flex">
+                                                        <input name="shipping6" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                            <i class="fas fa-shipping-fast text-base"></i>
+                                                        </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block">
+                                                        <span>Attachment</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <div class="filepond fp-bordered">
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment6"/>
+                                                            <input type="text" id="fileValue6" name="fileValue6" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            
+                                                            <span class="fileTemp6" style="display: none;">
+                                                                <a id="fileShow6" style="width: 100%;" download></a>    
+                                                                <button type="button" id="fileDelete6"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                            </span>
+                                                        </div>
+                                                        </span>
+                                                    </label>
+                                                </div>                                        
                                             </div>                                         
                                         </div>
                                     </div>
@@ -1013,11 +1135,31 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                            
-                                                <label class="block">
+                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                    <label class="block">
                                                     <span>Shipping Number</span>
-                                                    <textarea rows="4" placeholder="Shipping Number.." name="shipping7" class="notes7 form-textarea mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"></textarea>
-                                                </label>                                            
+                                                        <span class="relative mt-1.5 flex">
+                                                            <input name="shipping7" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="fas fa-shipping-fast text-base"></i>
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="block">
+                                                        <span>Attachment</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                            <div class="filepond fp-bordered">
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment7"/>
+                                                                <input type="text" id="fileValue7" name="fileValue7" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            
+                                                                <span class="fileTemp7" style="display: none;">
+                                                                    <a id="fileShow7" style="width: 100%;" download></a>    
+                                                                    <button type="button" id="fileDelete7"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                                </span>
+                                                            </div>
+                                                        </span>
+                                                    </label>
+                                                </div>                                       
                                             </div>   
                                         
                                         </div>
@@ -1034,7 +1176,8 @@
             </div>                 
         </div>                
     </template>
-</div>
+</div> 
+
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <?= $this->endSection() ?>
 <?= $this->section('js') ?>
@@ -1148,9 +1291,16 @@
         })
 
         $(document).on("click", ".save-buyers", function() {
-            const id = $(this).data('id');        
-            $.post( "/save-buyers", $( "#buyer_form" ).serialize())
-                .done(function(data) {                    
+            const id = $(this).data('id');                        
+            var formData = new FormData($("#buyer_form")[0]);
+            $.ajax({
+                type: "POST",
+                url: "/save-buyers",
+                data: formData,
+                processData: false,  // Important! Don't process the data
+                contentType: false,  // Important! Set contentType to false
+                success: function(data) {
+                    // Handle the success response                    
                     const resp = JSON.parse(data);
                     if (parseInt(resp['rest_qty']['qty']) === parseInt(resp['rest_qty']['buyer_qty'])) {
                         $('.buyer-' + id).removeClass('bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90').addClass('border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25');                                        
@@ -1158,12 +1308,66 @@
                         $('.buyer-' + id).removeClass('bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90')
                         .removeClass('border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25')
                             .addClass('border border-error/30 bg-error/10 font-medium text-error hover:bg-error/20 focus:bg-error/20 active:bg-error/25');                                        
-                    } 
-                    
+                    }
                     $.notify("Your changes have been saved!", "success");
-                });
+                },
+                error: function(error) {
+                    // Handle the error response
+                    console.error(error);
+                }
+            });
             
         });
+
+        $(document).on("click", "#fileDelete1", function() {
+            $(".attachment1").show();
+            $("#fileShow1").html("");
+            $("#fileDelete1").hide();
+            $("#fileValue1").val("");
+        });
+
+        $(document).on("click", "#fileDelete2", function() {
+            $(".attachment2").show();
+            $("#fileShow2").html("");
+            $("#fileDelete2").hide();
+            $("#fileValue2").val("");
+        });
+
+        $(document).on("click", "#fileDelete3", function() {
+            $(".attachment3").show();
+            $("#fileShow3").html("");
+            $("#fileDelete3").hide();
+            $("#fileValue3").val("");
+        });
+
+        $(document).on("click", "#fileDelete4", function() {
+            $(".attachment4").show();
+            $("#fileShow4").html("");
+            $("#fileDelete4").hide();
+            $("#fileValue4").val("");
+        });
+
+        $(document).on("click", "#fileDelete5", function() {
+            $(".attachment5").show();
+            $("#fileShow5").html("");
+            $("#fileDelete5").hide();
+            $("#fileValue5").val("");
+        });
+
+        $(document).on("click", "#fileDelete6", function() {
+            $(".attachment6").show();
+            $("#fileShow6").html("");
+            $("#fileDelete6").hide();
+            $("#fileValue6").val("");
+        });
+
+        $(document).on("click", "#fileDelete7", function() {
+            $(".attachment7").show();
+            $("#fileShow7").html("");
+            $("#fileDelete7").hide();
+            $("#fileValue7").val("");
+        });
+
         $(document).on("click", ".buyerModal", function() {
             const id = $(this).data('id');
             $(".save-buyers").removeData('id');    

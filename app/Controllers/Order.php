@@ -175,10 +175,10 @@ class Order extends BaseController
         $buyer5 = '';
         $buyer6 = '';
         $buyer7 = '';
-        
+
         // check purchase id
         $isExist = $this->buyerModel->where('purchase_id', $post['purch_id'])->get();
-        if ($isExist->getNumRows() > 0) {
+        if ($isExist->getNumRows() > 0) {           
             // buyer 1            
             if (empty($attch1->getName())) {
                 $data1 = [
@@ -187,7 +187,8 @@ class Order extends BaseController
                     'buyer_qty' => $post['qty1'],
                     'buyer_price' => $post['price_val'],
                     'order_number' => $post['order_number1'],                
-                    'purchase_id' => $post['purch_id'],                    
+                    'purchase_id' => $post['purch_id'], 
+                    'buyer_notes' => $post['fileValue1']                   
                 ];
             } else {
                 $file1 = time() . '_' . $attch1->getName();

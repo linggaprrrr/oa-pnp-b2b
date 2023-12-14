@@ -1148,42 +1148,49 @@
             $(".attachment1").show();
             $("#fileShow1").html("");
             $("#fileDelete1").hide();
+            $("#fileValue1").val("");
         });
 
         $(document).on("click", "#fileDelete2", function() {
             $(".attachment2").show();
             $("#fileShow2").html("");
             $("#fileDelete2").hide();
+            $("#fileValue2").val("");
         });
 
         $(document).on("click", "#fileDelete3", function() {
             $(".attachment3").show();
             $("#fileShow3").html("");
             $("#fileDelete3").hide();
+            $("#fileValue3").val("");
         });
 
         $(document).on("click", "#fileDelete4", function() {
             $(".attachment4").show();
             $("#fileShow4").html("");
             $("#fileDelete4").hide();
+            $("#fileValue4").val("");
         });
 
         $(document).on("click", "#fileDelete5", function() {
             $(".attachment5").show();
             $("#fileShow5").html("");
             $("#fileDelete5").hide();
+            $("#fileValue5").val("");
         });
 
         $(document).on("click", "#fileDelete6", function() {
             $(".attachment6").show();
             $("#fileShow6").html("");
             $("#fileDelete6").hide();
+            $("#fileValue6").val("");
         });
 
         $(document).on("click", "#fileDelete7", function() {
             $(".attachment7").show();
             $("#fileShow7").html("");
             $("#fileDelete7").hide();
+            $("#fileValue7").val("");
         });
 
         $(document).on("click", ".buyerModal", function() {
@@ -1206,18 +1213,22 @@
                     $(".qty-buyer").attr('data-price', parseFloat(resp[0]['market_price']).toFixed(2)); //setter
                     if (resp.length >= 5) {                        
                         for (var i = 0; i < resp.length; i++) {
-                            console.log(resp);
+                            
                             totalQty = totalQty + parseInt(resp[i]['buyer_qty']);
                             $(".buyer-id" + j).val(resp[i]['id']);
                             $(".buyer" + j).val(resp[i]['buyer']);
                             $(".cc" + j).val(resp[i]['cc']);
-                            if (resp[i]['buyer_notes'] != null) {                                
-                                $("#fileValue" + j).val("<a href="+resp[i]['buyer_notes']+">"+resp[i]['buyer_notes']+"</a>");                                
-                                $('#fileShow' + j).attr('href', '/cc_receipts/'+ resp[i]['buyer_notes']);
-                                $('#fileShow' + j).html(resp[i]['buyer_notes']);
-                                $(".attachment" + j).hide();
+                            
+                            if (resp[i]['buyer_notes'] !== null) {                                   
+                                if (resp[i]['buyer_notes'].length > 0) {
+                                    $('.fileTemp' + j).show();                         
+                                    $("#fileValue" + j).val(resp[i]['buyer_notes']);                                
+                                    $('#fileShow' + j).attr('href', '/cc_receipts/'+ resp[i]['buyer_notes']);
+                                    $('#fileShow' + j).html(resp[i]['buyer_notes']);                                
+                                    $(".attachment" + j).hide();
+                                }
                             }
-                            console.log("localhost:8080/cc_receipts/" +resp[i]['buyer_notes']);
+                            
                             $(".qty" + j).val(resp[i]['buyer_qty']);
                             if (resp[i]['buyer_qty'] == null) {
                                 $(".total_price" + j).val('$' + (parseFloat(resp[i]['market_price']) * parseFloat(0)).toFixed(2));
@@ -1660,27 +1671,22 @@
                 processData: false,  // Important! Don't process the data
                 contentType: false,  // Important! Set contentType to false
                 success: function(data) {
-                    // Handle the success response
-                    console.log(data);
+                    // Handle the success response                    
+                    const resp = JSON.parse(data);
+                    if (parseInt(resp['rest_qty']['qty']) === parseInt(resp['rest_qty']['buyer_qty'])) {
+                        $('.buyer-' + id).removeClass('bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90').addClass('border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25');                                        
+                    } else if (parseInt(resp['rest_qty']['qty']) > parseInt(resp['rest_qty']['buyer_qty'])) {
+                        $('.buyer-' + id).removeClass('bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90')
+                        .removeClass('border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25')
+                            .addClass('border border-error/30 bg-error/10 font-medium text-error hover:bg-error/20 focus:bg-error/20 active:bg-error/25');                                        
+                    }
+                    $.notify("Your changes have been saved!", "success");
                 },
                 error: function(error) {
                     // Handle the error response
                     console.error(error);
                 }
             });
-            // $.post( "/save-buyers", $( "#buyer_form" ).serialize())
-            //     .done(function(data) {                    
-            //         const resp = JSON.parse(data);
-            //         if (parseInt(resp['rest_qty']['qty']) === parseInt(resp['rest_qty']['buyer_qty'])) {
-            //             $('.buyer-' + id).removeClass('bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90').addClass('border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25');                                        
-            //         } else if (parseInt(resp['rest_qty']['qty']) > parseInt(resp['rest_qty']['buyer_qty'])) {
-            //             $('.buyer-' + id).removeClass('bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90')
-            //             .removeClass('border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25')
-            //                 .addClass('border border-error/30 bg-error/10 font-medium text-error hover:bg-error/20 focus:bg-error/20 active:bg-error/25');                                        
-            //         } 
-                    
-            //         $.notify("Your changes have been saved!", "success");
-            //     });
             
         });
 </script>
