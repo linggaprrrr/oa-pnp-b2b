@@ -208,7 +208,7 @@ class Order extends BaseController
             $this->buyerModel->set($data1);
             $this->buyerModel->where('id', $post['buyer-id1']);
             $this->buyerModel->update();            
-            $buyer1 = $post['buyer1'];
+            $buyer1 = $post['buyer-id1'];
             //save cc numb
             if (!is_null($post['cc1'])) {
                 $this->buyerStaffModel
@@ -246,7 +246,7 @@ class Order extends BaseController
                 $this->buyerModel->set($data2);
                 $this->buyerModel->where('id', $post['buyer-id2']);
                 $this->buyerModel->update();   
-                $buyer2 = $post['buyer2'];           
+                $buyer2 = $post['buyer-id2'];           
                 //save cc numb
                 if (!is_null($post['cc2'])) {
                     $this->buyerStaffModel
@@ -284,7 +284,7 @@ class Order extends BaseController
                 $this->buyerModel->set($data3);
                 $this->buyerModel->where('id', $post['buyer-id3']);
                 $this->buyerModel->update();
-                $buyer3 = $post['buyer3'];
+                $buyer3 = $post['buyer-id3'];
                 //save cc numb
                 if (!is_null($post['cc3'])) {
                     $this->buyerStaffModel
@@ -324,7 +324,7 @@ class Order extends BaseController
                 $this->buyerModel->set($data4);
                 $this->buyerModel->where('id', $post['buyer-id4']);
                 $this->buyerModel->update();     
-                $buyer4 = $post['buyer4'];           
+                $buyer4 = $post['buyer-id4'];           
                 //save cc numb
                 if (!is_null($post['cc4'])) {
                     $this->buyerStaffModel
@@ -365,7 +365,7 @@ class Order extends BaseController
                 $this->buyerModel->set($data5);
                 $this->buyerModel->where('id', $post['buyer-id5']);
                 $this->buyerModel->update();    
-                $buyer5 = $post['buyer5'];          
+                $buyer5 = $post['buyer-id5'];          
                 //save cc numb
                 if (!is_null($post['cc5'])) {
                     $this->buyerStaffModel
@@ -405,7 +405,7 @@ class Order extends BaseController
                 $this->buyerModel->set($data6);
                 $this->buyerModel->where('id', $post['buyer-id6']);
                 $this->buyerModel->update();   
-                $buyer6 = $post['buyer6'];           
+                $buyer6 = $post['buyer-id6'];           
                 //save cc numb
                 if (!is_null($post['cc6'])) {
                     $this->buyerStaffModel
@@ -444,7 +444,7 @@ class Order extends BaseController
                 $this->buyerModel->set($data7);
                 $this->buyerModel->where('id', $post['buyer-id7']);
                 $this->buyerModel->update();
-                $buyer7 = $post['buyer7'];
+                $buyer7 = $post['buyer-id7'];
                 //save cc numb
                 if (!is_null($post['cc7'])) {
                     $this->buyerStaffModel

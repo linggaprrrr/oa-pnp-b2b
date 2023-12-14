@@ -407,7 +407,7 @@
                                                         <label class="block">
                                                         <span>Shipping Number</span>
                                                             <span class="relative mt-1.5 flex">
-                                                            <input name="shipping1" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <input name="shipping1" class="shipping1 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                                 <i class="fas fa-shipping-fast text-base"></i>
                                                             </span>
@@ -510,7 +510,7 @@
                                                         <label class="block">
                                                         <span>Shipping Number</span>
                                                             <span class="relative mt-1.5 flex">
-                                                            <input name="shipping2" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <input name="shipping2" class="shipping2 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                                 <i class="fas fa-shipping-fast text-base"></i>
                                                             </span>
@@ -520,7 +520,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment2"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2" name="attachment2"/>
                                                                 <input type="text" id="fileValue2" name="fileValue2" style="font-size: 10px; width: 100%; display:none" readonly>                                                                
                                                                 <span class="fileTemp2" style="display: none;">
                                                                     <a id="fileShow2" style="width: 100%;" download></a>    
@@ -611,7 +611,7 @@
                                                         <label class="block">
                                                         <span>Shipping Number</span>
                                                             <span class="relative mt-1.5 flex">
-                                                            <input name="shipping3" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <input name="shipping3" class="shipping3 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                                 <i class="fas fa-shipping-fast text-base"></i>
                                                             </span>
@@ -621,7 +621,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment3"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2" name="attachment3"/>
                                                                 <input type="text" id="fileValue3" name="fileValue3" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                 <span class="fileTemp3" style="display: none;">
@@ -714,7 +714,7 @@
                                                         <label class="block">
                                                         <span>Shipping Number</span>
                                                             <span class="relative mt-1.5 flex">
-                                                            <input name="shipping4" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <input name="shipping4" class="shipping4 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                                 <i class="fas fa-shipping-fast text-base"></i>
                                                             </span>
@@ -724,7 +724,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment4"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment4" name="attachment4"/>
                                                                 <input type="text" id="fileValue4" name="fileValue4" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                 <span class="fileTemp4" style="display: none;">
@@ -817,7 +817,7 @@
                                                         <label class="block">
                                                         <span>Shipping Number</span>
                                                             <span class="relative mt-1.5 flex">
-                                                            <input name="shipping5" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <input name="shipping5" class="shipping5 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                                 <i class="fas fa-shipping-fast text-base"></i>
                                                             </span>
@@ -827,7 +827,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment5"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment5" name="attachment5"/>
                                                                 <input type="text" id="fileValue5" name="fileValue5" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                 <span class="fileTemp5" style="display: none;">
@@ -917,7 +917,7 @@
                                                         <label class="block">
                                                         <span>Shipping Number</span>
                                                             <span class="relative mt-1.5 flex">
-                                                            <input name="shipping6" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <input name="shipping6" class="shipping6 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                                 <i class="fas fa-shipping-fast text-base"></i>
                                                             </span>
@@ -927,7 +927,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment6"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment6" name="attachment6"/>
                                                                 <input type="text" id="fileValue6" name="fileValue6" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                 <span class="fileTemp6" style="display: none;">
@@ -1017,7 +1017,7 @@
                                                         <label class="block">
                                                         <span>Shipping Number</span>
                                                             <span class="relative mt-1.5 flex">
-                                                                <input name="shipping7" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                                <input name="shipping7" class="shipping7 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                                 <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                                     <i class="fas fa-shipping-fast text-base"></i>
                                                                 </span>
@@ -1027,7 +1027,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                                 <div class="filepond fp-bordered">
-                                                                    <input type="file" accept="application/pdf,image/png,image/jpeg"  name="attachment7"/>
+                                                                    <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment7" name="attachment7"/>
                                                                     <input type="text" id="fileValue7" name="fileValue7" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                     <span class="fileTemp7" style="display: none;">
@@ -1236,7 +1236,7 @@
                                 $(".total_price" + j).val('$' + (parseFloat(resp[i]['market_price']) * parseFloat(resp[i]['buyer_qty'])).toFixed(2));
                             }
                             $(".order_number" + j).val(resp[i]['order_number']);
-                            $(".notes" + j).val(resp[i]['tracking_number']);
+                            $(".shipping" + j).val(resp[i]['tracking_number']);
                             j++;
                         }
                     }
