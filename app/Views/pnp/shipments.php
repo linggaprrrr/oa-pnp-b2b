@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">    
     <div>
-        <form action="/shipments" method="GET" style="display: flex;">
+        <form action="/pnp/shipments" method="GET" style="display: flex;">
             <div class="mr-4">
                 <?php $last = date('m-d-Y', strtotime('-7 days')) ?>
                 <?php $now = date('m-d-Y') ?>            
@@ -515,7 +515,7 @@
     $(document).on('click', '.shipment-number', function(e) {
         const number = $(this).data('tracking');
         console.log(number);
-        $.get('/tracking-detail'  , {tracking: number})
+        $.get('/pnp/tracking-detail'  , {tracking: number})
             .done(function (data) {
                 const temp = JSON.parse(data);
                 const resp = temp['data'][0];
@@ -573,7 +573,7 @@
     $(document).on('click', '.refresh-tracking', function(e) {
         const id = $(this).data('id');
 
-        $.get('/refresh-tracking', {id: id})
+        $.get('/pnp/refresh-tracking', {id: id})
             .done(function(data) {
                 const resp = JSON.parse(data);
                 

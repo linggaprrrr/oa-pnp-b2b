@@ -551,7 +551,7 @@
     $(document).on('click', '.edit-pattern', function() {
         const id = $(this).data('id');
         
-        $.get('/get-pattern', {id: id})
+        $.get('/pnp/get-pattern', {id: id})
             .done(function(data) {
                 const resp = JSON.parse(data);
                 console.log(resp);
@@ -624,7 +624,7 @@
                 const max_val = Math.max(...title);
                 const titlePredict = title.indexOf(max_val);        
                 const startPredict = parseInt(titlePredict) + 2;
-                $.post('/sync-pattern', {search: fileNameArr})
+                $.post('/pnp/sync-pattern', {search: fileNameArr})
                     .done(function(data) {
                         const resp = JSON.parse(data);                 
                         

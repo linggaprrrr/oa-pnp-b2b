@@ -65,7 +65,7 @@
                         
                     </p>
                         <hr>
-                        <form method="post" action="/add-new-client">
+                        <form method="post" action="/pnp/add-new-client">
                             <?php csrf_field() ?>                                  
                             <div class="mt-4 grid grid-cols-1 gap-4">                           
                                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -278,7 +278,7 @@
                     
                 </p>
                     <hr>
-                    <form method="post" action="/update-client">
+                    <form method="post" action="/pnp/update-client">
                         <?php csrf_field() ?>                                  
                         <div class="mt-4 grid grid-cols-1 gap-4">                           
                             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -352,7 +352,7 @@
     $(document).on('click', '.edit-user-btn', function() {
         const id = $(this).data('id');
         $('.user-id').val(id);
-        $.get('/get-client', {id: id}, function(data) {
+        $.get('/pnp/get-client', {id: id}, function(data) {
             const resp = JSON.parse(data);
             $('.name-edit').val(resp['client_name']);
             $('.company-edit').val(resp['company']);

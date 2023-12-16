@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\pnp;
 
 use App\Models\pnp\FileModel;
 use App\Models\pnp\LeadModel;

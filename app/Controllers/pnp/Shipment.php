@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Controllers;
+namespace App\Controllers\pnp;
 
 use App\Models\LogModel;
 use App\Models\pnp\OrderModel;

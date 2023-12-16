@@ -69,7 +69,7 @@
                         </ul>
                     </nav>
         
-                    <a href="/login" class="btn_buy"> Register </a>
+                    <a href="/sign-up" class="btn_buy"> Register </a>
         
                     <!-- overly for small devices -->
                     <div class="overly" uk-toggle="target: .header_menu ; cls: is-visible"></div>
@@ -91,8 +91,8 @@
                         <p class="info">OA-app is an innovative software designed specifically to help businesses manage and optimize their operations. With a combination of outstanding features.</p>              
                         <p class="info">Choose the option that best suits your requirements.</p>
                         <div class="md:flex font-semibold items-center md:space-x-6 md:md:mb-14 mb-10 md:space-y-0 space-y-4" style="margin-top: 10px;">
-                            <button class="btn btn-blue-dark md:w-auto w-full">P&P</button>
-                            <button class="btn btn-yellow md:w-auto w-full">B2B</button>
+                            <a href="/pnp/login" class="btn btn-blue-dark md:w-auto w-full">P&P</a>
+                            <a href="/b2b/login" class="btn btn-yellow md:w-auto w-full">B2B</a>
                         </div>
 
                     </div>

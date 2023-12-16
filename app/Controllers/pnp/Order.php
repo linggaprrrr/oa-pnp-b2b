@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\pnp;
 
 use App\Models\pnp\AssignmentModel;
 use App\Models\pnp\AssignModel;
@@ -17,7 +17,7 @@ use App\Models\pnp\OrderStatusModel;
 use App\Models\pnp\ShipmentModel;
 use App\Models\pnp\TrackingModel;
 use App\Models\UserModel;
-use App\Controllers\Shipment;
+use App\Controllers\pnp\Shipment;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -176,6 +176,7 @@ class Order extends BaseController
         $buyer5 = '';
         $buyer6 = '';
         $buyer7 = '';
+        
 
         // check purchase id
         $isExist = $this->buyerModel->where('purchase_id', $post['purch_id'])->get();
@@ -868,7 +869,7 @@ class Order extends BaseController
             'buyers' => $buyers,            
         ];
     
-        return view('open_purchased_item', $data);   
+        return view('pnp/open_purchased_item', $data);   
         
     }
 

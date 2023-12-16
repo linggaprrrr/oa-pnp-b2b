@@ -119,6 +119,15 @@
                                 <input type="password" class="input-text with-border" id="confirm_password" name="password">
                             </div>
                         </div>
+                        <div>
+                            <label for="Name"> Type </label>
+                            <div class="input-with-icon">                            
+                                <select id="types" name="type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">                                    
+                                    <option value="pnp">P&P</option>
+                                    <option value="b2b">B2B</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="checkbox">
                             <input type="checkbox" id="chekcbox2" class="privacy-policy">
                             <label for="chekcbox2">

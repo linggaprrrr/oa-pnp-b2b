@@ -1,5 +1,5 @@
 <?php 
-namespace App\Controllers;
+namespace App\Controllers\pnp;
 use App\Models\pnp\UserModel;
 use App\Models\pnp\UPCLookupModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;

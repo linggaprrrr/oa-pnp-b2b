@@ -325,17 +325,17 @@
         const ordered = $(this).data('ordered');
         const received = $('.qty_received_'+id).val();
 
-        $.post('/save-qty-returned', {id: id, qty: qty})
+        $.post('/pnp/save-qty-returned', {id: id, qty: qty})
             .done(function(data) {
                 if (((parseInt(qty) + parseInt(received)) - parseInt(ordered)) == 0) {
                     $('.remain_' + id).html('<span class="text-success font-semibold">Complete</span>');
-                    $.notify("Your changes have been saved!", "success");
+                    
                 } else if(qty == "") {
                     $('.remain_' + id).html('<span class="font-semibold">'+ Math.abs(parseInt(ordered) - 0) +'</span>');
-                    $.notify("Your changes have been saved!", "success");
+                    
                 } else {
                     $('.remain_' + id).html('<span class="font-semibold">'+ Math.abs(((parseInt(qty) + parseInt(received)) - parseInt(ordered))) +'</span>');
-                    $.notify("Your changes have been saved!", "success");
+                    
                 }    
                 
 
@@ -353,7 +353,7 @@
         const returned = $('.qty_returned_'+id).val();
         
         
-        $.post('/save-qty-received', {id: id, qty: qty})
+        $.post('/pnp/save-qty-received', {id: id, qty: qty})
             .done(function(data) {                    
                 if (qty == "") {
                     $('.total_buy_cost_' + id).html('$' + (0 * parseFloat(cost)).toFixed(2));
@@ -384,7 +384,7 @@
         const id = $(this).data('id');
         const stat = $(this).val();
 
-        $.post('/save-status-order', {id: id, status: stat})
+        $.post('/pnp/save-status-order', {id: id, status: stat})
             .done(function(data) {
                 $.notify("Your changes have been saved!", "success");
             });
@@ -414,7 +414,7 @@
         var no = 1;
         $('.asin-title').html(asin);
         $('.shipment-tbody').html('');
-        $.get('/get-shipment-info-by-item', {id: id})
+        $.get('/pnp/get-shipment-info-by-item', {id: id})
             .done(function(data) {
                 const resp = JSON.parse(data);
                             

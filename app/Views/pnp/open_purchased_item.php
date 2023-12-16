@@ -417,7 +417,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" class="attachment1" accept="application/pdf,image/png,image/jpeg"  name="attachment1"/>
+                                                                <input type="file" class="attachment attachment1" accept="application/pdf,image/png,image/jpeg"  name="attachment1"/>
                                                                 <input type="text" id="fileValue1" name="fileValue1" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                 <span class="fileTemp1" style="display: none;">
@@ -520,7 +520,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2" name="attachment2"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment2" name="attachment2"/>
                                                                 <input type="text" id="fileValue2" name="fileValue2" style="font-size: 10px; width: 100%; display:none" readonly>                                                                
                                                                 <span class="fileTemp2" style="display: none;">
                                                                     <a id="fileShow2" style="width: 100%;" download></a>    
@@ -621,7 +621,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2" name="attachment3"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment3" name="attachment3"/>
                                                                 <input type="text" id="fileValue3" name="fileValue3" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                 <span class="fileTemp3" style="display: none;">
@@ -724,7 +724,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment4" name="attachment4"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment4" name="attachment4"/>
                                                                 <input type="text" id="fileValue4" name="fileValue4" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                 <span class="fileTemp4" style="display: none;">
@@ -827,7 +827,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment5" name="attachment5"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment5" name="attachment5"/>
                                                                 <input type="text" id="fileValue5" name="fileValue5" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                 <span class="fileTemp5" style="display: none;">
@@ -927,7 +927,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment6" name="attachment6"/>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment6" name="attachment6"/>
                                                                 <input type="text" id="fileValue6" name="fileValue6" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                 <span class="fileTemp6" style="display: none;">
@@ -1027,7 +1027,7 @@
                                                             <span>Attachment</span>
                                                             <span class="relative mt-1.5 flex">
                                                                 <div class="filepond fp-bordered">
-                                                                    <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment7" name="attachment7"/>
+                                                                    <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment7" name="attachment7"/>
                                                                     <input type="text" id="fileValue7" name="fileValue7" style="font-size: 10px; width: 100%; display:none" readonly>
                                                                 
                                                                     <span class="fileTemp7" style="display: none;">
@@ -1102,7 +1102,7 @@
             const cost = parseFloat($(this).data('cost'));
             const price = parseFloat($(this).data('price'));
             const profit = parseFloat($(this).data('profit'));
-            $.post("/save-qty", {id: id, qty: qty})
+            $.post("/pnp/save-qty", {id: id, qty: qty})
                 .done(function( data ) {
                     $('.total_buy_cost_' + id).html("$" + (qty * cost).toFixed(2));
                     $('.total_selling_' + id).html("$" + (qty * price).toFixed(2));
@@ -1117,7 +1117,7 @@
             const cost = parseFloat($(this).data('cost'));
             const price = parseFloat($(this).data('price'));
             const profit = parseFloat($(this).data('profit'));
-            $.post("/save-qty", {id: id, qty: qty})
+            $.post("/pnp/save-qty", {id: id, qty: qty})
                 .done(function( data ) {
                     $('.total_buy_cost_' + id).html("$" + (qty * cost).toFixed(2));
                     $('.total_selling_' + id).html("$" + (qty * price).toFixed(2));
@@ -1129,7 +1129,7 @@
         $(document).on("input propertychange", ".size", function() {
             const id = $(this).data('id');
             const size = $(this).val();
-            $.post("/save-size", {id: id, size: size})
+            $.post("/pnp/save-size", {id: id, size: size})
                 .done(function( data ) {
                     
                 });
@@ -1138,7 +1138,7 @@
         $(document).on("change", ".staff", function() {
             const id = $(this).data('id');
             const staff = $(this).val();
-            $.post("/save-staff", {id: id, staff: staff})
+            $.post("/pnp/save-staff", {id: id, staff: staff})
                 .done(function( data ) {
                     $.notify("Your changes have been saved!", "success");
                 });
@@ -1201,7 +1201,7 @@
             $(".total_price").html("$0.00");
             $(".qty-buyer").attr('data-id', id); //setter
             $(".save-buyers").attr('data-id', id);
-            $.get("/get-purchase-item", {id : id})
+            $.get("/pnp/get-purchase-item", {id : id})
                 .done(function( data ) {
                     const resp = JSON.parse(data);                                
                     var j = 1;
@@ -1666,7 +1666,7 @@
             var formData = new FormData($("#buyer_form")[0]);
             $.ajax({
                 type: "POST",
-                url: "/save-buyers",
+                url: "/pnp/save-buyers",
                 data: formData,
                 processData: false,  // Important! Don't process the data
                 contentType: false,  // Important! Set contentType to false

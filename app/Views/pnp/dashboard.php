@@ -1033,7 +1033,7 @@
             
         </div>
     </div>
-    <form action="/dashboard/" method="GET" id="summaryForm">
+    <form action="/pnp/dashboard/" method="GET" id="summaryForm">
     <?php csrf_field() ?>
         <div class="card px-4 pb-4 sm:px-5">
         

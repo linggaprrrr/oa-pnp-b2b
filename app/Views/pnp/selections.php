@@ -5,7 +5,7 @@
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="card px-4 pb-4 sm:px-5">
         <div class="max-w-sm my-2">
-            <form action="/selections/" method="get">
+            <form action="/pnp/selections/" method="get">
                 <label class="block">
                     <span>Select Date: </span>
                     <span class="relative mt-1.5 flex">
@@ -21,7 +21,7 @@
         </div>
         <div class="max-w-full">
             <div style="margin-top: 1.5rem">
-                <form action="/save-purchase-list" class="leadlist" method="post">
+                <form action="/pnp/save-purchase-list" class="leadlist" method="post">
                     <?php csrf_field() ?>             
                     <?php if (session()->getFlashdata('error')) : ?>
                         <div class="my-4 alert flex space-x-2 rounded-lg border border-error px-4 py-4 text-error">
@@ -539,10 +539,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" class="attachment1" accept="application/pdf,image/png,image/jpeg"  name="attachment1"/>
-                                                            <input type="text" id="fileValue1" name="fileValue1" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" class="attachment attachment1" accept="application/pdf,image/png,image/jpeg"  name="attachment1"/>
+                                                            <input type="text" id="fileValue1" class="fileValue" name="fileValue1" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp1" style="display: none;">
+                                                            <span class="fileTemp fileTemp1" style="display: none;">
                                                                 <a id="fileShow1" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete1"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -642,9 +642,9 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" name="attachment2" class="attachment2" />
-                                                            <input type="text" id="fileValue2" name="fileValue2" style="font-size: 10px; width: 100%; display:none" readonly>                                                                
-                                                            <span class="fileTemp2" style="display: none;">
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" name="attachment2" class="attachment attachment2" />
+                                                            <input type="text" id="fileValue2" class="fileValue" name="fileValue2" style="font-size: 10px; width: 100%; display:none" readonly>                                                                
+                                                            <span class="fileTemp fileTemp2" style="display: none;">
                                                                 <a id="fileShow2" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete2"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -743,10 +743,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2"  name="attachment3"/>
-                                                            <input type="text" id="fileValue3" name="fileValue3" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment3"  name="attachment3"/>
+                                                            <input type="text" id="fileValue3" class="fileValue" name="fileValue3" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp3" style="display: none;">
+                                                            <span class="fileTemp fileTemp3" style="display: none;">
                                                                 <a id="fileShow3" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete3"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -846,10 +846,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment4" name="attachment4"/>
-                                                            <input type="text" id="fileValue4" name="fileValue4" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment4" name="attachment4"/>
+                                                            <input type="text" id="fileValue4" class="fileValue" name="fileValue4" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp4" style="display: none;">
+                                                            <span class="fileTemp fileTemp4" style="display: none;">
                                                                 <a id="fileShow4" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete4"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -949,10 +949,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment5" name="attachment5"/>
-                                                            <input type="text" id="fileValue5" name="fileValue5" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment5" name="attachment5"/>
+                                                            <input type="text" id="fileValue5" class="fileValue" name="fileValue5" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp5" style="display: none;">
+                                                            <span class="fileTemp fileTemp5" style="display: none;">
                                                                 <a id="fileShow5" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete5"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -1049,10 +1049,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment6" name="attachment6"/>
-                                                            <input type="text" id="fileValue6" name="fileValue6" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment6" name="attachment6"/>
+                                                            <input type="text" id="fileValue6" class="fileValue" name="fileValue6" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp6" style="display: none;">
+                                                            <span class="fileTemp fileTemp6" style="display: none;">
                                                                 <a id="fileShow6" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete6"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -1149,10 +1149,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2" name="attachment7"/>
-                                                                <input type="text" id="fileValue7" name="fileValue7" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment7" name="attachment7"/>
+                                                                <input type="text" id="fileValue7" class="fileValue" name="fileValue7" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                                <span class="fileTemp7" style="display: none;">
+                                                                <span class="fileTemp fileTemp7" style="display: none;">
                                                                     <a id="fileShow7" style="width: 100%;" download></a>    
                                                                     <button type="button" id="fileDelete7"><i class="fas fa-trash text-error"></i></button>                                                                
                                                                 </span>
@@ -1248,7 +1248,7 @@
             const cost = parseFloat($(this).data('cost'));
             const price = parseFloat($(this).data('price'));
             const profit = parseFloat($(this).data('profit'));
-            $.post("/save-qty", {id: id, qty: qty})
+            $.post("/pnp/save-qty", {id: id, qty: qty})
                 .done(function( data ) {
                     $('.total_buy_cost_' + id).html("$" + (qty * cost).toFixed(2));
                     $('.total_selling_' + id).html("$" + (qty * price).toFixed(2));
@@ -1263,7 +1263,7 @@
             const cost = parseFloat($(this).data('cost'));
             const price = parseFloat($(this).data('price'));
             const profit = parseFloat($(this).data('profit'));
-            $.post("/save-qty", {id: id, qty: qty})
+            $.post("/pnp/save-qty", {id: id, qty: qty})
                 .done(function( data ) {
                     $('.total_buy_cost_' + id).html("$" + (qty * cost).toFixed(2));
                     $('.total_selling_' + id).html("$" + (qty * price).toFixed(2));
@@ -1275,7 +1275,7 @@
         $(document).on("input propertychange", ".size", function() {
             const id = $(this).data('id');
             const size = $(this).val();
-            $.post("/save-size", {id: id, size: size})
+            $.post("/pnp/save-size", {id: id, size: size})
                 .done(function( data ) {
                     
                 });
@@ -1284,7 +1284,7 @@
         $(document).on("change", ".staff", function() {
             const id = $(this).data('id');
             const staff = $(this).val();
-            $.post("/save-staff", {id: id, staff: staff})
+            $.post("/pnp/save-staff", {id: id, staff: staff})
                 .done(function( data ) {
                     $.notify("Your changes have been saved!", "success");
                 });
@@ -1295,7 +1295,7 @@
             var formData = new FormData($("#buyer_form")[0]);
             $.ajax({
                 type: "POST",
-                url: "/save-buyers",
+                url: "/pnp/save-buyers",
                 data: formData,
                 processData: false,  // Important! Don't process the data
                 contentType: false,  // Important! Set contentType to false
@@ -1373,10 +1373,16 @@
             $(".save-buyers").removeData('id');    
             $("#buyer_form")[0].reset();
             $("textarea").val('');
+            $(".attachment").show();
+            $('.fileTemp').hide();                         
+            $(".fileValue").val('');                                
+            $('.fileShow').attr('href', '');
+            $('.fileShow').html('');                                
+
             $(".total_price").html("$0.00");
             $(".qty-buyer").attr('data-id', id); //setter
             $(".save-buyers").attr('data-id', id);
-            $.get("/get-purchase-item", {id : id})
+            $.get("/pnp/get-purchase-item", {id : id})
                 .done(function( data ) {
                     const resp = JSON.parse(data);      
                     var j = 1;

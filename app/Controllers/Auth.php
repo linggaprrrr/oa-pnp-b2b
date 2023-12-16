@@ -42,12 +42,49 @@ class Auth extends BaseController
     public function index()
     {
         $userId = session()->get('user_id');
+        $type = session()->get('type');
         
         if (is_null($userId)) {            
             $data['googleAuth'] = $this->googleClient->createAuthUrl();
             return view('login', $data);
         } else {            
-            return redirect()->to(base_url('/dashboard'))->with('message', 'Login Successful!');
+            if ($type == 'pnp') {
+                return redirect()->to(base_url('/pnp/dashboard'))->with('message', 'Login Successful!');
+            } else {
+                return redirect()->to(base_url('/b2b/dashboard'))->with('message', 'Login Successful!');
+            }
+        }
+    }
+
+    public function pnpLogin() {
+        $userId = session()->get('user_id');
+        $type = session()->get('type');
+        
+        if (is_null($userId)) {            
+            $data['googleAuth'] = $this->googleClient->createAuthUrl();
+            return view('pnp/login', $data);
+        } else {            
+            if ($type == 'pnp') {
+                return redirect()->to(base_url('/pnp/dashboard'))->with('message', 'Login Successful!');
+            } else {
+                return redirect()->to(base_url('/pnp/login'))->with('message', 'Login Successful!');
+            }
+        }
+    }
+
+    public function b2bLogin() {
+        $userId = session()->get('user_id');
+        $type = session()->get('type');
+        
+        if (is_null($userId)) {            
+            $data['googleAuth'] = $this->googleClient->createAuthUrl();
+            return view('b2b/login', $data);
+        } else {            
+            if ($type == 'b2b') {
+                return redirect()->to(base_url('/b2b/dashboard'))->with('message', 'Login Successful!');
+            } else {
+                return redirect()->to(base_url('/b2b/login'))->with('message', 'Login Successful!');
+            }
         }
     }
 
@@ -200,6 +237,128 @@ class Auth extends BaseController
         }
     }
 
+    public function pnpLoginProcess() {
+        $post = $this->request->getVar();
+        $user = $this->userModel->getWhere(['email' => $post['email'], 'type' => 'pnp'])->getRow();
+        
+        if ($user) {
+            if (isset($post['rememberme'])) {            
+                setcookie("username", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
+                setcookie("password", $post['password'], time()+ (10 * 365 * 24 * 60 * 60)); 
+                setcookie("remember", "checked", time()+ (10 * 365 * 24 * 60 * 60));            
+            } else {
+                setcookie("username", "", time() - 3600, "/");
+                setcookie("password", "", time() - 3600, "/");
+                setcookie("remember", "", time() - 3600, "/");
+            }
+            // dd(password_verify($post['password'], $user->password));
+            if (password_verify($post['password'], $user->password)) {
+                $params = [
+                    'oauth_uid' => $user->oauth_uid,
+                    'user_id' => $user->id,
+                    'role' => $user->role,
+                    'username' => $user->username,
+                    'email' => $user->email,
+                    'name' => $user->name,
+                    'photo' => $user->photo,
+                    'user_ext' => $user->user_ext,
+                    'type' => $user->type,
+                ];
+                session()->set($params);
+                
+                $ip = getenv('HTTP_CLIENT_IP')?: getenv('HTTP_X_FORWARDED_FOR')?: getenv('HTTP_X_FORWARDED')?: getenv('HTTP_FORWARDED_FOR')?: getenv('HTTP_FORWARDED')?: getenv('REMOTE_ADDR');                
+                if ($ip == false) {
+                    $ip = "127.0.0.1";
+                }
+                $this->logModel->save([
+                    'user_id' => $user->id,
+                    'title' => 'login',
+                    'description' => '['. strtoupper($user->role) .'] '. $user->username. ' has logged in using IP: '. $ip,
+                    'level' => '1',
+                    'created_at' => date('Y-m-d H:i:s')
+                ]);
+
+                if ($user->role == 'superadministrator') {
+                    return redirect()->to(base_url('admin/users'))->with('message', 'Login Successful!');
+                    
+                }
+                
+                if ($user->type == 'pnp') {
+                    return redirect()->to(base_url('/pnp/dashboard'))->with('message', 'Login Successful!');
+                } else {
+                    return redirect()->to(base_url('/b2b/dashboard'))->with('message', 'Login Successful!');
+                }
+                
+            } else {
+                
+                return redirect()->to(base_url('/pnp/login'))->with('error', 'Wrong Password!');
+            }
+        } else {
+            return redirect()->to(base_url('/pnp/login'))->with('error', 'Username Not Found!');
+        }
+    }
+
+    public function b2bLoginProcess() {
+        $post = $this->request->getVar();
+        $user = $this->userModel->getWhere(['email' => $post['email'], 'type' => 'b2b'])->getRow();
+        
+        if ($user) {
+            if (isset($post['rememberme'])) {            
+                setcookie("username", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
+                setcookie("password", $post['password'], time()+ (10 * 365 * 24 * 60 * 60)); 
+                setcookie("remember", "checked", time()+ (10 * 365 * 24 * 60 * 60));            
+            } else {
+                setcookie("username", "", time() - 3600, "/");
+                setcookie("password", "", time() - 3600, "/");
+                setcookie("remember", "", time() - 3600, "/");
+            }
+            // dd(password_verify($post['password'], $user->password));
+            if (password_verify($post['password'], $user->password)) {
+                $params = [
+                    'oauth_uid' => $user->oauth_uid,
+                    'user_id' => $user->id,
+                    'role' => $user->role,
+                    'username' => $user->username,
+                    'email' => $user->email,
+                    'name' => $user->name,
+                    'photo' => $user->photo,
+                    'user_ext' => $user->user_ext,
+                    'type' => $user->type,
+                ];
+                session()->set($params);
+                
+                $ip = getenv('HTTP_CLIENT_IP')?: getenv('HTTP_X_FORWARDED_FOR')?: getenv('HTTP_X_FORWARDED')?: getenv('HTTP_FORWARDED_FOR')?: getenv('HTTP_FORWARDED')?: getenv('REMOTE_ADDR');                
+                if ($ip == false) {
+                    $ip = "127.0.0.1";
+                }
+                $this->logModel->save([
+                    'user_id' => $user->id,
+                    'title' => 'login',
+                    'description' => '['. strtoupper($user->role) .'] '. $user->username. ' has logged in using IP: '. $ip,
+                    'level' => '1',
+                    'created_at' => date('Y-m-d H:i:s')
+                ]);
+
+                if ($user->role == 'superadministrator') {
+                    return redirect()->to(base_url('admin/users'))->with('message', 'Login Successful!');
+                    
+                }
+                
+                if ($user->type == 'b2b') {
+                    return redirect()->to(base_url('/b2b/dashboard'))->with('message', 'Login Successful!');
+                } else {
+                    return redirect()->to(base_url('/pnp/dashboard'))->with('message', 'Login Successful!');
+                }
+                
+            } else {
+                
+                return redirect()->to(base_url('/b2b/login'))->with('error', 'Wrong Password!');
+            }
+        } else {
+            return redirect()->to(base_url('/b2b/login'))->with('error', 'Username Not Found!');
+        }
+    }
+
     public function signup() {
         $data['googleAuth'] = $this->googleClient->createAuthUrl();
         return view('signup', $data);
@@ -303,7 +462,7 @@ class Auth extends BaseController
 
     public function logout() {
         session()->destroy();
-        return redirect()->to(base_url('/login'));
+        return redirect()->to(base_url('/pnp/login'));
     }
 
     public function profile() {

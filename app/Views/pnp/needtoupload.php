@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="mb-1">        
-        <form action="/need-to-upload/" method="GET" style="display: flex;">
+        <form action="/pnp/need-to-upload/" method="GET" style="display: flex;">
         <?php csrf_field() ?>
             <div class="mr-4">
                 <?php $last = date('m-d-Y', strtotime('-7 days')) ?>
@@ -60,21 +60,15 @@
                 </h2> 
             </div>           
             <div>
-                <?php if (date('Y-m-d') < $subscription['exp']) : ?>
-                    <button disabled="" class="btn bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 disabled:pointer-events-none disabled:select-none disabled:opacity-60 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                        <em class="fas fa-file-excel mr-1"></em> Export
-                    </button>  
+            <?php if (!is_null($start)) : ?>
+                <?php if (!is_null($end)) : ?>
+                    <a href="/pnp/export-need-to-upload/<?= $start ?>&<?= $end ?>"  class="btn border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25"><em class="fas fa-file-excel mr-1"></em> Export</a>             
                 <?php else : ?>
-                    <?php if (!is_null($start)) : ?>
-                        <?php if (!is_null($end)) : ?>
-                            <a href="/export-need-to-upload/<?= $start ?>&<?= $end ?>"  class="btn border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25"><em class="fas fa-file-excel mr-1"></em> Export</a>             
-                        <?php else : ?>
-                            <a href="/export-need-to-upload/<?= $start ?>"  class="btn border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25"><em class="fas fa-file-excel mr-1"></em> Export</a>             
-                        <?php endif ?>
-                    <?php else : ?>
-                        <a href="/export-need-to-upload"  class="btn border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25"><em class="fas fa-file-excel mr-1"></em> Export</a>             
-                    <?php endif ?>
+                    <a href="/pnp/export-need-to-upload/<?= $start ?>"  class="btn border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25"><em class="fas fa-file-excel mr-1"></em> Export</a>             
                 <?php endif ?>
+            <?php else : ?>
+                <a href="/pnp/export-need-to-upload"  class="btn border border-success/30 bg-success/10 font-medium text-success hover:bg-success/20 focus:bg-success/20 active:bg-success/25"><em class="fas fa-file-excel mr-1"></em> Export</a>             
+            <?php endif ?>
                 
             </div>            
         </div>
@@ -239,7 +233,7 @@
             const item = $(this).data('id');
             const fnsku = $(this).val();
 
-            $.post('/save-fnsku', {item: item, fnsku: fnsku})
+            $.post('/pnp/save-fnsku', {item: item, fnsku: fnsku})
                 .done(function(data) {
                     
                 });
@@ -249,7 +243,7 @@
             const item = $(this).data('id');
             const vendor = $(this).val();
 
-            $.post('/save-vendor-name', {item: item, vendor: vendor})
+            $.post('/pnp/save-vendor-name', {item: item, vendor: vendor})
                 .done(function(data) {
                     
                 });
@@ -259,7 +253,7 @@
             const item = $(this).data('id');
             const number = $(this).val();
 
-            $.post('/save-fba-number', {item: item, number: number})
+            $.post('/pnp/save-fba-number', {item: item, number: number})
                 .done(function(data) {
                     
                 });
@@ -269,7 +263,7 @@
             const item = $(this).data('id');
             const number = $(this).val();
 
-            $.post('/save-shipment-number', {item: item, number: number})
+            $.post('/pnp/save-shipment-number', {item: item, number: number})
                 .done(function(data) {
                     
                 });
@@ -278,7 +272,7 @@
             const item = $(this).data('id');
             const notes = $(this).val();            
 
-            $.post('/save-assigned-notes', {item: item, notes: notes})
+            $.post('/pnp/save-assigned-notes', {item: item, notes: notes})
                 .done(function(data) {
                     
                 });

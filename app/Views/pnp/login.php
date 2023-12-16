@@ -11,17 +11,15 @@
         <meta name="description" content="Flex is - Professional A unique and beautiful collection of UI elements">
 
         <!-- Favicon -->
-        <link href="landing-page/assets/images/favicon.png" rel="icon" type="image/png">
+        <link href="/landing-page/assets/images/favicon.png" rel="icon" type="image/png">
 
-        <!-- icons
-        ================================================== -->
-        <link rel="stylesheet" href="landing-page/assets/css/icons.css">
+    
 
         <!-- CSS
         ================================================== -->
-        <link rel="stylesheet" href="landing-page/assets/css/uikit.css">
-        <link rel="stylesheet" href="landing-page/assets/css/style.css">
-        <link rel="stylesheet" href="landing-page/assets/css/tailwind.css"> 
+        <link rel="stylesheet" href="/landing-page/assets/css/uikit.css">
+        <link rel="stylesheet" href="/landing-page/assets/css/style.css">
+        <link rel="stylesheet" href="/landing-page/assets/css/tailwind.css"> 
 
     </head>
 
@@ -39,9 +37,9 @@
                     <!-- Logo -->
                     <div id="logo" >
                         <a href="/">
-                            <img src="landing-page/assets/images/logo.svg" alt="">
-                            <img src="landing-page/assets/images/logo-white.svg" class="logo_inverse" alt="">
-                            <img src="landing-page/assets/images/logo-mobile.svg" class="logo_mobile" alt="">
+                            <img src="/landing-page/assets/images/logo.svg" alt="">
+                            <img src="/landing-page/assets/images/logo-white.svg" class="logo_inverse" alt="">
+                            <img src="/landing-page/assets/images/logo-mobile.svg" class="logo_mobile" alt="">
                         </a>
                     </div>
         
@@ -83,10 +81,10 @@
         <div class="bg-white pt-56 pb-28 -mt-20">
 
             <div class="max-w-md mx-auto rounded-xl">
-                <form class="w-full" action="/log-in" method="post" autocomplete="off">
+                <form class="w-full" action="/pnp/log-in" method="post" autocomplete="off">
             
                     <div class="mb-12 text-center">
-                        <h1 class="lg:text-4xl text-2xl font-semibold mb-4"> Sign In to OA </h1>
+                        <h1 class="lg:text-4xl text-2xl font-semibold mb-4"> Sign In to OA (P&P)</h1>
                         <h6 class="text-gray-400 text-xl">  Login to manage your account.</h6>
                     </div>
                     <div class="space-y-6">
@@ -160,7 +158,7 @@
                         </div>
                         <button type="submit" class="btn btn_blue w-full">Sign In</button>
                         <div class="font-semibold py-3 text-center text-gray-400 text-xl uk-heading-linee"><span class="px-5">Or</span></div>
-                        <a href="<?= $googleAuth ?>" class="btn btn_blue-light w-full flex items-center justify-center"><img src="assets/img/google.svg" alt="" class="g-6 mr-4 w-6"><span class="btn__text">Sign In with Google</span></a>
+                        <a href="<?= $googleAuth ?>" class="btn btn_blue-light w-full flex items-center justify-center"><img src="/assets/img/google.svg" alt="" class="g-6 mr-4 w-6"><span class="btn__text">Sign In with Google</span></a>
                         <a class="block font-medium text-center text-gray-400 text-lg hover:text-blue-600 duration-500" href="/sign-up">Do not have an account? Sign Up</a>
                         <a class="block font-medium text-center text-gray-400 text-lg hover:text-blue-600 duration-500" href="/forgot-password">Forgot Password?</a>
                     </div>
@@ -236,10 +234,10 @@
     ================================================== -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.6/dist/js/uikit.min.js"></script>
-    <script src="landing-page/assets/js/tippy.all.min.js"></script>
-    <script src="landing-page/assets/js/simplebar.js"></script>
-    <script src="landing-page/assets/js/custom.js"></script>
-    <script src="landing-page/assets/js/bootstrap-select.min.js"></script>
+    <script src="/landing-page/assets/js/tippy.all.min.js"></script>
+    <script src="/landing-page/assets/js/simplebar.js"></script>
+    <script src="/landing-page/assets/js/custom.js"></script>
+    <script src="/landing-page/assets/js/bootstrap-select.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
  

@@ -3,7 +3,7 @@
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="justify-between" style="display: flex;">
         <div class="mb-1">                   
-            <form action="/assignments" method="GET" style="display: flex;">
+            <form action="/pnp/assignments" method="GET" style="display: flex;">
                 <div class="mr-4">
                     <?php $last = date('m-d-Y', strtotime('-7 days')) ?>
                     <?php $now = date('m-d-Y') ?>            
@@ -345,7 +345,7 @@
 
         $( "#assignmentForm" ).on( "submit", function( event ) {
             event.preventDefault();                        
-            $.post('/shipments', $( "#assignmentForm" ).serialize() )
+            $.post('/pnp/shipments', $( "#assignmentForm" ).serialize() )
                 .done(function(data) {
                     formStat = false;                   
                     const resp = JSON.parse(data);
@@ -391,7 +391,7 @@
             const remaining = $(this).data('remaining');
             
 
-            $.post('/save-qty-assigned', {id: id, pid: pid, qty: qty, received: received})
+            $.post('/pnp/save-qty-assigned', {id: id, pid: pid, qty: qty, received: received})
                 .done(function(data) { 
                     const remainder = JSON.parse(data);
 
@@ -420,7 +420,7 @@
             const item = $(this).data('id');
             const notes = $(this).val();            
 
-            $.post('/save-assigned-notes', {item: item, notes: notes})
+            $.post('/pnp/save-assigned-notes', {item: item, notes: notes})
                 .done(function(data) {
                     
                 });
@@ -433,7 +433,7 @@
             const asin = $(this).data('asin');
             const clientID = $(this).val();
 
-            $.post('/save-client-order', {id: id, item: item, client_id: clientID, asin: asin})
+            $.post('/pnp/save-client-order', {id: id, item: item, client_id: clientID, asin: asin})
                 .done(function(data) {
                     const resp = JSON.parse(data);
                     if (resp['status'] == 'warning') {
@@ -448,7 +448,7 @@
             const id = $(this).data('id');
             const client = $(this).val();
 
-            $.get('/get-client-list')
+            $.get('/pnp/get-client-list')
                 .done(function(data) {
                     const resp = JSON.parse(data);   
                     
@@ -479,7 +479,7 @@
             const item = $(this).data('item');
             const orderID = $(this).val();
 
-            $.post('/save-client-order', {id: id, item: item, order_id: orderID})
+            $.post('/pnp/save-client-order', {id: id, item: item, order_id: orderID})
                 .done(function(data) {
                     $.notify("Your changes have been saved!", "success");
                 });
@@ -495,7 +495,7 @@
             const received = $(this).data('received');
             const remaining = $(this).data('remaining');
             
-            $.post('/add-new-assign', {pid: pid})
+            $.post('/pnp/add-new-assign', {pid: pid})
                 .done(function(data) {                    
                     const client = JSON.parse(data);                                     
                     if (client['remaining'] != 0) {
@@ -514,7 +514,7 @@
             const pid = $(this).data('pid');
 
             $(this).closest("tr").remove();
-            $.post('/delete-assign-data', {id: id})
+            $.post('/pnp/delete-assign-data', {id: id})
                 .done(function(data) {
                     const qty = JSON.parse(data);
                     const remain = $('.qty_remain_' + pid).html();
@@ -554,7 +554,7 @@
                 .done(function( data ) {                          
                     $.notify("Your changes have been saved!", "success");
                     
-                    $.get('/get-client-list', {id: id, order_id: orderID})
+                    $.get('/pnp/get-client-list', {id: id, order_id: orderID})
                         .done(function(data) {
                         const resp = JSON.parse(data);          
                         
@@ -585,7 +585,7 @@
                 .done(function( data ) {                          
                     $.notify("Your changes have been saved!", "success");
                     // $('.select-client').find('option').remove();
-                    // $.get('/get-client-list', {id: id})
+                    // $.get('/pnp/get-client-list', {id: id})
                     //     .done(function(data) {
                     //     const resp = JSON.parse(data);          
                         

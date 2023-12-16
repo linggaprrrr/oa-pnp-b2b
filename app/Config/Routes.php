@@ -35,10 +35,12 @@ $routes->get('/pricing', 'Auth::pricing');
 $routes->get('/about', 'Auth::about');
 
 
-$routes->get('/login', 'Auth::index');
+$routes->get('/pnp/login', 'Auth::pnpLogin');
+$routes->get('/b2b/login', 'Auth::b2bLogin');
 
 // Auth
-$routes->post('/log-in', 'Auth::loginProcess');
+$routes->post('/pnp/log-in', 'Auth::pnpLoginProcess');
+$routes->post('/b2b/log-in', 'Auth::b2bLoginProcess');
 $routes->get('/login/process', 'Auth::googleOAuth');
 $routes->get('/sign-up', 'Auth::signup');
 $routes->get('/forgot-password', 'Auth::forgotPassword');
@@ -142,6 +144,27 @@ $routes->get('/pnp/uploader/file-parameter', 'pnp\Home::fileParameter');
 $routes->post('/pnp/change-profit', 'pnp\Purchase::changeProfit');
 $routes->post('/pnp/change-roi', 'pnp\Purchase::changeROI');
 $routes->post('/pnp/change-status', 'pnp\Purchase::changeStatus');
+
+// API
+$routes->get('/get-client-api', 'pnp\Home::test2');
+$routes->post('/sync-pattern', 'pnp\Purchase::syncPattern');
+$routes->get('/get-pattern', 'pnp\Purchase::getPattern');
+$routes->get('/test-api', 'pnp\Home::test2');
+$routes->get('/test-api2', 'pnp\Home::test2');
+
+$routes->get('/get-leads', 'pnp\Leads::index');
+$routes->get('/get-leads-by-date/(:any)', 'pnp\Leads::index/$1');
+$routes->get('/get-leads/(:num)', 'pnp\Leads::show/$1');
+$routes->get('/get-avail-dates', 'pnp\Leads::getAvailDates');
+$routes->post('/read-excel', 'pnp\Leads::readExcel');
+$routes->post('/update-token-api', 'pnp\Leads::updateTokenAPI');
+$routes->get('/get-token-left', 'pnp\Leads::getTokenLeft');
+
+$routes->get('/encrypt-file', 'pnp\Files::test');
+$routes->get('/download-backup/(:any)/(:any)', 'pnp\Files::downloadBackUp/$1/$2');
+$routes->post('/restore-data', 'pnp\Files::restoreData');
+$routes->post('/add-new-client', 'pnp\Clients::addClient');
+
 // PnP End
 
 // b2b Start
@@ -235,25 +258,7 @@ $routes->post('/b2b/change-status', 'Purchase::changeStatus');
 
 // b2b end
 
-// API
-$routes->get('/get-client-api', 'Home::test2');
-$routes->post('/sync-pattern', 'Purchase::syncPattern');
-$routes->get('/get-pattern', 'Purchase::getPattern');
-$routes->get('/test-api', 'Home::test2');
-$routes->get('/test-api2', 'Home::test2');
 
-$routes->get('/get-leads', 'Leads::index');
-$routes->get('/get-leads-by-date/(:any)', 'Leads::index/$1');
-$routes->get('/get-leads/(:num)', 'Leads::show/$1');
-$routes->get('/get-avail-dates', 'Leads::getAvailDates');
-$routes->post('/read-excel', 'Leads::readExcel');
-$routes->post('/update-token-api', 'Leads::updateTokenAPI');
-$routes->get('/get-token-left', 'Leads::getTokenLeft');
-
-$routes->get('/encrypt-file', 'Files::test');
-$routes->get('/download-backup/(:any)/(:any)', 'Files::downloadBackUp/$1/$2');
-$routes->post('/restore-data', 'Files::restoreData');
-$routes->post('/add-new-client', 'Clients::addClient');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
