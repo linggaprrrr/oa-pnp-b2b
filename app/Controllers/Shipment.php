@@ -3,9 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\LogModel;
-use App\Models\OrderModel;
-use App\Models\ShipmentModel;
-use App\Models\TrackingModel;
+use App\Models\pnp\OrderModel;
+use App\Models\pnp\ShipmentModel;
+use App\Models\pnp\TrackingModel;
 use App\Models\UserModel;
 
 

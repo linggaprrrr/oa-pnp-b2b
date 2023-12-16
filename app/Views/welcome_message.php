@@ -17,7 +17,7 @@
 
         <!-- icons
         ================================================== -->
-        <link rel="stylesheet" href="landing-page/assets/css/icons.css">
+        <!-- <link rel="stylesheet" href="landing-page/assets/css/icons.css"> -->
 
         <!-- CSS
         ================================================== -->
@@ -69,7 +69,7 @@
                         </ul>
                     </nav>
         
-                    <a href="/login" class="btn_buy"> Login </a>
+                    <a href="/login" class="btn_buy"> Register </a>
         
                     <!-- overly for small devices -->
                     <div class="overly" uk-toggle="target: .header_menu ; cls: is-visible"></div>
@@ -89,9 +89,10 @@
                     <div class="space-y-8 md:w-6/12 lg:-mt-10 mt-10">
                         <h1 class="h2" uk-scrollspy="cls: uk-animation-slide-bottom-small;delay: 50">Something that will help you analyze </h1>
                         <p class="info">OA-app is an innovative software designed specifically to help businesses manage and optimize their operations. With a combination of outstanding features.</p>              
-                        <div class="md:flex font-semibold items-center md:space-x-6 md:md:mb-14 mb-10 md:space-y-0 space-y-4">
-                            <button class="btn btn_blue md:w-auto w-full">Get Started</button>
-                            <button class="btn btn_blue-light md:w-auto w-full">View more</button>
+                        <p class="info">Choose the option that best suits your requirements.</p>
+                        <div class="md:flex font-semibold items-center md:space-x-6 md:md:mb-14 mb-10 md:space-y-0 space-y-4" style="margin-top: 10px;">
+                            <button class="btn btn-blue-dark md:w-auto w-full">P&P</button>
+                            <button class="btn btn-yellow md:w-auto w-full">B2B</button>
                         </div>
 
                     </div>

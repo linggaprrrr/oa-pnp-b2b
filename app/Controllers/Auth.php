@@ -2,10 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Models\BuyerModel;
-use App\Models\BuyerStaffModel;
+use App\Models\pnp\BuyerStaffModel;
 use App\Models\LogModel;
-use App\Models\SubscriptionModel;
+use App\Models\pnp\SubscriptionModel;
 use App\Models\UserModel;
 use Google\Client;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -164,7 +163,8 @@ class Auth extends BaseController
                     'email' => $user->email,
                     'name' => $user->name,
                     'photo' => $user->photo,
-                    'user_ext' => $user->user_ext
+                    'user_ext' => $user->user_ext,
+                    'type' => $user->type,
                 ];
                 session()->set($params);
                 
@@ -184,7 +184,12 @@ class Auth extends BaseController
                     return redirect()->to(base_url('admin/users'))->with('message', 'Login Successful!');
                     
                 }
-                return redirect()->to(base_url('dashboard'))->with('message', 'Login Successful!');
+                
+                if ($user->type == 'pnp') {
+                    return redirect()->to(base_url('/pnp/dashboard'))->with('message', 'Login Successful!');
+                } else {
+                    return redirect()->to(base_url('/b2b/dashboard'))->with('message', 'Login Successful!');
+                }
                 
             } else {
                 

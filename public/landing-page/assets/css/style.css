@@ -246,6 +246,28 @@ body .button i.icon-material-outline-arrow-right-alt {
   background: #1366ff;
 }
 
+.btn-blue-dark {
+  background: #0d35b0ff;
+  color: #d9d9d9;
+}
+
+.btn-blue-dark:hover {
+  background: #1366ff;
+}
+
+.btn-yellow {
+  background: #ffb804ff;
+
+}
+
+.btn-yellow:hover {
+  background: #b58505ff;
+}
+
+.btn_blue:hover {
+  background: #1366ff;
+}
+
 .btn_blue-light {
   background: #E5F1FF;
   color: #377DFF;

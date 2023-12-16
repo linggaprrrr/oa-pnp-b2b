@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table = 'users';
-    protected $allowedFields = ['name', 'username', 'password', 'email', 'photo', 'role', 'user_ext', 'oauth_uid', 'locale', 'verify'];
+    protected $allowedFields = ['name', 'username', 'password', 'email', 'photo', 'role', 'user_ext', 'oauth_uid', 'locale', 'verify', 'type'];
     protected $db = "";
 
     public function getAllUser()
