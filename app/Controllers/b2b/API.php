@@ -1,7 +1,7 @@
 <?php 
-    namespace App\Controllers;
-    use App\Models\UserModel;
-    use App\Models\UPCLookupModel;
+    namespace App\Controllers\b2b;
+    use App\Models\b2b\UserModel;
+    use App\Models\b2b\UPCLookupModel;
     use PhpOffice\PhpSpreadsheet\Spreadsheet;
     use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
     

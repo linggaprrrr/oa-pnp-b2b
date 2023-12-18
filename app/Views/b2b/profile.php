@@ -1,4 +1,4 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 
 <?= $this->section('content') ?>
 

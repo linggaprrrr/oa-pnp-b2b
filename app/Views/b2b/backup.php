@@ -1,4 +1,4 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 
 
 <?= $this->section('content') ?>
@@ -347,7 +347,7 @@
     $(document).on('click', '.edit-user-btn', function( ) {
         const id = $(this).data('id');
         $('.user-id').val(id);
-        $.get('/get-client', {id: id}, function(data) {
+        $.get('/b2b/get-client', {id: id}, function(data) {
             const resp = JSON.parse(data);
             $('.name-edit').val(resp['client_name']);
             $('.company-edit').val(resp['company']);

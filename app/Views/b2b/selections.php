@@ -1,5 +1,5 @@
 
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
@@ -528,7 +528,7 @@
                                                     <label class="block">
                                                     <span>Shipping Number</span>
                                                         <span class="relative mt-1.5 flex">
-                                                        <input name="shipping1" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <input name="shipping1" class="shipping1 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                         <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                             <i class="fas fa-shipping-fast text-base"></i>
                                                         </span>
@@ -538,10 +538,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" class="attachment1" accept="application/pdf,image/png,image/jpeg"  name="attachment1"/>
-                                                            <input type="text" id="fileValue1" name="fileValue1" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" class="attachment attachment1" accept="application/pdf,image/png,image/jpeg"  name="attachment1"/>
+                                                            <input type="text" id="fileValue1" class="fileValue" name="fileValue1" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp1" style="display: none;">
+                                                            <span class="fileTemp fileTemp1" style="display: none;">
                                                                 <a id="fileShow1" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete1"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -631,7 +631,7 @@
                                                     <label class="block">
                                                     <span>Shipping Number</span>
                                                         <span class="relative mt-1.5 flex">
-                                                        <input name="shipping2" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <input name="shipping2" class="shipping2 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                         <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                             <i class="fas fa-shipping-fast text-base"></i>
                                                         </span>
@@ -641,9 +641,9 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" name="attachment2" class="attachment2" />
-                                                            <input type="text" id="fileValue2" name="fileValue2" style="font-size: 10px; width: 100%; display:none" readonly>                                                                
-                                                            <span class="fileTemp2" style="display: none;">
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" name="attachment2" class="attachment attachment2" />
+                                                            <input type="text" id="fileValue2" class="fileValue" name="fileValue2" style="font-size: 10px; width: 100%; display:none" readonly>                                                                
+                                                            <span class="fileTemp fileTemp2" style="display: none;">
                                                                 <a id="fileShow2" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete2"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -732,7 +732,7 @@
                                                     <label class="block">
                                                     <span>Shipping Number</span>
                                                         <span class="relative mt-1.5 flex">
-                                                        <input name="shipping3" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <input name="shipping3" class="shipping3 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                         <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                             <i class="fas fa-shipping-fast text-base"></i>
                                                         </span>
@@ -742,10 +742,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2"  name="attachment3"/>
-                                                            <input type="text" id="fileValue3" name="fileValue3" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment3"  name="attachment3"/>
+                                                            <input type="text" id="fileValue3" class="fileValue" name="fileValue3" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp3" style="display: none;">
+                                                            <span class="fileTemp fileTemp3" style="display: none;">
                                                                 <a id="fileShow3" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete3"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -835,7 +835,7 @@
                                                     <label class="block">
                                                     <span>Shipping Number</span>
                                                         <span class="relative mt-1.5 flex">
-                                                        <input name="shipping4" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <input name="shipping4" class="shipping4 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                         <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                             <i class="fas fa-shipping-fast text-base"></i>
                                                         </span>
@@ -845,10 +845,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment4" name="attachment4"/>
-                                                            <input type="text" id="fileValue4" name="fileValue4" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment4" name="attachment4"/>
+                                                            <input type="text" id="fileValue4" class="fileValue" name="fileValue4" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp4" style="display: none;">
+                                                            <span class="fileTemp fileTemp4" style="display: none;">
                                                                 <a id="fileShow4" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete4"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -938,7 +938,7 @@
                                                     <label class="block">
                                                     <span>Shipping Number</span>
                                                         <span class="relative mt-1.5 flex">
-                                                        <input name="shipping5" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <input name="shipping5" class="shipping5 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                         <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                             <i class="fas fa-shipping-fast text-base"></i>
                                                         </span>
@@ -948,10 +948,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment5" name="attachment5"/>
-                                                            <input type="text" id="fileValue5" name="fileValue5" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment5" name="attachment5"/>
+                                                            <input type="text" id="fileValue5" class="fileValue" name="fileValue5" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp5" style="display: none;">
+                                                            <span class="fileTemp fileTemp5" style="display: none;">
                                                                 <a id="fileShow5" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete5"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -1038,7 +1038,7 @@
                                                     <label class="block">
                                                     <span>Shipping Number</span>
                                                         <span class="relative mt-1.5 flex">
-                                                        <input name="shipping6" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        <input name="shipping6" class="shipping6 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                         <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                             <i class="fas fa-shipping-fast text-base"></i>
                                                         </span>
@@ -1048,10 +1048,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                         <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment6" name="attachment6"/>
-                                                            <input type="text" id="fileValue6" name="fileValue6" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment6" name="attachment6"/>
+                                                            <input type="text" id="fileValue6" class="fileValue" name="fileValue6" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                            <span class="fileTemp6" style="display: none;">
+                                                            <span class="fileTemp fileTemp6" style="display: none;">
                                                                 <a id="fileShow6" style="width: 100%;" download></a>    
                                                                 <button type="button" id="fileDelete6"><i class="fas fa-trash text-error"></i></button>                                                                
                                                             </span>
@@ -1138,7 +1138,7 @@
                                                     <label class="block">
                                                     <span>Shipping Number</span>
                                                         <span class="relative mt-1.5 flex">
-                                                            <input name="shipping7" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <input name="shipping7" class="shipping7 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                                 <i class="fas fa-shipping-fast text-base"></i>
                                                             </span>
@@ -1148,10 +1148,10 @@
                                                         <span>Attachment</span>
                                                         <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2" name="attachment7"/>
-                                                                <input type="text" id="fileValue7" name="fileValue7" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment7" name="attachment7"/>
+                                                                <input type="text" id="fileValue7" class="fileValue" name="fileValue7" style="font-size: 10px; width: 100%; display:none" readonly>
                                                             
-                                                                <span class="fileTemp7" style="display: none;">
+                                                                <span class="fileTemp fileTemp7" style="display: none;">
                                                                     <a id="fileShow7" style="width: 100%;" download></a>    
                                                                     <button type="button" id="fileDelete7"><i class="fas fa-trash text-error"></i></button>                                                                
                                                                 </span>
@@ -1175,14 +1175,14 @@
             </div>                 
         </div>                
     </template>
-</div>       
+</div> 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <?= $this->endSection() ?>
 <?= $this->section('js') ?>
 <script>
     $(document).ready(function() {        
         var availDates = new Array();
-        $.get('/get-avail-dates')
+        $.get('/b2b/get-avail-dates')
             .done(function(data) {
                 const resp = JSON.parse(data);
                 
@@ -1220,7 +1220,7 @@
         $(document).on("input propertychange",".notes",function() {
             const id = $(this).data('id');
             const notes = $(this).val();
-            $.post( "/save-notes", {id: id, notes: notes})
+            $.post( "/b2b/save-notes", {id: id, notes: notes})
                 .done(function( data ) {
                     const resp = JSON.parse(data);                                                            
                     if (resp['notes'] != "") {                        
@@ -1231,7 +1231,7 @@
         });
 
         $(".save-note").click(function() {
-            $.post( "/save-notes", $( "#note-form" ).serialize())
+            $.post( "/b2b/save-notes", $( "#note-form" ).serialize())
                 .done(function( data ) {
                     const resp = JSON.parse(data);                                        
                     
@@ -1249,7 +1249,7 @@
             const cost = parseFloat($(this).data('cost'));
             const price = parseFloat($(this).data('price'));
             const profit = parseFloat($(this).data('profit'));
-            $.post("/save-qty", {id: id, qty: qty})
+            $.post("/b2b/save-qty", {id: id, qty: qty})
                 .done(function( data ) {
                     $('.total_buy_cost_' + id).html("$" + (qty * cost).toFixed(2));
                     $('.total_selling_' + id).html("$" + (qty * price).toFixed(2));
@@ -1264,7 +1264,7 @@
             const cost = parseFloat($(this).data('cost'));
             const price = parseFloat($(this).data('price'));
             const profit = parseFloat($(this).data('profit'));
-            $.post("/save-qty", {id: id, qty: qty})
+            $.post("/b2b/save-qty", {id: id, qty: qty})
                 .done(function( data ) {
                     $('.total_buy_cost_' + id).html("$" + (qty * cost).toFixed(2));
                     $('.total_selling_' + id).html("$" + (qty * price).toFixed(2));
@@ -1276,7 +1276,7 @@
         $(document).on("input propertychange", ".size", function() {
             const id = $(this).data('id');
             const size = $(this).val();
-            $.post("/save-size", {id: id, size: size})
+            $.post("/b2b/save-size", {id: id, size: size})
                 .done(function( data ) {
                     
                 });
@@ -1285,7 +1285,7 @@
         $(document).on("change", ".staff", function() {
             const id = $(this).data('id');
             const staff = $(this).val();
-            $.post("/save-staff", {id: id, staff: staff})
+            $.post("/b2b/save-staff", {id: id, staff: staff})
                 .done(function( data ) {
                     $.notify("Your changes have been saved!", "success");
                 });
@@ -1296,7 +1296,7 @@
             var formData = new FormData($("#buyer_form")[0]);
             $.ajax({
                 type: "POST",
-                url: "/save-buyers",
+                url: "/b2b/save-buyers",
                 data: formData,
                 processData: false,  // Important! Don't process the data
                 contentType: false,  // Important! Set contentType to false
@@ -1319,18 +1319,73 @@
             });
             
         });
+
+        $(document).on("click", "#fileDelete1", function() {
+            $(".attachment1").show();
+            $("#fileShow1").html("");
+            $("#fileDelete1").hide();
+            $("#fileValue1").val("");
+        });
+
+        $(document).on("click", "#fileDelete2", function() {
+            $(".attachment2").show();
+            $("#fileShow2").html("");
+            $("#fileDelete2").hide();
+            $("#fileValue2").val("");
+        });
+
+        $(document).on("click", "#fileDelete3", function() {
+            $(".attachment3").show();
+            $("#fileShow3").html("");
+            $("#fileDelete3").hide();
+            $("#fileValue3").val("");
+        });
+
+        $(document).on("click", "#fileDelete4", function() {
+            $(".attachment4").show();
+            $("#fileShow4").html("");
+            $("#fileDelete4").hide();
+            $("#fileValue4").val("");
+        });
+
+        $(document).on("click", "#fileDelete5", function() {
+            $(".attachment5").show();
+            $("#fileShow5").html("");
+            $("#fileDelete5").hide();
+            $("#fileValue5").val("");
+        });
+
+        $(document).on("click", "#fileDelete6", function() {
+            $(".attachment6").show();
+            $("#fileShow6").html("");
+            $("#fileDelete6").hide();
+            $("#fileValue6").val("");
+        });
+
+        $(document).on("click", "#fileDelete7", function() {
+            $(".attachment7").show();
+            $("#fileShow7").html("");
+            $("#fileDelete7").hide();
+            $("#fileValue7").val("");
+        });
+
         $(document).on("click", ".buyerModal", function() {
             const id = $(this).data('id');
             $(".save-buyers").removeData('id');    
             $("#buyer_form")[0].reset();
             $("textarea").val('');
+            $(".attachment").show();
+            $('.fileTemp').hide();                         
+            $(".fileValue").val('');                                
+            $('.fileShow').attr('href', '');
+            $('.fileShow').html('');                                
+
             $(".total_price").html("$0.00");
             $(".qty-buyer").attr('data-id', id); //setter
             $(".save-buyers").attr('data-id', id);
-            $.get("/get-purchase-item", {id : id})
+            $.get("/pnp/get-purchase-item", {id : id})
                 .done(function( data ) {
                     const resp = JSON.parse(data);      
-                    console.log(resp);                          
                     var j = 1;
                     var totalQty = 0;
                     $(".asin-modal").html(resp[0]['asin']);
@@ -1361,7 +1416,7 @@
                                 
                             }
                             $(".order_number" + j).val(resp[i]['order_number']);
-                            $(".notes" + j).val(resp[i]['tracking_number']);
+                            $(".shipping" + j).val(resp[i]['tracking_number']);
                             j++;
                         }
                     }

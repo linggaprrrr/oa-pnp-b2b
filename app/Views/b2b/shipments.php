@@ -1,4 +1,4 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">    
     <div>
@@ -515,7 +515,7 @@
     $(document).on('click', '.shipment-number', function(e) {
         const number = $(this).data('tracking');
         console.log(number);
-        $.get('/tracking-detail'  , {tracking: number})
+        $.get('/b2b/tracking-detail'  , {tracking: number})
             .done(function (data) {
                 const temp = JSON.parse(data);
                 const resp = temp['data'][0];
@@ -573,7 +573,7 @@
     $(document).on('click', '.refresh-tracking', function(e) {
         const id = $(this).data('id');
 
-        $.get('/refresh-tracking', {id: id})
+        $.get('/b2b/refresh-tracking', {id: id})
             .done(function(data) {
                 const resp = JSON.parse(data);
                 

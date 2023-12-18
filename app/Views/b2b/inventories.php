@@ -1,4 +1,4 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
@@ -64,7 +64,7 @@
                                             <span class="text-danger font-bold"><?= $purch['qty_ordered'] - (($purch['qty_received'] + $purch['qty_returned'])) ?></span>
                                         <?php endif ?>
                                     </td>
-                                    <td class="text-center align-middle total_price_<?= $purch['id'] ?>">$<?= round($purch['price'] * $purch['qty_received'], 2) ?></td>                                    
+                                    <td class="text-center align-middle total_price_<?= $purch['id'] ?>">$<?= round($purch['price'], 2) ?></td>
                                     <td class="text-center align-middle">$<?= round($purch['buy_cost'], 2) ?></td>
                                     <td class="text-center align-middle"><span class="total_buy_cost_<?= $purch['id'] ?>">$<?= round($purch['qty_received'] * $purch['buy_cost'], 2) ?></span></td>                                                                                                                
                                 </tr>  
@@ -90,7 +90,7 @@
                                             <span class="text-danger font-bold"><?= $purch['qty_ordered'] - (($purch['qty_received'] + $purch['qty_returned'])) ?></span>
                                         <?php endif ?>
                                     </td>
-                                    <td class="text-center align-middle total_price_<?= $purch['id'] ?>">$<?= round($purch['price'] * $purch['qty_received'], 2) ?></td>                                    
+                                    <td class="text-center align-middle total_price_<?= $purch['id'] ?>">$<?= round($purch['price'], 2) ?></td>                                    
                                     <td class="text-center align-middle">$<?= round($purch['buy_cost'], 2) ?></td>
                                     <td class="text-center align-middle"><span class="total_buy_cost_<?= $purch['id'] ?>">$<?= round($purch['qty_received'] * $purch['buy_cost'], 2) ?></span></td>                                                                                                                
                                 </tr>   

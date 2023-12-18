@@ -44,7 +44,7 @@ class Home extends BaseController
     {
         $userId = session()->get('user_id');
         if (is_null($userId)) {
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
         $this->leadModel = new LeadModel();
@@ -73,7 +73,7 @@ class Home extends BaseController
     public function purchase() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
         
@@ -581,7 +581,7 @@ class Home extends BaseController
     public function leadsList() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
 
@@ -629,7 +629,7 @@ class Home extends BaseController
     public function leadsListDownloadable() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
 
@@ -658,7 +658,7 @@ class Home extends BaseController
         $userRole = session()->get('user_id');
         $email = session()->get('email');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }        
         
@@ -745,7 +745,7 @@ class Home extends BaseController
     public function purchasesList() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
 
@@ -789,7 +789,7 @@ class Home extends BaseController
         
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
         $purchases = $this->assignModel->getAssignedData2();    
@@ -919,7 +919,7 @@ class Home extends BaseController
     public function assignments() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
         $startTemp = null;
@@ -1067,7 +1067,7 @@ class Home extends BaseController
     public function inventories() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {                      
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
     
@@ -1151,7 +1151,7 @@ class Home extends BaseController
     public function needToUpload() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {                      
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
         $start = null;
@@ -1280,7 +1280,7 @@ class Home extends BaseController
     public function shipments() {    
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
         $date = $this->request->getVar('date');
@@ -1346,7 +1346,7 @@ class Home extends BaseController
     public function dashboard() {        
         $userRole = session()->get('user_id');
         if (empty($userRole)) {
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
         
@@ -1708,7 +1708,7 @@ class Home extends BaseController
     public function users() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
 
@@ -1743,7 +1743,7 @@ class Home extends BaseController
         $userRole = session()->get('user_id');
         
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
 
@@ -1784,7 +1784,7 @@ class Home extends BaseController
     public function UPCLookup() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
 
@@ -1891,7 +1891,7 @@ class Home extends BaseController
     public function history() {
         $userRole = session()->get('user_id');
         if (empty($userRole)) {            
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
 

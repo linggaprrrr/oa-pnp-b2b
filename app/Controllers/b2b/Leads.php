@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\b2b;
 
-use App\Models\FileModel;
-use App\Models\LeadModel;
+use App\Models\b2b\FileModel;
+use App\Models\b2b\LeadModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use CodeIgniter\RESTful\ResourceController;

@@ -1,9 +1,9 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="justify-between" style="display: flex;">
         <div class="mb-1">                   
-            <form action="/assignments" method="GET" style="display: flex;">
+            <form action="/b2b/assignments" method="GET" style="display: flex;">
                 <div class="mr-4">
                     <?php $last = date('m-d-Y', strtotime('-7 days')) ?>
                     <?php $now = date('m-d-Y') ?>            
@@ -51,15 +51,9 @@
             </form>
         </div>  
         <div class="mb-1" style="justify-self: right" x-data="{showModal:false}">
-        <?php if (date('Y-m-d') < $subscription['exp']) : ?>
-            <button disabled="" class="btn bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 disabled:pointer-events-none disabled:select-none disabled:opacity-60 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-            Company List
-            </button>  
-        <?php else : ?>
             <button @click="showModal = true" class="company-list btn bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
             Company List
             </button>
-        <?php endif ?>
             
             <template x-teleport="#x-teleport-target">
                 <div
@@ -162,17 +156,10 @@
                     </h2>      
                 </div>      
                 <div>
-                <?php if (date('Y-m-d') < $subscription['exp']) : ?>
-                    <button disabled="" class="btn bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 disabled:pointer-events-none disabled:select-none disabled:opacity-60 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                        <span>Send to Need To Upload Process</span>                  
-                        <em class="fas fa-shipping-fast"></em> 
-                    </button>  
-                <?php else : ?>
-                    <button type="submit" class="btn space-x-2 bg-warning font-medium text-white shadow-lg shadow-warning/50 hover:bg-warning-focus focus:bg-warning-focus active:bg-warning-focus/90">                         
-                        <span>Send to Need To Upload Process</span>                         
-                        <em class="fas fa-shipping-fast"></em> 
-                    </button>
-                <?php endif ?>
+<button type="submit" class="btn space-x-2 bg-warning font-medium text-white shadow-lg shadow-warning/50 hover:bg-warning-focus focus:bg-warning-focus active:bg-warning-focus/90">
+    <span>Send to Need To Upload Process</span>
+    <em class="fas fa-shipping-fast"></em>
+</button>
                     
                 </div>
             </div>
@@ -358,7 +345,7 @@
 
         $( "#assignmentForm" ).on( "submit", function( event ) {
             event.preventDefault();                        
-            $.post('/shipments', $( "#assignmentForm" ).serialize() )
+            $.post('/b2b/shipments', $( "#assignmentForm" ).serialize() )
                 .done(function(data) {
                     formStat = false;                   
                     const resp = JSON.parse(data);
@@ -404,7 +391,7 @@
             const remaining = $(this).data('remaining');
             
 
-            $.post('/save-qty-assigned', {id: id, pid: pid, qty: qty, received: received})
+            $.post('/b2b/save-qty-assigned', {id: id, pid: pid, qty: qty, received: received})
                 .done(function(data) { 
                     const remainder = JSON.parse(data);
 
@@ -433,7 +420,7 @@
             const item = $(this).data('id');
             const notes = $(this).val();            
 
-            $.post('/save-assigned-notes', {item: item, notes: notes})
+            $.post('/b2b/save-assigned-notes', {item: item, notes: notes})
                 .done(function(data) {
                     
                 });
@@ -446,7 +433,7 @@
             const asin = $(this).data('asin');
             const clientID = $(this).val();
 
-            $.post('/save-client-order', {id: id, item: item, client_id: clientID, asin: asin})
+            $.post('/b2b/save-client-order', {id: id, item: item, client_id: clientID, asin: asin})
                 .done(function(data) {
                     const resp = JSON.parse(data);
                     if (resp['status'] == 'warning') {
@@ -461,7 +448,7 @@
             const id = $(this).data('id');
             const client = $(this).val();
 
-            $.get('/get-client-list')
+            $.get('/b2b/get-client-list')
                 .done(function(data) {
                     const resp = JSON.parse(data);   
                     
@@ -492,7 +479,7 @@
             const item = $(this).data('item');
             const orderID = $(this).val();
 
-            $.post('/save-client-order', {id: id, item: item, order_id: orderID})
+            $.post('/b2b/save-client-order', {id: id, item: item, order_id: orderID})
                 .done(function(data) {
                     $.notify("Your changes have been saved!", "success");
                 });
@@ -508,7 +495,7 @@
             const received = $(this).data('received');
             const remaining = $(this).data('remaining');
             
-            $.post('/add-new-assign', {pid: pid})
+            $.post('/b2b/add-new-assign', {pid: pid})
                 .done(function(data) {                    
                     const client = JSON.parse(data);                                     
                     if (client['remaining'] != 0) {
@@ -527,7 +514,7 @@
             const pid = $(this).data('pid');
 
             $(this).closest("tr").remove();
-            $.post('/delete-assign-data', {id: id})
+            $.post('/b2b/delete-assign-data', {id: id})
                 .done(function(data) {
                     const qty = JSON.parse(data);
                     const remain = $('.qty_remain_' + pid).html();
@@ -567,7 +554,7 @@
                 .done(function( data ) {                          
                     $.notify("Your changes have been saved!", "success");
                     
-                    $.get('/get-client-list', {id: id, order_id: orderID})
+                    $.get('/b2b/get-client-list', {id: id, order_id: orderID})
                         .done(function(data) {
                         const resp = JSON.parse(data);          
                         
@@ -598,7 +585,7 @@
                 .done(function( data ) {                          
                     $.notify("Your changes have been saved!", "success");
                     // $('.select-client').find('option').remove();
-                    // $.get('/get-client-list', {id: id})
+                    // $.get('/b2b/get-client-list', {id: id})
                     //     .done(function(data) {
                     //     const resp = JSON.parse(data);          
                         

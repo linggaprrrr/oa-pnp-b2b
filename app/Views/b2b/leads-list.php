@@ -1,4 +1,4 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 <?php 
 
 // dd(str_contains(strtolower("[BUNDLE] Bath & Body Works Aromatherapy Energy - O"), 'bundle'));

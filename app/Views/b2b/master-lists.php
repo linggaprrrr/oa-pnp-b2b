@@ -1,4 +1,4 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
@@ -23,7 +23,7 @@
                         <th class="text-center">Amazon Price</th>
                         <th class="text-center">Cost Per Unit</th>
                         <th class="text-center">Cost Total</th>
-                        <th class="text-center">Allocate Date</th>                        
+                        <th class="text-center">Purchase Date</th>                        
                         <th class="text-center">Shipping Status</th>
                         <th class="text-center" style="width: 12%">Notes</th>                        
                     </tr>
@@ -79,10 +79,10 @@
                                             <span class="text-danger font-semibold"><?= abs($purch['qty_ordered'] - (($purch['qty_received'] + $purch['qty_returned']))) ?></span>
                                         <?php endif ?>
                                     </td>
-                                    <td class="text-center align-middle total_price_<?= $purch['id'] ?>">$<?= round($purch['price'] * $purch['qty_received'], 2) ?></td>                                    
+                                    <td class="text-center align-middle ?>">$<?= round($purch['price'], 2) ?></td>
                                     <td class="text-center align-middle">$<?= round($purch['buy_cost'], 2) ?></td>
                                     <td class="text-center align-middle"><span class="total_buy_cost_<?= $purch['id'] ?>">$<?= round($purch['qty_received'] * $purch['buy_cost'], 2) ?></span></td>
-                                    <td class="text-center align-middle allocated_date_<?= $purch['id'] ?>"><?= is_null($purch['allocated_date']) ? '-' : date('m/d/Y', strtotime($purch['allocated_date'])) ?></td>                                                                
+                                    <td class="text-center align-middle"><?= is_null($purch['purchased_date']) ? '-' : date('m/d/Y', strtotime($purch['purchased_date'])) ?></td>                                                                
                                     <td class="text-center align-middle" style="text-align: -webkit-center;"><a href="#" class="shipment-details" data-id="<?= $purch['purchased_item_id'] ?>" data-asin="<?= $purch['asin'] ?>"><img src="/assets/img/shipping-48.png" alt="" style="width: 30%;"></a></td>
                                     <td class="text-center align-middle">
                                         <input type="text" name="notes" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center notes" data-id="<?= $purch['purchased_item_id'] ?>" style="font-size: 11px;" placeholder="notes" value="<?= $purch['order_notes'] ?>">
@@ -123,10 +123,10 @@
                                                 <span class="text-danger font-semibold"><?= abs($purch['qty_ordered'] - (($purch['qty_received'] + $purch['qty_returned']))) ?></span>
                                         <?php endif ?>
                                     </td>
-                                    <td class="text-center align-middle total_price_<?= $purch['id'] ?>">$<?= round($purch['price'] * $purch['qty_received'], 2) ?></td>                                    
+                                    <td class="text-center align-middle ?>">$<?= round($purch['price'], 2) ?></td>                                    
                                     <td class="text-center align-middle">$<?= round($purch['buy_cost'], 2) ?></td>
                                     <td class="text-center align-middle"><span class="total_buy_cost_<?= $purch['id'] ?>">$<?= round($purch['qty_received'] * $purch['buy_cost'], 2) ?></span></td>
-                                    <td class="text-center align-middle allocated_date_<?= $purch['id'] ?>"><?= is_null($purch['allocated_date']) ? '-' : date('m/d/Y', strtotime($purch['allocated_date'])) ?></td>                                
+                                    <td class="text-center align-middle"><?= is_null($purch['purchased_date']) ? '-' : date('m/d/Y', strtotime($purch['purchased_date'])) ?></td>                                
                                     
                                     <td class="text-center align-middle" style="text-align: -webkit-center;"><a href="#" class="shipment-details" data-id="<?= $purch['purchased_item_id'] ?>" data-asin="<?= $purch['asin'] ?>"><img src="/assets/img/shipping-48.png" alt="" style="width: 30%;"></a></td>
                                     <td class="text-center align-middle">
@@ -135,7 +135,7 @@
                                         
                                 </tr>   
                             <?php endif ?>
-                        <?php endif ?>                        
+                        <?php endif ?>
                     <?php endforeach ?> 
                 </tbody>
             </table>
@@ -325,21 +325,21 @@
         const ordered = $(this).data('ordered');
         const received = $('.qty_received_'+id).val();
 
-        $.post('/save-qty-returned', {id: id, qty: qty})
+        $.post('/b2b/save-qty-returned', {id: id, qty: qty})
             .done(function(data) {
                 if (((parseInt(qty) + parseInt(received)) - parseInt(ordered)) == 0) {
                     $('.remain_' + id).html('<span class="text-success font-semibold">Complete</span>');
-                    $.notify("Your changes have been saved!", "success");
+                    
                 } else if(qty == "") {
                     $('.remain_' + id).html('<span class="font-semibold">'+ Math.abs(parseInt(ordered) - 0) +'</span>');
-                    $.notify("Your changes have been saved!", "success");
+                    
                 } else {
                     $('.remain_' + id).html('<span class="font-semibold">'+ Math.abs(((parseInt(qty) + parseInt(received)) - parseInt(ordered))) +'</span>');
-                    $.notify("Your changes have been saved!", "success");
+                    
                 }    
                 
 
-                $('.allocated_date_' + id).html('<?= date('m/d/Y') ?>');
+                // $('.allocated_date_' + id).html('<?= date('m/d/Y') ?>');
             });
             
     });
@@ -353,7 +353,7 @@
         const returned = $('.qty_returned_'+id).val();
         
         
-        $.post('/save-qty-received', {id: id, qty: qty})
+        $.post('/b2b/save-qty-received', {id: id, qty: qty})
             .done(function(data) {                    
                 if (qty == "") {
                     $('.total_buy_cost_' + id).html('$' + (0 * parseFloat(cost)).toFixed(2));
@@ -375,7 +375,7 @@
                         $('.remain_' + id).html('<span class="font-semibold">'+ Math.abs((parseInt(qty) + parseInt(returned)) - parseInt(ordered)) +'</span>');
                     }
                 }                    
-                $('.allocated_date_' + id).html('<?= date('m/d/Y') ?>');
+                // $('.allocated_date_' + id).html('<?= date('m/d/Y') ?>');
             });
     });
 
@@ -384,7 +384,7 @@
         const id = $(this).data('id');
         const stat = $(this).val();
 
-        $.post('/save-status-order', {id: id, status: stat})
+        $.post('/b2b/save-status-order', {id: id, status: stat})
             .done(function(data) {
                 $.notify("Your changes have been saved!", "success");
             });
@@ -414,7 +414,7 @@
         var no = 1;
         $('.asin-title').html(asin);
         $('.shipment-tbody').html('');
-        $.get('/get-shipment-info-by-item', {id: id})
+        $.get('/b2b/get-shipment-info-by-item', {id: id})
             .done(function(data) {
                 const resp = JSON.parse(data);
                             

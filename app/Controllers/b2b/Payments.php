@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\b2b;
 
 use App\Controllers\BaseController;
-use App\Models\SubscriptionModel;
+use App\Models\b2b\SubscriptionModel;
 
 class Payments extends BaseController
 {
@@ -16,7 +16,7 @@ class Payments extends BaseController
 
     public function index()
     {
-        return view('payment');
+        return view('b2b/payment');
     }
 
     public function transaction() {

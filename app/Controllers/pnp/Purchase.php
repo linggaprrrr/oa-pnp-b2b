@@ -28,7 +28,7 @@ class Purchase extends BaseController
     {
         $userId = session()->get('user_id');
         if (is_null($userId)) {
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/pnp/login'));
             die();            
         }
         $this->leadModel = new LeadModel();

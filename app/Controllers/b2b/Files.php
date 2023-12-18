@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\b2b;
 
-use App\Controllers\BaseController;
-use App\Models\ClientModel;
-use App\Models\FileModel;
+use App\Controllers\b2b\BaseController;
+use App\Models\b2b\ClientModel;
+use App\Models\b2b\FileModel;
 use App\Models\UserModel;
 
 define('FILE_ENCRYPTION_BLOCKS', 10000);

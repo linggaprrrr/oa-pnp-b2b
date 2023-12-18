@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controllers;
-use App\Models\LeadModel;
-use App\Models\ScanUnlimitedModel;
-use App\Models\FileModel;
-use App\Models\OrderModel;
-use App\Models\StaffModel;
-use App\Models\BuyerStaffModel;
+namespace App\Controllers\b2b;
+use App\Models\b2b\LeadModel;
+use App\Models\b2b\ScanUnlimitedModel;
+use App\Models\b2b\FileModel;
+use App\Models\b2b\OrderModel;
+use App\Models\b2b\StaffModel;
+use App\Models\b2b\BuyerStaffModel;
 use App\Models\LogModel;
 use App\Models\UserModel;
 use LDAP\Result;
@@ -28,7 +28,7 @@ class Purchase extends BaseController
     {
         $userId = session()->get('user_id');
         if (is_null($userId)) {
-            header("Location: ".base_url('/login'));
+            header("Location: ".base_url('/b2b/login'));
             die();            
         }
         $this->leadModel = new LeadModel();
@@ -636,7 +636,7 @@ class Purchase extends BaseController
             'buyers' => $buyers
         ];
     
-        return view('purchase/open_selections', $data);
+        return view('b2b/open_selections', $data);
     }
 
     public function tickItem() {

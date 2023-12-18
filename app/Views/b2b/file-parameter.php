@@ -1,4 +1,4 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
@@ -551,7 +551,7 @@
     $(document).on('click', '.edit-pattern', function() {
         const id = $(this).data('id');
         
-        $.get('/get-pattern', {id: id})
+        $.get('/b2b/get-pattern', {id: id})
             .done(function(data) {
                 const resp = JSON.parse(data);
                 console.log(resp);

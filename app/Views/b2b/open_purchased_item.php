@@ -1,9 +1,9 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="max-w-sm">
-        <a href="/purchases-list" class="btn rounded-full bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90"><em class="fas fa-angle-left mr-2"></em> Back</a>                  
+        <a href="/b2b/purchases-list" class="btn rounded-full bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90"><em class="fas fa-angle-left mr-2"></em> Back</a>                  
     </div>
     <div class="card px-4 pb-4 sm:px-5">        
         <div class="max-w-full">
@@ -1152,7 +1152,7 @@
             $(".total_price").html("$0.00");
             $(".qty-buyer").attr('data-id', id); //setter
             $(".save-buyers").attr('data-id', id);
-            $.get("/get-purchase-item", {id : id})
+            $.get("/b2b/get-purchase-item", {id : id})
                 .done(function( data ) {
                     const resp = JSON.parse(data);                                
                     var j = 1;

@@ -1,26 +1,26 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\b2b;
 
-use App\Models\AssignmentModel;
-use App\Models\AssignModel;
-use App\Models\LeadModel;
-use App\Models\ScanUnlimitedModel;
-use App\Models\FileModel;
-use App\Models\OrderModel;
-use App\Models\StaffModel;
-use App\Models\BuyerStaffModel;
-use App\Models\BuyerModel;
-use App\Models\ClientModel;
+use App\Models\b2b\AssignmentModel;
+use App\Models\b2b\AssignModel;
+use App\Models\b2b\LeadModel;
+use App\Models\b2b\ScanUnlimitedModel;
+use App\Models\b2b\FileModel;
+use App\Models\b2b\OrderModel;
+use App\Models\b2b\StaffModel;
+use App\Models\b2b\BuyerStaffModel;
+use App\Models\b2b\BuyerModel;
+use App\Models\b2b\ClientModel;
 use App\Models\LogModel;
-use App\Models\OrderStatusModel;
-use App\Models\ShipmentModel;
-use App\Models\TrackingModel;
+use App\Models\b2b\OrderStatusModel;
+use App\Models\b2b\ShipmentModel;
+use App\Models\b2b\TrackingModel;
 use App\Models\UserModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-use App\Controllers\Shipment;
-use App\Models\SubscriptionModel;
+use App\Controllers\b2b\Shipment;
+use App\Models\b2b\SubscriptionModel;
 
 class Order extends BaseController
 {
@@ -649,7 +649,7 @@ class Order extends BaseController
             'buyers' => $buyers,            
         ];
     
-        return view('open_purchased_item', $data);   
+        return view('b2b/open_purchased_item', $data);   
         
     }
 
@@ -713,7 +713,7 @@ class Order extends BaseController
             
         ];
     
-        return view('warehouse/open_ordered_item', $data);
+        return view('b2b/open_ordered_item', $data);
     }
 
     public function saveClients() {

@@ -1,11 +1,11 @@
 <?php 
 
-namespace App\Controllers\pnp;
+namespace App\Controllers\b2b;
 
 use App\Models\LogModel;
-use App\Models\pnp\OrderModel;
-use App\Models\pnp\ShipmentModel;
-use App\Models\pnp\TrackingModel;
+use App\Models\b2b\OrderModel;
+use App\Models\b2b\ShipmentModel;
+use App\Models\b2b\TrackingModel;
 use App\Models\UserModel;
 
 
@@ -22,7 +22,7 @@ class Shipment extends BaseController
     {
         $userId = session()->get('user_id');
         if (is_null($userId)) {
-            header("Location: ".base_url('/pnp/login'));
+            header("Location: ".base_url('/b2b/login'));
             die();            
         }
         $this->userModel = new UserModel();

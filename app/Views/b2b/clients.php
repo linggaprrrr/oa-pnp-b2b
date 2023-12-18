@@ -1,4 +1,4 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
@@ -353,7 +353,7 @@
     $(document).on('click', '.edit-user-btn', function() {
         const id = $(this).data('id');
         $('.user-id').val(id);
-        $.get('/get-client', {id: id}, function(data) {
+        $.get('/b2b/get-client', {id: id}, function(data) {
             const resp = JSON.parse(data);
             $('.name-edit').val(resp['client_name']);
             $('.company-edit').val(resp['company']);
