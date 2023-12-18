@@ -370,6 +370,7 @@ class Auth extends BaseController
             $this->userModel->save(array(      
                 "name" => $post['name'],                              
                 "email" => $post['email'],
+                "type" => $post['type'],
                 "password" => password_hash($post['password'], PASSWORD_BCRYPT),
             ));
 

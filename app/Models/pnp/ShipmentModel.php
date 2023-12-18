@@ -28,9 +28,8 @@ class ShipmentModel extends Model
 
     public function findClient($id) {
         $query = $this->db->table('clients')
-            ->join('assigned_items', 'assigned_items.order_id = .clients.id')
+            ->join('assigned_items', 'assigned_items.order_id = clients.id')
             ->where('assigned_items.item_id', $id)
-            
             ->get();
         return $query;
     }

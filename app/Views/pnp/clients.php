@@ -65,7 +65,7 @@
                         
                     </p>
                         <hr>
-                        <form method="post" action="/pnp/add-new-client">
+                        <form method="post" action="/add-new-client">
                             <?php csrf_field() ?>                                  
                             <div class="mt-4 grid grid-cols-1 gap-4">                           
                                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -278,7 +278,7 @@
                     
                 </p>
                     <hr>
-                    <form method="post" action="/pnp/update-client">
+                    <form method="post" action="/update-client">
                         <?php csrf_field() ?>                                  
                         <div class="mt-4 grid grid-cols-1 gap-4">                           
                             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">

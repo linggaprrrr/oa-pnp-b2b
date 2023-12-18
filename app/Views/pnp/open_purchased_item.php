@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="max-w-sm">
-        <a href="/purchases-list" class="btn rounded-full bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90"><em class="fas fa-angle-left mr-2"></em> Back</a>                  
+        <a href="/pnp/purchases-list" class="btn rounded-full bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90"><em class="fas fa-angle-left mr-2"></em> Back</a>                  
     </div>
     <div class="card px-4 pb-4 sm:px-5">        
         <div class="max-w-full">

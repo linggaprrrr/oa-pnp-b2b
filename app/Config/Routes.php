@@ -97,7 +97,7 @@ $routes->post('/pnp/save-qty-assigned', 'pnp\Order::saveQtyAssigned');
 $routes->post('/pnp/add-new-assign', 'pnp\Order::addNewAssign');
 $routes->post('/pnp/delete-assign-data', 'pnp\Order::deleteAssignData');
 $routes->get('/pnp/get-client-list', 'pnp\Order::getClientList');
-$routes->get('/pnp/get-client', 'pnp\Clients::getClient');
+$routes->get('/pnp/get-client', 'Clients::getClient');
 $routes->post('/pnp/save-status-order', 'pnp\Order::saveStatusOrder');
 $routes->post('/pnp/save-client-order', 'pnp\Order::saveClientOrder');
 $routes->post('/pnp/save-notes-order', 'pnp\Order::saveNotesOrder');
@@ -163,7 +163,7 @@ $routes->get('/get-token-left', 'pnp\Leads::getTokenLeft');
 $routes->get('/encrypt-file', 'pnp\Files::test');
 $routes->get('/download-backup/(:any)/(:any)', 'pnp\Files::downloadBackUp/$1/$2');
 $routes->post('/restore-data', 'pnp\Files::restoreData');
-$routes->post('/add-new-client', 'pnp\Clients::addClient');
+$routes->post('/add-new-client', 'Clients::addClient');
 
 // PnP End
 

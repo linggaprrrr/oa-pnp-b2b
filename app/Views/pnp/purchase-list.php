@@ -43,7 +43,7 @@
                                 <span class="fw-bold"><?= $file->purchased_item ?></span>
                             </td>
                             <td class="text-center">
-                                <a href="/open-purchased-list/?date=<?= date('m-d-Y', strtotime($file->purch_date))?>" class="btn rounded-full bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">Open</a>
+                                <a href="/pnp/open-purchased-list/?date=<?= date('m-d-Y', strtotime($file->purch_date))?>" class="btn rounded-full bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">Open</a>
                             </td>        
                         </tr>
                     <?php endforeach; ?>

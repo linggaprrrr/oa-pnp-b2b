@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\ClientModel;
+use App\Models\pnp\ClientModel;
 use Google\Service\CloudFunctions\Retry;
 
 class Clients extends BaseController
@@ -53,7 +53,7 @@ class Clients extends BaseController
             ->set('order_date', $post['order_date'])            
             ->where('id', $post['id'])
             ->update();
-        return redirect()->to(base_url('clients'))->with('message', 'Login Successful!');
+        return redirect()->to(base_url('/pnp/clients'))->with('message', 'Login Successful!');
     }
 
 }
