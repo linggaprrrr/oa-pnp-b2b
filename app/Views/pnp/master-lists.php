@@ -513,6 +513,21 @@
             });
     });
 
+    $(document).on('input propertychange', '.notes', function() {
+        const id = $(this).data('id');
+        const notes = $(this).val();
+
+        clearTimeout(inputTimer);
+        inputTimer = setTimeout(function() {
+            $.post('/pnp/save-masterlist-notes', {id: id, notes: notes})
+                ,done(function(data) {
+                    
+                });
+
+        }, 500);
+        
+    }) 
+
     $(document).on('click', '.orderModal', function() {            
         let asin = $(this).data('asin');
         let orders = $(this).data('order_number');                                    

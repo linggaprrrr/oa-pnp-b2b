@@ -3,6 +3,7 @@
 namespace App\Controllers\pnp;
 
 use App\Models\LogModel;
+use App\Models\pnp\BoxModel;
 use App\Models\pnp\OrderModel;
 use App\Models\pnp\ShipmentModel;
 use App\Models\pnp\TrackingModel;
@@ -16,6 +17,7 @@ class Shipment extends BaseController
     protected $logModel = "";
     protected $trackingModel = "";
     protected $orderModel = "";
+    protected $boxModel = "";
     protected $API_KEY = "ueiw0i08-7ywq-22yb-laz2-07m00qrvlqgd";
 
     public function __construct()
@@ -30,6 +32,7 @@ class Shipment extends BaseController
         $this->logModel = new LogModel();
         $this->trackingModel = new TrackingModel();
         $this->orderModel = new OrderModel();
+        $this->boxModel = new BoxModel();
     }
 
     public function inputShipment() {
@@ -108,6 +111,56 @@ class Shipment extends BaseController
         
         return json_encode($resp);
         
+    }
+
+    public function addToNTU() {               
+        $assignId = $this->request->getVar('assign_id');        
+        $client = $this->request->getVar('client');
+        
+        $shipments = array();
+        $shipmentId = "";
+        $id = "";
+        $asins = array();
+        $itemIds = array();
+
+        if (isset($client)) {
+            for ($i = 0; $i < count($client); $i++) {
+                if (!empty($client[$i]) || $client[$i] != '') {                
+                    $getBoxes = $this->boxModel->isItemExist($assignId[$i]);                                        
+                    foreach ($getBoxes->getResultObject() as $box) {
+                        if (is_null($box->ntu_date) || empty($box->ntu_date)) {
+                            $this->boxModel->set('ntu_date', date('Y-m-d'))
+                                ->where('id', $box->id)
+                                ->update();
+                        }
+                    }
+                }
+            }        
+            $resp = [
+                'status' => '200',
+                'result' => 'success',
+                'id' => $itemIds,
+                'asins' =>  $asins,                
+            ];
+        } else {
+            $resp = [
+                'status' => '200',
+                'result' => 'error',                
+                'id' => $itemIds,
+                'asins' =>  $asins
+            ];
+        }
+        $user = $this->userModel->find(session()->get('user_id'));  
+        $this->logModel->save([
+            'user_id' => $user['id'],
+            'title' => 'create-ntu',
+            'description' => '['. strtoupper($user['role']) .'] '. $user['username']. ' created Need To Upload',
+            'level' => '2',
+            'items' => implode(', ', $asins),
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
+        
+        return json_encode($resp);
     }
 
     public function trackingShipment($buyerId = null, $number = null, $purchId = null) {        

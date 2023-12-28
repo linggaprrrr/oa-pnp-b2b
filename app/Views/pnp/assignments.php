@@ -220,12 +220,7 @@
                                             <td class="rounded-l-lg px-4 py-3 sm:px-5 font-semibold"><?= $id++ ?></td>
                                             <td class="px-4 py-3 sm:px-5 assigned-asin<?= $purch['aid'] ?>">
                                                 <?= $purch['asin'] ?>
-                                                <input type="hidden" name="assign_id[]" value="<?= $purch['aid'] ?>">
-                                                <?php if (!is_null($purch['sid'])) : ?>
-                                                    <a x-tooltip.success="'<?= (date('m-d-Y') == date('m-d-Y', strtotime($purch['sent_date'])) ? 'This item just sent to NTU today ' : 'This item has been sent to NTU on '.date('m/d/Y', strtotime($purch['sent_date'])).'') ?> '">
-                                                        <em class="fas fa-shipping-fast"></em>
-                                                    </a>
-                                                <?php endif ?>
+                                                <input type="hidden" name="assign_id[]" value="<?= $purch['aid'] ?>">                                                                                                
                                             </td>
                                             <td class="px-4 py-3 sm:px-5">
                                                 <button type="button" class="text-left font-bold" x-tooltip.cursor.x="'<?= str_replace("'", " ", $purch['title']) ?>'">
@@ -238,7 +233,12 @@
                                                             <div class="grid grid-cols-3 gap-2 box-<?= $purch['boxes'][$i]->id ?>" data-box="<?= $purch['boxes'][$i]->id ?>">
                                                                 <label class="block">
                                                                     <span>B&zwnj;ox N&zwnj;ame </span>
-                                                                    <input type="hidden" name="box_id" class="box_id<?= $purch['aid'] ?>" value="<?= $purch['boxes'][$i]->id ?>">
+                                                                    <?php if (!is_null($purch['boxes'][$i]->ntu_date)) : ?>
+                                                                        <a x-tooltip.success="'<?= (date('m-d-Y') == date('m-d-Y', strtotime($purch['boxes'][$i]->ntu_date)) ? 'This item just sent to NTU today ' : 'This item has been sent to NTU on '.date('m/d/Y', strtotime($purch['boxes'][$i]->ntu_date)).'') ?> '">
+                                                                            <em class="fas fa-shipping-fast"></em>
+                                                                        </a>
+                                                                    <?php endif ?>
+                                                                    <input type="hidden" name="box_id[]" class="box_id<?= $purch['aid'] ?>" value="<?= $purch['boxes'][$i]->id ?>">
                                                                     <input name="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="<?= $purch['boxes'][$i]->id ?>" data-allocation="<?= $purch['boxes'][$i]->allocation ?>" value="<?= $purch['boxes'][$i]->box_name ?>" type="text" autocomplete="nope">
                                                                 </label>
                                                                 <label class="block">
@@ -287,7 +287,7 @@
                                                         <div class="grid grid-cols-3 gap-2" data-box="">
                                                             <label class="block">
                                                                 <span>B&zwnj;ox N&zwnj;ame </span>
-                                                                <input type="hidden" name="box_id" class="box_id<?= $purch['aid'] ?>">                                                                
+                                                                <input type="hidden" name="box_id[]" class="box_id<?= $purch['aid'] ?>">                                                                
                                                                 <input name="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="" data-allocation="" type="text" autocomplete="nope">
                                                             </label>
                                                             <label class="block">
@@ -736,6 +736,7 @@
         const id = $(this).data('id');
         const boxName = $(this).val();
         const boxId =  $(this).closest('div').find('.box_id' + id).val();
+        
         $.post('/update-box-name', {id: id, box: boxName, box_id: boxId})
             .done( function(data) {
                 const resp = JSON.parse(data);                        
@@ -828,7 +829,7 @@
             $.post('/add-new-box', {id: id})
                 .done( function(data) {
                     const resp = JSON.parse(data);
-                    $('.box-section'+id).append('<div class="grid grid-cols-3 gap-2 box-'+ resp['box_id'] +'"><label class="block"><span>B&zwnj;ox N&zwnj;ame</span><input type="hidden" name="box_id" class="box_id'+id+'" value="'+ resp['box_id'] +'"> <input names="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" placeholder="BOX#12345..." type="text"></label><label class="block"><span>Total Allocation</span><input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" data-qty="" placeholder="..." type="number" min="1" ></label><label for="" class="flex items-center justify-center"><button type="button" class="delete-box btn h-9 w-9 p-0 font-medium text-error hover:bg-error/20 focus:bg-error/20 active:bg-error/25" data-id="'+id+'" data-box_id="'+resp['box_id']+'"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button></label></div>');
+                    $('.box-section'+id).append('<div class="grid grid-cols-3 gap-2 box-'+ resp['box_id'] +'"><label class="block"><span>B&zwnj;ox N&zwnj;ame</span><input type="hidden" name="box_id[]" class="box_id'+id+'" value="'+ resp['box_id'] +'"> <input names="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" placeholder="BOX#12345..." type="text"></label><label class="block"><span>Total Allocation</span><input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" data-qty="" placeholder="..." type="number" min="1" ></label><label for="" class="flex items-center justify-center"><button type="button" class="delete-box btn h-9 w-9 p-0 font-medium text-error hover:bg-error/20 focus:bg-error/20 active:bg-error/25" data-id="'+id+'" data-box_id="'+resp['box_id']+'"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button></label></div>');
                 })
         }
 
@@ -860,7 +861,7 @@
                     }
                 });
             },
-            minLength: 3, // Minimum characters before triggering autocomplete
+            minLength: 2, // Minimum characters before triggering autocomplete
             select: function(event, ui) {
                 // This function will be triggered when an item is selected from the suggestion list
                 var selectedValue = ui.item.value;

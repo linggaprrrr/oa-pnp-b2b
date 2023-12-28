@@ -1108,6 +1108,16 @@ class Order extends BaseController
             ->update();
     }   
 
+    public function saveMasterlistNotes() {
+        $id = $this->request->getVar('id');
+        $notes = $this->request->getVar('notes');
+
+        $this->orderStatusModel->set('order_notes', $notes)
+            ->where('purchased_item_id', $id)
+            ->update();
+            
+    }
+
     public function saveItems() {
         $userRole = session()->get('role');
         $id = $this->request->getVar('ceklist');        

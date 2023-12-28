@@ -1,0 +1,406 @@
+INFO - 2023-12-28 00:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:46:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:46:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-12-28 00:46:36 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'NUNUN')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+WARNING - 2023-12-28 00:46:38 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'NONONO')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 00:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:47:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-28 00:48:36 --> Undefined array key 1
+in APPPATH/Controllers/pnp/Shipment.php on line 125.
+ 1 APPPATH/Controllers/pnp/Shipment.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Shipment.php', 125)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Shipment->addToNTU()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Shipment))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 00:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-12-28 00:51:42 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'nono')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+WARNING - 2023-12-28 00:51:43 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'nonono')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 00:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:51:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 00:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:18:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-12-28 01:26:01 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'boo')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 01:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:26:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-12-28 01:26:33 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'bbb')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 01:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:29:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:29:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:29:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-12-28 01:29:28 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'wewewew')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 01:29:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:33:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-12-28 01:34:35 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'WIWIIW')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 01:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-12-28 01:35:11 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'KAKAKKA')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 01:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:37:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:37:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:42:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:43:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:50:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:50:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 01:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:04:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:06:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:07:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:07:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:07:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:11:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-12-28 02:12:56 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, '222')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 02:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-12-28 02:13:31 --> [DEPRECATED] stripos(): Passing null to parameter #1 ($haystack) of type string is deprecated in APPPATH/Controllers/pnp/API.php on line 180.
+ 1 APPPATH/Controllers/pnp/API.php(180): stripos(null, 'eeeee')
+ 2 [internal function]: App\Controllers\pnp\API->App\Controllers\pnp\{closure}(null)
+ 3 APPPATH/Controllers/pnp/API.php(179): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\API->getAllBoxName()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\API))
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 02:13:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:14:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:19:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:19:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:23:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-28 02:23:09 --> Attempt to read property "client_name" on null
+in APPPATH/Controllers/pnp/Order.php on line 1160.
+ 1 APPPATH/Controllers/pnp/Order.php(1160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "client_name" on null', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Order.php', 1160)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Order->saveClientOrder()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Order))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 02:23:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:24:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-28 02:25:27 --> mysqli_sql_exception: Table 'oa-app-api.assign_items' doesn't exist in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/pnp/BoxModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Shipment.php(129): App\Models\pnp\BoxModel->isItemExist('39')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Shipment->addToNTU()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Shipment))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-12-28 02:25:27 --> Table 'oa-app-api.assign_items' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *
+FROM `boxes`
+JOIN `assign_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assign_items`.`id` = \'39\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `boxes`
+JOIN `assign_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assign_items`.`id` = \'39\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `boxes`
+JOIN `assign_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assign_items`.`id` = \'39\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `boxes`
+JOIN `assign_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assign_items`.`id` = :assign_items.id:', [...], false)
+ 5 APPPATH/Models/pnp/BoxModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/pnp/Shipment.php(129): App\Models\pnp\BoxModel->isItemExist('39')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Shipment->addToNTU()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Shipment))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 02:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-28 02:26:40 --> mysqli_sql_exception: Unknown column 'assign_items.id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/pnp/BoxModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Shipment.php(129): App\Models\pnp\BoxModel->isItemExist('39')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Shipment->addToNTU()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Shipment))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-12-28 02:26:40 --> Unknown column 'assign_items.id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = \'39\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = \'39\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = \'39\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = :assigned_items.id:', [...], false)
+ 5 APPPATH/Models/pnp/BoxModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/pnp/Shipment.php(129): App\Models\pnp\BoxModel->isItemExist('39')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Shipment->addToNTU()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Shipment))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 02:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-28 02:26:48 --> mysqli_sql_exception: Unknown column 'assign_items.id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/pnp/BoxModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Shipment.php(129): App\Models\pnp\BoxModel->isItemExist('39')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Shipment->addToNTU()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Shipment))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-12-28 02:26:48 --> Unknown column 'assign_items.id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = \'39\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = \'39\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = \'39\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assign_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = :assigned_items.id:', [...], false)
+ 5 APPPATH/Models/pnp/BoxModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/pnp/Shipment.php(129): App\Models\pnp\BoxModel->isItemExist('39')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Shipment->addToNTU()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Shipment))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 02:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-28 02:26:58 --> mysqli_sql_exception: Unknown column 'boxes_assign_id' in 'on clause' in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/pnp/BoxModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Shipment.php(129): App\Models\pnp\BoxModel->isItemExist('39')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Shipment->addToNTU()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Shipment))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-12-28 02:26:58 --> Unknown column 'boxes_assign_id' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assigned_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = \'39\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assigned_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = \'39\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assigned_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = \'39\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `boxes`
+JOIN `assigned_items` ON `assigned_items`.`id` = `boxes_assign_id`
+WHERE `assigned_items`.`id` = :assigned_items.id:', [...], false)
+ 5 APPPATH/Models/pnp/BoxModel.php(28): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/pnp/Shipment.php(129): App\Models\pnp\BoxModel->isItemExist('39')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Shipment->addToNTU()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Shipment))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 02:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:31:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:35:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:37:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:37:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -702,6 +702,7 @@ class Home extends BaseController
         $totalClientCost = 0;
 
         $getAllBox = $this->boxModel->getAllBox($start, $end);
+        
         foreach ($assignedData->getResultObject() as $purch) {
             if ($totalUnit > 0) {
                 $avgUnitRetail = round($totalOriginalRetail / $totalUnit, 2);
@@ -711,7 +712,7 @@ class Home extends BaseController
             $totalOriginalRetail = $totalOriginalRetail + (round( ($purch->qty_received - $purch->qty_remaining) * $purch->market_price, 2));                                
             
         }
-    //    dd($getAllBox->getResultArray());
+    
         $summary = [
             'totalUnit' => $totalUnit,
             'totalOriginalRetail' => $totalOriginalRetail, 

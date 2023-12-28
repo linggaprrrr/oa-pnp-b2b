@@ -78,11 +78,12 @@ $routes->post('/pnp/save-purchase-list', 'pnp\Order::savePurchaseList');
 $routes->post('/pnp/save-qty', 'pnp\Order::saveQty');
 $routes->post('/pnp/save-size', 'pnp\Order::saveSize');
 $routes->post('/pnp/save-staff', 'pnp\Order::saveStaff');
+$routes->post('/pnp/save-masterlist-notes', 'pnp\Order::saveMasterlistNotes');
 $routes->get('/pnp/get-purchase-item', 'pnp\Order::getItem');
 $routes->post('/pnp/save-buyers', 'pnp\Order::saveBuyersItem');
 
 $routes->get('/pnp/shipments', 'pnp\Home::shipments');
-$routes->post('/pnp/shipments', 'pnp\Shipment::addToShipments');
+$routes->post('/pnp/shipments', 'pnp\Shipment::addToNTU');
 $routes->post('/pnp/tracking-shipment', 'pnp\Shipment::trackingShipment');
 $routes->post('/pnp/input-shipment', 'pnp\Shipment::inputShipment');
 $routes->get('/pnp/tracking-detail', 'pnp\Shipment::getTrackingInfo');
