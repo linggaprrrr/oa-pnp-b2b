@@ -56,6 +56,7 @@ class Shipment extends BaseController
         $shipmentId = "";
         $id = "";
         $asins = array();
+        $itemIds = array();
 
         if (isset($client)) {
             for ($i = 0; $i < count($client); $i++) {
@@ -63,7 +64,7 @@ class Shipment extends BaseController
                     $isExist = $this->shipmentModel->isItemExist($assignId[$i]);
                     $getASIN = $this->shipmentModel->getASINData($assignId[$i]);
                     array_push($asins, $getASIN->asin);
-
+                    array_push($itemIds, $assignId[$i]);
                     if ($isExist->getNumRows() == 0) {                    
                         if ($id = array_search($client[$i], $shipments)) {                    
                             $this->shipmentModel->addItemToShipments($assignId[$i], $id);                    
@@ -83,12 +84,16 @@ class Shipment extends BaseController
             }        
             $resp = [
                 'status' => '200',
-                'result' => 'success'                
+                'result' => 'success',
+                'id' => $itemIds,
+                'asins' =>  $asins,                
             ];
         } else {
             $resp = [
                 'status' => '200',
-                'result' => 'error'                
+                'result' => 'error',                
+                'id' => $itemIds,
+                'asins' =>  $asins
             ];
         }
         $user = $this->userModel->find(session()->get('user_id'));  

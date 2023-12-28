@@ -220,4 +220,41 @@ class OrderStatusModel extends Model
         return $query;
     }
 
+    public function getTotalReceived($date) {
+        $query = $this->db->table('orders_status')
+            ->select('SUM(qty_received) as total_received')
+            ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+            ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+            ->where('lead_lists.file_id', session()->get('user_id'))
+            ->where('DATE(orders_status.received_date)', $date)
+            ->groupBy('orders_status.id')
+            ->get();
+            
+        return $query->getFirstRow();
+    }
+
+    public function getTotalUnreceived($date) {
+        $query = $this->db->table('orders_status')
+            ->select('ABS((SUM(qty_received + IFNULL(qty_returned, 0))) - SUM(purchase_items.qty)) as total_unreceived')
+            ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+            ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+            ->where('lead_lists.file_id', session()->get('user_id'))
+            ->where('DATE(orders_status.received_date)', $date)
+            ->groupBy('orders_status.id')
+            ->get();
+        return $query->getFirstRow();
+    }
+
+    public function getTotalRefund($date) {
+        $query = $this->db->table('orders_status')
+        ->select('ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund')
+            ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+            ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+            ->where('lead_lists.file_id', session()->get('user_id'))
+            ->where('DATE(orders_status.received_date)', $date)
+            ->groupBy('orders_status.id')
+            ->get();
+    return $query->getFirstRow();
+    }
+
 }

@@ -18,6 +18,7 @@ use App\Models\pnp\ShipmentModel;
 use App\Models\pnp\TrackingModel;
 use App\Models\UserModel;
 use App\Controllers\pnp\Shipment;
+use App\Models\pnp\BoxModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -41,6 +42,7 @@ class Order extends BaseController
     protected $logModel = "";
     protected $trackingModel = "";
     protected $subsModel = "";
+    protected $boxModel = "";
 
     public function __construct()
     {
@@ -60,6 +62,7 @@ class Order extends BaseController
         $this->logModel = new LogModel();
         $this->trackingModel = new TrackingModel();
         $this->subsModel = new SubscriptionModel();
+        $this->boxModel = new BoxModel();
     }
 
     public function savePurchaseList() {
@@ -111,7 +114,8 @@ class Order extends BaseController
             
             $this->orderStatusModel->insert([
                 'purchased_item_id' => $this->orderModel->getInsertID(),
-                'purchased_date' => date('Y-m-d H:i:s')
+                'purchased_date' => date('Y-m-d H:i:s'),
+                'received_date' => date('Y-m-d H:i:s')
             ]);
             
             $this->assignModel->insert([
@@ -1197,58 +1201,43 @@ class Order extends BaseController
     }
 
     public function saveFBANumber() {
-        $item = $this->request->getVar('item');
+        $boxName = $this->request->getVar('box_name');
         $numb = $this->request->getVar('number');
 
-        $this->shipmentModel->set('fba_number', $numb)
-            ->where('id', $item)
+        $this->boxModel->set('fba_number', $numb)
+            ->where('box_name', $boxName)
             ->update();
 
-        // cek if completed
-        // $shipments = $this->shipmentModel
-        //     ->where('id', $item)    
-        //     ->where('fba_number is NOT NULL', NULL, FALSE)        
-        //     ->where('shipment_number is NOT NULL', NULL, FALSE)
-        //     ->get();
-        // if ($shipments->getNumRows() > 0) {
-        //     $this->assignModel->set('updated_at', date('Y-m-d H:i:s'))
-        //     ->where('item_id', $item)
-        //     ->update();
-        // }
-        
     }
 
     public function saveShipmentNumber() {
-        $item = $this->request->getVar('item');
+        $boxName = $this->request->getVar('box_name');
         $numb = $this->request->getVar('number');
 
-        $this->shipmentModel->set('shipment_number', $numb)
-            ->where('id', $item)
-            ->update();
+        $this->boxModel->set('shipment_number', $numb)
+            ->where('box_name', $boxName)
+            ->update();        
+    }
 
-        // cek if completed
-        // $shipments = $this->assignModel
-        //     ->where('id', $item)    
-        //     ->where('fba_number is NOT NULL', NULL, FALSE)        
-        //     ->where('shipment_number is NOT NULL', NULL, FALSE)
-        //     ->get();
-        // if ($shipments->getNumRows() > 0) {
-        //     $this->assignModel->set('updated_at', date('Y-m-d H:i:s'))
-        //     ->where('item_id', $item)
-        //     ->update();
-        // }
+    public function saveBoxDimensions() {
+        $boxName = $this->request->getVar('box_name');
+        $dim = $this->request->getVar('dim');
+
+        $this->boxModel->set('dimensions', $dim)
+            ->where('box_name', $boxName)
+            ->update(); 
     }
 
     public function exportNeedToUpload($date = null) {
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
         
-        
+        $start = null;
+        $end = null;
         if (is_null($date)) {
             $assignedData = $this->assignModel->getAssignedData3();                
         } else {
-            $start = null;
-            $end = null;
+            
             $temp = explode("&", $date);            
             // start
             $startExp = explode('-', $temp[0]);
@@ -1259,6 +1248,8 @@ class Order extends BaseController
             }
             $assignedData = $this->assignModel->getAssignedData3($start, $end);   
         }   
+        
+        $getAllBox = $this->boxModel->getAllBox($start, $end);
         $buyers = $this->buyerStaffModel
                 ->join('buyer_details', 'buyer_details.buyer = buyers.id')
                 ->get();   
@@ -1393,97 +1384,83 @@ class Order extends BaseController
 		$sheet->setCellValue('D3', 'ORIGINAL QTY');
 		$sheet->setCellValue('E3', 'RETAIL VALUE');
         $sheet->setCellValue('F3', 'TOTAL ORIGINAL RETAIL');
-        $sheet->setCellValue('G3', 'TOTAL CLIENT COST');
-        $sheet->setCellValue('H3', 'VENDOR NAME');
+        $sheet->setCellValue('G3', 'TOTAL CLIENT COST'); 
+        $sheet->setCellValue('H3', 'VENDOR');        
         // $sheet->setCellValue('I3', 'NOTES');
         
         $no = 4;
         $client = "";
-        for($i = 0; $i < count($lists); $i++) {             
-            if ($i == 0) {
-                $sheet->setCellValue('A' . $no, $lists[$i]['fnsku']);               
-                $sheet->setCellValue('B' . $no, $lists[$i]['asin']);               
-                $sheet->setCellValue('C' . $no, $lists[$i]['title']);               
-                $sheet->setCellValue('D' . $no, $lists[$i]['qty_assigned']);               
-                $sheet->setCellValue('E' . $no, number_format(round($lists[$i]['price'], 2), 2));               
-                $sheet->setCellValue('F' . $no, number_format(round($lists[$i]['price'] * $lists[$i]['qty_assigned'], 2), 2));               
-                $sheet->setCellValue('G' . $no, number_format(round($lists[$i]['buy_cost'] * $lists[$i]['qty_assigned'], 2), 2));               
-                $sheet->setCellValue('H' . $no, $lists[$i]['vendor']); 
-                // $sheet->setCellValue('I' . $no, $lists[$i]['assigned_notes']);    
+        $data = $getAllBox->getResultArray(); 
+        
+        for ($i = 0; $i < $getAllBox->getNumRows(); $i++) {  
+            if ($i == $getAllBox->getNumRows()-1) {
+                $sheet->setCellValue('A' . $no, $data[$i]['fnsku']);               
+                $sheet->setCellValue('B' . $no, $data[$i]['asin']);               
+                $sheet->setCellValue('C' . $no, $data[$i]['title']);               
+                $sheet->setCellValue('D' . $no, $data[$i]['allocation']);               
+                $sheet->setCellValue('E' . $no, number_format(round($data[$i]['market_price'], 2), 2));               
+                $sheet->setCellValue('F' . $no, number_format(round($data[$i]['market_price'] * $data[$i]['allocation'], 2), 2));               
+                $sheet->setCellValue('G' . $no, number_format(round($data[$i]['buy_cost'] * $data[$i]['allocation'], 2), 2));                               
+                $sheet->setCellValue('H' . $no, $data[$i]['vendor']);  
                 $no++;
-            } else {
-                if ($client == $lists[$i]['order_id']) {                    
-                    $sheet->setCellValue('A' . $no, $lists[$i]['fnsku']);               
-                    $sheet->setCellValue('B' . $no, $lists[$i]['asin']);               
-                    $sheet->setCellValue('C' . $no, $lists[$i]['title']);               
-                    $sheet->setCellValue('D' . $no, $lists[$i]['qty_assigned']);               
-                    $sheet->setCellValue('E' . $no, number_format(round($lists[$i]['price'], 2), 2));               
-                    $sheet->setCellValue('F' . $no, number_format(round($lists[$i]['price'] * $lists[$i]['qty_assigned'], 2), 2));               
-                    $sheet->setCellValue('G' . $no, number_format(round($lists[$i]['buy_cost'] * $lists[$i]['qty_assigned'], 2), 2));               
-                    $sheet->setCellValue('H' . $no, $lists[$i]['vendor']); 
-                    // $sheet->setCellValue('I' . $no, $lists[$i]['assigned_notes']);    
-                    $no++;
-                } else {
-                    $sheet->setCellValue('A' . $no, '');               
-                    $sheet->setCellValue('B' . $no, '');               
-                    $sheet->setCellValue('C' . $no, $lists[$i-1]['fba_number'] . ' / ' . $lists[$i-1]['shipment_number']);               
-                    $sheet->setCellValue('D' . $no, '');               
-                    $sheet->setCellValue('E' . $no, '');               
-                    $sheet->setCellValue('F' . $no, '');               
-                    $sheet->setCellValue('G' . $no, '');                                   
-                    $sheet->setCellValue('H' . $no, (!is_null($lists[$i-1]['updated_at'])) ? date('m/d/Y', strtotime($lists[$i-1]['updated_at'])) : '-');    
-                    $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
-                    $no++;
-                    $sheet->setCellValue('A' . $no, '');               
-                    $sheet->setCellValue('B' . $no, '');               
-                    $sheet->setCellValue('C' . $no, $lists[$i-1]['client_name'] . '(' . $lists[$i-1]['company'] . ')');               
-                    $sheet->setCellValue('D' . $no, '');               
-                    $sheet->setCellValue('E' . $no, '');               
-                    $sheet->setCellValue('F' . $no, '');               
-                    $sheet->setCellValue('G' . $no, '');               
-                    $sheet->setCellValue('H' . $no, ''); 
-                    $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
-                    $no++;
-                    $no++;
-                    $sheet->setCellValue('A' . $no, $lists[$i]['fnsku']);               
-                    $sheet->setCellValue('B' . $no, $lists[$i]['asin']);               
-                    $sheet->setCellValue('C' . $no, $lists[$i]['title']);               
-                    $sheet->setCellValue('D' . $no, $lists[$i]['qty_assigned']);               
-                    $sheet->setCellValue('E' . $no, number_format(round($lists[$i]['price'], 2), 2));               
-                    $sheet->setCellValue('F' . $no, number_format(round($lists[$i]['price'] * $lists[$i]['qty_assigned'], 2), 2));               
-                    $sheet->setCellValue('G' . $no, number_format(round($lists[$i]['buy_cost'] * $lists[$i]['qty_assigned'], 2), 2));               
-                    $sheet->setCellValue('H' . $no, $lists[$i]['vendor']); 
-                    // $sheet->setCellValue('I' . $no, $lists[$i]['assigned_notes']);    
-                    $no++;
-                    
-                }
-            }
-
-            if ($i == count($lists)-1) {
+                
                 $sheet->setCellValue('A' . $no, '');               
                 $sheet->setCellValue('B' . $no, '');               
-                $sheet->setCellValue('C' . $no, $lists[$i]['fba_number'] . ' / ' . $lists[$i]['shipment_number']);               
+                $sheet->setCellValue('C' . $no, $data[$i]['fba_number'] . ' / ' . $data[$i]['shipment_number']);               
                 $sheet->setCellValue('D' . $no, '');               
                 $sheet->setCellValue('E' . $no, '');               
                 $sheet->setCellValue('F' . $no, '');               
-                $sheet->setCellValue('G' . $no, '');                               
-                $sheet->setCellValue('H' . $no, (!is_null($lists[$i]['updated_at'])) ? date('m/d/Y', strtotime($lists[$i]['updated_at'])) : '-');    
+                $sheet->setCellValue('G' . $no, '');                                   
+                $sheet->setCellValue('H' . $no, (!is_null($data[$i]['updated_at'])) ? date('m/d/Y', strtotime($data[$i]['updated_at'])) : '-');    
                 $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
                 $no++;
-                $sheet->setCellValue('A' . $no, '');               
+                
+                $sheet->setCellValue('A' . $no, $data[$i]['dimensions']);               
                 $sheet->setCellValue('B' . $no, '');               
-                $sheet->setCellValue('C' . $no, $lists[$i]['client_name'] . '(' . $lists[$i]['company'] . ')');               
+                $sheet->setCellValue('C' . $no, $data[$i]['box_name'] .' - '. $data[$i]['client_name'] . '(' . $data[$i]['company'] . ')');               
                 $sheet->setCellValue('D' . $no, '');               
                 $sheet->setCellValue('E' . $no, '');               
                 $sheet->setCellValue('F' . $no, '');               
                 $sheet->setCellValue('G' . $no, '');               
                 $sheet->setCellValue('H' . $no, ''); 
                 $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
+                $no++;               
+            } else {
+                $nextVal = $data[$i + 1]['box_name'];
+                $sheet->setCellValue('A' . $no, $data[$i]['fnsku']);               
+                $sheet->setCellValue('B' . $no, $data[$i]['asin']);               
+                $sheet->setCellValue('C' . $no, $data[$i]['title']);               
+                $sheet->setCellValue('D' . $no, $data[$i]['allocation']);               
+                $sheet->setCellValue('E' . $no, number_format(round($data[$i]['market_price'], 2), 2));               
+                $sheet->setCellValue('F' . $no, number_format(round($data[$i]['market_price'] * $data[$i]['allocation'], 2), 2));               
+                $sheet->setCellValue('G' . $no, number_format(round($data[$i]['buy_cost'] * $data[$i]['allocation'], 2), 2));                               
+                $sheet->setCellValue('H' . $no, $data[$i]['vendor']);  
                 $no++;
+                if ($nextVal != $data[$i]['box_name']) {
+                    $sheet->setCellValue('A' . $no, '');               
+                    $sheet->setCellValue('B' . $no, '');               
+                    $sheet->setCellValue('C' . $no, $data[$i]['fba_number'] . ' / ' . $data[$i]['shipment_number']);               
+                    $sheet->setCellValue('D' . $no, '');               
+                    $sheet->setCellValue('E' . $no, '');               
+                    $sheet->setCellValue('F' . $no, '');               
+                    $sheet->setCellValue('G' . $no, '');                                   
+                    $sheet->setCellValue('H' . $no, (!is_null($data[$i]['updated_at'])) ? date('m/d/Y', strtotime($data[$i]['updated_at'])) : '-');    
+                    $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
+                    $no++;
+                    
+                    $sheet->setCellValue('A' . $no, $data[$i]['dimensions']);               
+                    $sheet->setCellValue('B' . $no, '');               
+                    $sheet->setCellValue('C' . $no, $data[$i]['box_name'] .' - '. $data[$i]['client_name'] . '(' . $data[$i]['company'] . ')');               
+                    $sheet->setCellValue('D' . $no, '');               
+                    $sheet->setCellValue('E' . $no, '');               
+                    $sheet->setCellValue('F' . $no, '');               
+                    $sheet->setCellValue('G' . $no, '');               
+                    $sheet->setCellValue('H' . $no, ''); 
+                    $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
+                    $no++;   
+                }
             }
-
             
-            $client = $lists[$i]['order_id']; 
         }
         $fileName = "Need To Upload.xlsx";  
         $writer = new Xlsx($spreadsheet);

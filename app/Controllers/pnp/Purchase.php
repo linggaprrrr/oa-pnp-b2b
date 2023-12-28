@@ -8,6 +8,8 @@ use App\Models\pnp\OrderModel;
 use App\Models\pnp\StaffModel;
 use App\Models\pnp\BuyerStaffModel;
 use App\Models\LogModel;
+use App\Models\pnp\AssignModel;
+use App\Models\pnp\BoxModel;
 use App\Models\UserModel;
 use LDAP\Result;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -22,7 +24,9 @@ class Purchase extends BaseController
     protected $staffModel = "";
     protected $buyerModel = "";
     protected $logModel = "";
+    protected $assignModel = "";
     protected $userModel = "";
+    protected $boxModel = "";
 
     public function __construct()
     {
@@ -39,7 +43,8 @@ class Purchase extends BaseController
         $this->buyerModel = new BuyerStaffModel();
         $this->logModel = new LogModel();
         $this->userModel = new UserModel();
-        
+        $this->assignModel = new AssignModel();
+        $this->boxModel = new BoxModel();
     }
 
     public function index()
@@ -688,5 +693,78 @@ class Purchase extends BaseController
             ->where('id', $id)
             ->update();
     }
+
+    public function addNewBox() {
+        $assignId = $this->request->getVar('id');
+        $this->boxModel->save([
+            'assign_id' => $assignId
+        ]);
+        $boxId = $this->boxModel->getInsertID();
+        echo json_encode([
+            'box_id' => $boxId
+        ]);
+    }
+
+    public function deleteBox() {
+        $id = $this->request->getVar('id');
+        $this->boxModel->where('id', $id)->delete();
+    }
+
+    public function updateBoxName() {
+        $id = $this->request->getVar('id');
+        $boxName = trim($this->request->getVar('box'));
+        $boxId = $this->request->getVar('box_id');
+        if (empty($boxId)) {
+            $this->boxModel->save([
+                'assign_id' => $id,
+                'box_name' => $boxName,                
+            ]);            
+            $getBoxId = $this->boxModel->getInsertID();
+            return json_encode([
+                'box_id' => $getBoxId
+            ]);
+        } else {
+            $this->boxModel
+                ->set('box_name', $boxName)
+                ->where('id', $boxId)
+                ->update();                
+            return json_encode([
+                'box_id' => $boxId
+            ]);
+        }
+    }
+    
+
+    public function updateTotalAllocation() {
+        $id = $this->request->getVar('id');
+        $qty = $this->request->getVar('total');
+        $boxId = $this->request->getVar('box_id');
+        
+        
+        if (is_null($boxId) || empty($boxId)) {
+            $this->boxModel->save([
+                'assign_id' => $id,
+                'allocation' => $qty,                
+            ]);            
+            $getBoxId = $this->boxModel->getInsertID();
+            return json_encode([
+                'box_id' => $getBoxId,
+                'allocation' => $qty
+            ]);
+        } else {
+            $this->boxModel
+                ->set('allocation', $qty)
+                ->where('id', $boxId)
+                ->update();                
+            return json_encode([
+                'box_id' => $boxId,
+                'allocation' => $qty
+            ]);
+        }
+        
+
+    }
+
+    
 
 }

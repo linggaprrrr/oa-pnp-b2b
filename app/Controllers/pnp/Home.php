@@ -4,6 +4,7 @@ namespace App\Controllers\pnp;
 
 use App\Models\LogModel;
 use App\Models\pnp\AssignModel;
+use App\Models\pnp\BoxModel;
 use App\Models\pnp\FileModel;
 use App\Models\pnp\StaffModel;
 use App\Models\pnp\BuyerModel;
@@ -12,6 +13,7 @@ use App\Models\pnp\ClientModel;
 use App\Models\pnp\LeadModel;
 use App\Models\pnp\OrderModel;
 use App\Models\pnp\OrderStatusModel;
+use App\Models\pnp\RefundModel;
 use App\Models\pnp\ScanUnlimitedModel;
 use App\Models\pnp\ShipmentModel;
 use App\Models\pnp\SubscriptionModel;
@@ -39,6 +41,8 @@ class Home extends BaseController
     protected $logModel = "";
     protected $trackingModel = "";
     protected $subsModel = "";
+    protected $boxModel = "";
+    protected $refundModel = "";
 
     public function __construct()
     {
@@ -63,6 +67,8 @@ class Home extends BaseController
         $this->logModel = new LogModel();
         $this->trackingModel = new TrackingModel();
         $this->subsModel = new SubscriptionModel();
+        $this->boxModel = new BoxModel();
+        $this->refundModel = new RefundModel();
     }
 
     public function index()
@@ -70,513 +76,7 @@ class Home extends BaseController
         return view('welcome_message');
     }
 
-    public function purchase() {
-        $userRole = session()->get('user_id');
-        if (empty($userRole)) {            
-            header("Location: ".base_url('/pnp/login'));
-            die();            
-        }
-        
-        // purchase
-        $totalPurchases = $this->assignModel->getTotalPurchaseWeek();        
-        $totalPurchaseLastDay = 0;
-        $totalPurchaseToday = 0;
-        $purchaseData = array();
-        $totalPurchaseThisWeek = 0;
-        $count = 1;
-        foreach ($totalPurchases->getResultArray() as $purch) {
-            if ($purch['day'] == date('Y-m-d')) {
-                $totalPurchaseToday = $purch['total_price'];
-            } else if ($purch['day'] == date('Y-m-d', strtotime("-1 days"))) {                
-                $totalPurchaseLastDay = $purch['total_price'];
-            }
-            if ($totalPurchaseToday == 0 && $count == 1) {
-                $item = [
-                    'day' => date('d M'),
-                    'total_price' => 0,
-                ];
-                array_push($purchaseData, $item);
-                $item = [
-                    'day' => date('d M', strtotime($purch['day'])),
-                    'total_price' => $purch['total_price'] 
-                ];
-                array_push($purchaseData, $item);
-                
-            } else {
-                $item = [
-                    'day' => date('d M', strtotime($purch['day'])),
-                    'total_price' => $purch['total_price'] 
-                ];
-                array_push($purchaseData, $item);
-            }
-            $count++;
-            $totalPurchaseThisWeek = $totalPurchaseThisWeek + $purch['total_price'];
-        }
-        
 
-        $totalPurchaseMTD = $this->assignModel->getTotalPurchaseMonth();
-        $totalPurchaseYTD = $this->assignModel->getTotalPurchaseYear();
-        $purchase = [
-            'purchase_data' => $purchaseData,
-            'total_this_week' => $totalPurchaseThisWeek,
-            'total_last_day' => $totalPurchaseLastDay,
-            'total_today' => $totalPurchaseToday,
-            'total_mtd' => $totalPurchaseMTD->getResultObject(),
-            'total_ytd' => $totalPurchaseYTD->getResultObject()
-        ];
-        // d($purchase);
-        // assignment
-        $totalAssigned = $this->assignModel->getTotalAssignWeek();        
-        $totalAssignedLastDay = 0;
-        $totalAssignedToday = 0;
-        $assignedData = array();
-        $totalAssignedThisWeek = 0; 
-        $count = 1;
-        foreach ($totalAssigned->getResultArray() as $purch) {
-            if ($purch['day'] == date('Y-m-d')) {
-                $totalAssignedToday = $purch['total_assigned'];
-            } else if ($purch['day'] == date('Y-m-d', strtotime("-1 days"))) {                
-                $totalAssignedLastDay = $purch['total_assigned'];
-            }
-            if ($totalAssignedToday == 0 && $count == 1) {
-                $item = [
-                    'day' => date('d M'),
-                    'total_assigned' => 0,
-                ];
-                array_push($assignedData, $item);
-                $item = [
-                    'day' => date('d M', strtotime($purch['day'])),
-                    'total_assigned' => $purch['total_assigned'] 
-                ];
-                array_push($assignedData, $item);
-                
-            } else {
-                $item = [
-                    'day' => date('d M', strtotime($purch['day'])),
-                    'total_assigned' => $purch['total_assigned']
-                ];
-                array_push($assignedData, $item);
-            }
-            $totalAssignedThisWeek = $totalAssignedThisWeek + $purch['total_assigned'];
-            $count++;
-        }
-        
-
-        $totalAssignedMTD = $this->assignModel->getTotalAssignedMonth();
-        $totalAssignedYTD = $this->assignModel->getTotalAssignedYear();
-        $assigned = [
-            'assigned_data' => $assignedData,
-            'total_this_week' => $totalAssignedThisWeek,
-            'total_last_day' => $totalAssignedLastDay,
-            'total_today' => $totalAssignedToday,
-            'total_mtd' => $totalAssignedMTD->getResultObject(),
-            'total_ytd' => $totalAssignedYTD->getResultObject()
-        ];
-        
-
-
-
-        // need to upload
-        $totalNTU = $this->assignModel->getTotalNTUWeek();        
-        $totalNTULastDay = 0;
-        $totalNTUToday = 0;
-        $NTUData = array();
-        $totalNTUThisWeek = 0;
-        $count = 1;
-        foreach ($totalNTU->getResultArray() as $purch) {
-            if ($purch['day'] == date('Y-m-d')) {
-                $totalNTUToday = $purch['total_cost'];
-            } else if ($purch['day'] == date('Y-m-d', strtotime("-1 days"))) {                
-                $totalNTULastDay = $purch['total_cost'];
-            }
-            if ($totalAssignedToday == 0 && $count == 1) {
-                $item = [
-                    'day' => date('d M'),
-                    'total_cost' => 0,
-                ];
-                array_push($NTUData, $item);
-                $item = [
-                    'day' => date('d M', strtotime($purch['day'])),
-                    'total_cost' => $purch['total_cost'] 
-                ];
-                array_push($NTUData, $item);
-                
-            } else {
-                $item = [
-                    'day' => date('d M', strtotime($purch['day'])),
-                    'total_cost' => $purch['total_cost']
-                ];
-                array_push($NTUData, $item);
-            }
-            $count++;
-            $totalNTUThisWeek = $totalNTUThisWeek + $purch['total_cost'];
-        }
-        
-
-        $totalNTUMTD = $this->assignModel->getTotalNTUMonth();
-        $totalNTUYTD = $this->assignModel->getTotalNTUYear();
-        $NTU = [
-            'ntu_data' => $NTUData,
-            'total_this_week' => $totalNTUThisWeek,
-            'total_last_day' => $totalNTULastDay,
-            'total_today' => $totalNTUToday,
-            'total_mtd' => $totalNTUMTD->getResultObject(),
-            'total_ytd' => $totalNTUYTD->getResultObject()
-        ];
-   
-        
-        $totalReceived = $this->orderStatusModel->totalReceivedCompleted();
-        $totalUnreceived = $this->orderStatusModel->totalUnReceivedCompleted(); ;
-        $totalReceivedCompleted = $this->orderStatusModel->totalReceivedUncompleted();
-        $totalUnassigned = $this->orderStatusModel->totalUnassigned();
-        $inventory = [
-            'total_received' => $totalReceived->total,
-            'total_unreceived' => $totalUnreceived->total,
-            'total_received_uncomleted' => $totalReceivedCompleted->total,
-            'total_unassigned' => $totalUnassigned->total,
-        ];
-        $buyers = $this->buyerStaffModel
-            ->join('buyer_details', 'buyer_details.buyer = buyers.id')
-            ->get();
-
-        $shippedNoClient = $this->orderStatusModel->shippedNoClient();
-        $shippedNoClientlists = array();
-        
-        foreach ($shippedNoClient->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->purchased_item_id == $buyer->purchase_id) {                                        
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
-            $item = [
-                'title' => $purch->title,                
-                'order_number' => $orderNumbers,
-                'purchased_date' => $purch->purchased_date
-            ];
-
-            array_push($shippedNoClientlists, $item);
-        }
-
-        
-
-        $deleiveredNoClient = $this->orderStatusModel->deleiveredNoClient();
-        $deleiveredNoClientlists = array();
-        
-        foreach ($deleiveredNoClient->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->purchased_item_id == $buyer->purchase_id) {                                        
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
-            $item = [
-                'title' => $purch->title,                
-                'order_number' => $orderNumbers,
-                'purchased_date' => $purch->purchased_date
-            ];
-
-            array_push($deleiveredNoClientlists, $item);
-        }
-
-        $orderedNoClient = $this->orderStatusModel->orderedNoClient();
-        $orderedNoClientlists = array();
-        
-        foreach ($orderedNoClient->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->purchased_item_id == $buyer->purchase_id) {                                        
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
-            $item = [
-                'title' => $purch->title,                
-                'order_number' => $orderNumbers,
-                'purchased_date' => $purch->purchased_date
-            ];
-
-            array_push($orderedNoClientlists, $item);
-        }
-
-        $orderedCanceled = $this->orderStatusModel->orderedCanceled();
-        $orderedCanceledlists = array();
-        
-        foreach ($orderedCanceled->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->purchased_item_id == $buyer->purchase_id) {                                        
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
-            $item = [
-                'title' => $purch->title,                
-                'order_number' => $orderNumbers,
-                'purchased_date' => $purch->purchased_date
-            ];
-
-            array_push($orderedCanceledlists, $item);
-        }
-
-        $returned = $this->orderStatusModel->returned();
-        $returnedlists = array();
-        
-        foreach ($returned->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->purchased_item_id == $buyer->purchase_id) {                                        
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
-            $item = [
-                'title' => $purch->title,                
-                'order_number' => $orderNumbers,
-                'purchased_date' => $purch->purchased_date
-            ];
-
-            array_push($returnedlists, $item);
-        }
-
-        $inProcess = $this->orderStatusModel->inProcess();
-        $inProcesslists = array();
-        
-        foreach ($inProcess->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->purchased_item_id == $buyer->purchase_id) {                                        
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
-            $item = [
-                'title' => $purch->title,                
-                'order_number' => $orderNumbers,
-                'purchased_date' => $purch->purchased_date
-            ];
-
-            array_push($inProcesslists, $item);
-        }
-
-        $partiallyShipped = $this->orderStatusModel->partiallyShipped();
-        $partiallyShippedlists = array();
-        
-        foreach ($partiallyShipped->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->purchased_item_id == $buyer->purchase_id) {                                        
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
-            $item = [
-                'title' => $purch->title,                
-                'order_number' => $orderNumbers,
-                'purchased_date' => $purch->purchased_date
-            ];
-
-            array_push($partiallyShippedlists, $item);
-        }
-
-        $outstandingOrdered = $this->orderStatusModel->outstandingOrdered();
-        $outstandingOrderedlists = array();
-        
-        foreach ($outstandingOrdered->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->purchased_item_id == $buyer->purchase_id) {                                        
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
-            $item = [
-                'title' => $purch->title,                
-                'order_number' => $orderNumbers,
-                'purchased_date' => $purch->purchased_date
-            ];
-
-            array_push($outstandingOrderedlists, $item);
-        }
-
-        $purchases = $this->assignModel->getAssignedData2();    
-        $buyers = $this->buyerStaffModel
-            ->join('buyer_details', 'buyer_details.buyer = buyers.id')
-            ->get(); 
-        
-        $lists = array();                
-        
-        foreach ($purchases->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->pid == $buyer->purchase_id) {                                        
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }            
-
-            $getClients = $this->shipmentModel->findClient($purch->pid);
-            $clients = array();  
-            $clientQty = array();
-            foreach ($getClients->getResultObject() as $cl) {
-                array_push($clients, $cl->client_name. ' ('.$cl->company.')' ); 
-                array_push($clientQty, $cl->qty);
-            }          
-            
-            $item = [
-                'lid' => $purch->lid,
-                'id' => $purch->pid,
-                'aid' => $purch->aid,
-                'purchased_item_id' => $purch->purchased_item_id,
-                'title' => $purch->title,
-                'asin' => $purch->asin,
-                'order_number' => $orderNumbers,
-                'qty_ordered' => $purch->qty_ordered,
-                'buy_cost' => $purch->buy_cost,
-                'price' => $purch->market_price,
-                'qty_returned' => $purch->qty_returned,
-                'qty_assigned' => $clientQty,
-                'qty_received' => $purch->qty_received,
-                'allocated_date' => $purch->allocated_date,
-                'status' => $purch->status,                
-                'purchased_date' => $purch->purchased_date,
-                'assigned_date' => $purch->assigned_date,
-                'order_notes' => $purch->order_notes,                
-                'clients' => $clients,
-               
-            ];
-
-            array_push($lists, $item);  
-            
-        }
-        $totalQtyToday = $this->assignModel->getTotalQtyToday();
-        $purchaseDataToday = $this->assignModel->getPurchaseDataToday();
-        
-
-        // source summary
-        $start = null;
-        $end = null;
-        $startTemp = null;
-        $endTemp = null;
-        $startCC = null;
-        $endCC = null;
-        $startTempCC = null;
-        $endTempCC = null;
-
-        $date = $this->request->getVar('date');
-        $dateCC = $this->request->getVar('dateCC');
-        if (!is_null($date)) {
-            $temp = explode("to", $date);
-            $temp = array_map('trim', $temp);
-            
-            // start
-            $startTemp = $temp[0];
-            $startExp = explode('-', $temp[0]);
-
-            $start = $startExp[2].'-'.$startExp[0].'-'.$startExp[1];
-            
-            if (count($temp) > 1) {
-                $endExp = explode('-', $temp[1]);                
-                $endTemp = $temp[1];
-                $end = $endExp[2].'-'.$endExp[0].'-'.$endExp[1];
-            }          
-        } else {
-            $start = date('Y-m-01');
-            $end = date('Y-m-d');
-        }
-
-        $sourceSummary = $this->leadModel->sourceSummary($start, $end);
-
-        if (!is_null($dateCC)) {
-            $tempCC = explode("to", $dateCC);
-            $tempCC = array_map('trim', $tempCC);
-            
-            // start
-            $startTempCC = $tempCC[0];
-            $startExpCC = explode('-', $tempCC[0]);
-
-            $startCC = $startExpCC[2].'-'.$startExpCC[0].'-'.$startExpCC[1];
-            
-            if (count($tempCC) > 1) {
-                $endExpCC = explode('-', $tempCC[1]);                
-                $endTempCC = $tempCC[1];
-                $endCC = $endExpCC[2].'-'.$endExpCC[0].'-'.$endExpCC[1];
-            }          
-        } else {
-            $startCC = date('Y-m-01');
-            $endCC = date('Y-m-d');
-        }
-        $CCUsages = $this->buyerModel->getCCUsage($startCC, $endCC);
-        $totalCCUsage = 0;
-        $totalQty = 0;
-        foreach ($CCUsages->getResultObject() as $cc) {
-            $totalCCUsage = $totalCCUsage + $cc->total_buy_cost;
-            $totalQty = $totalQty + $cc->total_qty;
-        }
-
-        $year = $this->request->getVar('year');
-        $logs = $this->logModel->getLogData(2);
-        $getMonthlySummary = $this->leadModel->getMonthlySummary($year);
-        $totalBuyCost = 0;
-        $totalProfit = 0;
-        $totalSellPrice = 0;
-        $totalMargin = 0;
-        $totalROI = 0;
-        $totalQTY = 0;
-        
-        foreach ($getMonthlySummary->getResultObject() as $summary) {
-            $totalBuyCost = $totalBuyCost + $summary->buy_cost; 
-            $totalProfit = $totalProfit + $summary->profit; 
-            $totalSellPrice = $totalSellPrice + $summary->sell_price; 
-            $totalMargin = $totalMargin + $summary->margin; 
-            $totalROI = $totalROI + $summary->roi; 
-            $totalQTY = $totalQTY + $summary->qty; 
-        }
-
-        $getAnnualuSummary = [
-            'buy_cost' => $totalBuyCost,
-            'sell_price' => $totalSellPrice,
-            'profit' => $totalProfit,
-            'margin' => $totalMargin,
-            'roi' => $totalROI,
-            'qty' => $totalQTY
-        ];
-
-
-        $data = [
-            'title' => 'Dashboard',
-            'totalQtyToday' => $totalQtyToday,
-            'purchaseDataToday' => $purchaseDataToday,
-            'assigned' => $assigned,
-            'purchase' => $purchase,            
-            'ntu' => $NTU,
-            'inventory' => $inventory,
-            'shippedNoClient' => $shippedNoClientlists,
-            'deleiveredNoClient' => $deleiveredNoClientlists,
-            'orderedNoClient' => $orderedNoClientlists,
-            'orderedCanceled' => $orderedCanceledlists,
-            'returned' => $returnedlists,
-            'inProcess' => $inProcesslists,
-            'partiallyShipped' => $partiallyShippedlists,
-            'outstandingOrdered' => $outstandingOrderedlists,
-            'reports' => $lists,
-            'sourceSummary' => $sourceSummary,
-            'getMonthlySummary' => $getMonthlySummary,
-            'getAnnualuSummary' => $getAnnualuSummary,
-            'CCUsages' => $CCUsages,
-            'start' => $startTemp,
-            'end' => $endTemp,
-            'startCC' => $startTempCC,
-            'endCC' => $endTempCC,
-            'year' => $year,
-            'totalCCUsage' => $totalCCUsage,
-            'totalQty' => $totalQty,
-            'logs' => $logs
-            
-        ];               
-        return view('pnp/purchase/dashboard', $data);
-    }
 
     public function leadsList() {
         $userRole = session()->get('user_id');
@@ -807,7 +307,6 @@ class Home extends BaseController
                     array_push($orderNumbers, $buyer->order_number);
                 }                
             }            
-           
             $item = [
                 'lid' => $purch->lid,
                 'id' => $purch->pid,
@@ -977,13 +476,22 @@ class Home extends BaseController
         
         if (is_null($date)) {
             $assignItems = $this->assignModel->getAssignmentData(date('Y-m-d'));                    
-            
+            $getBoxes = $this->boxModel->getBoxes(date('Y-m-d'));
         } else {                        
             $assignItems = $this->assignModel->getAssignmentData($start, $end);    
+            $getBoxes = $this->boxModel->getBoxes($start, $end);
         }
         
+        
         // storing all to list
-        foreach ($assignItems->getResultObject() as $purch) {                     
+        
+        foreach ($assignItems->getResultObject() as $purch) {           
+            $boxes = array();          
+            foreach ($getBoxes->getResultObject() as $box) {
+                if ($box->assign_id == $purch->aid) {
+                    array_push($boxes, $box);                    
+                }
+            }
             $item = [
                 'lid' => $purch->lid,
                 'id' => $purch->pid,
@@ -1007,12 +515,13 @@ class Home extends BaseController
                 'assigned_notes' => $purch->assigned_notes,
                 'client_name' => $purch->client_name,
                 'company' => $purch->company,
-                'sent_date' => $purch->sent_date
+                'sent_date' => $purch->sent_date,
+                'boxes' => $boxes
             ];
             array_push($items, $item);
             
         }
-
+            
         
 
         $uid = session()->get('user_id');
@@ -1049,7 +558,7 @@ class Home extends BaseController
                 'start' => $startSub, 
                 'exp' => $expSub, 
             ],
-            'title' => 'Assignments',
+            'title' => 'Box Assignments',
             'clients' => $clients,
             'purchased_items' => $lists,
             'assigned_items' => $items,
@@ -1181,6 +690,7 @@ class Home extends BaseController
             $end = date('Y-m-d');
         }
         $assignedData = $this->assignModel->getAssignedData3($start, $end);
+        $getBoxes = $this->boxModel->getBoxes($start, $end);
         
         $buyers = $this->buyerStaffModel
             ->join('buyer_details', 'buyer_details.buyer = buyers.id')
@@ -1190,50 +700,18 @@ class Home extends BaseController
         $avgUnitRetail = 0;
         $totalOriginalRetail = 0;
         $totalClientCost = 0;
+
+        $getAllBox = $this->boxModel->getAllBox($start, $end);
         foreach ($assignedData->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->pid == $buyer->purchase_id) {                          
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
             if ($totalUnit > 0) {
                 $avgUnitRetail = round($totalOriginalRetail / $totalUnit, 2);
             }
-            
-            $item = [                                
-                'aid' => $purch->aid,
-                'sid' => $purch->sid,
-                'title' => $purch->title,
-                'asin' => $purch->asin,
-                'order_number' => $orderNumbers,
-                'qty_ordered' => $purch->qty_ordered,
-                'buy_cost' => $purch->buy_cost,
-                'price' => $purch->market_price,
-                'qty_returned' => $purch->qty_returned,
-                'qty_received' => $purch->qty_received,
-                'qty_assigned' => $purch->qty,
-                'allocated_date' => $purch->allocated_date,
-                'status' => $purch->status,
-                'order_id' => $purch->order_id,
-                'purchased_date' => $purch->purchased_date,
-                'order_notes' => $purch->order_notes,
-                'client_name' => $purch->client_name,
-                'company' => $purch->company,
-                'fnsku' => $purch->fnsku,
-                'vendor' => $purch->vendor,
-                'assigned_notes' => $purch->assigned_notes,
-                'fba_number' => $purch->fba_number,
-                'shipment_number' => $purch->shipment_number,
-                'updated_at' => $purch->updated_at
-            ];
             $totalUnit = $totalUnit + ($purch->qty_received - $purch->qty_remaining); 
             $totalClientCost = $totalClientCost + (round(( $purch->qty_received - $purch->qty_remaining ) * $purch->buy_cost, 2));                                
             $totalOriginalRetail = $totalOriginalRetail + (round( ($purch->qty_received - $purch->qty_remaining) * $purch->market_price, 2));                                
-            array_push($lists, $item);
+            
         }
-        // dd($lists);
+    //    dd($getAllBox->getResultArray());
         $summary = [
             'totalUnit' => $totalUnit,
             'totalOriginalRetail' => $totalOriginalRetail, 
@@ -1268,7 +746,8 @@ class Home extends BaseController
                 'exp' => $expSub, 
             ],
             'title' => 'Need To Upload',
-            'purchased_items' => $lists,
+            'purchased_items' => array(),
+            'boxes' => $getAllBox,
             'summary' => $summary,
             'start' => $startTemp,
             'end' => $endTemp
@@ -1673,6 +1152,10 @@ class Home extends BaseController
             $plan = 0;
             $days = 0;
         }
+
+        $totalQtyReceivedToday = $this->orderStatusModel->getTotalReceived(date('Y-m-d'));
+        $totalQtyUnreceivedToday = $this->orderStatusModel->getTotalUnreceived(date('Y-m-d'));
+        $totalQtyRefundToday = $this->orderStatusModel->getTotalRefund(date('Y-m-d'));
         $data = [
             'subscription' => [
                 'plan' => $plan,
@@ -1683,6 +1166,9 @@ class Home extends BaseController
             'title' => 'Dashboard',
             'totalQtyToday' => $totalQtyToday,
             'purchaseDataToday' => $purchaseDataToday,
+            'totalReceivedToday' => $totalQtyReceivedToday,
+            'totalUnreceivedToday' => $totalQtyUnreceivedToday,
+            'totalRefundToday' => $totalQtyRefundToday,
             'assigned' => $assigned,
             'purchase' => $purchase,            
             'ntu' => $NTU,
@@ -1974,6 +1460,66 @@ class Home extends BaseController
         ];
 
         return view('pnp/backup', $data);
+    }
+
+    public function refunds() {
+        $date = $this->request->getVar('date');
+        $start = null;
+        $end = null;
+        if (!is_null($date)) {
+            $temp = explode("to", $date);
+            $temp = array_map('trim', $temp);
+            
+            // start
+            $startTemp = $temp[0];
+            $startExp = explode('-', $temp[0]);
+
+            $start = $startExp[2].'-'.$startExp[0].'-'.$startExp[1];
+            
+            if (count($temp) > 1) {
+                $endExp = explode('-', $temp[1]);                
+                $endTemp = $temp[1];
+                $end = $endExp[2].'-'.$endExp[0].'-'.$endExp[1];
+            }
+        } else {
+            $start = date('Y-m-d', strtotime('-8 days'));
+            $end = date('Y-m-d');
+        }
+        $items = $this->refundModel->getAllRefundItems($start, $end);        
+        $getPaymentData = $this->subsModel
+            ->where('user_id', session()->get('oauth_uid'))
+            ->where('expire_date >=', date('Y-m-d'))            
+            ->get();
+        $getPaymentData = $getPaymentData->getFirstRow();
+        $startSub = null;
+        $expSub = null;
+        if (!is_null($getPaymentData) != 0) {
+            $currDate = date_create(date('Y-m-d'));
+            $expireDate = date_create(date('Y-m-d', strtotime($getPaymentData->expire_date)));            
+            $days = date_diff($currDate,$expireDate);
+            $days = $days->days;
+            $plan = $getPaymentData->plan;
+            $startSub = $getPaymentData->valid_date;
+            $expSub = $getPaymentData->expire_date; 
+        } else {            
+            $plan = 0;
+            $days = 0;
+        }        
+
+        $data = [            
+            'title' => 'Refund Page',            
+            'subscription' => [
+                'plan' => $plan,
+                'days' => $days,
+                'start' => $startSub, 
+                'exp' => $expSub, 
+            ],
+            'start' => $start,
+            'end' => $end,
+            'items' => $items,            
+        ];
+
+        return view('pnp/refunds', $data);
     }
 
     public function masterListAll() {

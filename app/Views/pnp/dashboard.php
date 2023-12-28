@@ -362,7 +362,7 @@
         </div>
     </div>
     
-    <div class="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-3">
+    <div class="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-4">
         <div class="relative flex flex-col overflow-hidden rounded-lg bg-gradient-to-br from-info to-info-focus p-3.5">
             <p class="text-xs uppercase text-sky-100">Total Purchase Amount Today</p>                        
             <div class="flex items-end justify-between space-x-2">
@@ -426,6 +426,28 @@
                 </div>
             </div>
             <div class="mask is-hexagon-2 absolute top-0 right-0 -m-3 h-16 w-16 bg-white/20"></div>
+        </div>
+        <div class="relative flex flex-col overflow-hidden rounded-lg bg-gradient-to-br from-fuchsia-600  to-info-focus p-3.5">
+            <p class="text-xs uppercase text-sky-100">Total Qty Received Today</p>                        
+            <div class="flex items-end justify-between space-x-2">
+                <p class="mt-2 text-2xl font-medium text-white"><?= (is_null($totalReceivedToday)) ? '-' : $totalReceivedToday->total_received ?></p>                               
+            </div>            
+            <div class="flex justify-end">                
+                <div class="mr-4">
+                    <p class="text-xs uppercase text-sky-100">Refund Today</p>
+                    <div class="flex items-end justify-between space-x-2">
+                        <p class="text-xl font-medium text-white"><?= (is_null($totalRefundToday)) ? '-' : $totalRefundToday->total_refund  ?></p>                
+                    </div>
+                </div>
+                <div>
+                    <p class="text-xs uppercase text-sky-100">Not Received Today</p>
+                    <div class="flex items-end justify-between space-x-2">
+                        <p class="text-xl font-medium text-white"><?= (is_null($totalUnreceivedToday)) ? '-' : $totalUnreceivedToday->total_unreceived ?></p>                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mask is-reuleaux-triangle absolute top-0 right-0 -m-3 h-16 w-16 bg-white/20"></div>
         </div>
     </div>
     
@@ -1342,7 +1364,7 @@
                         </select>                        
                     </label>                
                 </div> 
-                <div class="grid grid-cols-3 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-3"> 
+                <div class="grid grid-cols-3 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-2"> 
                     <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
                         <div class="flex justify-between space-x-1">
                             <div class="flex">
@@ -1393,35 +1415,7 @@
                         </div>
                         <p class="mt-1 text-xs+">Total Profit</p>
                     </div>
-                    <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
-                        <div class="flex justify-between space-x-1">
-                            <div class="flex">
-                                <p class="text-xl font-semibold text-slate-700 dark:text-navy-100">
-                                    <?= (!empty($getMonthlySummary->getResultObject())) ? number_format($getAnnualuSummary['margin']/$getMonthlySummary->getNumRows(), 2) : '-' ?>%
-                                </p>
-                                
-                            </div>
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary dark:text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <p class="mt-1 text-xs+">Total AVG Margin</p>
-                    </div>
-                    <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
-                        <div class="flex justify-between space-x-1">
-                            <div class="flex">
-                                <p class="text-xl font-semibold text-slate-700 dark:text-navy-100">
-                                    <?= (!empty($getMonthlySummary->getResultObject())) ? number_format($getAnnualuSummary['roi']/$getMonthlySummary->getNumRows(), 2) : '-' ?>%
-                                </p>
-                            </div>
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary dark:text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <p class="mt-1 text-xs+">TOTAL AVG ROI</p>
-                    </div>
+
                     <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
                         <div class="flex justify-between">
                             <div class="flex">

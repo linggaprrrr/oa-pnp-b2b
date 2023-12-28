@@ -107,6 +107,7 @@ $routes->post('/pnp/save-vendor-name', 'pnp\Order::saveVendorName');
 $routes->post('/pnp/save-assigned-notes', 'pnp\Order::saveAssignedNotes');
 $routes->post('/pnp/save-fba-number', 'pnp\Order::saveFBANumber');
 $routes->post('/pnp/save-shipment-number', 'pnp\Order::saveShipmentNumber');
+$routes->post('/pnp/save-dimensions', 'pnp\Order::saveBoxDimensions');
 $routes->get('/pnp/export-need-to-upload', 'pnp\Order::exportNeedToUpload');
 $routes->get('/pnp/export-need-to-upload/(:any)', 'pnp\Order::exportNeedToUpload/$1');
 $routes->post('/pnp/save-assign-item', 'pnp\Order::saveItems');
@@ -137,6 +138,10 @@ $routes->get('/pnp/file-parameter', 'pnp\Home::fileParameter');
 $routes->post('/pnp/upload-upc-files', 'pnp\API::getUPCDetails');
 $routes->get('/pnp/backup-and-restore', 'pnp\Home::backuprestore');
 $routes->get('/pnp/history', 'pnp\Home::history');
+$routes->get('/pnp/refunds', 'pnp\Home::refunds');
+$routes->get('/pnp/export-refunds', 'pnp\API::exportRefund');
+$routes->get('/pnp/export-refunds/(:any)', 'pnp\API::exportRefund/$1');
+
 
 $routes->get('/pnp/uploader/upload-file', 'pnp\Home::leadsList');
 $routes->get('/pnp/uploader/selections', 'pnp\Home::selections');
@@ -258,6 +263,18 @@ $routes->post('/b2b/change-status', 'Purchase::changeStatus');
 
 // b2b end
 
+
+// API Box
+$routes->post('/add-new-box', 'pnp\Purchase::addNewBox');
+$routes->post('/delete-box', 'pnp\Purchase::deleteBox');
+$routes->post('/update-box-name', 'pnp\Purchase::updateBoxName');
+$routes->post('/update-total-allocation', 'pnp\Purchase::updateTotalAllocation');
+$routes->get('/get-all-box-name', 'pnp\API::getAllBoxName');
+$routes->get('/get-lead-data', 'pnp\API::getLeadData');
+
+$routes->post('/split-data', 'pnp\API::splitData');
+$routes->post('/update-shipping-cost', 'pnp\API::updateShippingCost');
+$routes->post('/update-shipping-notes', 'pnp\API::updateShippingNotes');
 
 /*
  * --------------------------------------------------------------------

@@ -1,5 +1,4 @@
 <?= $this->extend('pnp/layout/component') ?>
-
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="mb-1">        
@@ -108,119 +107,135 @@
                         <th class="text-center align-middle">NOTES</th>
                     </tr>                            
                 </thead>
-                <tbody>                
-                    <?php $client = ""; $date = ""; $count = 1;?>
-                    <?php for ($i = 0; $i < count($purchased_items); $i++) : ?>                        
-                        <?php if (($client == $purchased_items[$i]['order_id']) || $i == 0) : ?>
+                <?php $client = ""; $date = ""; $count = 1; $boxName = "22"; ?>
+                
+                <tbody>
+                    <?php $data = $boxes->getResultObject(); ?>                    
+                    <?php  for ($i = 0; $i < $boxes->getNumRows(); $i++) : ?>
+                        <?php if ($i == $boxes->getNumRows()-1) : ?>
+                            <tr>
+                                <td class="text-center align-middle">
+                                    <input type="text" name="fnsku" placeholder="FNSKU..." class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fnsku" data-id="<?= $data[$i]->assign_id ?>" style="font-size: 11px;" value="<?= $data[$i]->fnsku ?>">
+                                </td>                                            
+                                <td class="text-center align-middle"><b><?=$data[$i]->asin?></b></td>                                                                                
+                                <td class="text-center align-middle">
+                                    <button x-tooltip.cursor.x="'<?= str_replace("'", " ", $data[$i]->title ) ?>'">
+                                    <?= substr($data[$i]->title , 0, 120) ?><?= (strlen($data[$i]->title ) > 120) ? '..' : '' ?></td>
+                                    </button>                                                                       
+                                <td class="text-center align-middle">
+                                    <?= $data[$i]->allocation ?>
+                                </td>
+                                <td class="text-center align-middle total_price_<?= $data[$i]->assign_id ?>">$<?= round($data[$i]->market_price, 2) ?></td>                                    
+                                <td class="text-center align-middle total_price_<?= $data[$i]->assign_id ?>">$<?= round($data[$i]->market_price * $data[$i]->allocation, 2) ?></td>                                                                            
+                                <td class="text-center align-middle"><span class="total_buy_cost_<?= $data[$i]->assign_id ?>">$<?= round($data[$i]->allocation * $data[$i]->buy_cost, 2) ?></span></td>                                                                                                                                                    
+                                <td class="text-center align-middle">
+                                    <input type="text" name="notes" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $data[$i]->assign_id ?>" style="font-size: 11px;" value="<?= $data[$i]->assigned_notes ?>">
+                                </td> 
+                            </tr>   
+                            <tr>
+                                <td></td>
+                                <td class="text-center align-middle font-bold">
+                                    <label class="block">
+                                        <span>Box Dimensions</span>
+                                        <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent dimensions" data-id="<?= $data[$i]->box_name ?>" placeholder="18x18x24x24" value="<?= $data[$i]->dimensions ?>" type="text">
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="grid grid-cols-2 gap-4 font-bold">
+                                        <label class="block">
+                                            <span>FBA Number</span>
+                                            <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fba-number" data-id="<?= $data[$i]->box_name ?>" placeholder="FBA172..." value="<?= $data[$i]->fba_number ?>" type="text">
+                                        </label>
+
+                                        <label class="block">
+                                            <span>Shipment Number</span>
+                                            <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent shipment-number" data-id="<?= $data[$i]->box_name ?>" placeholder="1ZR726..." value="<?= $data[$i]->shipment_number ?>" type="text">
+                                        </label>
+                                    </div>                                        
+                                </td>
+                                <td class="text-center align-middle font-bold">
+                                    <?= $data[$i]->box_name ?>
+                                </td>
+                                <td></td>
+                                <td></td>                                    
+                                <td></td>
+                                <td class="text-center align-middle font-bold"><?= (!is_null($data[$i]->assigned_date)) ? date('m/d/Y', strtotime($data[$i]->assigned_date)) : '-' ?> </td>
+                            </tr>
+                            <tr>
+                                <td class="table-success"></td>
+                                <td class="table-sucess"></td>
+                                <td class="text-center table-success align-middle font-bold"><?= $data[$i]->box_name ?> - <?= $data[$i]->client_name  ?> (<?= $data[$i]->company  ?>)</td>
+                                <td class="table-success"></td>
+                                <td class="table-success"></td>
+                                <td class="table-success"></td>
+                                <td class="table-success"></td>
+                                <td class="table-success"></td>                                    
+                            </tr>                           
+                        <?php else : ?>
+                            <?php $nextVal = $data[$i + 1]->box_name; ?>
+                            <tr>
+                                <td class="text-center align-middle">
+                                    <input type="text" name="fnsku" placeholder="FNSKU..." class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fnsku" data-id="<?= $data[$i]->assign_id ?>" style="font-size: 11px;" value="<?= $data[$i]->fnsku ?>">
+                                </td>                                            
+                                <td class="text-center align-middle"><b><?=$data[$i]->asin?></b></td>                                                                                
+                                <td class="text-center align-middle">
+                                    <button x-tooltip.cursor.x="'<?= str_replace("'", " ", $data[$i]->title ) ?>'">
+                                    <?= substr($data[$i]->title , 0, 120) ?><?= (strlen($data[$i]->title ) > 120) ? '..' : '' ?></td>
+                                    </button>                                                                       
+                                <td class="text-center align-middle">
+                                    <?= $data[$i]->allocation ?>
+                                </td>
+                                <td class="text-center align-middle total_price_<?= $data[$i]->assign_id ?>">$<?= round($data[$i]->market_price, 2) ?></td>                                    
+                                <td class="text-center align-middle total_price_<?= $data[$i]->assign_id ?>">$<?= round($data[$i]->market_price * $data[$i]->allocation, 2) ?></td>                                                                            
+                                <td class="text-center align-middle"><span class="total_buy_cost_<?= $data[$i]->assign_id ?>">$<?= round($data[$i]->allocation * $data[$i]->buy_cost, 2) ?></span></td>                                                                                                                                                    
+                                <td class="text-center align-middle">
+                                    <input type="text" name="notes" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $data[$i]->assign_id ?>" style="font-size: 11px;" value="<?= $data[$i]->assigned_notes ?>">
+                                </td> 
+                            </tr>  
+                            <?php if ($nextVal != $data[$i]->box_name) : ?>
                                 <tr>
-                                    <td class="text-center align-middle">
-                                        <input type="text" name="fnsku" placeholder="FNSKU..." class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fnsku" data-id="<?= $purchased_items[$i]['aid'] ?>" style="font-size: 11px;" value="<?= $purchased_items[$i]['fnsku'] ?>">
-                                    </td>                                            
-                                    <td class="text-center align-middle"><b><?= $purchased_items[$i]['asin'] ?></b></td>                                                                                
-                                    <td class="text-center align-middle">
-                                        <button x-tooltip.cursor.x="'<?= str_replace("'", " ", $purchased_items[$i]['title']) ?>'">
-                                            <?= substr($purchased_items[$i]['title'], 0, 120) ?><?= (strlen($purchased_items[$i]['title']) > 120) ? '..' : '' ?></td>
-                                        </button>                                                                       
-                                    <td class="text-center align-middle">
-                                        <?= empty($purchased_items[$i]['qty_assigned']) ? '0' : $purchased_items[$i]['qty_assigned'] ?> 
+                                    <td></td>
+                                    <td class="align-middle font-bold">
+                                        <label class="block">
+                                            <span>Box Dimensions</span>
+                                            <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent dimensions" data-id="<?= $data[$i]->box_name ?>" placeholder="18x18x24x24" value="<?= $data[$i]->dimensions ?>" type="text">
+                                        </label>
                                     </td>
-                                    <td class="text-center align-middle total_price_<?= $purchased_items[$i]['aid'] ?>">$<?= round($purchased_items[$i]['price'], 2) ?></td>                                    
-                                    <td class="text-center align-middle total_price_<?= $purchased_items[$i]['aid'] ?>">$<?= round($purchased_items[$i]['price'] * $purchased_items[$i]['qty_assigned'], 2) ?></td>                                                                            
-                                    <td class="text-center align-middle"><span class="total_buy_cost_<?= $purchased_items[$i]['aid'] ?>">$<?= round($purchased_items[$i]['qty_assigned'] * $purchased_items[$i]['buy_cost'], 2) ?></span></td>                                                                                                                                                    
-                                    <td class="text-center align-middle">
-                                        <input type="text" name="notes" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purchased_items[$i]['aid'] ?>" style="font-size: 11px;" value="<?= $purchased_items[$i]['assigned_notes'] ?>">
-                                    </td>    
-                                </tr>                             
-                            <?php else : ?>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
                                     <td>
-                                        <div class="grid grid-cols-2 gap-4">
+                                        <div class="grid grid-cols-2 gap-4 font-bold">
                                             <label class="block">
                                                 <span>FBA Number</span>
-                                                <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fba-number" data-id="<?= $purchased_items[$i-1]['sid'] ?>" placeholder="FBA172..." value="<?= $purchased_items[$i-1]['fba_number'] ?>" type="text">
+                                                <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fba-number" data-id="<?= $data[$i]->box_name ?>" placeholder="FBA172..." value="<?= $data[$i]->fba_number ?>" type="text">
                                             </label>
 
                                             <label class="block">
                                                 <span>Shipment Number</span>
-                                                <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent shipment-number" data-id="<?= $purchased_items[$i-1]['sid'] ?>" placeholder="1ZR726..." value="<?= $purchased_items[$i-1]['shipment_number'] ?>" type="text">
+                                                <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent shipment-number" data-id="<?= $data[$i]->box_name ?>" placeholder="1ZR726..." value="<?= $data[$i]->shipment_number ?>" type="text">
                                             </label>
                                         </div>                                        
                                     </td>
-                                    <td></td>
+                                    <td class="text-center align-middle font-bold">
+                                        <?= $data[$i]->box_name ?>
+                                    </td>
                                     <td></td>
                                     <td></td>                                    
                                     <td></td>
-                                    <td class="text-center align-middle"><?= (!is_null($purchased_items[$i-1]['updated_at'])) ? date('m/d/Y', strtotime($purchased_items[$i-1]['updated_at'])) : '-' ?> </td>
+                                    <td class="text-center align-middle font-bold"><?= (!is_null($data[$i]->assigned_date)) ? date('m/d/Y', strtotime($data[$i]->assigned_date)) : '-' ?> </td>
                                 </tr>
                                 <tr>
                                     <td class="table-success"></td>
                                     <td class="table-success"></td>
-                                    <td class="text-center table-success align-middle font-bold"><?= $purchased_items[$i-1]['client_name'] ?> (<?= $purchased_items[$i-1]['company'] ?>)</td>
+                                    <td class="text-center table-success align-middle font-bold"><?= $data[$i]->box_name ?> - <?= $data[$i]->client_name  ?> (<?= $data[$i]->company  ?>)</td>
                                     <td class="table-success"></td>
                                     <td class="table-success"></td>
                                     <td class="table-success"></td>
                                     <td class="table-success"></td>
                                     <td class="table-success"></td>                                    
                                 </tr>  
-                                <tr>
-                                    <td class="text-center align-middle">
-                                        <input type="text" name="fnsku" placeholder="FNSKU..." class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fnsku" data-id="<?= $purchased_items[$i]['aid'] ?>" style="font-size: 11px;" value="<?= $purchased_items[$i]['fnsku'] ?>">
-                                    </td>                                            
-                                    <td class="text-center align-middle"><b><?= $purchased_items[$i]['asin'] ?></b></td>                                                                                
-                                    <td class="text-center align-middle">
-                                        <button x-tooltip.cursor.x="'<?= str_replace("'", " ", $purchased_items[$i]['title']) ?>'">
-                                            <?= substr($purchased_items[$i]['title'], 0, 120) ?><?= (strlen($purchased_items[$i]['title']) > 120) ? '..' : '' ?></td>
-                                        </button>                                    
-                                    <td class="text-center align-middle">
-                                        <?= empty($purchased_items[$i]['qty_assigned']) ? '0' : $purchased_items[$i]['qty_assigned'] ?> 
-                                    </td>
-                                    <td class="text-center align-middle total_price_<?= $purchased_items[$i]['aid'] ?>">$<?= round($purchased_items[$i]['price'], 2) ?></td>                                    
-                                    <td class="text-center align-middle total_price_<?= $purchased_items[$i]['aid'] ?>">$<?= round($purchased_items[$i]['price'] * $purchased_items[$i]['qty_assigned'], 2) ?></td>                                                                            
-                                    <td class="text-center align-middle"><span class="total_buy_cost_<?= $purchased_items[$i]['aid'] ?>">$<?= round($purchased_items[$i]['qty_assigned'] * $purchased_items[$i]['buy_cost'], 2) ?></span></td>                                                                                                                                                    
-                                    <td class="text-center align-middle">
-                                        <input type="text" name="notes" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purchased_items[$i]['aid'] ?>" style="font-size: 11px;" value="<?= $purchased_items[$i]['assigned_notes'] ?>">
-                                    </td>    
-                                </tr>                              
                             <?php endif ?>
-                            <?php $client = $purchased_items[$i]['order_id'] ?>
-                            <?php if ($i == count($purchased_items)-1) : ?>                                 
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <div class="grid grid-cols-2 gap-4">
-                                            <label class="block">
-                                                <span>FBA Number</span>
-                                                <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fba-number" data-id="<?= $purchased_items[$i]['sid'] ?>" placeholder="FBA172..." value="<?= $purchased_items[$i]['fba_number'] ?>" type="text">
-                                            </label>
-
-                                            <label class="block">
-                                                <span>Shipment Number</span>
-                                                <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent shipment-number" data-id="<?= $purchased_items[$i]['sid'] ?>" placeholder="1ZR726..." value="<?= $purchased_items[$i]['shipment_number'] ?>" type="text">
-                                            </label>
-                                        </div>                                      
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="text-center align-middle"><?= (!is_null($purchased_items[$i]['updated_at'])) ? date('m/d/Y', strtotime($purchased_items[$i]['updated_at'])) : '-' ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-success"></td>
-                                    <td class="table-success"></td>
-                                    <td class="text-center table-success align-middle font-bold"><?= $purchased_items[$i]['client_name'] ?> (<?= $purchased_items[$i]['company'] ?>)</td>
-                                    <td class="table-success"></td>
-                                    <td class="table-success"></td>
-                                    <td class="table-success"></td>
-                                    <td class="table-success"></td>                                    
-                                    <td class="table-success"></td>
-                                </tr>                                             
-                            <?php endif ?>
-                    <?php endfor ?>                                   
-                </tbody>
+                        <?php endif ?>
+                    <?php endfor ?>
+                </tbody>               
             </table>
         </div>
     </div>
@@ -248,26 +263,46 @@
                     
                 });
         });
-
+        let inputTimer;
         $(document).on('input propertychange', '.fba-number', function(data) {            
-            const item = $(this).data('id');
+            const boxName = $(this).data('id');
             const number = $(this).val();
-
-            $.post('/pnp/save-fba-number', {item: item, number: number})
-                .done(function(data) {
-                    
-                });
+            clearTimeout(inputTimer);
+            inputTimer = setTimeout(function() {
+                $.post('/pnp/save-fba-number', {box_name: boxName, number: number})
+                    .done(function(data) {
+                        
+                    });
+                }, 500);     
+            
         });
 
         $(document).on('input propertychange', '.shipment-number', function(data) {            
-            const item = $(this).data('id');
+            const boxName = $(this).data('id');
             const number = $(this).val();
-
-            $.post('/pnp/save-shipment-number', {item: item, number: number})
-                .done(function(data) {
-                    
-                });
+            clearTimeout(inputTimer);
+            inputTimer = setTimeout(function() {
+                $.post('/pnp/save-shipment-number', {box_name: boxName, number: number})
+                    .done(function(data) {
+                        
+                    });
+                }, 500);                  
+            
         });
+
+        $(document).on('input propertychange', '.dimensions', function(data) {            
+            const boxName = $(this).data('id');
+            const dim = $(this).val();
+            clearTimeout(inputTimer);
+            inputTimer = setTimeout(function() {
+                $.post('/pnp/save-dimensions', {box_name: boxName, dim: dim})
+                    .done(function(data) {
+                        
+                    });
+                }, 500);                  
+            
+        });
+
         $(document).on('input propertychange', '.assigned_notes', function(data) {            
             const item = $(this).data('id');
             const notes = $(this).val();            
@@ -277,6 +312,7 @@
                     
                 });
         });
+        
 
         $(".upload-form").on('submit', function(e){            
             e.preventDefault();
