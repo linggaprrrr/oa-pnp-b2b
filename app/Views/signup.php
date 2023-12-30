@@ -69,7 +69,7 @@
                         </ul>
                     </nav>
         
-                    <a href="/login" class="btn_buy"> Login </a>
+                    <a href="/pnp/login" class="btn_buy"> Login </a>
         
                     <!-- overly for small devices -->
                     <div class="overly" uk-toggle="target: .header_menu ; cls: is-visible"></div>
@@ -137,7 +137,7 @@
                         <button type="submit" class="btn btn_blue w-full">Create my account</button>
                         <div class="font-semibold py-3 text-center text-gray-400 text-xl uk-heading-linee"><span class="px-5">Or</span></div>
                         <a href="<?= $googleAuth ?>" class="btn btn_blue-light w-full flex items-center justify-center"><img src="assets/img/google.svg" alt="" class="g-6 mr-4 w-6"><span class="btn__text">Sign Up with Google</span></a>
-                        <a class="block font-medium text-center text-gray-400 text-lg hover:text-blue-600 duration-500" href="/login">Already have an account? Sign In</a>
+                        <a class="block font-medium text-center text-gray-400 text-lg hover:text-blue-600 duration-500" href="/pnp/login">Already have an account? Sign In</a>
                     </div>
                     
                 </form>

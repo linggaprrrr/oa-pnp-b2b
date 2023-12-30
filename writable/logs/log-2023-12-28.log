@@ -404,3 +404,318 @@ INFO - 2023-12-28 02:37:54 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-12-28 02:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-12-28 02:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-12-28 02:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:55:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:55:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:56:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 02:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:22:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:24:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:25:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:26:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:26:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:28:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:29:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:30:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:37:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:41:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:43:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:43:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:44:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:59:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 03:59:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-28 04:02:27 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) >=, ' at line 6 in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT ABS((SUM...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ABS((SUM...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ABS((SUM...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT ABS((SUM...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/pnp/OrderStatusModel.php(280): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Home.php(1185): App\Models\pnp\OrderStatusModel->getAllQty('2023-12-01', '2023-12-28')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-12-28 04:02:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) >=, ' at line 6
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = \'26\'
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,.1:
+GROUP BY `lead_lists`.`id`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = \'26\'
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,.1:
+GROUP BY `lead_lists`.`id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = \'26\'
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,.1:
+GROUP BY `lead_lists`.`id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = :lead_lists.file_id:
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,.1:
+GROUP BY `lead_lists`.`id`', [...], false)
+ 5 APPPATH/Models/pnp/OrderStatusModel.php(280): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/pnp/Home.php(1185): App\Models\pnp\OrderStatusModel->getAllQty('2023-12-01', '2023-12-28')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 04:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-28 04:02:38 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, ' at line 6 in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT ABS((SUM...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ABS((SUM...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ABS((SUM...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT ABS((SUM...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/pnp/OrderStatusModel.php(280): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Home.php(1185): App\Models\pnp\OrderStatusModel->getAllQty('2023-12-01', '2023-12-28')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-12-28 04:02:38 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, ' at line 6
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = \'26\'
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, :DATE(purchase_items.created_at) <= ,:
+GROUP BY `lead_lists`.`id`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = \'26\'
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, :DATE(purchase_items.created_at) <= ,:
+GROUP BY `lead_lists`.`id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = \'26\'
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, :DATE(purchase_items.created_at) <= ,:
+GROUP BY `lead_lists`.`id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = :lead_lists.file_id:
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, :DATE(purchase_items.created_at) <= ,:
+GROUP BY `lead_lists`.`id`', [...], false)
+ 5 APPPATH/Models/pnp/OrderStatusModel.php(280): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/pnp/Home.php(1185): App\Models\pnp\OrderStatusModel->getAllQty('2023-12-01', '2023-12-28')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 04:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-28 04:03:26 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, ' at line 6 in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT ABS((SUM...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ABS((SUM...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ABS((SUM...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT ABS((SUM...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/pnp/OrderStatusModel.php(280): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Home.php(1187): App\Models\pnp\OrderStatusModel->getAllQty('2023-12-01', '2023-12-28')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2023-12-28 04:03:26 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, ' at line 6
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = \'26\'
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, :DATE(purchase_items.created_at) <= ,:
+GROUP BY `lead_lists`.`id`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = \'26\'
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, :DATE(purchase_items.created_at) <= ,:
+GROUP BY `lead_lists`.`id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = \'26\'
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, :DATE(purchase_items.created_at) <= ,:
+GROUP BY `lead_lists`.`id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund
+FROM `orders_status`
+JOIN `purchase_items` ON `purchase_items`.`id` = `orders_status`.`purchased_item_id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `lead_lists`.`file_id` = :lead_lists.file_id:
+AND DATE(purchase_items.created_at) >=, :DATE(purchase_items.created_at) >= ,:
+AND DATE(purchase_items.created_at) <=, :DATE(purchase_items.created_at) <= ,:
+GROUP BY `lead_lists`.`id`', [...], false)
+ 5 APPPATH/Models/pnp/OrderStatusModel.php(280): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/pnp/Home.php(1187): App\Models\pnp\OrderStatusModel->getAllQty('2023-12-01', '2023-12-28')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 04:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:15:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:27:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:30:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:30:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 04:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 05:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 20:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 20:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 20:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 20:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 20:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 21:36:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 21:36:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 21:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 21:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 21:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-28 21:39:03 --> Undefined property: stdClass::$qty_received
+in APPPATH/Controllers/pnp/Home.php on line 706.
+ 1 APPPATH/Controllers/pnp/Home.php(706): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$qty_received', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Home.php', 706)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 21:39:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-28 21:39:57 --> Undefined property: stdClass::$qty_received
+in APPPATH/Controllers/pnp/Home.php on line 706.
+ 1 APPPATH/Controllers/pnp/Home.php(706): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$qty_received', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Home.php', 706)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 21:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-28 21:40:08 --> Undefined property: stdClass::$qty_received
+in APPPATH/Controllers/pnp/Home.php on line 706.
+ 1 APPPATH/Controllers/pnp/Home.php(706): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$qty_received', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Home.php', 706)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 21:40:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-28 21:40:46 --> Undefined property: stdClass::$qty_received
+in APPPATH/Controllers/pnp/Home.php on line 706.
+ 1 APPPATH/Controllers/pnp/Home.php(706): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$qty_received', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Home.php', 706)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 21:42:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-28 21:42:44 --> Undefined property: stdClass::$buy_cost
+in APPPATH/Controllers/pnp/Home.php on line 707.
+ 1 APPPATH/Controllers/pnp/Home.php(707): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$buy_cost', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Home.php', 707)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 21:43:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-28 21:43:17 --> Undefined property: stdClass::$buy_cost
+in APPPATH/Controllers/pnp/Home.php on line 707.
+ 1 APPPATH/Controllers/pnp/Home.php(707): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$buy_cost', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/pnp/Home.php', 707)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2023-12-28 21:43:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 21:43:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:18:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:24:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-28 22:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

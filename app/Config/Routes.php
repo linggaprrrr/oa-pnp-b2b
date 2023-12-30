@@ -36,7 +36,9 @@ $routes->get('/about', 'Auth::about');
 
 
 $routes->get('/pnp/login', 'Auth::pnpLogin');
+$routes->get('/pnp/logout', 'Auth::pnpLogout');
 $routes->get('/b2b/login', 'Auth::b2bLogin');
+$routes->get('/b2b/logout', 'Auth::b2bLogout');
 
 // Auth
 $routes->post('/pnp/log-in', 'Auth::pnpLoginProcess');

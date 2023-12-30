@@ -233,11 +233,13 @@
                                                             <div class="grid grid-cols-3 gap-2 box-<?= $purch['boxes'][$i]->id ?>" data-box="<?= $purch['boxes'][$i]->id ?>">
                                                                 <label class="block">
                                                                     <span>B&zwnj;ox N&zwnj;ame </span>
+                                                                    <span class="ntu-icon<?= $purch['aid'] ?>">
                                                                     <?php if (!is_null($purch['boxes'][$i]->ntu_date)) : ?>
                                                                         <a x-tooltip.success="'<?= (date('m-d-Y') == date('m-d-Y', strtotime($purch['boxes'][$i]->ntu_date)) ? 'This item just sent to NTU today ' : 'This item has been sent to NTU on '.date('m/d/Y', strtotime($purch['boxes'][$i]->ntu_date)).'') ?> '">
                                                                             <em class="fas fa-shipping-fast"></em>
                                                                         </a>
                                                                     <?php endif ?>
+                                                                    </span>
                                                                     <input type="hidden" name="box_id[]" class="box_id<?= $purch['aid'] ?>" value="<?= $purch['boxes'][$i]->id ?>">
                                                                     <input name="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="<?= $purch['boxes'][$i]->id ?>" data-allocation="<?= $purch['boxes'][$i]->allocation ?>" value="<?= $purch['boxes'][$i]->box_name ?>" type="text" autocomplete="nope">
                                                                 </label>
@@ -287,6 +289,8 @@
                                                         <div class="grid grid-cols-3 gap-2" data-box="">
                                                             <label class="block">
                                                                 <span>B&zwnj;ox N&zwnj;ame </span>
+                                                                <span class="ntu-icon<?= $purch['aid'] ?>">
+                                                                </span>
                                                                 <input type="hidden" name="box_id[]" class="box_id<?= $purch['aid'] ?>">                                                                
                                                                 <input name="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="" data-allocation="" type="text" autocomplete="nope">
                                                             </label>
@@ -432,10 +436,8 @@
                     formStat = false;                   
                     const resp = JSON.parse(data);
                     if (resp['result'] == 'success') {
-                        swal("Good Job!", "Your changes have been successfully saved.", "success");
-                        for (var i = 0; i < resp['id'].length; i++) {
-                            $('.assigned-asin' + resp['id'][i]).append('<a x-tooltip.success="This item just sent to NTU"><em class="fas fa-shipping-fast"></em></a>');                            
-                        }
+                        swal("Good Job!", "These Boxes have been successfully added to NTU, please refresh the page.", "success");
+                        
                     } else {
                         swal("Error!", "There is no data.", "warning");
                     }

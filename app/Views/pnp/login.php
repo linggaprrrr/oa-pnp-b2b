@@ -68,7 +68,7 @@
                         </ul>
                     </nav>
         
-                    <a href="/login" class="btn_buy"> Login </a>
+                    <a href="/pnp/login" class="btn_buy"> Login </a>
         
                     <!-- overly for small devices -->
                     <div class="overly" uk-toggle="target: .header_menu ; cls: is-visible"></div>

@@ -688,13 +688,9 @@ class Home extends BaseController
         } else {
             $start = date('Y-m-d', strtotime('-7 days'));
             $end = date('Y-m-d');
-        }
-        $assignedData = $this->assignModel->getAssignedData3($start, $end);
+        }        
         $getBoxes = $this->boxModel->getBoxes($start, $end);
-        
-        $buyers = $this->buyerStaffModel
-            ->join('buyer_details', 'buyer_details.buyer = buyers.id')
-            ->get();
+                
         $lists = array();        
         $totalUnit = 0;
         $avgUnitRetail = 0;
@@ -703,13 +699,13 @@ class Home extends BaseController
 
         $getAllBox = $this->boxModel->getAllBox($start, $end);
         
-        foreach ($assignedData->getResultObject() as $purch) {
+        foreach ($getAllBox->getResultObject() as $purch) {
             if ($totalUnit > 0) {
                 $avgUnitRetail = round($totalOriginalRetail / $totalUnit, 2);
             }
-            $totalUnit = $totalUnit + ($purch->qty_received - $purch->qty_remaining); 
-            $totalClientCost = $totalClientCost + (round(( $purch->qty_received - $purch->qty_remaining ) * $purch->buy_cost, 2));                                
-            $totalOriginalRetail = $totalOriginalRetail + (round( ($purch->qty_received - $purch->qty_remaining) * $purch->market_price, 2));                                
+            $totalUnit = $totalUnit + $purch->allocation; 
+            $totalClientCost = $totalClientCost + (round( $purch->allocation * $purch->buy_cost, 2));                                
+            $totalOriginalRetail = $totalOriginalRetail + (round( $purch->allocation * $purch->market_price, 2));                                
             
         }
     
@@ -1054,6 +1050,10 @@ class Home extends BaseController
         $endCC = null;
         $startTempCC = null;
         $endTempCC = null;
+        $startQty = null;
+        $endQty = null;
+        $startTempQty = null;
+        $endTempQty = null;
 
         $date = $this->request->getVar('date');
         $dateCC = $this->request->getVar('dateCC');
@@ -1157,6 +1157,33 @@ class Home extends BaseController
         $totalQtyReceivedToday = $this->orderStatusModel->getTotalReceived(date('Y-m-d'));
         $totalQtyUnreceivedToday = $this->orderStatusModel->getTotalUnreceived(date('Y-m-d'));
         $totalQtyRefundToday = $this->orderStatusModel->getTotalRefund(date('Y-m-d'));
+
+        $dateQty = $this->request->getVar('date-qty');
+        if (!is_null($dateQty)) {
+            $tempQty = explode("to", $dateQty);
+            $tempQty = array_map('trim', $tempQty);
+            
+            // start
+            $startTempQty = $tempCC[0];
+            $startExpQty = explode('-', $tempQty[0]);
+
+            $startQty = $startExpQty[2].'-'.$startExpQty[0].'-'.$startExpQty[1];
+            
+            if (count($tempQty) > 1) {
+                $endExpQty = explode('-', $tempQty[1]);                
+                $endTempQty = $tempQty[1];
+                $endQty = $endExpQty[2].'-'.$endExpQty[0].'-'.$endExpQty[1];
+            }          
+        } else {
+            $startQty = date('Y-m-01');
+            $endQty = date('Y-m-d');
+        }
+        
+        
+        $getAllQtyOverview = $this->orderStatusModel->getAllQty($startQty, $endQty);
+        $getTotalQtyOverview = $this->orderStatusModel->getTotalAllQty($startQty, $endQty);
+        
+        
         $data = [
             'subscription' => [
                 'plan' => $plan,
@@ -1183,9 +1210,13 @@ class Home extends BaseController
             'end' => $endTemp,
             'startCC' => $startTempCC,
             'endCC' => $endTempCC,
+            'startQty' => $startTempQty,
+            'endQty' => $endTempQty,
             'year' => $year,
             'totalCCUsage' => $totalCCUsage,
             'totalQty' => $totalQty,
+            'qtyOverView' => $getAllQtyOverview,
+            'qtyTotalQtyOverview' => $getTotalQtyOverview,
             'logs' => $logs
             
         ];        
@@ -1467,6 +1498,8 @@ class Home extends BaseController
         $date = $this->request->getVar('date');
         $start = null;
         $end = null;
+        $startTemp = null;
+        $endTemp = null;
         if (!is_null($date)) {
             $temp = explode("to", $date);
             $temp = array_map('trim', $temp);
@@ -1486,6 +1519,7 @@ class Home extends BaseController
             $start = date('Y-m-d', strtotime('-8 days'));
             $end = date('Y-m-d');
         }
+        
         $items = $this->refundModel->getAllRefundItems($start, $end);        
         $getPaymentData = $this->subsModel
             ->where('user_id', session()->get('oauth_uid'))
@@ -1515,8 +1549,8 @@ class Home extends BaseController
                 'start' => $startSub, 
                 'exp' => $expSub, 
             ],
-            'start' => $start,
-            'end' => $end,
+            'start' => $startTemp,
+            'end' => $endTemp,
             'items' => $items,            
         ];
 

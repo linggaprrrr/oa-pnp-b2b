@@ -116,22 +116,20 @@ class Shipment extends BaseController
     public function addToNTU() {               
         $assignId = $this->request->getVar('assign_id');        
         $client = $this->request->getVar('client');
-        
-        $shipments = array();
-        $shipmentId = "";
-        $id = "";
         $asins = array();
         $itemIds = array();
 
         if (isset($client)) {
             for ($i = 0; $i < count($client); $i++) {
                 if (!empty($client[$i]) || $client[$i] != '') {                
-                    $getBoxes = $this->boxModel->isItemExist($assignId[$i]);                                        
+                    $getBoxes = $this->boxModel->isItemExist($assignId[$i]);                                                            
                     foreach ($getBoxes->getResultObject() as $box) {
                         if (is_null($box->ntu_date) || empty($box->ntu_date)) {
                             $this->boxModel->set('ntu_date', date('Y-m-d'))
                                 ->where('id', $box->id)
                                 ->update();
+                            array_push($itemIds, $assignId[$i]);
+                            
                         }
                     }
                 }

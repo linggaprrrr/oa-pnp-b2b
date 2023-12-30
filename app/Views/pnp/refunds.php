@@ -1,7 +1,7 @@
 <?= $this->extend('pnp/layout/component') ?>
 <?= $this->section('content') ?>
 <div class="justify-between" style="display: flex;">
-<div class="mb-1">        
+    <div class="mb-1">        
         <form action="/pnp/refunds/" method="GET" style="display: flex;">
         <?php csrf_field() ?>
             <div class="mr-4">

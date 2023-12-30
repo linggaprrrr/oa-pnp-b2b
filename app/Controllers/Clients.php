@@ -33,7 +33,7 @@ class Clients extends BaseController
             'created_at' => date('Y-m-d H:i:s')
         ]);
 
-        return redirect()->to(base_url('clients'))->with('message', 'Login Successful!');
+        return redirect()->to(base_url('pnp/clients'))->with('message', 'Login Successful!');
     }
 
     public function getClient() {

@@ -29,7 +29,7 @@ class Auth extends BaseController
         
         $this->googleClient->setClientId("1031790131862-1s3hp335h9h2foe8rkbpok31sfsri3m0.apps.googleusercontent.com");
         $this->googleClient->setClientSecret("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");
-        $this->googleClient->setRedirectUri("https://swinternal.net/login/process");
+        $this->googleClient->setRedirectUri("https://quickprep.ai/pnp/login/process");
         $this->googleClient->addScope('https://www.googleapis.com/auth/userinfo.email');
         $this->googleClient->addScope('https://www.googleapis.com/auth/userinfo.profile');
         $this->userModel = new UserModel();
@@ -46,7 +46,7 @@ class Auth extends BaseController
         
         if (is_null($userId)) {            
             $data['googleAuth'] = $this->googleClient->createAuthUrl();
-            return view('login', $data);
+            return view('pnp/login', $data);
         } else {            
             if ($type == 'pnp') {
                 return redirect()->to(base_url('/pnp/dashboard'))->with('message', 'Login Successful!');
@@ -230,10 +230,10 @@ class Auth extends BaseController
                 
             } else {
                 
-                return redirect()->to(base_url('/login'))->with('error', 'Wrong Password!');
+                return redirect()->to(base_url('/pnp/login'))->with('error', 'Wrong Password!');
             }
         } else {
-            return redirect()->to(base_url('/login'))->with('error', 'Username Not Found!');
+            return redirect()->to(base_url('/pnp/login'))->with('error', 'Username Not Found!');
         }
     }
 
@@ -449,7 +449,7 @@ class Auth extends BaseController
         $link = base_url()."reset-password?uid=".$user->oauth_uid;
         
         $this->forgotPasswordEmail($user->email, $user->first_name, $link);
-        return redirect()->to(base_url('/login'))->with('message', 'Please check your email');
+        return redirect()->to(base_url('/pnp/login'))->with('message', 'Please check your email');
     }
 
     public function resetPasswordProcess() {
@@ -458,12 +458,17 @@ class Auth extends BaseController
         $this->userModel->set('password', $password)
             ->where('oauth_uid', $uid)
             ->update();
-        return redirect()->to(base_url('/login'))->with('message', 'Please sign in with your new password');
+        return redirect()->to(base_url('/pnp/login'))->with('message', 'Please sign in with your new password');
     }
 
-    public function logout() {
+    public function pnpLogout() {
         session()->destroy();
         return redirect()->to(base_url('/pnp/login'));
+    }
+
+    public function b2bLogout() {
+        session()->destroy();
+        return redirect()->to(base_url('/b2b/login'));
     }
 
     public function profile() {

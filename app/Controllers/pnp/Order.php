@@ -1244,10 +1244,10 @@ class Order extends BaseController
         
         $start = null;
         $end = null;
-        if (is_null($date)) {
-            $assignedData = $this->assignModel->getAssignedData3();                
-        } else {
-            
+        if (is_null($date)) {  
+            $start = date('Y-m-d', strtotime('-8 days'));
+            $end = date('Y-m-d');          
+        } else {            
             $temp = explode("&", $date);            
             // start
             $startExp = explode('-', $temp[0]);
@@ -1256,61 +1256,22 @@ class Order extends BaseController
                 $endExp = explode('-', $temp[1]);                
                 $end = $endExp[2].'-'.$endExp[0].'-'.$endExp[1];
             }
-            $assignedData = $this->assignModel->getAssignedData3($start, $end);   
         }   
         
         $getAllBox = $this->boxModel->getAllBox($start, $end);
-        $buyers = $this->buyerStaffModel
-                ->join('buyer_details', 'buyer_details.buyer = buyers.id')
-                ->get();   
-        $lists = array();        
+      
         $totalUnit = 0;
         $avgUnitRetail = 0;
         $totalOriginalRetail = 0;
         $totalClientCost = 0;
-        foreach ($assignedData->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->pid == $buyer->purchase_id) {                          
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
+        foreach ($getAllBox->getResultObject() as $purch) {
             if ($totalUnit > 0) {
                 $avgUnitRetail = round($totalOriginalRetail / $totalUnit, 2);
             }
+            $totalUnit = $totalUnit + $purch->allocation; 
+            $totalClientCost = $totalClientCost + (round( $purch->allocation * $purch->buy_cost, 2));                                
+            $totalOriginalRetail = $totalOriginalRetail + (round( $purch->allocation * $purch->market_price, 2));                                
             
-            $item = [
-                'lid' => $purch->lid,
-                'id' => $purch->pid,
-                'purchased_item_id' => $purch->purchased_item_id,
-                'title' => $purch->title,
-                'asin' => $purch->asin,
-                'order_number' => $orderNumbers,
-                'qty_ordered' => $purch->qty_ordered,
-                'buy_cost' => $purch->buy_cost,
-                'price' => $purch->market_price,
-                'qty_returned' => $purch->qty_returned,
-                'qty_received' => $purch->qty_received,
-                'qty_assigned' => $purch->qty,
-                'allocated_date' => $purch->allocated_date,
-                'status' => $purch->status,
-                'order_id' => $purch->order_id,
-                'purchased_date' => $purch->purchased_date,
-                'order_notes' => $purch->order_notes,
-                'client_name' => $purch->client_name,
-                'company' => $purch->company,
-                'fnsku' => $purch->fnsku,
-                'vendor' => $purch->vendor,
-                'assigned_notes' => $purch->assigned_notes,
-                'fba_number' => $purch->fba_number,
-                'shipment_number' => $purch->shipment_number,
-                'updated_at' => $purch->updated_at
-            ];
-            $totalUnit = $totalUnit + $purch->qty; 
-            $totalClientCost = $totalClientCost + (round($purch->qty * $purch->market_price, 2));                                
-            $totalOriginalRetail = $totalOriginalRetail + (round($purch->qty * $purch->buy_cost, 2));                                
-            array_push($lists, $item);
         }
 
         $spreadsheet->getActiveSheet()->getStyle('A:A')

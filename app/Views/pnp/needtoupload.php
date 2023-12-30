@@ -1,4 +1,5 @@
 <?= $this->extend('pnp/layout/component') ?>
+
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="mb-1">        
