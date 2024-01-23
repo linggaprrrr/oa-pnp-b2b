@@ -28,9 +28,8 @@ class ShipmentModel extends Model
 
     public function findClient($id) {
         $query = $this->db->table('clients')
-            ->join('assigned_items', 'assigned_items.order_id = .clients.id')
+            ->join('assigned_items', 'assigned_items.order_id = clients.id')
             ->where('assigned_items.item_id', $id)
-            
             ->get();
         return $query;
     }
@@ -41,9 +40,9 @@ class ShipmentModel extends Model
             ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
             ->join('assigned_items', 'assigned_items.item_id = purchase_items.id')
             ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')   
-            ->join('files', 'files.id = lead_lists.file_id')       
-            ->where('files.activation', 'actived')
-            ->where('files.oauth_uid', session()->get('oauth_uid'))  
+            // ->join('files', 'files.id = lead_lists.file_id')       
+            // // ->where('files.activation', 'actived')
+            // // ->where('files.oauth_uid', session()->get('oauth_uid'))                                       
             ->where('assigned_items.id', $id)            
             ->get();
         return $query->getFirstRow();

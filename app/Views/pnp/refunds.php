@@ -108,6 +108,7 @@
 
 <?= $this->section('js') ?>
 <script>
+    
     let inputTimer;
     $(document).on("input propertychange", ".shipping-cost", function() {
         const id = $(this).data('id');

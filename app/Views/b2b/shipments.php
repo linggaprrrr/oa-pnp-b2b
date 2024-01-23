@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">    
     <div>
-        <form action="/shipments" method="GET" style="display: flex;">
+        <form action="/b2b/shipments" method="GET" style="display: flex;">
             <div class="mr-4">
                 <?php $last = date('m-d-Y', strtotime('-7 days')) ?>
                 <?php $now = date('m-d-Y') ?>            

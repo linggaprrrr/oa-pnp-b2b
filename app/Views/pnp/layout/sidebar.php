@@ -10,7 +10,7 @@
                 <a href="/pnp/dashboard">
                 <img
                     class="h-11 w-11 transition-transform duration-500 ease-in-out hover:rotate-[360deg]"
-                    src="/lineone/images/sw.jpeg"
+                    src="/assets/img/quickprep-logo-only.png"
                     alt="logo"
                     style="border-radius: 50%"
                 />

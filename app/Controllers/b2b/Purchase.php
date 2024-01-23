@@ -231,50 +231,47 @@ class Purchase extends BaseController
         $fileID = $this->request->getVar('file_id');
         $row = $this->request->getVar('row');        
         
-        
+
         $asin = $product[1];
-        if (str_contains(strtolower($product[0]), 'bundle') == false) {            
-            $cost = str_replace('$', '', $product[2]);
-            $cost = str_replace(',', '', $cost);
-            if (is_numeric($cost)) {                            
-                $leads = array(
-                    'title' => $product[0],
-                    'asin' => $product[1],                                
-                    'retail_link' => $product[6],                    
-                    'amazon_link' => $product[8],
-                    'buy_cost' => $cost,
-                    'promo_code' => $product[7],                        
-                    'brand' => '-',
-                    'category' => '-',
-                    'best_sales_rank' => $product[9],
-                    'market_price' => $product[3],
-                    'martket_place_fees' => 0,
-                    'fba_selling_fees' => 0,
-                    'profit' => $product[4],
-                    'roi' => $product[5],
-                    'status' => $product[10],
-                    'file_id' => $fileID,
-                    
-                );
-                // insert rows                          
-                $this->leadModel->save($leads);        
-                $res = [
-                    'row' => $row,
-                    'asin' => $asin,
-                    'status' => '200', 
-                    'message' => $leads,                        
-                ];     
-                echo json_encode($res);
-            }
-        } else {
-            $res = [
-                'row' => $row,
-                'asin' => $asin,
-                'status' => '400',
-                'message' => 'This is bundle item'
-            ];
-            echo json_encode($res);
-        }
+        
+        $res = [
+            'row' => null,
+            'asin' => $product,
+            'status' => '200', 
+            'message' => null,                        
+        ];     
+        
+        $cost = str_replace('$', '', $product[2]);
+        $cost = str_replace(',', '', $cost);
+        $leads = array(
+            'title' => $product[0],
+            'asin' => $product[1],                                
+            'retail_link' => $product[6],                    
+            'amazon_link' => $product[8],
+            'buy_cost' => $cost,
+            'promo_code' => $product[7],                        
+            'brand' => '-',
+            'category' => '-',
+            'best_sales_rank' => $product[9],
+            'market_price' => $product[3],
+            'martket_place_fees' => 0,
+            'fba_selling_fees' => 0,
+            'profit' => $product[4],
+            'roi' => $product[5],
+            'status' => $product[10],
+            'file_id' => $fileID,
+            
+        );
+        // insert rows                          
+        $this->leadModel->save($leads);        
+        $res = [
+            'row' => $row,
+            'asin' => $asin,
+            'status' => '200', 
+            'message' => $leads,                        
+        ];     
+
+        echo json_encode($res);
         
     }
 

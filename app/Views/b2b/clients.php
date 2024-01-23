@@ -1,5 +1,4 @@
 <?= $this->extend('b2b/layout/component') ?>
-
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="mb-1" style="justify-self: right">
@@ -207,7 +206,7 @@
                             <td class="tb-tnx-info"><span class="date"><?= $client->client_name ?></span></td>
                             <td class="tb-tnx-info"><span class="date"><?= $client->company ?></span></td>
                             <td class="tb-tnx-info"><span class="date">$<?= number_format($client->total_order, 2) ?></span></td>
-                            <td class="tb-tnx-info"><span class="date">$<?= number_format($client->cost_left - $client->total_cost, 2) ?></span></td>
+                            <td class="tb-tnx-info"><span class="date">$<?= number_format($client->total_order - $client->total_cost, 2) ?></span></td>
                             <td class="tb-tnx-info"><span class="date"><?= date('d M Y', strtotime($client->order_date)) ?></span></td>
                             <td class="tb-tnx-info"><span class="date"><?= $client->qty ?></span></td>
                             <td class="tb-tnx-info text-center"><a href="#" class="edit-user-btn" data-id="<?= $client->id ?>"><em class="fas fa-pen-square fa-lg"></em></a></td>

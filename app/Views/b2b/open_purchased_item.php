@@ -101,960 +101,960 @@
     </div>
 
     <div style="display: none;" x-data="{showModal:false}">
-    <button
-    @click="showModal = true"
-    class="buyer-template btn bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90"
-    >
-    </button>
-    <template x-teleport="#x-teleport-target">
-        <div
-            class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
-            x-show="showModal"
-            role="dialog"
-            @keydown.window.escape="showModal = false"
+        <button
+        @click="showModal = true"
+        class="buyer-template btn bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90"
         >
+        </button>
+        <template x-teleport="#x-teleport-target">
             <div
-            class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
-            @click="showModal = false"
-            x-show="showModal"
-            x-transition:enter="ease-out"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100"
-            x-transition:leave="ease-in"
-            x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"
-            ></div>
-            <div
-            class="relative w-full max-w-screen-lg origin-bottom rounded-lg bg-white transition-all duration-300 dark:bg-navy-700"
-            x-show="showModal"
-            x-transition:enter="easy-out"
-            x-transition:enter-start="opacity-0 scale-95"
-            x-transition:enter-end="opacity-100 scale-100"
-            x-transition:leave="easy-in"
-            x-transition:leave-start="opacity-100 scale-100"
-            x-transition:leave-end="opacity-0 scale-95"
+                class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                x-show="showModal"
+                role="dialog"
+                @keydown.window.escape="showModal = false"
             >
-            <div
-                class="flex justify-between rounded-t-lg bg-slate-200 px-4 py-3 dark:bg-navy-800 sm:px-5"
-            >
-                <h3 class="text-base font-medium text-slate-700 dark:text-navy-100 asin-code">
-                Buyer - <span class="font-bold asin-modal"></span> [<small class="fst-italic">Buy Qty: <em class="away"></em><em class="buy_qty"></em> </small>]
-                </h3>
-                <button
-                @click="showModal = !showModal"
-                class="btn -mr-1.5 h-7 w-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                <div
+                class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                @click="showModal = false"
+                x-show="showModal"
+                x-transition:enter="ease-out"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="ease-in"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                ></div>
+                <div
+                class="relative w-full max-w-screen-lg origin-bottom rounded-lg bg-white transition-all duration-300 dark:bg-navy-700"
+                x-show="showModal"
+                x-transition:enter="easy-out"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="easy-in"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
                 >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-4.5 w-4.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
+                <div
+                    class="flex justify-between rounded-t-lg bg-slate-200 px-4 py-3 dark:bg-navy-800 sm:px-5"
                 >
-                    <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                </svg>
-                </button>
-            </div>
-            <div class="">
-                <!-- Modal content -->
+                    <h3 class="text-base font-medium text-slate-700 dark:text-navy-100 asin-code">
+                    Buyer - <span class="font-bold asin-modal"></span> [<small class="fst-italic">Buy Qty: <em class="away"></em><em class="buy_qty"></em> </small>]
+                    </h3>
+                    <button
+                    @click="showModal = !showModal"
+                    class="btn -mr-1.5 h-7 w-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                    >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4.5 w-4.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                    </svg>
+                    </button>
+                </div>
                 <div class="">
-                    <!-- Modal body -->
-                    <div class="p-2 space-y-6 font-bold">
-                        <form id="buyer_form"> 
-                            <input type="hidden" name="purch_id" class="purch_id"> 
-                            <input type="hidden" name="price_val" class="price_val">                                                      
-                            <div x-data="{activeTab:'tabBuyer1'}" class="tabs flex flex-col">
-                                <div class="is-scrollbar-hidden overflow-x-auto">
-                                    <div class="border-b-2 border-slate-150 dark:border-navy-500">
-                                        <div class="tabs-list -mb-0.5 flex" >
-                                            <button
-                                                type="button"
-                                                @click="activeTab = 'tabBuyer1'"
-                                                :class="activeTab === 'tabBuyer1' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
-                                                class="btn shrink-0 rounded-none border-b-2 px-3 py-2 font-medium"
-                                                >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4.5 w-4.5"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                >
-                                                    <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                                    />
-                                                </svg>
-                                                <span>Buyer 1</span>
-                                            </button>
-                                            <button
-                                                type="button"
-                                                @click="activeTab = 'tabBuyer2'"
-                                                :class="activeTab === 'tabBuyer2' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
-                                                class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
-                                                >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4.5 w-4.5"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                >
-                                                    <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                                    />
-                                                </svg>
-                                                <span>Buyer 2</span>
-                                            </button>
-                                            <button
-                                                type="button"
-                                                @click="activeTab = 'tabBuyer3'"
-                                                :class="activeTab === 'tabBuyer3' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
-                                                class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
-                                                >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4.5 w-4.5"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                >
-                                                    <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                                    />
-                                                </svg>
-                                                <span>Buyer 3</span>
-                                            </button>
-                                            <button
-                                                type="button"
-                                                @click="activeTab = 'tabBuyer4'"
-                                                :class="activeTab === 'tabBuyer4' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
-                                                class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
-                                                >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4.5 w-4.5"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                >
-                                                    <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                                    />
-                                                </svg>
-                                                <span>Buyer 4</span>
-                                            </button>
-                                            <button
-                                                type="button"
-                                                @click="activeTab = 'tabBuyer5'"
-                                                :class="activeTab === 'tabBuyer5' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
-                                                class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
-                                                >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4.5 w-4.5"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                >
-                                                    <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                                    />
-                                                </svg>
-                                                <span>Buyer 5</span>
-                                            </button>
-                                            <button
-                                                type="button"
-                                                @click="activeTab = 'tabBuyer6'"
-                                                :class="activeTab === 'tabBuyer6' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
-                                                class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
-                                                >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4.5 w-4.5"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                >
-                                                    <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                                    />
-                                                </svg>
-                                                <span>Buyer 6</span>
-                                            </button>
-                                            <button
-                                                type="button"
-                                                @click="activeTab = 'tabBuyer7'"
-                                                :class="activeTab === 'tabBuyer7' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
-                                                class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
-                                                >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-4.5 w-4.5"
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                >
-                                                    <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                                    />
-                                                </svg>
-                                                <span>Buyer 7</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-content pt-4">
-                                    <div                                    
-                                        x-show="activeTab === 'tabBuyer1'"
-                                        x-transition:enter="transition-all duration-500 easy-in-out"
-                                        x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
-                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
-                                    >
-                                        <div>
-                                            <div class="m-2 space-y-4">
-                                                <label class="block">
-                                                    <span>Name</span>
-                                                    <span class="relative mt-1.5 flex">
-                                                        <input type="hidden" name="buyer-id1" class="buyer-id1">
-                                                        <select name="buyer1" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer1">
-                                                            <option>...</option>
-                                                            <?php foreach ($buyers->getResultObject() as $buyer) : ?>
-                                                                <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
-                                                            <?php endforeach ?>
-                                                        </select>
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-user text-base"></i>
-                                                        </span>
-                                                    </span>
-                                                </label>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                        <span>CC</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="cc1" class="cc1 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-credit-card text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Order Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input  name="order_number1" class="order_number1 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-shopping-bag"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                                                    <label class="block">
-                                                        <span>Qty</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input data-price="0" class="qty-buyer qty1 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty1" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-box"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        
-                                                            <input class="price1 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign text-base"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Total Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input class="total_price total_price1 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Total Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                    <span>Shipping Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="shipping1" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="fas fa-shipping-fast text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Attachment</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <div class="filepond fp-bordered">
-                                                            <input type="file" class="attachment1" accept="application/pdf,image/png,image/jpeg"  name="attachment1"/>
-                                                            <input type="text" id="fileValue1" name="fileValue1" style="font-size: 10px; width: 100%; display:none" readonly>
-                                                            
-                                                            <span class="fileTemp1" style="display: none;">
-                                                                <a id="fileShow1" style="width: 100%;" download></a>    
-                                                                <button type="button" id="fileDelete1"><i class="fas fa-trash text-error"></i></button>                                                                
-                                                            </span>
-
-                                                        </div>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
-                                    <div
-                                        x-show="activeTab === 'tabBuyer2'"
-                                        x-transition:enter="transition-all duration-500 easy-in-out"
-                                        x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
-                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
-                                    >
-                                        <div>                                    
-                                            <div class="m-2 space-y-4">
-                                                <label class="block">
-                                                    <span>Name</span>
-                                                    <span class="relative mt-1.5 flex">
-                                                        <input type="hidden" name="buyer-id2" class="buyer-id2">
-                                                        <select name="buyer2" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer2">
-                                                            <option>...</option>
-                                                            <?php foreach ($buyers->getResultObject() as $buyer) : ?>
-                                                                <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
-                                                            <?php endforeach ?>
-                                                        </select>
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-user text-base"></i>
-                                                        </span>
-                                                    </span>
-                                                </label>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                        <span>CC</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="cc2" class="cc2 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-credit-card text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Order Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input  name="order_number2" class="order_number2 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-shopping-bag"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                                                    <label class="block">
-                                                        <span>Qty</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input data-price="0" class="qty-buyer qty2 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty2" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-box"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Price</span>
-                                                        <span class="relative mt-1.5 flex">                                                    
-                                                            <input class="price2 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign text-base"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Total Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input class="total_price total_price2 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Total Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                    <span>Shipping Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="shipping2" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="fas fa-shipping-fast text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Attachment</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" name="attachment2" class="attachment2" />
-                                                            <input type="text" id="fileValue2" name="fileValue2" style="font-size: 10px; width: 100%; display:none" readonly>                                                                
-                                                            <span class="fileTemp2" style="display: none;">
-                                                                <a id="fileShow2" style="width: 100%;" download></a>    
-                                                                <button type="button" id="fileDelete2"><i class="fas fa-trash text-error"></i></button>                                                                
-                                                            </span>
-                                                        </div>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                
+                    <!-- Modal content -->
+                    <div class="">
+                        <!-- Modal body -->
+                        <div class="p-2 space-y-6 font-bold">
+                            <form id="buyer_form"> 
+                                <input type="hidden" name="purch_id" class="purch_id"> 
+                                <input type="hidden" name="price_val" class="price_val">                                                      
+                                <div x-data="{activeTab:'tabBuyer1'}" class="tabs flex flex-col">
+                                    <div class="is-scrollbar-hidden overflow-x-auto">
+                                        <div class="border-b-2 border-slate-150 dark:border-navy-500">
+                                            <div class="tabs-list -mb-0.5 flex" >
+                                                <button
+                                                    type="button"
+                                                    @click="activeTab = 'tabBuyer1'"
+                                                    :class="activeTab === 'tabBuyer1' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
+                                                    class="btn shrink-0 rounded-none border-b-2 px-3 py-2 font-medium"
+                                                    >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-4.5 w-4.5"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                    >
+                                                        <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                                        />
+                                                    </svg>
+                                                    <span>Buyer 1</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    @click="activeTab = 'tabBuyer2'"
+                                                    :class="activeTab === 'tabBuyer2' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
+                                                    class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
+                                                    >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-4.5 w-4.5"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                    >
+                                                        <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                                        />
+                                                    </svg>
+                                                    <span>Buyer 2</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    @click="activeTab = 'tabBuyer3'"
+                                                    :class="activeTab === 'tabBuyer3' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
+                                                    class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
+                                                    >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-4.5 w-4.5"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                    >
+                                                        <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                                        />
+                                                    </svg>
+                                                    <span>Buyer 3</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    @click="activeTab = 'tabBuyer4'"
+                                                    :class="activeTab === 'tabBuyer4' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
+                                                    class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
+                                                    >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-4.5 w-4.5"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                    >
+                                                        <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                                        />
+                                                    </svg>
+                                                    <span>Buyer 4</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    @click="activeTab = 'tabBuyer5'"
+                                                    :class="activeTab === 'tabBuyer5' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
+                                                    class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
+                                                    >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-4.5 w-4.5"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                    >
+                                                        <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                                        />
+                                                    </svg>
+                                                    <span>Buyer 5</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    @click="activeTab = 'tabBuyer6'"
+                                                    :class="activeTab === 'tabBuyer6' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
+                                                    class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
+                                                    >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-4.5 w-4.5"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                    >
+                                                        <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                                        />
+                                                    </svg>
+                                                    <span>Buyer 6</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    @click="activeTab = 'tabBuyer7'"
+                                                    :class="activeTab === 'tabBuyer7' ? 'border-primary dark:border-accent text-primary dark:text-accent-light' : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'"
+                                                    class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
+                                                    >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-4.5 w-4.5"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                    >
+                                                        <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                                        />
+                                                    </svg>
+                                                    <span>Buyer 7</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        x-show="activeTab === 'tabBuyer3'"
-                                        x-transition:enter="transition-all duration-500 easy-in-out"
-                                        x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
-                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
-                                    >
-                                        <div>
-                                            <div class="m-2 space-y-4">
-                                                <label class="block">
-                                                    <span>Name</span>
-                                                    <span class="relative mt-1.5 flex">
-                                                    <input type="hidden" name="buyer-id3" class="buyer-id3">
-                                                        <select name="buyer3" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer3">
-                                                            <option>...</option>
-                                                            <?php foreach ($buyers->getResultObject() as $buyer) : ?>
-                                                                <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
-                                                            <?php endforeach ?>
-                                                        </select>
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-user text-base"></i>
-                                                        </span>
-                                                    </span>
-                                                </label>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    <div class="tab-content pt-4">
+                                        <div                                    
+                                            x-show="activeTab === 'tabBuyer1'"
+                                            x-transition:enter="transition-all duration-500 easy-in-out"
+                                            x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
+                                            x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                        >
+                                            <div>
+                                                <div class="m-2 space-y-4">
                                                     <label class="block">
-                                                        <span>CC</span>
+                                                        <span>Name</span>
                                                         <span class="relative mt-1.5 flex">
-                                                        <input name="cc3" class="cc3 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-credit-card text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Order Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input  name="order_number3" class="order_number3 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
+                                                            <input type="hidden" name="buyer-id1" class="buyer-id1">
+                                                            <select name="buyer1" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer1">
+                                                                <option>...</option>
+                                                                <?php foreach ($buyers->getResultObject() as $buyer) : ?>
+                                                                    <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
+                                                                <?php endforeach ?>
+                                                            </select>
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-shopping-bag"></i>
+                                                                <i class="far fa-user text-base"></i>
                                                             </span>
                                                         </span>
                                                     </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                                                    <label class="block">
-                                                        <span>Qty</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input data-price="0" class="qty-buyer qty3 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty3" type="text" x-input-mask="{numericOnly: true}">
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                            <span>CC</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="cc1" class="cc1 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-box"></i>
+                                                                <i class="far fa-credit-card text-base"></i>
                                                             </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        
-                                                            <input class="price3 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign text-base"></i>
                                                             </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Total Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input class="total_price total_price3 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Total Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign"></i>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Order Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input  name="order_number1" class="order_number1 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-shopping-bag"></i>
+                                                                </span>
                                                             </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                    <span>Shipping Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="shipping3" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="fas fa-shipping-fast text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Attachment</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2"  name="attachment3"/>
-                                                            <input type="text" id="fileValue3" name="fileValue3" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                                        <label class="block">
+                                                            <span>Qty</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input data-price="0" class="qty-buyer qty1 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty1" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-box"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Price</span>
+                                                            <span class="relative mt-1.5 flex">
                                                             
-                                                            <span class="fileTemp3" style="display: none;">
-                                                                <a id="fileShow3" style="width: 100%;" download></a>    
-                                                                <button type="button" id="fileDelete3"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                                <input class="price1 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign text-base"></i>
+                                                                </span>
                                                             </span>
-                                                        </div>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        x-show="activeTab === 'tabBuyer4'"
-                                        x-transition:enter="transition-all duration-500 easy-in-out"
-                                        x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
-                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
-                                    >
-                                        <div>
-                                            <div class="m-2 space-y-4">
-                                                <label class="block">
-                                                    <span>Name</span>
-                                                    <span class="relative mt-1.5 flex">
-                                                        <input type="hidden" name="buyer-id4" class="buyer-id4">
-                                                        <select name="buyer4" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer4">
-                                                            <option>...</option>
-                                                            <?php foreach ($buyers->getResultObject() as $buyer) : ?>
-                                                                <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
-                                                            <?php endforeach ?>
-                                                        </select>
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-user text-base"></i>
-                                                        </span>
-                                                    </span>
-                                                </label>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                        <span>CC</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="cc4" class="cc4 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-credit-card text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Order Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input  name="order_number4" class="order_number4 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-shopping-bag"></i>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Total Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input class="total_price total_price1 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Total Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign"></i>
+                                                                </span>
                                                             </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                                                    <label class="block">
-                                                        <span>Qty</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input data-price="0" class="qty-buyer qty4 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty4" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-box"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        
-                                                            <input class="price4 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign text-base"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Total Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input class="total_price total_price4 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Total Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                    <span>Shipping Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="shipping4" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="fas fa-shipping-fast text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Attachment</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment4" name="attachment4"/>
-                                                            <input type="text" id="fileValue4" name="fileValue4" style="font-size: 10px; width: 100%; display:none" readonly>
-                                                            
-                                                            <span class="fileTemp4" style="display: none;">
-                                                                <a id="fileShow4" style="width: 100%;" download></a>    
-                                                                <button type="button" id="fileDelete4"><i class="fas fa-trash text-error"></i></button>                                                                
-                                                            </span>
-                                                        </div>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                                                    
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
-                                    <div
-                                        x-show="activeTab === 'tabBuyer5'"
-                                        x-transition:enter="transition-all duration-500 easy-in-out"
-                                        x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
-                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
-                                    >
-                                        <div>
-                                            <div class="m-2 space-y-4">
-                                                <label class="block">
-                                                    <span>Name</span>
-                                                    <span class="relative mt-1.5 flex">
-                                                        <input type="hidden" name="buyer-id5" class="buyer-id5">
-                                                        <select name="buyer5" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer5">
-                                                            <option>...</option>
-                                                            <?php foreach ($buyers->getResultObject() as $buyer) : ?>
-                                                                <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
-                                                            <?php endforeach ?>
-                                                        </select>
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-user text-base"></i>
-                                                        </span>
-                                                    </span>
-                                                </label>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                        <span>CC</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="cc5" class="cc5 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-credit-card text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Order Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input  name="order_number5" class="order_number5 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-shopping-bag"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                                                    <label class="block">
-                                                        <span>Qty</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input data-price="0" class="qty-buyer qty5 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty5" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-box"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        
-                                                            <input class="price5 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="price5" placeholder="Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign text-base"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Total Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input class="total_price total_price5 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="total_price5" placeholder="Total Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                    <span>Shipping Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="shipping5" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="fas fa-shipping-fast text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Attachment</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment5" name="attachment5"/>
-                                                            <input type="text" id="fileValue5" name="fileValue5" style="font-size: 10px; width: 100%; display:none" readonly>
-                                                            
-                                                            <span class="fileTemp5" style="display: none;">
-                                                                <a id="fileShow5" style="width: 100%;" download></a>    
-                                                                <button type="button" id="fileDelete5"><i class="fas fa-trash text-error"></i></button>                                                                
-                                                            </span>
-                                                        </div>
-                                                        </span>
-                                                    </label>
-                                                </div>                                      
-                                            </div>                                    
-                                        </div>
-                                    </div>
-                                    <div
-                                        x-show="activeTab === 'tabBuyer6'"
-                                        x-transition:enter="transition-all duration-500 easy-in-out"
-                                        x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
-                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
-                                    >
-                                        <div>
-                                            <div class="m-2 space-y-4">
-                                                <label class="block">
-                                                    <span>Name</span>
-                                                    <span class="relative mt-1.5 flex">
-                                                    <input type="hidden" name="buyer-id6" class="buyer-id6">
-                                                        <select name="buyer6" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer6">
-                                                            <option>...</option>
-                                                            <?php foreach ($buyers->getResultObject() as $buyer) : ?>
-                                                                <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
-                                                            <?php endforeach ?>
-                                                        </select>
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-user text-base"></i>
-                                                        </span>
-                                                    </span>
-                                                </label>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                        <span>CC</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="cc6" class="cc6 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-credit-card text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Order Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input  name="order_number6" class="order_number6 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-shopping-bag"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                                                    <label class="block">
-                                                        <span>Qty</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input data-price="0" class="qty-buyer qty6 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty6" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-box"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Price</span>
-                                                        <span class="relative mt-1.5 flex">                                                    
-                                                            <input class="price6 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="price6" placeholder="Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign text-base"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Total Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input class="total_price total_price6 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="total_price6" placeholder="Total Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                    <span>Shipping Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="shipping6" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="fas fa-shipping-fast text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Attachment</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <div class="filepond fp-bordered">
-                                                            <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment6" name="attachment6"/>
-                                                            <input type="text" id="fileValue6" name="fileValue6" style="font-size: 10px; width: 100%; display:none" readonly>
-                                                            
-                                                            <span class="fileTemp6" style="display: none;">
-                                                                <a id="fileShow6" style="width: 100%;" download></a>    
-                                                                <button type="button" id="fileDelete6"><i class="fas fa-trash text-error"></i></button>                                                                
-                                                            </span>
-                                                        </div>
-                                                        </span>
-                                                    </label>
-                                                </div>                                        
-                                            </div>                                         
-                                        </div>
-                                    </div>
-                                    <div
-                                        x-show="activeTab === 'tabBuyer7'"
-                                        x-transition:enter="transition-all duration-500 easy-in-out"
-                                        x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
-                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
-                                    >
-                                        <div>
-                                            <div class="m-2 space-y-4">
-                                                <label class="block">
-                                                    <span>Name</span>
-                                                    <span class="relative mt-1.5 flex">
-                                                        <input type="hidden" name="buyer-id7" class="buyer-id7">
-                                                        <select name="buyer7" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer7">
-                                                            <option>...</option>
-                                                            <?php foreach ($buyers->getResultObject() as $buyer) : ?>
-                                                                <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
-                                                            <?php endforeach ?>
-                                                        </select>
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-user text-base"></i>
-                                                        </span>
-                                                    </span>
-                                                </label>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                        <span>CC</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input name="cc7" class="cc7 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
-                                                        <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                            <i class="far fa-credit-card text-base"></i>
-                                                        </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Order Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input  name="order_number7" class="order_number7 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-shopping-bag"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                                                    <label class="block">
-                                                        <span>Qty</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input data-price="0" class="qty-buyer qty7 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty7" type="text" x-input-mask="{numericOnly: true}">
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-box"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Price</span>
-                                                        <span class="relative mt-1.5 flex">                                                    
-                                                            <input class="price7 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="price7" placeholder="Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign text-base"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="block">
-                                                        <span>Total Price</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                        <input class="total_price total_price7 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="total_price7" placeholder="Total Price" type="text" readonly>
-                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                                                <i class="fas fa-dollar-sign"></i>
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                                    <label class="block">
-                                                    <span>Shipping Number</span>
-                                                        <span class="relative mt-1.5 flex">
-                                                            <input name="shipping7" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                        <span>Shipping Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="shipping1" class="shipping1 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
                                                             <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
                                                                 <i class="fas fa-shipping-fast text-base"></i>
                                                             </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Attachment</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <div class="filepond fp-bordered">
+                                                                <input type="file" class="attachment attachment1" accept="application/pdf,image/png,image/jpeg"  name="attachment1"/>
+                                                                <input type="text" id="fileValue1" name="fileValue1" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                                
+                                                                <span class="fileTemp1" style="display: none;">
+                                                                    <a id="fileShow1" style="width: 100%;" download></a>    
+                                                                    <button type="button" id="fileDelete1"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                                </span>
+
+                                                            </div>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            
+                                            </div>
+                                        </div>
+                                        <div
+                                            x-show="activeTab === 'tabBuyer2'"
+                                            x-transition:enter="transition-all duration-500 easy-in-out"
+                                            x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
+                                            x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                        >
+                                            <div>                                    
+                                                <div class="m-2 space-y-4">
+                                                    <label class="block">
+                                                        <span>Name</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                            <input type="hidden" name="buyer-id2" class="buyer-id2">
+                                                            <select name="buyer2" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer2">
+                                                                <option>...</option>
+                                                                <?php foreach ($buyers->getResultObject() as $buyer) : ?>
+                                                                    <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
+                                                                <?php endforeach ?>
+                                                            </select>
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-user text-base"></i>
+                                                            </span>
                                                         </span>
                                                     </label>
-                                                    <label class="block">
-                                                        <span>Attachment</span>
-                                                        <span class="relative mt-1.5 flex">
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                            <span>CC</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="cc2" class="cc2 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-credit-card text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Order Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input  name="order_number2" class="order_number2 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-shopping-bag"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                                        <label class="block">
+                                                            <span>Qty</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input data-price="0" class="qty-buyer qty2 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty2" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-box"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Price</span>
+                                                            <span class="relative mt-1.5 flex">                                                    
+                                                                <input class="price2 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign text-base"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Total Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input class="total_price total_price2 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Total Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                        <span>Shipping Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="shipping2" class="shipping2 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="fas fa-shipping-fast text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Attachment</span>
+                                                            <span class="relative mt-1.5 flex">
                                                             <div class="filepond fp-bordered">
-                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment2" name="attachment7"/>
-                                                                <input type="text" id="fileValue7" name="fileValue7" style="font-size: 10px; width: 100%; display:none" readonly>
-                                                            
-                                                                <span class="fileTemp7" style="display: none;">
-                                                                    <a id="fileShow7" style="width: 100%;" download></a>    
-                                                                    <button type="button" id="fileDelete7"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment2" name="attachment2"/>
+                                                                <input type="text" id="fileValue2" name="fileValue2" style="font-size: 10px; width: 100%; display:none" readonly>                                                                
+                                                                <span class="fileTemp2" style="display: none;">
+                                                                    <a id="fileShow2" style="width: 100%;" download></a>    
+                                                                    <button type="button" id="fileDelete2"><i class="fas fa-trash text-error"></i></button>                                                                
                                                                 </span>
                                                             </div>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            x-show="activeTab === 'tabBuyer3'"
+                                            x-transition:enter="transition-all duration-500 easy-in-out"
+                                            x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
+                                            x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                        >
+                                            <div>
+                                                <div class="m-2 space-y-4">
+                                                    <label class="block">
+                                                        <span>Name</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <input type="hidden" name="buyer-id3" class="buyer-id3">
+                                                            <select name="buyer3" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer3">
+                                                                <option>...</option>
+                                                                <?php foreach ($buyers->getResultObject() as $buyer) : ?>
+                                                                    <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
+                                                                <?php endforeach ?>
+                                                            </select>
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-user text-base"></i>
+                                                            </span>
                                                         </span>
                                                     </label>
-                                                </div>                                       
-                                            </div>   
-                                        
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                            <span>CC</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="cc3" class="cc3 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-credit-card text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Order Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input  name="order_number3" class="order_number3 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-shopping-bag"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                                        <label class="block">
+                                                            <span>Qty</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input data-price="0" class="qty-buyer qty3 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty3" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-box"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            
+                                                                <input class="price3 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign text-base"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Total Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input class="total_price total_price3 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Total Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                        <span>Shipping Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="shipping3" class="shipping3 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="fas fa-shipping-fast text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Attachment</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <div class="filepond fp-bordered">
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment3" name="attachment3"/>
+                                                                <input type="text" id="fileValue3" name="fileValue3" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                                
+                                                                <span class="fileTemp3" style="display: none;">
+                                                                    <a id="fileShow3" style="width: 100%;" download></a>    
+                                                                    <button type="button" id="fileDelete3"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                                </span>
+                                                            </div>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                   
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            x-show="activeTab === 'tabBuyer4'"
+                                            x-transition:enter="transition-all duration-500 easy-in-out"
+                                            x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
+                                            x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                        >
+                                            <div>
+                                                <div class="m-2 space-y-4">
+                                                    <label class="block">
+                                                        <span>Name</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                            <input type="hidden" name="buyer-id4" class="buyer-id4">
+                                                            <select name="buyer4" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer4">
+                                                                <option>...</option>
+                                                                <?php foreach ($buyers->getResultObject() as $buyer) : ?>
+                                                                    <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
+                                                                <?php endforeach ?>
+                                                            </select>
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-user text-base"></i>
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                            <span>CC</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="cc4" class="cc4 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-credit-card text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Order Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input  name="order_number4" class="order_number4 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-shopping-bag"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                                        <label class="block">
+                                                            <span>Qty</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input data-price="0" class="qty-buyer qty4 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty4" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-box"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            
+                                                                <input class="price4 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign text-base"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Total Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input class="total_price total_price4 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" placeholder="Total Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                        <span>Shipping Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="shipping4" class="shipping4 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="fas fa-shipping-fast text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Attachment</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <div class="filepond fp-bordered">
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment4" name="attachment4"/>
+                                                                <input type="text" id="fileValue4" name="fileValue4" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                                
+                                                                <span class="fileTemp4" style="display: none;">
+                                                                    <a id="fileShow4" style="width: 100%;" download></a>    
+                                                                    <button type="button" id="fileDelete4"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                                </span>
+                                                            </div>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                                                        
+                                                </div>
+                                            
+                                            </div>
+                                        </div>
+                                        <div
+                                            x-show="activeTab === 'tabBuyer5'"
+                                            x-transition:enter="transition-all duration-500 easy-in-out"
+                                            x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
+                                            x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                        >
+                                            <div>
+                                                <div class="m-2 space-y-4">
+                                                    <label class="block">
+                                                        <span>Name</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                            <input type="hidden" name="buyer-id5" class="buyer-id5">
+                                                            <select name="buyer5" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer5">
+                                                                <option>...</option>
+                                                                <?php foreach ($buyers->getResultObject() as $buyer) : ?>
+                                                                    <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
+                                                                <?php endforeach ?>
+                                                            </select>
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-user text-base"></i>
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                            <span>CC</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="cc5" class="cc5 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-credit-card text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Order Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input  name="order_number5" class="order_number5 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-shopping-bag"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                                        <label class="block">
+                                                            <span>Qty</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input data-price="0" class="qty-buyer qty5 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty5" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-box"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            
+                                                                <input class="price5 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="price5" placeholder="Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign text-base"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Total Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input class="total_price total_price5 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="total_price5" placeholder="Total Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                        <span>Shipping Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="shipping5" class="shipping5 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="fas fa-shipping-fast text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Attachment</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <div class="filepond fp-bordered">
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment5" name="attachment5"/>
+                                                                <input type="text" id="fileValue5" name="fileValue5" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                                
+                                                                <span class="fileTemp5" style="display: none;">
+                                                                    <a id="fileShow5" style="width: 100%;" download></a>    
+                                                                    <button type="button" id="fileDelete5"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                                </span>
+                                                            </div>
+                                                            </span>
+                                                        </label>
+                                                    </div>                                      
+                                                </div>                                    
+                                            </div>
+                                        </div>
+                                        <div
+                                            x-show="activeTab === 'tabBuyer6'"
+                                            x-transition:enter="transition-all duration-500 easy-in-out"
+                                            x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
+                                            x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                        >
+                                            <div>
+                                                <div class="m-2 space-y-4">
+                                                    <label class="block">
+                                                        <span>Name</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                        <input type="hidden" name="buyer-id6" class="buyer-id6">
+                                                            <select name="buyer6" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer6">
+                                                                <option>...</option>
+                                                                <?php foreach ($buyers->getResultObject() as $buyer) : ?>
+                                                                    <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
+                                                                <?php endforeach ?>
+                                                            </select>
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-user text-base"></i>
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                            <span>CC</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="cc6" class="cc6 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-credit-card text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Order Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input  name="order_number6" class="order_number6 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-shopping-bag"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                                        <label class="block">
+                                                            <span>Qty</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input data-price="0" class="qty-buyer qty6 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty6" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-box"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Price</span>
+                                                            <span class="relative mt-1.5 flex">                                                    
+                                                                <input class="price6 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="price6" placeholder="Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign text-base"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Total Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input class="total_price total_price6 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="total_price6" placeholder="Total Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                        <span>Shipping Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="shipping6" class="shipping6 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="fas fa-shipping-fast text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Attachment</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <div class="filepond fp-bordered">
+                                                                <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment6" name="attachment6"/>
+                                                                <input type="text" id="fileValue6" name="fileValue6" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                                
+                                                                <span class="fileTemp6" style="display: none;">
+                                                                    <a id="fileShow6" style="width: 100%;" download></a>    
+                                                                    <button type="button" id="fileDelete6"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                                </span>
+                                                            </div>
+                                                            </span>
+                                                        </label>
+                                                    </div>                                        
+                                                </div>                                         
+                                            </div>
+                                        </div>
+                                        <div
+                                            x-show="activeTab === 'tabBuyer7'"
+                                            x-transition:enter="transition-all duration-500 easy-in-out"
+                                            x-transition:enter-start="opacity-0 [transform:translate3d(1rem,0,0)]"
+                                            x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                        >
+                                            <div>
+                                                <div class="m-2 space-y-4">
+                                                    <label class="block">
+                                                        <span>Name</span>
+                                                        <span class="relative mt-1.5 flex">
+                                                            <input type="hidden" name="buyer-id7" class="buyer-id7">
+                                                            <select name="buyer7" class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent buyer7">
+                                                                <option>...</option>
+                                                                <?php foreach ($buyers->getResultObject() as $buyer) : ?>
+                                                                    <option value="<?= $buyer->id ?>" data-cc="<?= $buyer->cc ?>"><?= $buyer->buyer_name ?></option>
+                                                                <?php endforeach ?>
+                                                            </select>
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-user text-base"></i>
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                            <span>CC</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input name="cc7" class="cc7 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Your CC" type="text" >
+                                                            <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                <i class="far fa-credit-card text-base"></i>
+                                                            </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Order Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input  name="order_number7" class="order_number7 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="999-9999" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-shopping-bag"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                                        <label class="block">
+                                                            <span>Qty</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input data-price="0" class="qty-buyer qty7 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="..." name="qty7" type="text" x-input-mask="{numericOnly: true}">
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-box"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Price</span>
+                                                            <span class="relative mt-1.5 flex">                                                    
+                                                                <input class="price7 price form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="price7" placeholder="Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign text-base"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Total Price</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                            <input class="total_price total_price7 form-input peer w-full rounded-lg border bg-slate-150 px-3 py-2 pl-9 ring-primary/50 placeholder:text-slate-400 hover:bg-slate-200 focus:ring dark:bg-navy-900/90 dark:ring-accent/50 dark:placeholder:text-navy-300 dark:hover:bg-navy-900 dark:focus:bg-navy-900" name="total_price7" placeholder="Total Price" type="text" readonly>
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-dollar-sign"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <label class="block">
+                                                        <span>Shipping Number</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                                <input name="shipping7" class="shipping7 form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Shipping Number.." type="text" >
+                                                                <span class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                                    <i class="fas fa-shipping-fast text-base"></i>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <label class="block">
+                                                            <span>Attachment</span>
+                                                            <span class="relative mt-1.5 flex">
+                                                                <div class="filepond fp-bordered">
+                                                                    <input type="file" accept="application/pdf,image/png,image/jpeg" class="attachment attachment7" name="attachment7"/>
+                                                                    <input type="text" id="fileValue7" name="fileValue7" style="font-size: 10px; width: 100%; display:none" readonly>
+                                                                
+                                                                    <span class="fileTemp7" style="display: none;">
+                                                                        <a id="fileShow7" style="width: 100%;" download></a>    
+                                                                        <button type="button" id="fileDelete7"><i class="fas fa-trash text-error"></i></button>                                                                
+                                                                    </span>
+                                                                </div>
+                                                            </span>
+                                                        </label>
+                                                    </div>                                       
+                                                </div>   
+                                            
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="flex justify-end items-center p-2 mx-3 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">                                                                           
+                            <button type="button" class="btn bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 save-buyers">Save</button>
+                        </div>
                     </div>
-                    <!-- Modal footer -->
-                    <div class="flex justify-end items-center p-2 mx-3 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">                                                                           
-                        <button type="button" class="btn bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 save-buyers">Save</button>
-                    </div>
-                </div>
-            </div>                 
-        </div>                
-    </template>
-</div>                     
+                </div>                 
+            </div>                
+        </template>
+    </div>                       
 </div>
 
 <?= $this->endSection() ?>
@@ -1102,7 +1102,7 @@
             const cost = parseFloat($(this).data('cost'));
             const price = parseFloat($(this).data('price'));
             const profit = parseFloat($(this).data('profit'));
-            $.post("/save-qty", {id: id, qty: qty})
+            $.post("/b2b/save-qty", {id: id, qty: qty})
                 .done(function( data ) {
                     $('.total_buy_cost_' + id).html("$" + (qty * cost).toFixed(2));
                     $('.total_selling_' + id).html("$" + (qty * price).toFixed(2));
@@ -1117,7 +1117,7 @@
             const cost = parseFloat($(this).data('cost'));
             const price = parseFloat($(this).data('price'));
             const profit = parseFloat($(this).data('profit'));
-            $.post("/save-qty", {id: id, qty: qty})
+            $.post("/b2b/save-qty", {id: id, qty: qty})
                 .done(function( data ) {
                     $('.total_buy_cost_' + id).html("$" + (qty * cost).toFixed(2));
                     $('.total_selling_' + id).html("$" + (qty * price).toFixed(2));
@@ -1129,7 +1129,7 @@
         $(document).on("input propertychange", ".size", function() {
             const id = $(this).data('id');
             const size = $(this).val();
-            $.post("/save-size", {id: id, size: size})
+            $.post("/b2b/save-size", {id: id, size: size})
                 .done(function( data ) {
                     
                 });
@@ -1138,11 +1138,60 @@
         $(document).on("change", ".staff", function() {
             const id = $(this).data('id');
             const staff = $(this).val();
-            $.post("/save-staff", {id: id, staff: staff})
+            $.post("/b2b/save-staff", {id: id, staff: staff})
                 .done(function( data ) {
                     $.notify("Your changes have been saved!", "success");
                 });
         })
+
+        $(document).on("click", "#fileDelete1", function() {
+            $(".attachment1").show();
+            $("#fileShow1").html("");
+            $("#fileDelete1").hide();
+            $("#fileValue1").val("");
+        });
+
+        $(document).on("click", "#fileDelete2", function() {
+            $(".attachment2").show();
+            $("#fileShow2").html("");
+            $("#fileDelete2").hide();
+            $("#fileValue2").val("");
+        });
+
+        $(document).on("click", "#fileDelete3", function() {
+            $(".attachment3").show();
+            $("#fileShow3").html("");
+            $("#fileDelete3").hide();
+            $("#fileValue3").val("");
+        });
+
+        $(document).on("click", "#fileDelete4", function() {
+            $(".attachment4").show();
+            $("#fileShow4").html("");
+            $("#fileDelete4").hide();
+            $("#fileValue4").val("");
+        });
+
+        $(document).on("click", "#fileDelete5", function() {
+            $(".attachment5").show();
+            $("#fileShow5").html("");
+            $("#fileDelete5").hide();
+            $("#fileValue5").val("");
+        });
+
+        $(document).on("click", "#fileDelete6", function() {
+            $(".attachment6").show();
+            $("#fileShow6").html("");
+            $("#fileDelete6").hide();
+            $("#fileValue6").val("");
+        });
+
+        $(document).on("click", "#fileDelete7", function() {
+            $(".attachment7").show();
+            $("#fileShow7").html("");
+            $("#fileDelete7").hide();
+            $("#fileValue7").val("");
+        });
 
         $(document).on("click", ".buyerModal", function() {
             const id = $(this).data('id');
@@ -1164,10 +1213,12 @@
                     $(".qty-buyer").attr('data-price', parseFloat(resp[0]['market_price']).toFixed(2)); //setter
                     if (resp.length >= 5) {                        
                         for (var i = 0; i < resp.length; i++) {
+                            
                             totalQty = totalQty + parseInt(resp[i]['buyer_qty']);
                             $(".buyer-id" + j).val(resp[i]['id']);
                             $(".buyer" + j).val(resp[i]['buyer']);
                             $(".cc" + j).val(resp[i]['cc']);
+                            
                             if (resp[i]['buyer_notes'] !== null) {                                   
                                 if (resp[i]['buyer_notes'].length > 0) {
                                     $('.fileTemp' + j).show();                         
@@ -1177,7 +1228,7 @@
                                     $(".attachment" + j).hide();
                                 }
                             }
-
+                            
                             $(".qty" + j).val(resp[i]['buyer_qty']);
                             if (resp[i]['buyer_qty'] == null) {
                                 $(".total_price" + j).val('$' + (parseFloat(resp[i]['market_price']) * parseFloat(0)).toFixed(2));
@@ -1185,7 +1236,7 @@
                                 $(".total_price" + j).val('$' + (parseFloat(resp[i]['market_price']) * parseFloat(resp[i]['buyer_qty'])).toFixed(2));
                             }
                             $(".order_number" + j).val(resp[i]['order_number']);
-                            $(".notes" + j).val(resp[i]['tracking_number']);
+                            $(".shipping" + j).val(resp[i]['tracking_number']);
                             j++;
                         }
                     }
@@ -1615,7 +1666,7 @@
             var formData = new FormData($("#buyer_form")[0]);
             $.ajax({
                 type: "POST",
-                url: "/save-buyers",
+                url: "/b2b/save-buyers",
                 data: formData,
                 processData: false,  // Important! Don't process the data
                 contentType: false,  // Important! Set contentType to false
@@ -1636,6 +1687,7 @@
                     console.error(error);
                 }
             });
+            
         });
 </script>
 <?= $this->endSection() ?>

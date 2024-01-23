@@ -17,9 +17,11 @@ use App\Models\b2b\OrderStatusModel;
 use App\Models\b2b\ShipmentModel;
 use App\Models\b2b\TrackingModel;
 use App\Models\UserModel;
+use App\Controllers\b2b\Shipment;
+use App\Models\b2b\BoxModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-use App\Controllers\b2b\Shipment;
+
 use App\Models\b2b\SubscriptionModel;
 
 class Order extends BaseController
@@ -40,6 +42,7 @@ class Order extends BaseController
     protected $logModel = "";
     protected $trackingModel = "";
     protected $subsModel = "";
+    protected $boxModel = "";
 
     public function __construct()
     {
@@ -59,6 +62,7 @@ class Order extends BaseController
         $this->logModel = new LogModel();
         $this->trackingModel = new TrackingModel();
         $this->subsModel = new SubscriptionModel();
+        $this->boxModel = new BoxModel();
     }
 
     public function savePurchaseList() {
@@ -71,7 +75,7 @@ class Order extends BaseController
         if (is_null($lists)) {
             return redirect()->back()->with('error', 'Please tick at least 1 item!');
         }
-
+        
         if (empty($lists)) {
             $date = $this->request->getVar('date'); 
             return redirect()->to('selections/?date=' . $date)->with('success', 'Report Successfully Uploaded!');
@@ -95,6 +99,7 @@ class Order extends BaseController
                 'roi' => $item->roi,
                 'file_id' => session()->get('user_id'),
                 'source' => $item->source,
+                
             );
             // insert rows                          
             $this->leadModel->save($leads);        
@@ -109,7 +114,8 @@ class Order extends BaseController
             
             $this->orderStatusModel->insert([
                 'purchased_item_id' => $this->orderModel->getInsertID(),
-                'purchased_date' => date('Y-m-d H:i:s')
+                'purchased_date' => date('Y-m-d H:i:s'),
+                'received_date' => date('Y-m-d H:i:s')
             ]);
             
             $this->assignModel->insert([
@@ -160,6 +166,13 @@ class Order extends BaseController
     public function saveBuyersItem() {
         $shipment = new Shipment();
         $post = $this->request->getVar();       
+        $attch1 = $this->request->getFile('attachment1');
+        $attch2 = $this->request->getFile('attachment2');
+        $attch3 = $this->request->getFile('attachment3');
+        $attch4 = $this->request->getFile('attachment4');
+        $attch5 = $this->request->getFile('attachment5');
+        $attch6 = $this->request->getFile('attachment6');
+        $attch7 = $this->request->getFile('attachment7');
         $buyer1 = '';
         $buyer2 = '';
         $buyer3 = '';
@@ -167,18 +180,37 @@ class Order extends BaseController
         $buyer5 = '';
         $buyer6 = '';
         $buyer7 = '';
+        
+
         // check purchase id
         $isExist = $this->buyerModel->where('purchase_id', $post['purch_id'])->get();
-        if ($isExist->getNumRows() > 0) {
-            // buyer 1
-            $data1 = [
-                'buyer' => $post['buyer1'],
-                'cc' => $post['cc1'],
-                'buyer_qty' => $post['qty1'],
-                'buyer_price' => $post['price_val'],
-                'order_number' => $post['order_number1'],                
-                'purchase_id' => $post['purch_id'] 
-            ];
+        if ($isExist->getNumRows() > 0) {           
+            // buyer 1            
+            if (empty($attch1->getName())) {
+                $data1 = [
+                    'buyer' => $post['buyer1'],
+                    'cc' => $post['cc1'],
+                    'buyer_qty' => $post['qty1'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number1'],                
+                    'purchase_id' => $post['purch_id'], 
+                    'buyer_notes' => $post['fileValue1']                   
+                ];
+            } else {
+                $file1 = time() . '_' . $attch1->getName();
+                $data1 = [
+                    'buyer' => $post['buyer1'],
+                    'cc' => $post['cc1'],
+                    'buyer_qty' => $post['qty1'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number1'],                
+                    'purchase_id' => $post['purch_id'],
+                    'buyer_notes' => $file1
+                ];
+                
+                $attch1->move('cc_receipts/', $file1);
+            }
+
             $this->buyerModel->set($data1);
             $this->buyerModel->where('id', $post['buyer-id1']);
             $this->buyerModel->update();            
@@ -190,19 +222,33 @@ class Order extends BaseController
                 ->where('id', $post['buyer1'])
                 ->update();
             }
-
-            $shipment->trackingShipment($buyer1, trim($post['shipping1']), $post['purch_id']);                
             
             // buyer 2
             if (isset($post['buyer2'])) {
-                $data2 = [
-                    'buyer' => $post['buyer2'],
-                    'cc' => $post['cc2'],
-                    'buyer_qty' => $post['qty2'],
-                    'buyer_price' => $post['price_val'],
-                    'order_number' => $post['order_number2'],
-                    
-                ];
+
+                if (empty($attch2->getName())) {
+                    $data2 = [
+                        'buyer' => $post['buyer2'],
+                        'cc' => $post['cc2'],
+                        'buyer_qty' => $post['qty2'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number2'],
+                        
+                    ];
+                } else {
+                    $file2 = time() . '_' . $attch2->getName();
+                    $data2 = [
+                        'buyer' => $post['buyer2'],
+                        'cc' => $post['cc2'],
+                        'buyer_qty' => $post['qty2'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number2'],
+                        'buyer_notes' => $file2
+                        
+                    ];                                     
+                    $attch2->move('cc_receipts/', $file2);
+                }
+                
                 $this->buyerModel->set($data2);
                 $this->buyerModel->where('id', $post['buyer-id2']);
                 $this->buyerModel->update();   
@@ -218,14 +264,29 @@ class Order extends BaseController
 
             // buyer 3
             if (isset($post['buyer3'])) {
-                $data3 = [
-                    'buyer' => $post['buyer3'],
-                    'cc' => $post['cc3'],
-                    'buyer_qty' => $post['qty3'],
-                    'buyer_price' => $post['price_val'],
-                    'order_number' => $post['order_number3'],                    
-                    'purchase_id' => $post['purch_id'] 
-                ];
+                if (empty($attch3->getName())) {
+                    $data3 = [
+                        'buyer' => $post['buyer3'],
+                        'cc' => $post['cc3'],
+                        'buyer_qty' => $post['qty3'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number3'],                    
+                        'purchase_id' => $post['purch_id'] 
+                    ];
+                } else {
+                    $file3 = time() . '_' . $attch3->getName();
+                    $data3 = [
+                        'buyer' => $post['buyer3'],
+                        'cc' => $post['cc3'],
+                        'buyer_qty' => $post['qty3'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number3'],                    
+                        'purchase_id' => $post['purch_id'],
+                        'buyer_notes' => $file3
+                    ];                            
+                    $attch3->move('cc_receipts/', $file3);
+                }
+                
                 $this->buyerModel->set($data3);
                 $this->buyerModel->where('id', $post['buyer-id3']);
                 $this->buyerModel->update();
@@ -242,14 +303,30 @@ class Order extends BaseController
 
             // buyer 4
             if (isset($post['buyer4'])) {
-                $data4 = [
-                    'buyer' => $post['buyer4'],
-                    'cc' => $post['cc4'],
-                    'buyer_qty' => $post['qty4'],
-                    'buyer_price' => $post['price_val'],
-                    'order_number' => $post['order_number4'],
-                    'purchase_id' => $post['purch_id'] 
-                ];
+                if (empty($attch4->getName())) {
+                    $data4 = [
+                        'buyer' => $post['buyer4'],
+                        'cc' => $post['cc4'],
+                        'buyer_qty' => $post['qty4'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number4'],
+                        'purchase_id' => $post['purch_id'] 
+                    ];
+                } else {
+                    $file4 = time() . '_' . $attch4->getName();
+                    $data4 = [
+                        'buyer' => $post['buyer4'],
+                        'cc' => $post['cc4'],
+                        'buyer_qty' => $post['qty4'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number4'],
+                        'purchase_id' => $post['purch_id'],
+                        'buyer_notes' => $file4
+                    ];
+                    
+                    $attch4->move('cc_receipts/', $file4);
+                }
+                
                 $this->buyerModel->set($data4);
                 $this->buyerModel->where('id', $post['buyer-id4']);
                 $this->buyerModel->update();     
@@ -267,14 +344,30 @@ class Order extends BaseController
 
             // buyer 5
             if (isset($post['buyer5'])) {
-                $data5 = [
-                    'buyer' => $post['buyer5'],
-                    'cc' => $post['cc5'],
-                    'buyer_qty' => $post['qty5'],
-                    'buyer_price' => $post['price_val'],
-                    'order_number' => $post['order_number5'],
-                    'purchase_id' => $post['purch_id'] 
-                ];
+                if (empty($attch5->getName())) {
+                    $data5 = [
+                        'buyer' => $post['buyer5'],
+                        'cc' => $post['cc5'],
+                        'buyer_qty' => $post['qty5'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number5'],
+                        'purchase_id' => $post['purch_id'],                        
+                    ];     
+                } else {
+                    $file5 = time() . '_' . $attch5->getName();
+                    $data5 = [
+                        'buyer' => $post['buyer5'],
+                        'cc' => $post['cc5'],
+                        'buyer_qty' => $post['qty5'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number5'],
+                        'purchase_id' => $post['purch_id'],
+                        'buyer_notes' => $file5
+                    ];                
+                    
+                    $attch5->move('cc_receipts/', $file5);
+                }
+                
                 $this->buyerModel->set($data5);
                 $this->buyerModel->where('id', $post['buyer-id5']);
                 $this->buyerModel->update();    
@@ -290,14 +383,31 @@ class Order extends BaseController
             
             // buyer 6
             if (isset($post['buyer6'])) {
-                $data6 = [
-                    'buyer' => $post['buyer6'],
-                    'cc' => $post['cc6'],
-                    'buyer_qty' => $post['qty6'],
-                    'buyer_price' => $post['price_val'],
-                    'order_number' => $post['order_number6'],                    
-                    'purchase_id' => $post['purch_id'] 
-                ];
+                if (empty($attch6->getName())) {
+                    $data6 = [
+                        'buyer' => $post['buyer6'],
+                        'cc' => $post['cc6'],
+                        'buyer_qty' => $post['qty6'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number6'],                    
+                        'purchase_id' => $post['purch_id'] 
+                    ];
+
+                } else {
+                    $file6 = time() . '_' . $attch6->getName();
+                    $data6 = [
+                        'buyer' => $post['buyer6'],
+                        'cc' => $post['cc6'],
+                        'buyer_qty' => $post['qty6'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number6'],                    
+                        'purchase_id' => $post['purch_id'],
+                        'buyer_notes' => $file6
+                    ];
+                    
+                    $attch6->move('cc_receipts/', $file6);
+                }
+                
                 $this->buyerModel->set($data6);
                 $this->buyerModel->where('id', $post['buyer-id6']);
                 $this->buyerModel->update();   
@@ -313,14 +423,30 @@ class Order extends BaseController
             
             // buyer 7
             if (isset($post['buyer7'])) {
-                $data7 = [
-                    'buyer' => $post['buyer7'],
-                    'cc' => $post['cc7'],
-                    'buyer_qty' => $post['qty7'],
-                    'buyer_price' => $post['price_val'],
-                    'order_number' => $post['order_number7'],
-                    'purchase_id' => $post['purch_id'] 
-                ];
+                if (empty($attch7->getName())) {
+                    $data7 = [
+                        'buyer' => $post['buyer7'],
+                        'cc' => $post['cc7'],
+                        'buyer_qty' => $post['qty7'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number7'],
+                        'purchase_id' => $post['purch_id'] 
+                    ];
+                } else {
+                    $file7 = time() . '_' . $attch7->getName();
+                    $data7 = [
+                        'buyer' => $post['buyer7'],
+                        'cc' => $post['cc7'],
+                        'buyer_qty' => $post['qty7'],
+                        'buyer_price' => $post['price_val'],
+                        'order_number' => $post['order_number7'],
+                        'purchase_id' => $post['purch_id'],
+                        'buyer_notes' => $file7
+                    ];
+                    
+                    $attch7->move('cc_receipts/', $file7);
+                }
+                
                 $this->buyerModel->set($data7);
                 $this->buyerModel->where('id', $post['buyer-id7']);
                 $this->buyerModel->update();
@@ -337,17 +463,31 @@ class Order extends BaseController
             
         } else {
             // buyer 1
-            $this->buyerModel->save([
-                'buyer' => $post['buyer1'],
-                'cc' => $post['cc1'],
-                'buyer_qty' => $post['qty1'],
-                'buyer_price' => $post['price_val'],
-                'order_number' => $post['order_number1'],                
-                'purchase_id' => $post['purch_id'],
-                'user_id' => session()->get('user_id')        
-            ]);
+            if (empty($attch1->getName())) {
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer1'],
+                    'cc' => $post['cc1'],
+                    'buyer_qty' => $post['qty1'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number1'],                
+                    'purchase_id' => $post['purch_id']        
+                ]);              
+            } else {
+                $file1 = time() . '_' . $attch1->getName();
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer1'],
+                    'cc' => $post['cc1'],
+                    'buyer_qty' => $post['qty1'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number1'],                
+                    'purchase_id' => $post['purch_id'],
+                    'buyer_notes' => $file1
+                ]);            
+                $attch1->move('cc_receipts/', $file1);
+            }
+
             $buyer1 = $this->buyerModel->getInsertID();
-            
+
             //save cc numb
             if (!is_null($post['cc1'])) {
                 $this->buyerStaffModel
@@ -357,17 +497,31 @@ class Order extends BaseController
             }
             
             // buyer 2
-            $this->buyerModel->save([
-                'buyer' => $post['buyer2'],
-                'cc' => $post['cc2'],
-                'buyer_qty' => $post['qty2'],
-                'buyer_price' => $post['price_val'],
-                'order_number' => $post['order_number2'],                
-                'purchase_id' => $post['purch_id'],
-                'user_id' => session()->get('user_id')        
-            ]);
+            if (empty($attch2->getName())) {
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer2'],
+                    'cc' => $post['cc2'],
+                    'buyer_qty' => $post['qty2'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number2'],                
+                    'purchase_id' => $post['purch_id']        
+                ]);        
+            } else {
+                $file2 = time() . '_' . $attch2->getName();
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer2'],
+                    'cc' => $post['cc2'],
+                    'buyer_qty' => $post['qty2'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number2'],                
+                    'purchase_id' => $post['purch_id'],
+                    'buyer_notes' => $file2      
+                ]);               
+                $attch2->move('cc_receipts/', $file2);
+            }
+            
             $buyer2 = $this->buyerModel->getInsertID();
-               
+
             //save cc numb
             if (!is_null($post['cc2'])) {
                 $this->buyerStaffModel
@@ -377,15 +531,29 @@ class Order extends BaseController
             }
 
             // buyer 3
-            $this->buyerModel->save([
-                'buyer' => $post['buyer3'],
-                'cc' => $post['cc3'],
-                'buyer_qty' => $post['qty3'],
-                'buyer_price' => $post['price_val'],
-                'order_number' => $post['order_number3'],                
-                'purchase_id' => $post['purch_id'],
-                'user_id' => session()->get('user_id')        
-            ]);
+            if (empty($attch3->getName())) {
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer3'],
+                    'cc' => $post['cc3'],
+                    'buyer_qty' => $post['qty3'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number3'],                
+                    'purchase_id' => $post['purch_id']        
+                ]);     
+            } else {
+                $file3 = time() . '_' . $attch3->getName();
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer3'],
+                    'cc' => $post['cc3'],
+                    'buyer_qty' => $post['qty3'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number3'],                
+                    'purchase_id' => $post['purch_id'],
+                    'buyer_notes' => $file3
+                ]);     
+                $attch3->move('cc_receipts/', $file3);
+            }
+            
             $buyer3 = $this->buyerModel->getInsertID();
 
             //save cc numb
@@ -396,15 +564,29 @@ class Order extends BaseController
                 ->update();
             }
             // buyer 4
-            $this->buyerModel->save([
-                'buyer' => $post['buyer4'],
-                'cc' => $post['cc4'],
-                'buyer_qty' => $post['qty4'],
-                'buyer_price' => $post['price_val'],
-                'order_number' => $post['order_number4'],
-                'purchase_id' => $post['purch_id'],
-                'user_id' => session()->get('user_id')        
-            ]);
+            if (empty($attch4->getName())) {
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer4'],
+                    'cc' => $post['cc4'],
+                    'buyer_qty' => $post['qty4'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number4'],
+                    'purchase_id' => $post['purch_id']        
+                ]);
+            } else {
+                $file4 = time() . '_' . $attch4->getName();
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer4'],
+                    'cc' => $post['cc4'],
+                    'buyer_qty' => $post['qty4'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number4'],
+                    'purchase_id' => $post['purch_id'],
+                    'buyer_notes' => $file4       
+                ]);               
+                $attch4->move('cc_receipts/', $file4);
+            }
+            
             $buyer4 = $this->buyerModel->getInsertID();
 
             //save cc numb
@@ -415,15 +597,29 @@ class Order extends BaseController
                 ->update();
             }
             // buyer 5
-            $this->buyerModel->save([
-                'buyer' => $post['buyer5'],
-                'cc' => $post['cc5'],
-                'buyer_qty' => $post['qty5'],
-                'buyer_price' => $post['price_val'],
-                'order_number' => $post['order_number5'],
-                'purchase_id' => $post['purch_id'],
-                'user_id' => session()->get('user_id')        
-            ]);
+            if (empty($attch5->getName())) {
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer5'],
+                    'cc' => $post['cc5'],
+                    'buyer_qty' => $post['qty5'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number5'],
+                    'purchase_id' => $post['purch_id']        
+                ]);
+            } else {
+                $file5 = time() . '_' . $attch5->getName();
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer5'],
+                    'cc' => $post['cc5'],
+                    'buyer_qty' => $post['qty5'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number5'],
+                    'purchase_id' => $post['purch_id'],
+                    'buyer_notes' => $file5
+                ]);            
+                $attch5->move('cc_receipts/', $file5);
+            }
+            
             $buyer5 = $this->buyerModel->getInsertID();
 
             //save cc numb
@@ -435,15 +631,29 @@ class Order extends BaseController
                 }
 
             // buyer 6
-            $this->buyerModel->save([
-                'buyer' => $post['buyer6'],
-                'cc' => $post['cc6'],
-                'buyer_qty' => $post['qty6'],
-                'buyer_price' => $post['price_val'],
-                'order_number' => $post['order_number6'],
-                'purchase_id' => $post['purch_id'],
-                'user_id' => session()->get('user_id')        
-            ]);
+            if (empty($attch6->getName())) {
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer6'],
+                    'cc' => $post['cc6'],
+                    'buyer_qty' => $post['qty6'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number6'],
+                    'purchase_id' => $post['purch_id']        
+                ]);
+            } else {
+                $file6 = time() . '_' . $attch6->getName();
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer6'],
+                    'cc' => $post['cc6'],
+                    'buyer_qty' => $post['qty6'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number6'],
+                    'purchase_id' => $post['purch_id'],
+                    'buyer_notes' => $file6      
+                ]);                      
+                $attch6->move('cc_receipts/', $file6);
+            }
+            
             $buyer6 = $this->buyerModel->getInsertID();
 
             //save cc numb
@@ -455,15 +665,29 @@ class Order extends BaseController
             }
 
             // buyer 7
-            $this->buyerModel->save([
-                'buyer' => $post['buyer7'],
-                'cc' => $post['cc7'],
-                'buyer_qty' => $post['qty7'],
-                'buyer_price' => $post['price_val'],
-                'order_number' => $post['order_number7'],
-                'purchase_id' => $post['purch_id'],
-                'user_id' => session()->get('user_id')        
-            ]);
+            if (empty($attch7->getName())) {
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer7'],
+                    'cc' => $post['cc7'],
+                    'buyer_qty' => $post['qty7'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number7'],
+                    'purchase_id' => $post['purch_id']        
+                ]);
+            } else {
+                $file7 = time() . '_' . $attch7->getName();
+                $this->buyerModel->save([
+                    'buyer' => $post['buyer7'],
+                    'cc' => $post['cc7'],
+                    'buyer_qty' => $post['qty7'],
+                    'buyer_price' => $post['price_val'],
+                    'order_number' => $post['order_number7'],
+                    'purchase_id' => $post['purch_id'],
+                    'buyer_notes' => $file7
+                ]);                
+                $attch7->move('cc_receipts/', $file7);
+            }
+            
             $buyer7 = $this->buyerModel->getInsertID();
 
             //save cc numb
@@ -713,7 +937,7 @@ class Order extends BaseController
             
         ];
     
-        return view('b2b/open_ordered_item', $data);
+        return view('warehouse/open_ordered_item', $data);
     }
 
     public function saveClients() {
@@ -738,8 +962,8 @@ class Order extends BaseController
                 'order_id' => $orderID,
                 'check_flag' => $checkFlag,
                 'client_name' => $clientName,
-                'company' => $company,   
-                'created_at' => date('Y-m-d H:i:s')              
+                'company' => $company,
+                'created_at' => date('Y-m-d H:i:s')                
             ]);
         }        
     }
@@ -884,6 +1108,16 @@ class Order extends BaseController
             ->update();
     }   
 
+    public function saveMasterlistNotes() {
+        $id = $this->request->getVar('id');
+        $notes = $this->request->getVar('notes');
+
+        $this->orderStatusModel->set('order_notes', $notes)
+            ->where('purchased_item_id', $id)
+            ->update();
+            
+    }
+
     public function saveItems() {
         $userRole = session()->get('role');
         $id = $this->request->getVar('ceklist');        
@@ -977,58 +1211,43 @@ class Order extends BaseController
     }
 
     public function saveFBANumber() {
-        $item = $this->request->getVar('item');
+        $boxName = $this->request->getVar('box_name');
         $numb = $this->request->getVar('number');
 
-        $this->shipmentModel->set('fba_number', $numb)
-            ->where('id', $item)
+        $this->boxModel->set('fba_number', $numb)
+            ->where('box_name', $boxName)
             ->update();
 
-        // cek if completed
-        // $shipments = $this->shipmentModel
-        //     ->where('id', $item)    
-        //     ->where('fba_number is NOT NULL', NULL, FALSE)        
-        //     ->where('shipment_number is NOT NULL', NULL, FALSE)
-        //     ->get();
-        // if ($shipments->getNumRows() > 0) {
-        //     $this->assignModel->set('updated_at', date('Y-m-d H:i:s'))
-        //     ->where('item_id', $item)
-        //     ->update();
-        // }
-        
     }
 
     public function saveShipmentNumber() {
-        $item = $this->request->getVar('item');
+        $boxName = $this->request->getVar('box_name');
         $numb = $this->request->getVar('number');
 
-        $this->shipmentModel->set('shipment_number', $numb)
-            ->where('id', $item)
-            ->update();
+        $this->boxModel->set('shipment_number', $numb)
+            ->where('box_name', $boxName)
+            ->update();        
+    }
 
-        // cek if completed
-        // $shipments = $this->assignModel
-        //     ->where('id', $item)    
-        //     ->where('fba_number is NOT NULL', NULL, FALSE)        
-        //     ->where('shipment_number is NOT NULL', NULL, FALSE)
-        //     ->get();
-        // if ($shipments->getNumRows() > 0) {
-        //     $this->assignModel->set('updated_at', date('Y-m-d H:i:s'))
-        //     ->where('item_id', $item)
-        //     ->update();
-        // }
+    public function saveBoxDimensions() {
+        $boxName = $this->request->getVar('box_name');
+        $dim = $this->request->getVar('dim');
+
+        $this->boxModel->set('dimensions', $dim)
+            ->where('box_name', $boxName)
+            ->update(); 
     }
 
     public function exportNeedToUpload($date = null) {
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
         
-        
-        if (is_null($date)) {
-            $assignedData = $this->assignModel->getAssignedData3();                
-        } else {
-            $start = null;
-            $end = null;
+        $start = null;
+        $end = null;
+        if (is_null($date)) {  
+            $start = date('Y-m-d', strtotime('-8 days'));
+            $end = date('Y-m-d');          
+        } else {            
             $temp = explode("&", $date);            
             // start
             $startExp = explode('-', $temp[0]);
@@ -1037,59 +1256,22 @@ class Order extends BaseController
                 $endExp = explode('-', $temp[1]);                
                 $end = $endExp[2].'-'.$endExp[0].'-'.$endExp[1];
             }
-            $assignedData = $this->assignModel->getAssignedData3($start, $end);   
         }   
-        $buyers = $this->buyerStaffModel
-                ->join('buyer_details', 'buyer_details.buyer = buyers.id')
-                ->get();   
-        $lists = array();        
+        
+        $getAllBox = $this->boxModel->getAllBox($start, $end);
+      
         $totalUnit = 0;
         $avgUnitRetail = 0;
         $totalOriginalRetail = 0;
         $totalClientCost = 0;
-        foreach ($assignedData->getResultObject() as $purch) {
-            $orderNumbers = array();            
-            foreach ($buyers->getResultObject() as $buyer) {
-                if ($purch->pid == $buyer->purchase_id) {                          
-                    array_push($orderNumbers, $buyer->order_number);
-                }                
-            }
-            
+        foreach ($getAllBox->getResultObject() as $purch) {
             if ($totalUnit > 0) {
                 $avgUnitRetail = round($totalOriginalRetail / $totalUnit, 2);
             }
+            $totalUnit = $totalUnit + $purch->allocation; 
+            $totalClientCost = $totalClientCost + (round( $purch->allocation * $purch->buy_cost, 2));                                
+            $totalOriginalRetail = $totalOriginalRetail + (round( $purch->allocation * $purch->market_price, 2));                                
             
-            $item = [
-                'lid' => $purch->lid,
-                'id' => $purch->pid,
-                'purchased_item_id' => $purch->purchased_item_id,
-                'title' => $purch->title,
-                'asin' => $purch->asin,
-                'order_number' => $orderNumbers,
-                'qty_ordered' => $purch->qty_ordered,
-                'buy_cost' => $purch->buy_cost,
-                'price' => $purch->market_price,
-                'qty_returned' => $purch->qty_returned,
-                'qty_received' => $purch->qty_received,
-                'qty_assigned' => $purch->qty,
-                'allocated_date' => $purch->allocated_date,
-                'status' => $purch->status,
-                'order_id' => $purch->order_id,
-                'purchased_date' => $purch->purchased_date,
-                'order_notes' => $purch->order_notes,
-                'client_name' => $purch->client_name,
-                'company' => $purch->company,
-                'fnsku' => $purch->fnsku,
-                'vendor' => $purch->vendor,
-                'assigned_notes' => $purch->assigned_notes,
-                'fba_number' => $purch->fba_number,
-                'shipment_number' => $purch->shipment_number,
-                'updated_at' => $purch->updated_at
-            ];
-            $totalUnit = $totalUnit + $purch->qty; 
-            $totalClientCost = $totalClientCost + (round($purch->qty * $purch->market_price, 2));                                
-            $totalOriginalRetail = $totalOriginalRetail + (round($purch->qty * $purch->buy_cost, 2));                                
-            array_push($lists, $item);
         }
 
         $spreadsheet->getActiveSheet()->getStyle('A:A')
@@ -1173,102 +1355,87 @@ class Order extends BaseController
 		$sheet->setCellValue('D3', 'ORIGINAL QTY');
 		$sheet->setCellValue('E3', 'RETAIL VALUE');
         $sheet->setCellValue('F3', 'TOTAL ORIGINAL RETAIL');
-        $sheet->setCellValue('G3', 'TOTAL CLIENT COST');
-        $sheet->setCellValue('H3', 'VENDOR NAME');
+        $sheet->setCellValue('G3', 'TOTAL CLIENT COST'); 
+        $sheet->setCellValue('H3', 'VENDOR');        
         // $sheet->setCellValue('I3', 'NOTES');
         
         $no = 4;
         $client = "";
-        for($i = 0; $i < count($lists); $i++) {             
-            if ($i == 0) {
-                $sheet->setCellValue('A' . $no, $lists[$i]['fnsku']);               
-                $sheet->setCellValue('B' . $no, $lists[$i]['asin']);               
-                $sheet->setCellValue('C' . $no, $lists[$i]['title']);               
-                $sheet->setCellValue('D' . $no, $lists[$i]['qty_assigned']);               
-                $sheet->setCellValue('E' . $no, number_format(round($lists[$i]['price'], 2), 2));               
-                $sheet->setCellValue('F' . $no, number_format(round($lists[$i]['price'] * $lists[$i]['qty_assigned'], 2), 2));               
-                $sheet->setCellValue('G' . $no, number_format(round($lists[$i]['buy_cost'] * $lists[$i]['qty_assigned'], 2), 2));               
-                $sheet->setCellValue('H' . $no, $lists[$i]['vendor']); 
-                // $sheet->setCellValue('I' . $no, $lists[$i]['assigned_notes']);    
+        $data = $getAllBox->getResultArray(); 
+        
+        for ($i = 0; $i < $getAllBox->getNumRows(); $i++) {  
+            if ($i == $getAllBox->getNumRows()-1) {
+                $sheet->setCellValue('A' . $no, $data[$i]['fnsku']);               
+                $sheet->setCellValue('B' . $no, $data[$i]['asin']);               
+                $sheet->setCellValue('C' . $no, $data[$i]['title']);               
+                $sheet->setCellValue('D' . $no, $data[$i]['allocation']);               
+                $sheet->setCellValue('E' . $no, number_format(round($data[$i]['market_price'], 2), 2));               
+                $sheet->setCellValue('F' . $no, number_format(round($data[$i]['market_price'] * $data[$i]['allocation'], 2), 2));               
+                $sheet->setCellValue('G' . $no, number_format(round($data[$i]['buy_cost'] * $data[$i]['allocation'], 2), 2));                               
+                $sheet->setCellValue('H' . $no, $data[$i]['vendor']);  
                 $no++;
-            } else {
-                if ($client == $lists[$i]['order_id']) {                    
-                    $sheet->setCellValue('A' . $no, $lists[$i]['fnsku']);               
-                    $sheet->setCellValue('B' . $no, $lists[$i]['asin']);               
-                    $sheet->setCellValue('C' . $no, $lists[$i]['title']);               
-                    $sheet->setCellValue('D' . $no, $lists[$i]['qty_assigned']);               
-                    $sheet->setCellValue('E' . $no, number_format(round($lists[$i]['price'], 2), 2));               
-                    $sheet->setCellValue('F' . $no, number_format(round($lists[$i]['price'] * $lists[$i]['qty_assigned'], 2), 2));               
-                    $sheet->setCellValue('G' . $no, number_format(round($lists[$i]['buy_cost'] * $lists[$i]['qty_assigned'], 2), 2));               
-                    $sheet->setCellValue('H' . $no, $lists[$i]['vendor']); 
-                    // $sheet->setCellValue('I' . $no, $lists[$i]['assigned_notes']);    
-                    $no++;
-                } else {
-                    $sheet->setCellValue('A' . $no, '');               
-                    $sheet->setCellValue('B' . $no, '');               
-                    $sheet->setCellValue('C' . $no, $lists[$i-1]['fba_number'] . ' / ' . $lists[$i-1]['shipment_number']);               
-                    $sheet->setCellValue('D' . $no, '');               
-                    $sheet->setCellValue('E' . $no, '');               
-                    $sheet->setCellValue('F' . $no, '');               
-                    $sheet->setCellValue('G' . $no, '');                                   
-                    $sheet->setCellValue('H' . $no, (!is_null($lists[$i-1]['updated_at'])) ? date('m/d/Y', strtotime($lists[$i-1]['updated_at'])) : '-');    
-                    $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
-                    $no++;
-                    $sheet->setCellValue('A' . $no, '');               
-                    $sheet->setCellValue('B' . $no, '');               
-                    $sheet->setCellValue('C' . $no, $lists[$i-1]['client_name'] . '(' . $lists[$i-1]['company'] . ')');               
-                    $sheet->setCellValue('D' . $no, '');               
-                    $sheet->setCellValue('E' . $no, '');               
-                    $sheet->setCellValue('F' . $no, '');               
-                    $sheet->setCellValue('G' . $no, '');               
-                    $sheet->setCellValue('H' . $no, ''); 
-                    $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
-                    $no++;
-                    $no++;
-                    $sheet->setCellValue('A' . $no, $lists[$i]['fnsku']);               
-                    $sheet->setCellValue('B' . $no, $lists[$i]['asin']);               
-                    $sheet->setCellValue('C' . $no, $lists[$i]['title']);               
-                    $sheet->setCellValue('D' . $no, $lists[$i]['qty_assigned']);               
-                    $sheet->setCellValue('E' . $no, number_format(round($lists[$i]['price'], 2), 2));               
-                    $sheet->setCellValue('F' . $no, number_format(round($lists[$i]['price'] * $lists[$i]['qty_assigned'], 2), 2));               
-                    $sheet->setCellValue('G' . $no, number_format(round($lists[$i]['buy_cost'] * $lists[$i]['qty_assigned'], 2), 2));               
-                    $sheet->setCellValue('H' . $no, $lists[$i]['vendor']); 
-                    // $sheet->setCellValue('I' . $no, $lists[$i]['assigned_notes']);    
-                    $no++;
-                    
-                }
-            }
-
-            if ($i == count($lists)-1) {
+                
                 $sheet->setCellValue('A' . $no, '');               
                 $sheet->setCellValue('B' . $no, '');               
-                $sheet->setCellValue('C' . $no, $lists[$i]['fba_number'] . ' / ' . $lists[$i]['shipment_number']);               
+                $sheet->setCellValue('C' . $no, $data[$i]['fba_number'] . ' / ' . $data[$i]['shipment_number']);               
                 $sheet->setCellValue('D' . $no, '');               
                 $sheet->setCellValue('E' . $no, '');               
                 $sheet->setCellValue('F' . $no, '');               
-                $sheet->setCellValue('G' . $no, '');                               
-                $sheet->setCellValue('H' . $no, (!is_null($lists[$i]['updated_at'])) ? date('m/d/Y', strtotime($lists[$i]['updated_at'])) : '-');    
+                $sheet->setCellValue('G' . $no, '');                                   
+                $sheet->setCellValue('H' . $no, (!is_null($data[$i]['updated_at'])) ? date('m/d/Y', strtotime($data[$i]['updated_at'])) : '-');    
                 $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
                 $no++;
-                $sheet->setCellValue('A' . $no, '');               
+                
+                $sheet->setCellValue('A' . $no, $data[$i]['dimensions']);               
                 $sheet->setCellValue('B' . $no, '');               
-                $sheet->setCellValue('C' . $no, $lists[$i]['client_name'] . '(' . $lists[$i]['company'] . ')');               
+                $sheet->setCellValue('C' . $no, $data[$i]['box_name'] .' - '. $data[$i]['client_name'] . '(' . $data[$i]['company'] . ')');               
                 $sheet->setCellValue('D' . $no, '');               
                 $sheet->setCellValue('E' . $no, '');               
                 $sheet->setCellValue('F' . $no, '');               
                 $sheet->setCellValue('G' . $no, '');               
                 $sheet->setCellValue('H' . $no, ''); 
                 $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
+                $no++;               
+            } else {
+                $nextVal = $data[$i + 1]['box_name'];
+                $sheet->setCellValue('A' . $no, $data[$i]['fnsku']);               
+                $sheet->setCellValue('B' . $no, $data[$i]['asin']);               
+                $sheet->setCellValue('C' . $no, $data[$i]['title']);               
+                $sheet->setCellValue('D' . $no, $data[$i]['allocation']);               
+                $sheet->setCellValue('E' . $no, number_format(round($data[$i]['market_price'], 2), 2));               
+                $sheet->setCellValue('F' . $no, number_format(round($data[$i]['market_price'] * $data[$i]['allocation'], 2), 2));               
+                $sheet->setCellValue('G' . $no, number_format(round($data[$i]['buy_cost'] * $data[$i]['allocation'], 2), 2));                               
+                $sheet->setCellValue('H' . $no, $data[$i]['vendor']);  
                 $no++;
+                if ($nextVal != $data[$i]['box_name']) {
+                    $sheet->setCellValue('A' . $no, '');               
+                    $sheet->setCellValue('B' . $no, '');               
+                    $sheet->setCellValue('C' . $no, $data[$i]['fba_number'] . ' / ' . $data[$i]['shipment_number']);               
+                    $sheet->setCellValue('D' . $no, '');               
+                    $sheet->setCellValue('E' . $no, '');               
+                    $sheet->setCellValue('F' . $no, '');               
+                    $sheet->setCellValue('G' . $no, '');                                   
+                    $sheet->setCellValue('H' . $no, (!is_null($data[$i]['updated_at'])) ? date('m/d/Y', strtotime($data[$i]['updated_at'])) : '-');    
+                    $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
+                    $no++;
+                    
+                    $sheet->setCellValue('A' . $no, $data[$i]['dimensions']);               
+                    $sheet->setCellValue('B' . $no, '');               
+                    $sheet->setCellValue('C' . $no, $data[$i]['box_name'] .' - '. $data[$i]['client_name'] . '(' . $data[$i]['company'] . ')');               
+                    $sheet->setCellValue('D' . $no, '');               
+                    $sheet->setCellValue('E' . $no, '');               
+                    $sheet->setCellValue('F' . $no, '');               
+                    $sheet->setCellValue('G' . $no, '');               
+                    $sheet->setCellValue('H' . $no, ''); 
+                    $spreadsheet->getActiveSheet()->getStyle('A'.$no.':I'.$no)->getFont()->setBold(true);
+                    $no++;   
+                }
             }
-
             
-            $client = $lists[$i]['order_id']; 
         }
         $fileName = "Need To Upload.xlsx";  
         $writer = new Xlsx($spreadsheet);
         $writer->save("files/". $fileName);
-      
         header("Content-Type: application/vnd.ms-excel");
 
 		header('Content-Disposition: attachment; filename="' . basename($fileName) . '"');

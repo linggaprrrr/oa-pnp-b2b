@@ -719,7 +719,7 @@
                         let fileId = 0;
                         let pattern = [];
                         $.ajax({
-                            url: "/upload-file",
+                            url: "/b2b/upload-file",
                             type: "post",
                             data: {file: fileNames[i]},
                             async: false,
@@ -737,7 +737,7 @@
                             if ((products[i][j][0] != null)) {                        
                                 totalCurrProduct++;
                                 $.ajaxQueue({
-                                    url: "/upload-data",
+                                    url: "/b2b/upload-data",
                                     type: "post",
                                     data: {product: products[i][j], file_id: fileId, row: j},                                           
                                     success : function(data) {                                                                 

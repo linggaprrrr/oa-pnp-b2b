@@ -8,9 +8,25 @@
                 Master List Page
             </h2>            
         </div>
-        <hr>
-        <div class="my-3 max-w-full">
-            <table class="datatable-init stripe table" style="font-size: 11px; "> 
+        <hr>        
+        <div class="my-3 max-w-full ">            
+            <div style="float: right; margin-bottom: 10px">
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-left"
+                    >
+                    <i class="fa-solid fas fa-angle-double-left"></i>                    
+                </button>
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-right"
+                    >
+                    <i class="fa-solid fas fa-angle-double-right"></i>                    
+                </button>
+            </div>
+            <table class="datatable-init stripe table scroll-container" style="font-size: 11px; display: block; overflow-x: auto; white-space: nowrap;"> 
                 <thead>
                     <tr>                                 
                         <th style="width: 15%">Item Description</th>         
@@ -440,6 +456,22 @@
 <?= $this->endSection() ?>
 <?= $this->section('js') ?>
 <script>
+    $(document).ready(function() {
+        const scrollContainer = $(".scroll-container");
+        const scrollLeftButton = $("#scroll-left");
+        const scrollRightButton = $("#scroll-right");
+
+        scrollLeftButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() - 100); // Ubah nilai scroll sesuai kebutuhan
+
+        });
+
+        scrollRightButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() + 100); // Ubah nilai scroll sesuai kebutuhan
+        });
+    });
+
+
     let inputTimer;
     $(document).on('input propertychange', '.qty_returned', function() {
         const id = $(this).data('id');

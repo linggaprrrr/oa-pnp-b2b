@@ -2,8 +2,7 @@
 
 namespace App\Controllers\b2b;
 
-use App\Controllers\b2b\BaseController;
-use App\Models\b2b\ClientModel;
+use App\Controllers\BaseController;
 use App\Models\b2b\FileModel;
 use App\Models\UserModel;
 

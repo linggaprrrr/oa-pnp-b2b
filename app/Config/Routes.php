@@ -34,7 +34,7 @@ $routes->get('/features', 'Auth::features');
 $routes->get('/pricing', 'Auth::pricing');
 $routes->get('/about', 'Auth::about');
 
-
+$routes->get('/login', 'Auth::pnpLogin');
 $routes->get('/pnp/login', 'Auth::pnpLogin');
 $routes->get('/pnp/logout', 'Auth::pnpLogout');
 $routes->get('/b2b/login', 'Auth::b2bLogin');
@@ -176,58 +176,58 @@ $routes->post('/add-new-client', 'Clients::addClient');
 // PnP End
 
 // b2b Start
-$routes->post('/b2b/upload-files', 'Purchase::uploadFiles');
-$routes->get('/b2b/download-asin-data', 'Purchase::downloadASINData');
-$routes->post('/b2b/upload-asin-file', 'Purchase::uploadASINData');
-$routes->post('/b2b/upload-file','Purchase::uploadFile2');
-$routes->post('/b2b/upload-file2','Purchase::uploadFile2');
-$routes->post('/b2b/upload-data','Purchase::addProductDetails3');
-$routes->post('/b2b/upload-data2','Purchase::addProductDetails2');
+$routes->post('/b2b/upload-files', 'b2b\Purchase::uploadFiles');
+$routes->get('/b2b/download-asin-data', 'b2b\Purchase::downloadASINData');
+$routes->post('/b2b/upload-asin-file', 'b2b\Purchase::uploadASINData');
+$routes->post('/b2b/upload-file','b2b\Purchase::uploadFile2');
+$routes->post('/b2b/upload-file2','b2b\Purchase::uploadFile2');
+$routes->post('/b2b/upload-data','b2b\Purchase::addProductDetails3');
+$routes->post('/b2b/upload-data2','b2b\Purchase::addProductDetails2');
 $routes->get('/b2b/download-file/(:any)', 'Leads::downlaodFile/$1');
 
-$routes->post('/b2b/edit-template-files', 'Purchase::updateTemplate');
-$routes->post('/b2b/upload-template-files', 'Purchase::uploadTemplateFiles');
-$routes->get('/b2b/purchase/open-purchase-list/(:any)', 'Purchase::openFile/$1');
-$routes->get('/b2b/purchase/open-purchased-list/', 'Order::openFile');
-$routes->post('/b2b/tick-item', 'Purchase::tickItem');
-$routes->get('/b2b/get-item-notes', 'Purchase::getItemNotes');
-$routes->post('/b2b/save-notes', 'Purchase::saveItemNotes');
-$routes->post('/b2b/save-purchase-list', 'Order::savePurchaseList');
-$routes->post('/b2b/save-qty', 'Order::saveQty');
-$routes->post('/b2b/save-size', 'Order::saveSize');
-$routes->post('/b2b/save-staff', 'Order::saveStaff');
-$routes->get('/b2b/get-purchase-item', 'Order::getItem');
-$routes->post('/b2b/save-buyers', 'Order::saveBuyersItem');
+$routes->post('/b2b/edit-template-files', 'b2b\Purchase::updateTemplate');
+$routes->post('/b2b/upload-template-files', 'b2b\Purchase::uploadTemplateFiles');
+$routes->get('/b2b/purchase/open-purchase-list/(:any)', 'b2b\Purchase::openFile/$1');
+$routes->get('/b2b/purchase/open-purchased-list/', 'b2b\Order::openFile');
+$routes->post('/b2b/tick-item', 'b2b\Purchase::tickItem');
+$routes->get('/b2b/get-item-notes', 'b2b\Purchase::getItemNotes');
+$routes->post('/b2b/save-notes', 'b2b\Purchase::saveItemNotes');
+$routes->post('/b2b/save-purchase-list', 'b2b\Order::savePurchaseList');
+$routes->post('/b2b/save-qty', 'b2b\Order::saveQty');
+$routes->post('/b2b/save-size', 'b2b\Order::saveSize');
+$routes->post('/b2b/save-staff', 'b2b\Order::saveStaff');
+$routes->get('/b2b/get-purchase-item', 'b2b\Order::getItem');
+$routes->post('/b2b/save-buyers', 'b2b\Order::saveBuyersItem');
 
 $routes->get('/b2b/shipments', 'b2b\Home::shipments');
-$routes->post('/b2b/shipments', 'Shipment::addToShipments');
-$routes->post('/b2b/tracking-shipment', 'Shipment::trackingShipment');
-$routes->post('/b2b/input-shipment', 'Shipment::inputShipment');
-$routes->get('/b2b/tracking-detail', 'Shipment::getTrackingInfo');
-$routes->get('/b2b/refresh-tracking', 'Shipment::updateTracking');
-$routes->get('/b2b/get-shipment-info-by-item', 'Shipment::getShipmentInfoByItem');
+$routes->post('/b2b/shipments', 'b2b\Shipment::addToShipments');
+$routes->post('/b2b/tracking-shipment', 'b2b\Shipment::trackingShipment');
+$routes->post('/b2b/input-shipment', 'b2b\Shipment::inputShipment');
+$routes->get('/b2b/tracking-detail', 'b2b\Shipment::getTrackingInfo');
+$routes->get('/b2b/refresh-tracking', 'b2b\Shipment::updateTracking');
+$routes->get('/b2b/get-shipment-info-by-item', 'b2b\Shipment::getShipmentInfoByItem');
 
-$routes->post('/b2b/save-clients', 'Order::saveClients');
-$routes->post('/b2b/save-clients-status', 'Order::saveClientStatus');
-$routes->post('/b2b/save-qty-received', 'Order::saveQtyReceived');
-$routes->post('/b2b/save-qty-returned', 'Order::saveQtyReturned');
-$routes->post('/b2b/save-qty-assigned', 'Order::saveQtyAssigned');
-$routes->post('/b2b/add-new-assign', 'Order::addNewAssign');
-$routes->post('/b2b/delete-assign-data', 'Order::deleteAssignData');
-$routes->get('/b2b/get-client-list', 'Order::getClientList');
+$routes->post('/b2b/save-clients', 'b2b\Order::saveClients');
+$routes->post('/b2b/save-clients-status', 'b2b\Order::saveClientStatus');
+$routes->post('/b2b/save-qty-received', 'b2b\Order::saveQtyReceived');
+$routes->post('/b2b/save-qty-returned', 'b2b\Order::saveQtyReturned');
+$routes->post('/b2b/save-qty-assigned', 'b2b\Order::saveQtyAssigned');
+$routes->post('/b2b/add-new-assign', 'b2b\Order::addNewAssign');
+$routes->post('/b2b/delete-assign-data', 'b2b\Order::deleteAssignData');
+$routes->get('/b2b/get-client-list', 'b2b\Order::getClientList');
 $routes->get('/b2b/get-client', 'Clients::getClient');
-$routes->post('/b2b/save-status-order', 'Order::saveStatusOrder');
-$routes->post('/b2b/save-client-order', 'Order::saveClientOrder');
-$routes->post('/b2b/save-notes-order', 'Order::saveNotesOrder');
+$routes->post('/b2b/save-status-order', 'b2b\Order::saveStatusOrder');
+$routes->post('/b2b/save-client-order', 'b2b\Order::saveClientOrder');
+$routes->post('/b2b/save-notes-order', 'b2b\Order::saveNotesOrder');
 
-$routes->post('/b2b/save-fnsku', 'Order::saveFNSKU');
-$routes->post('/b2b/save-vendor-name', 'Order::saveVendorName');
-$routes->post('/b2b/save-assigned-notes', 'Order::saveAssignedNotes');
-$routes->post('/b2b/save-fba-number', 'Order::saveFBANumber');
-$routes->post('/b2b/save-shipment-number', 'Order::saveShipmentNumber');
-$routes->get('/b2b/export-need-to-upload', 'Order::exportNeedToUpload');
-$routes->get('/b2b/export-need-to-upload/(:any)', 'Order::exportNeedToUpload/$1');
-$routes->post('/b2b/save-assign-item', 'Order::saveItems');
+$routes->post('/b2b/save-fnsku', 'b2b\Order::saveFNSKU');
+$routes->post('/b2b/save-vendor-name', 'b2b\Order::saveVendorName');
+$routes->post('/b2b/save-assigned-notes', 'b2b\Order::saveAssignedNotes');
+$routes->post('/b2b/save-fba-number', 'b2b\Order::saveFBANumber');
+$routes->post('/b2b/save-shipment-number', 'b2b\Order::saveShipmentNumber');
+$routes->get('/b2b/export-need-to-upload', 'b2b\Order::exportNeedToUpload');
+$routes->get('/b2b/export-need-to-upload/(:any)', 'b2b\Order::exportNeedToUpload/$1');
+$routes->post('/b2b/save-assign-item', 'b2b\Order::saveItems');
 
 // admin
 $routes->get('/b2b/admin/users', 'b2b\Home::users');
@@ -264,6 +264,7 @@ $routes->post('/b2b/change-profit', 'Purchase::changeProfit');
 $routes->post('/b2b/change-roi', 'Purchase::changeROI');
 $routes->post('/b2b/change-status', 'Purchase::changeStatus');
 
+$routes->get('/get-avail-dates-b2b', 'b2b\Leads::getAvailDates');
 // b2b end
 
 

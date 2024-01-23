@@ -13,7 +13,7 @@
         <meta name="description" content="Flex is - Professional A unique and beautiful collection of UI elements">
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="favicon.png" />
+        <link href="landing-page/assets/images/favicon.png" rel="icon" type="image/png">
 
         <!-- icons
         ================================================== -->

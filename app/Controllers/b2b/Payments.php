@@ -16,7 +16,7 @@ class Payments extends BaseController
 
     public function index()
     {
-        return view('b2b/payment');
+        return view('payment');
     }
 
     public function transaction() {

@@ -40,10 +40,26 @@
                             <p><?= session()->getFlashdata('error') ?></p>
                         </div>
                     <?php endif ?>
-                    <table class="datatable-init table stripe" style="font-size: 11px">
+                    <div style="float: right; margin-bottom: 10px">
+                        <button
+                            type="button"
+                            class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                            id="scroll-left"
+                            >
+                            <i class="fa-solid fas fa-angle-double-left"></i>                    
+                        </button>
+                        <button
+                            type="button"
+                            class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                            id="scroll-right"
+                            >
+                            <i class="fa-solid fas fa-angle-double-right"></i>                    
+                        </button>
+                    </div>
+                    <table class="datatable-init table stripe scroll-container" style="font-size: 11px; display: block; overflow-x: auto; white-space: nowrap;">
                         <thead>
                             <tr>
-                                <th class="text-center">Title</th>
+                                <th class="text-center" style="width: 25%">Title</th>
                                 <th class="text-center">ASIN</th>
                                 <th class="text-center">Retail Link</th>
                                 <th class="text-center">Promo Code</th>                                
@@ -52,7 +68,7 @@
                                 <th class="text-center">Amazon Price</th>
                                 <th class="text-center">Net Profit</th>                                    
                                 <th class="text-center">ROI</th>        
-                                <th class="text-center">Status</th>        
+                                <th class="text-center" style="width: 10%">Status</th>        
                                 <!-- <th class="text-center">Notes</th>                                 -->
                                 <th class="text-center"><em class="icon ni ni-more-v-alt"></em></th>
                             </tr>
@@ -132,15 +148,31 @@
             
         </div>
         <div class="max-w-full">
+            <div style="float: right; margin-bottom: 10px">
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-left2"
+                    >
+                    <i class="fa-solid fas fa-angle-double-left"></i>                    
+                </button>
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-right2"
+                    >
+                    <i class="fa-solid fas fa-angle-double-right"></i>                    
+                </button>
+            </div>
             <div class="my-2">
-                <table class="datatable-init table stripe" style="font-size: 11px"> 
+                <table class="datatable-init table stripe scroll-container2"  style="font-size: 11px; display: block; overflow-x: auto; white-space: nowrap;"> 
                     <thead>
                         <tr>                                                            
                             <th class="text-center">ASIN</th>
                             <th>Item Name</th>
                             <th class="text-center">Product URL</th>
                             <th class="text-center" style="width: 5%">Buy Qty</th>
-                            <th class="text-center" style="width: 10%">Size</th>
+                            <th class="text-center" style="width: 1%">Size</th>
                             <th class="text-center">Buy Cost</th>
                             <th class="text-center">Total Buy Cost</th>
                             <th class="text-center">Selling Price</th>
@@ -170,11 +202,11 @@
                                             <?php endif ?>
                                         </div> 
                                     </td>                                    
-                                    <td>
+                                    <td >
                                         <?php if (session()->get('user_id') == $purch->order_staff) : ?>
-                                            <input type="text" name="size" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center size" value="<?= $purch->size ?>" data-id="<?= $purch->uid ?>">
+                                            <input type="text" style="width: 180px;" name="size" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center size" value="<?= $purch->size ?>" data-id="<?= $purch->uid ?>">
                                         <?php else : ?>
-                                            <input type="text" name="size" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center size" value="<?= $purch->size ?>" data-id="<?= $purch->uid ?>" disabled>
+                                            <input type="text" style="width: 180px;" name="size" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center size" value="<?= $purch->size ?>" data-id="<?= $purch->uid ?>" disabled>
                                         <?php endif ?>
                                         
                                     </td>
@@ -1205,7 +1237,28 @@
                 });
             });            
 
-            
+        const scrollContainer = $(".scroll-container");
+        const scrollLeftButton = $("#scroll-left");
+        const scrollRightButton = $("#scroll-right");
+        const scrollContainer2 = $(".scroll-container2");
+        const scrollLeftButton2 = $("#scroll-left2");
+        const scrollRightButton2 = $("#scroll-right2");
+
+        scrollLeftButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() - 100); 
+        });
+
+        scrollRightButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() + 100); 
+        });
+
+        scrollLeftButton2.on("click", function() {
+            scrollContainer2.scrollLeft(scrollContainer2.scrollLeft() - 100); 
+        });
+
+        scrollRightButton2.on("click", function() {
+            scrollContainer2.scrollLeft(scrollContainer2.scrollLeft() + 100); 
+        });    
     });
 
     $(document).on("change",".tick",function() {

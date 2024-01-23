@@ -10,7 +10,23 @@
         </div>
         <hr>
         <div class="my-3 max-w-full">
-            <table class="datatable-init stripe table" style="font-size: 11px; "> 
+            <div style="float: right; margin-bottom: 10px">
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-left"
+                    >
+                    <i class="fa-solid fas fa-angle-double-left"></i>                    
+                </button>
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-right"
+                    >
+                    <i class="fa-solid fas fa-angle-double-right"></i>                    
+                </button>
+            </div>
+            <table class="datatable-init stripe table scroll-container" style="font-size: 11px; "> 
                 <thead>
                     <tr>                                 
                         <th style="width: 15%">Item Description</th>         
@@ -50,7 +66,9 @@
                                 </tr>
                                 <tr>
                                     <td class="align-middle"><?= substr($purch['title'], 0, 120) ?><?= (strlen($purch['title']) > 120) ? '..' : '' ?></td>
-                                    <td class="text-center align-middle"><b><?= $purch['asin'] ?></b></td>
+                                    <td class="text-center align-middle">
+                                        <button type="button" class="asinModal flex" data-id="<?= $purch['lid'] ?>" data-asin="<?= $purch['asin'] ?>"> <b><?= $purch['asin'] ?> <em class="fas fa-expand-alt"></em> </b> </button>                                               
+                                    </td>
                                     <td class="text-center align-middle">
                                         <a href="#" class="orderModal" data-asin="<?= $purch['asin'] ?>" data-order_number="<?= implode(',',$purch['order_number']) ?>"><em class="far fa-credit-card"></em></a>                                        
                                     </td>
@@ -92,8 +110,10 @@
                                 <?php $date = date('F jS, Y', strtotime($purch['purchased_date'])) ?>
                             <?php else : ?>
                                 <tr>
-                                    <td class="align-middle"><?= substr($purch['title'], 0, 55) ?><?= (strlen($purch['title']) > 55) ? '..' : '' ?></td>
-                                    <td class="text-center align-middle"><b><?= $purch['asin'] ?></b></td>
+                                    <td class="align-middle"><?= substr($purch['title'], 0, 120) ?><?= (strlen($purch['title']) > 120) ? '..' : '' ?></td>
+                                    <td class="text-center align-middle">
+                                        <button type="button" class="asinModal flex" data-id="<?= $purch['lid'] ?>"  data-asin="<?= $purch['asin'] ?>"> <b><?= $purch['asin'] ?>  <em class="fas fa-expand-alt"></em> </b> </button>                                               
+                                    </td>
                                     <td class="text-center align-middle">
                                         
                                         <a href="#" class="orderModal" data-asin="<?= $purch['asin'] ?>" data-order_number="<?= implode(',',$purch['order_number']) ?>"><em class="far fa-credit-card"></em></a>                                        
@@ -314,10 +334,144 @@
     </div>
 </div>
 
+<div style="display: none;" x-data="{showModal:false}">
+    <button
+    @click="showModal = true"
+    class="splitting-data btn bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90"
+    >
+    </button>
+    
+        <template x-teleport="#x-teleport-target">
+                <div
+                class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                x-show="showModal"
+                role="dialog"
+                @keydown.window.escape="showModal = false"
+            >
+            <div
+                class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                @click="showModal = false"
+                x-show="showModal"
+                x-transition:enter="ease-out"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="ease-in"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+            ></div>
+            <div
+                class="relative w-full max-w-lg origin-top rounded-lg bg-white transition-all duration-300 dark:bg-navy-700"
+                x-show="showModal"
+                x-transition:enter="easy-out"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="easy-in"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+            >
+                <div
+                    class="flex justify-between rounded-t-lg bg-slate-200 px-4 py-3 dark:bg-navy-800 sm:px-5"
+                    >
+                    <h3 class="text-base font-medium text-slate-700 dark:text-navy-100">
+                        Splitting Qty (<strong class="asin-section"></strong>)
+                    </h3>
+                    <button
+                        @click="showModal = !showModal"
+                        class="btn -mr-1.5 h-7 w-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                    >
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4.5 w-4.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                        ></path>
+                        </svg>
+                    </button>
+                    </div>
+                    <div class="px-4 py-4 sm:px-5">
+                    <p style="margin-bottom: 4px;">
+                        Now, You are splitting <code class="splitting-desc text-error font-bold"></code>
+                    </p>
+                    <hr>
+                        <div class="mt-4 space-y-4">   
+                        <form class="splitting-form">
+                            <label class="block">
+                                <span>New ASIN:</span>
+                                <input type="hidden" name="id" class="lead-id">
+                                <input
+                                    name="new-asin"
+                                    class="new-asin form-input mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                    placeholder="New Asin"
+                                    type="text"
+                                />
+                            </label>
+                            <label class="block">
+                                <span>New Item Description:</span>
+                                <textarea
+                                    rows="4"
+                                    name="new-desc"
+                                    placeholder="Enter title"
+                                    class="new-desc form-textarea mt-1.5 w-full resize-none rounded-lg border border-slate-300 bg-transparent p-2.5 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                ></textarea>
+                            </label>
+                            <label class="block">
+                                <span>New Qty: <small class="original-qty font-bold text-warning"></small></span>
+                                <input
+                                    name="new-qty"
+                                    class="new-qty form-input mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"                        
+                                    type="number"
+                                    min="1"
+                                />
+                            </label>
+                            <div class="space-x-2 text-right mt-4">
+                                <button
+                                    @click="showModal = false"
+                                    class="btn close-split-modal min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90"
+                                >
+                                    Cancel
+                                </button>
+                            <button
+                                type="button"
+                                class="btn splitting-button min-w-[7rem] rounded-full bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90"
+                            >
+                                Apply
+                            </button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    
+</div>
 
 <?= $this->endSection() ?>
 <?= $this->section('js') ?>
 <script>
+    let inputTimer;
+
+    $(document).ready(function() {
+        const scrollContainer = $(".scroll-container");
+        const scrollLeftButton = $("#scroll-left");
+        const scrollRightButton = $("#scroll-right");
+
+        scrollLeftButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() - 100); // Ubah nilai scroll sesuai kebutuhan
+
+        });
+
+        scrollRightButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() + 100); // Ubah nilai scroll sesuai kebutuhan
+        });
+    });
     $(document).on('input propertychange', '.qty_returned', function() {
         const id = $(this).data('id');
         const qty = $(this).val();
@@ -390,6 +544,21 @@
             });
     });
 
+    $(document).on('input propertychange', '.notes', function() {
+        const id = $(this).data('id');
+        const notes = $(this).val();
+
+        clearTimeout(inputTimer);
+        inputTimer = setTimeout(function() {
+            $.post('/b2b/save-masterlist-notes', {id: id, notes: notes})
+                ,done(function(data) {
+                    
+                });
+
+        }, 500);
+        
+    }) 
+
     $(document).on('click', '.orderModal', function() {            
         let asin = $(this).data('asin');
         let orders = $(this).data('order_number');                                    
@@ -406,6 +575,56 @@
         }
         $('.asin-code').html(asin);
         $('.order-number').click();
+    });
+
+    $(document).on('click', '.asinModal', function() {            
+        let id = $(this).data('id');                                      
+        $('.splitting-desc').html('');
+        $('.asin-section').html('');
+        $('.original-qty').html('');
+        $('.lead-id').val('');
+        $('.new-asin').val('');
+        $('.new-desc').val('');
+
+        $.get('/get-lead-data', {id: id})
+            .done(function(data) {
+                const resp = JSON.parse(data);
+                $('.splitting-desc').html(resp['asin'] + ' - ' + resp['title'] );
+                $('.asin-section').html(resp['asin']);
+                $('.original-qty').html('*original qty : '+resp['qty']);
+                
+                $('.lead-id').val(resp['lead_id']);
+                $('.new-asin').val(resp['asin']);
+                $('.new-desc').val(resp['title']);
+                $('.new-qty').val(1); 
+                $('.new-qty').data('original-qty', resp['qty']);
+                
+                
+            });
+
+        $('.splitting-data').click();
+    });
+
+    $(document).on('click', '.splitting-button', function() {
+        $.post('/split-data', $( ".splitting-form" ).serialize() )
+            .done(function(data) {
+                swal("Good Job!", "Your changes have been successfully saved", "success");
+                $('.close-split-modal').click();
+                clearTimeout(inputTimer);                
+                inputTimer = setTimeout(function() {
+                    location.reload() 
+                }, 1000);
+        });
+    });
+
+    $(document).on('input propertychange', '.new-qty', function() {
+        const original = parseInt($(this).data('original-qty'));
+        const value = parseInt($(this).val());
+
+        if (value > original) {
+            $.notify("Quantity exceeded!", "error");      
+            $(this).val(1);
+        }
     });
 
     $(document).on('click', '.shipment-details', function() {

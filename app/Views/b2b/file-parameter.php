@@ -624,7 +624,7 @@
                 const max_val = Math.max(...title);
                 const titlePredict = title.indexOf(max_val);        
                 const startPredict = parseInt(titlePredict) + 2;
-                $.post('/sync-pattern', {search: fileNameArr})
+                $.post('/b2b/sync-pattern', {search: fileNameArr})
                     .done(function(data) {
                         const resp = JSON.parse(data);                 
                         

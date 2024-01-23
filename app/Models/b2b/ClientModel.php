@@ -24,7 +24,7 @@ class ClientModel extends Model
             ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id', 'left')
             ->join('users', 'users.id = clients.oauth_uid')
             ->where('users.id', $id)
-            // ->where('purchase_items.activation', '1')
+//            ->where('purchase_items.activation', '1')
             ->orderBy('clients.id', 'DESC')
             ->groupBy('clients.id')
             ->get();

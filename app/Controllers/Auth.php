@@ -182,11 +182,11 @@ class Auth extends BaseController
         
         if ($user) {
             if (isset($post['rememberme'])) {            
-                setcookie("username", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
+                setcookie("email", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
                 setcookie("password", $post['password'], time()+ (10 * 365 * 24 * 60 * 60)); 
                 setcookie("remember", "checked", time()+ (10 * 365 * 24 * 60 * 60));            
             } else {
-                setcookie("username", "", time() - 3600, "/");
+                setcookie("email", "", time() - 3600, "/");
                 setcookie("password", "", time() - 3600, "/");
                 setcookie("remember", "", time() - 3600, "/");
             }
@@ -241,15 +241,19 @@ class Auth extends BaseController
         $post = $this->request->getVar();
         $user = $this->userModel->getWhere(['email' => $post['email'], 'type' => 'pnp'])->getRow();
         
+        
         if ($user) {
             if (isset($post['rememberme'])) {            
-                setcookie("username", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
+                setcookie("email", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
                 setcookie("password", $post['password'], time()+ (10 * 365 * 24 * 60 * 60)); 
                 setcookie("remember", "checked", time()+ (10 * 365 * 24 * 60 * 60));            
             } else {
-                setcookie("username", "", time() - 3600, "/");
-                setcookie("password", "", time() - 3600, "/");
-                setcookie("remember", "", time() - 3600, "/");
+                delete_cookie("email");
+                delete_cookie("password");
+                delete_cookie("remember");
+                setcookie("email", "", time() - 3600);
+                setcookie("password", "", time() - 3600);
+                setcookie("remember", "", time() - 3600);
             }
             // dd(password_verify($post['password'], $user->password));
             if (password_verify($post['password'], $user->password)) {
@@ -302,15 +306,19 @@ class Auth extends BaseController
         $post = $this->request->getVar();
         $user = $this->userModel->getWhere(['email' => $post['email'], 'type' => 'b2b'])->getRow();
         
+        
         if ($user) {
             if (isset($post['rememberme'])) {            
-                setcookie("username", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
+                setcookie("email", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
                 setcookie("password", $post['password'], time()+ (10 * 365 * 24 * 60 * 60)); 
                 setcookie("remember", "checked", time()+ (10 * 365 * 24 * 60 * 60));            
             } else {
-                setcookie("username", "", time() - 3600, "/");
-                setcookie("password", "", time() - 3600, "/");
-                setcookie("remember", "", time() - 3600, "/");
+                delete_cookie("email");
+                delete_cookie("password");
+                delete_cookie("remember");
+                setcookie("email", "", time() - 3600);
+                setcookie("password", "", time() - 3600);
+                setcookie("remember", "", time() - 3600);
             }
             // dd(password_verify($post['password'], $user->password));
             if (password_verify($post['password'], $user->password)) {
@@ -428,9 +436,9 @@ class Auth extends BaseController
                 ->where('email', $post['email'])
                 ->update();            
             // $this->greetingEmail($post['email'], $post['email']);
-            return redirect()->to(base_url('/login'))->with('message', 'Please sign in with your registered email');
+            return redirect()->to(base_url('/pnp/login'))->with('message', 'Please sign in with your registered email');
         } catch (\Throwable $th) {
-            return redirect()->to(base_url('/sign-up'))->with('error', 'Email has been used');
+            return redirect()->to(base_url('/pnp/sign-up'))->with('error', 'Email has been used');
         }
         
     }

@@ -1,5 +1,4 @@
 <?= $this->extend('pnp/layout/component') ?>
-
 <?= $this->section('content') ?>
 <?php
     use function App\Helpers\timeSpan;

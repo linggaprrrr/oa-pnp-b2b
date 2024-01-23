@@ -1,7 +1,7 @@
 <?= $this->extend('b2b/layout/component') ?>
 
 <?= $this->section('content') ?>
-<?php dd($selections->getResultObject()) ?>
+
 <div class="nk-content-body">
     <div class="nk-content-wrap">    
         <div class="nk-block-between">

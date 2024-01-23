@@ -24,7 +24,7 @@ class OrderStatusModel extends Model
                 ->join('files', 'files.id = lead_lists.file_id')
                 ->join('scan_unlimited', 'scan_unlimited.asin = lead_lists.asin')   
                 ->where('files.activation', 'actived')
-                ->where('files.oauth_uid', session()->get('user_id'))  
+                ->where('files.oauth_uid', session()->get('oauth_uid'))  
                 ->groupBy('orders_status.purchased_item_id')   
                 ->groupBy('DATE(orders_status.purchased_date)')                      
                 ->orderBy('orders_status.purchased_date', 'DESC')         
@@ -218,6 +218,99 @@ class OrderStatusModel extends Model
             ->get();
 
         return $query;
+    }
+
+    public function getTotalReceived($date) {
+        $query = $this->db->table('orders_status')
+            ->select('SUM(qty_received) as total_received')
+            ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+            ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+            ->where('lead_lists.file_id', session()->get('user_id'))
+            ->where('DATE(orders_status.received_date)', $date)
+            ->groupBy('orders_status.id')
+            ->get();
+            
+        return $query->getFirstRow();
+    }
+
+    public function getTotalUnreceived($date) {
+        $query = $this->db->table('orders_status')
+            ->select('ABS((SUM(qty_received + IFNULL(qty_returned, 0))) - SUM(purchase_items.qty)) as total_unreceived')
+            ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+            ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+            ->where('lead_lists.file_id', session()->get('user_id'))
+            ->where('DATE(orders_status.received_date)', $date)
+            ->groupBy('orders_status.id')
+            ->get();
+        return $query->getFirstRow();
+    }
+
+    public function getTotalRefund($date) {
+        $query = $this->db->table('orders_status')
+            ->select('ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund')
+            ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+            ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+            ->where('lead_lists.file_id', session()->get('user_id'))
+            ->where('DATE(orders_status.received_date)', $date)
+            ->groupBy('orders_status.id')
+            ->get();
+        return $query->getFirstRow();
+    }
+
+    public function getAllQty($start = null, $end = null) {
+        if (is_null($start)) {
+            $query = $this->db->table('orders_status')
+                ->select('lead_lists.title, lead_lists.asin, orders_status.purchased_date, purchase_items.qty, SUM(qty_received) as total_received, ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund, ABS((SUM(qty_received + IFNULL(qty_returned, 0))) - (purchase_items.qty)) as total_unreceived')
+                ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+                ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+                ->where('lead_lists.file_id', session()->get('user_id'))
+                ->where('DATE(purchase_items.created_at) >= CURDATE() - INTERVAL 8 day')   
+                ->groupBy('lead_lists.id')     
+                ->orderBy('purchase_items.id', 'DESC')        
+                ->get();
+            return $query;
+        } else {
+            $query = $this->db->table('orders_status')
+                ->select('lead_lists.title, lead_lists.asin, orders_status.purchased_date, purchase_items.qty, SUM(qty_received) as total_received, ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund, ABS((SUM(qty_received + IFNULL(qty_returned, 0))) - (purchase_items.qty)) as total_unreceived')
+                ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+                ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+                ->where('lead_lists.file_id', session()->get('user_id'))
+                ->where('DATE(purchase_items.created_at) >=', $start)
+                ->where('DATE(purchase_items.created_at) <=', $end)
+                ->groupBy('lead_lists.id')            
+                ->orderBy('purchase_items.id', 'DESC') 
+                ->get();
+            return $query;
+        }
+
+    }
+
+    public function getTotalAllQty($start = null, $end = null) {
+        if (is_null($start)) {
+            $query = $this->db->table('orders_status')
+            ->select('SUM(qty_received) as total_received, ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund, ABS((SUM(qty_received + IFNULL(qty_returned, 0))) - (purchase_items.qty)) as total_unreceived')
+                ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+                ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+                ->where('lead_lists.file_id', session()->get('user_id'))
+                ->where('DATE(purchase_items.created_at) >= CURDATE() - INTERVAL 8 day')   
+                
+                ->orderBy('purchase_items.id', 'DESC')        
+                ->get();
+            return $query->getFirstRow();
+        } else {
+            $query = $this->db->table('orders_status')
+                ->select('SUM(qty_received) as total_received, ABS((SUM(IFNULL(qty_returned, 0)))) as total_refund, ABS((SUM(qty_received + IFNULL(qty_returned, 0))) - (purchase_items.qty)) as total_unreceived')
+                ->join('purchase_items', 'purchase_items.id = orders_status.purchased_item_id')
+                ->join('lead_lists', 'lead_lists.id = purchase_items.lead_id')        
+                ->where('lead_lists.file_id', session()->get('user_id'))
+                ->where('DATE(purchase_items.created_at) >=', $start)
+                ->where('DATE(purchase_items.created_at) <=', $end)
+                
+                ->orderBy('purchase_items.id', 'DESC') 
+                ->get();
+            return $query->getFirstRow();
+        }
+
     }
 
 }

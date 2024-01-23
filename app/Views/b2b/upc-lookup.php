@@ -1,4 +1,4 @@
-<?= $this->extend('layout/component') ?>
+<?= $this->extend('b2b/layout/component') ?>
 
 <?= $this->section('content') ?>
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">

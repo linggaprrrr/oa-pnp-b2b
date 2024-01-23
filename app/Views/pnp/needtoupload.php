@@ -75,12 +75,28 @@
         
         <hr>
         <div class="my-3 max-w-full">
-            <table class="datatable-init stripe table" style="font-size: 11px; "> 
+            <div style="float: right; margin-bottom: 10px">
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-left"
+                    >
+                    <i class="fa-solid fas fa-angle-double-left"></i>                    
+                </button>
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-right"
+                    >
+                    <i class="fa-solid fas fa-angle-double-right"></i>                    
+                </button>
+            </div>
+            <table class="datatable-init stripe table scroll-container" style="font-size: 11px; display: block; overflow-x: auto; white-space: nowrap; width: 100%"> 
                 <thead>
                     <tr class="table-warning">
-                        <th class="text-center align-middle"></th>                                 
+                        <th class="text-center align-middle" style="width: 15%"></th>                                 
                         <th class="text-center align-middle"></th>  
-                        <th class="text-center align-middle" style="width: 400px">CATEGORY</th>
+                        <th class="text-center align-middle" style="width: 20%">CATEGORY</th>
                         <th class="text-center align-middle">CONDITION</th>
                         <th class="text-center align-middle"># OF UNITS</th>
                         <th class="text-center align-middle">AVG UNIT RETAIL</th>
@@ -88,9 +104,9 @@
                         <th class="text-center align-middle">TOTAL CLIENT COST</th>                        
                     </tr>
                     <tr>
-                        <th class="text-center align-middle"></th>                                 
+                        <th class="text-center align-middle" style="width: 15%"></th>                                 
                         <th class="text-center align-middle"></th>  
-                        <th class="text-center align-middle" style="width: 400px">OA</th>
+                        <th class="text-center align-middle" style="width: 20%">OA</th>
                         <th class="text-center align-middle">NEW</th>
                         <th class="text-center align-middle"><?= $summary['totalUnit'] ?></th>
                         <th class="text-center align-middle">$<?= number_format($summary['avgUnitRetail'], 2) ?></th>
@@ -98,9 +114,9 @@
                         <th class="text-center align-middle">$<?= number_format($summary['totalClientCost'], 2) ?></th>                        
                     </tr> 
                     <tr class="table-warning">
-                        <th class="text-center align-middle">FNSKU</th>                                 
+                        <th class="text-center align-middle" style="width: 15%">FNSKU</th>                                 
                         <th class="text-center align-middle">ASIN</th>  
-                        <th class="text-center align-middle" style="width: 400px">ITEM DESCRIPTION</th>
+                        <th class="text-center align-middle" style="width: 20%">ITEM DESCRIPTION</th>
                         <th class="text-center align-middle">ORIGINAL QTY</th>
                         <th class="text-center align-middle">RETAIL VALUE</th>
                         <th class="text-center align-middle">TOTAL ORIGINAL RETAIL</th>
@@ -116,12 +132,12 @@
                         <?php if ($i == $boxes->getNumRows()-1) : ?>
                             <tr>
                                 <td class="text-center align-middle">
-                                    <input type="text" name="fnsku" placeholder="FNSKU..." class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fnsku" data-id="<?= $data[$i]->assign_id ?>" style="font-size: 11px;" value="<?= $data[$i]->fnsku ?>">
+                                    <input type="text" name="fnsku" placeholder="FNSKU..." class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fnsku" data-id="<?= $data[$i]->assign_id ?>" style="font-size: 11px; width: 150px;" value="<?= $data[$i]->fnsku ?>" >
                                 </td>                                            
                                 <td class="text-center align-middle"><b><?=$data[$i]->asin?></b></td>                                                                                
                                 <td class="text-center align-middle">
                                     <button x-tooltip.cursor.x="'<?= str_replace("'", " ", $data[$i]->title ) ?>'">
-                                    <?= substr($data[$i]->title , 0, 120) ?><?= (strlen($data[$i]->title ) > 120) ? '..' : '' ?></td>
+                                    <?= substr($data[$i]->title , 0, 90) ?><?= (strlen($data[$i]->title ) > 90) ? '..' : '' ?></td>
                                     </button>                                                                       
                                 <td class="text-center align-middle">
                                     <?= $data[$i]->allocation ?>
@@ -138,6 +154,7 @@
                                 <td class="text-center align-middle font-bold">
                                     <label class="block">
                                         <span>Box Dimensions</span>
+                                        <br>
                                         <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent dimensions" data-id="<?= $data[$i]->box_name ?>" placeholder="18x18x24x24" value="<?= $data[$i]->dimensions ?>" type="text">
                                     </label>
                                 </td>
@@ -145,11 +162,13 @@
                                     <div class="grid grid-cols-2 gap-4 font-bold">
                                         <label class="block">
                                             <span>FBA Number</span>
+                                            <br>
                                             <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fba-number" data-id="<?= $data[$i]->box_name ?>" placeholder="FBA172..." value="<?= $data[$i]->fba_number ?>" type="text">
                                         </label>
 
                                         <label class="block">
                                             <span>Shipment Number</span>
+                                            <br>
                                             <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent shipment-number" data-id="<?= $data[$i]->box_name ?>" placeholder="1ZR726..." value="<?= $data[$i]->shipment_number ?>" type="text">
                                         </label>
                                     </div>                                        
@@ -176,12 +195,12 @@
                             <?php $nextVal = $data[$i + 1]->box_name; ?>
                             <tr>
                                 <td class="text-center align-middle">
-                                    <input type="text" name="fnsku" placeholder="FNSKU..." class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fnsku" data-id="<?= $data[$i]->assign_id ?>" style="font-size: 11px;" value="<?= $data[$i]->fnsku ?>">
+                                    <input type="text" name="fnsku" placeholder="FNSKU..." class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fnsku" data-id="<?= $data[$i]->assign_id ?>" style="font-size: 11px; width: 150px;" value="<?= $data[$i]->fnsku ?>" >
                                 </td>                                            
                                 <td class="text-center align-middle"><b><?=$data[$i]->asin?></b></td>                                                                                
                                 <td class="text-center align-middle">
                                     <button x-tooltip.cursor.x="'<?= str_replace("'", " ", $data[$i]->title ) ?>'">
-                                    <?= substr($data[$i]->title , 0, 120) ?><?= (strlen($data[$i]->title ) > 120) ? '..' : '' ?></td>
+                                    <?= substr($data[$i]->title , 0, 90) ?><?= (strlen($data[$i]->title ) > 90) ? '..' : '' ?></td>
                                     </button>                                                                       
                                 <td class="text-center align-middle">
                                     <?= $data[$i]->allocation ?>
@@ -199,6 +218,7 @@
                                     <td class="align-middle font-bold">
                                         <label class="block">
                                             <span>Box Dimensions</span>
+                                            <br>
                                             <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent dimensions" data-id="<?= $data[$i]->box_name ?>" placeholder="18x18x24x24" value="<?= $data[$i]->dimensions ?>" type="text">
                                         </label>
                                     </td>
@@ -206,11 +226,13 @@
                                         <div class="grid grid-cols-2 gap-4 font-bold">
                                             <label class="block">
                                                 <span>FBA Number</span>
+                                                <br>
                                                 <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent fba-number" data-id="<?= $data[$i]->box_name ?>" placeholder="FBA172..." value="<?= $data[$i]->fba_number ?>" type="text">
                                             </label>
 
                                             <label class="block">
                                                 <span>Shipment Number</span>
+                                                <br>
                                                 <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent shipment-number" data-id="<?= $data[$i]->box_name ?>" placeholder="1ZR726..." value="<?= $data[$i]->shipment_number ?>" type="text">
                                             </label>
                                         </div>                                        
@@ -245,6 +267,20 @@
 
 <?= $this->section('js') ?>
 <script>
+    $(document).ready(function() {
+        const scrollContainer = $(".scroll-container");
+        const scrollLeftButton = $("#scroll-left");
+        const scrollRightButton = $("#scroll-right");
+
+        scrollLeftButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() - 100); // Ubah nilai scroll sesuai kebutuhan
+
+        });
+
+        scrollRightButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() + 100); // Ubah nilai scroll sesuai kebutuhan
+        });
+    });
     $(document).on('input propertychange', '.fnsku', function(data) {            
             const item = $(this).data('id');
             const fnsku = $(this).val();

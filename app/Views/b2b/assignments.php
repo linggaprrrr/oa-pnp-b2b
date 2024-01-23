@@ -1,5 +1,7 @@
 <?= $this->extend('b2b/layout/component') ?>
+
 <?= $this->section('content') ?>
+
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="justify-between" style="display: flex;">
         <div class="mb-1">                   
@@ -152,26 +154,25 @@
             <div class="my-3 flex h-8 items-center justify-between" style="display: flex; ">
                 <div>
                     <h2 class="font-medium tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100 lg:text-base">
-                        Assignments Page
+                        Box Assignments 
                     </h2>      
                 </div>      
                 <div>
-<button type="submit" class="btn space-x-2 bg-warning font-medium text-white shadow-lg shadow-warning/50 hover:bg-warning-focus focus:bg-warning-focus active:bg-warning-focus/90">
-    <span>Send to Need To Upload Process</span>
-    <em class="fas fa-shipping-fast"></em>
-</button>
-                    
+                    <button type="submit" class="btn space-x-2 bg-warning font-medium text-white shadow-lg shadow-warning/50 hover:bg-warning-focus focus:bg-warning-focus active:bg-warning-focus/90">
+                        <span>Send to Need To Upload Process</span>
+                        <em class="fas fa-shipping-fast"></em>
+                    </button>    
                 </div>
             </div>
             <hr>
             <div class="my-3 max-w-full">
                 <div class="overflow-x-auto">
-                    <table class="is-hoverable w-full text-left" style="font-size: 12px">
+                    <table class="is-hoverable w-full text-left" style="font-size: 12px; display: block; overflow-x: auto; white-space: nowrap;">
                         <thead>
                             <tr>                        
                                 <th class="rounded-l-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 ">#</th>
                                 <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 ">ASIN</th>
-                                <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 30%;">Item Description</th>
+                                <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 20%;">Item Description</th>
                                 <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 5%;">Buy Cost</th>
                                 <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 7%;">Qty Assign</th>
                                 <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 5%;">Qty Remaining</th>
@@ -217,20 +218,104 @@
                                     <?php if ($purch['id'] != $purchId) : ?>                               
                                         <tr class="border border-transparent border-b-slate-200 dark:border-b-navy-500 row_<?= $purch['id'] ?>">
                                             <td class="rounded-l-lg px-4 py-3 sm:px-5 font-semibold"><?= $id++ ?></td>
-                                            <td class="px-4 py-3 sm:px-5">
+                                            <td class="px-4 py-3 sm:px-5 assigned-asin<?= $purch['aid'] ?>">
                                                 <?= $purch['asin'] ?>
-                                                <input type="hidden" name="assign_id[]" value="<?= $purch['aid'] ?>">
-                                                <?php if (!is_null($purch['sid'])) : ?>
-                                                    <a x-tooltip.success="'<?= (date('m-d-Y') == date('m-d-Y', strtotime($purch['sent_date'])) ? 'This item just sent to NTU today ' : 'This item has been sent to NTU on '.date('m/d/Y', strtotime($purch['sent_date'])).'') ?> '">
-                                                        <em class="fas fa-shipping-fast"></em>
-                                                    </a>
-                                                <?php endif ?>
+                                                <input type="hidden" name="assign_id[]" value="<?= $purch['aid'] ?>">                                                                                                
                                             </td>
                                             <td class="px-4 py-3 sm:px-5">
-                                                <button type="button" class="text-left" x-tooltip.cursor.x="'<?= str_replace("'", " ", $purch['title']) ?>'">
+                                                <button type="button" class="text-left font-bold" x-tooltip.cursor.x="'<?= str_replace("'", " ", $purch['title']) ?>'">
                                                     <?= substr($purch['title'], 0, 90) ?><?= (strlen($purch['title']) > 90) ? '..' : '' ?>
-                                                </button>                                    
-                                                
+                                                </button>                           
+                                                <hr>      
+                                                <div class="box-section<?= $purch['aid'] ?>">
+                                                    <?php if (count($purch['boxes']) > 0) : ?>
+                                                        <?php for ($i = 0; $i < count($purch['boxes']); $i++) :?>  
+                                                            <div class="grid grid-cols-3 gap-2 box-<?= $purch['boxes'][$i]->id ?>" data-box="<?= $purch['boxes'][$i]->id ?>">
+                                                                <label class="block">
+                                                                    <span>B&zwnj;ox N&zwnj;ame </span>
+                                                                    <span class="ntu-icon<?= $purch['aid'] ?>">
+                                                                    <?php if (!is_null($purch['boxes'][$i]->ntu_date)) : ?>
+                                                                        <a x-tooltip.success="'<?= (date('m-d-Y') == date('m-d-Y', strtotime($purch['boxes'][$i]->ntu_date)) ? 'This item just sent to NTU today ' : 'This item has been sent to NTU on '.date('m/d/Y', strtotime($purch['boxes'][$i]->ntu_date)).'') ?> '">
+                                                                            <em class="fas fa-shipping-fast"></em>
+                                                                        </a>
+                                                                    <?php endif ?>
+                                                                    </span>
+                                                                    <input type="hidden" name="box_id[]" class="box_id<?= $purch['aid'] ?>" value="<?= $purch['boxes'][$i]->id ?>">
+                                                                    <br>
+                                                                    <input name="box" style="width: 150px;" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="<?= $purch['boxes'][$i]->id ?>" data-allocation="<?= $purch['boxes'][$i]->allocation ?>" value="<?= $purch['boxes'][$i]->box_name ?>" type="text" autocomplete="nope">
+                                                                </label>
+                                                                <label class="block">
+                                                                    <span>Allocation</span>
+                                                                    <br>
+                                                                    <input style="width: 150px;" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="<?= $purch['boxes'][$i]->id ?>" data-allocation="<?= $purch['boxes'][$i]->allocation ?>"  placeholder="..." value="<?= $purch['boxes'][$i]->allocation ?>" type="number" min="1">
+                                                                </label>
+                                                                <label for="" class="flex items-center justify-center">                                                        
+                                                                    <?php if ($i == 0) : ?>
+                                                                        <button
+                                                                            type="button"
+                                                                            class="btn new-box border h-6 px-3 border-success/30 bg-success/10 font-medium text-success text-tiny hover:bg-success/20 focus:bg-success/20 active:bg-success/25"
+                                                                            data-id="<?= $purch['aid'] ?>"
+                                                                        >
+                                                                            <em class="fas fa-box-open mr-2"></em>
+                                                                            New Box
+                                                                        </button>
+                                                                    <?php else : ?>
+                                                                        <button
+                                                                            type="button"
+                                                                            class="delete-box btn h-9 w-9 p-0 font-medium text-error hover:bg-error/20 focus:bg-error/20 active:bg-error/25"
+                                                                            data-id="<?= $purch['aid'] ?>"
+                                                                            data-box_id="<?= $purch['boxes'][$i]->id ?>"
+                                                                        >
+                                                                            <svg
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            class="h-5 w-5"
+                                                                            fill="none"
+                                                                            viewBox="0 0 24 24"
+                                                                            stroke="currentColor"
+                                                                            >
+                                                                            <path
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                stroke-width="2"
+                                                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                                                            />
+                                                                            </svg>
+                                                                        </button>                                                                        
+                                                                            
+                                                                        
+                                                                    <?php endif ?>
+                                                                </label>
+                                                            </div>
+                                                        <?php endfor ?>
+                                                    <?php else : ?>
+                                                        <div class="grid grid-cols-3 gap-2" data-box="">
+                                                            <label class="block">
+                                                                <span>B&zwnj;ox N&zwnj;ame </span>
+                                                                <span class="ntu-icon<?= $purch['aid'] ?>">
+                                                                </span>
+                                                                <input type="hidden" name="box_id[]" class="box_id<?= $purch['aid'] ?>">   
+                                                                <br>                                                             
+                                                                <input name="box" style="width: 150px;" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="" data-allocation="" type="text" autocomplete="nope">
+                                                            </label>
+                                                            <label class="block">
+                                                                <span>Allocation</span>
+                                                                <br>
+                                                                <input style="width: 150px;"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id=""  data-allocation="" placeholder="..." type="number" min="1">
+                                                            </label>
+                                                            <label for="" class="flex items-center justify-center">                                                        
+                                                                <button
+                                                                    type="button"
+                                                                    class="btn new-box border h-6 px-3 border-success/30 bg-success/10 font-medium text-success text-tiny hover:bg-success/20 focus:bg-success/20 active:bg-success/25"
+                                                                    data-id="<?= $purch['aid'] ?>"
+                                                                >
+                                                                    <em class="fas fa-box-open mr-2"></em>
+                                                                    New Box
+                                                                </button>
+                                                            </label>
+                                                        </div>  
+                                                    <?php endif ?>
+                                                </div>
+
                                             </td>
                                             <td class="px-4 py-3 sm:px-5">
                                                 $<?= $purch['buy_cost'] ?>
@@ -238,7 +323,7 @@
                                             <td class="px-4 py-3 sm:px-5">
                                                 <div class="form-group">                                            
                                                     <div class="form-control-wrap number-spinner-wrap">                                
-                                                        <input type="number" name="qty[]" min="0" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center qty_assigned qty_assigned<?= $purch['aid'] ?>" data-received="<?= $purch['qty_received'] ?>" data-pid="<?= $purch['id'] ?>" data-id="<?= $purch['aid'] ?>" data-cost="<?= $purch['buy_cost'] ?>" data-asin="<?= $purch['asin'] ?>" data-title="<?= $purch['title'] ?>" data-remaining="<?= $purch['qty_remaining'] ?>" data-price="<?= $purch['price'] ?>" value="<?= ($purch['qty_assigned'] == 0) ? '0' : $purch['qty_assigned']  ?>">                                                
+                                                        <input type="number" name="qty[]" min="0" style="width: 75px;" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center qty_assigned qty_assigned<?= $purch['aid'] ?>" data-received="<?= $purch['qty_received'] ?>" data-pid="<?= $purch['id'] ?>" data-id="<?= $purch['aid'] ?>" data-cost="<?= $purch['buy_cost'] ?>" data-asin="<?= $purch['asin'] ?>" data-title="<?= $purch['title'] ?>" data-remaining="<?= $purch['qty_remaining'] ?>" data-price="<?= $purch['price'] ?>" value="<?= ($purch['qty_assigned'] == 0) ? '0' : $purch['qty_assigned']  ?>">                                                
                                                     </div>
                                                 </div>    
                                             </td>
@@ -253,7 +338,7 @@
                                                 $<?= round(($purch['buy_cost'] * $purch['qty_assigned']), 2)  ?>
                                             </td>
                                             <td class="rounded-r-lg px-4 py-3 sm:px-5">
-                                                <select name="client[]" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent select-client select-client_<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-item="<?= $purch['purchased_item_id'] ?>" style="font-size: 10px" id="">
+                                                <select name="client[]" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent select-client select-client_<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-item="<?= $purch['purchased_item_id'] ?>" style="font-size: 10px; width: 240px" id="">
                                                     <option value="">...</option>
                                                     <?php foreach ($clients->getResultObject() as $cl) : ?>
                                                         <option value="<?= $cl->id ?>" <?= $cl->id == $purch['order_id'] ? 'selected' : '' ?>><?= $cl->client_name ?> (<?= $cl->company ?>)</option>
@@ -261,7 +346,7 @@
                                                 </select>
                                             </td>
                                             <td class="rounded-r-lg px-4 py-3 sm:px-5">
-                                                <input type="text"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purch['aid'] ?>" style="font-size: 11px;" value="<?= $purch['assigned_notes'] ?>">
+                                                <input type="text"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purch['aid'] ?>" style="font-size: 11px; width: 300px" value="<?= $purch['assigned_notes'] ?>">
                                             </td>
                                             <td class="text-right addmore_<?= $purch['id'] ?>">
                                                 <div>                                                
@@ -272,7 +357,7 @@
                                     <?php else : ?>
                                         <tr class="border border-transparent border-b-slate-200 dark:border-b-navy-500">
                                             <td class="rounded-l-lg px-4 py-3 sm:px-5 font-semibold"></td>
-                                            <td class="px-4 py-3 sm:px-5">
+                                            <td class="px-4 py-3 sm:px-5 assigned-asin<?= $purch['aid'] ?>">
                                                 <?= $purch['asin'] ?>
                                                 <input type="hidden" name="assign_id[]" value="<?= $purch['aid'] ?>">
                                                 <?php if (!is_null($purch['sid'])) : ?>
@@ -290,7 +375,7 @@
                                             <td class="px-4 py-3 sm:px-5">
                                                 <div class="form-group">                                            
                                                     <div class="form-control-wrap number-spinner-wrap">                                
-                                                        <input type="number" name="qty[]" min="0" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center qty_assigned qty_assigned<?= $purch['aid'] ?>" data-received="<?= $purch['qty_received'] ?>" data-pid="<?= $purch['id'] ?>" data-id="<?= $purch['aid'] ?>" data-cost="<?= $purch['buy_cost'] ?>"  data-price="<?= $purch['price'] ?>" value="<?= ($purch['qty_assigned'] == 0) ? '0' : $purch['qty_assigned']  ?>">                                                
+                                                        <input type="number" name="qty[]" min="0" style="width: 75px;" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center qty_assigned qty_assigned<?= $purch['aid'] ?>" data-received="<?= $purch['qty_received'] ?>" data-pid="<?= $purch['id'] ?>" data-id="<?= $purch['aid'] ?>" data-cost="<?= $purch['buy_cost'] ?>"  data-price="<?= $purch['price'] ?>" value="<?= ($purch['qty_assigned'] == 0) ? '0' : $purch['qty_assigned']  ?>">                                                
                                                     </div>
                                                 </div>    
                                             </td>
@@ -302,7 +387,7 @@
                                                 <?php endif ?>
                                             </td>
                                             <td class="rounded-r-lg px-4 py-3 sm:px-5">
-                                                <select name="client[]" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent select-client select-client_<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-item="<?= $purch['purchased_item_id'] ?>" data-asin="<?= $purch['asin'] ?>" style="font-size: 10px" id="">
+                                                <select name="client[]" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent select-client select-client_<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-item="<?= $purch['purchased_item_id'] ?>" data-asin="<?= $purch['asin'] ?>" style="font-size: 10px; width: 240px" id="">
                                                     <option value="">...</option>
                                                     <?php foreach ($clients->getResultObject() as $cl) : ?>
                                                         <option value="<?= $cl->id ?>" <?= $cl->id == $purch['order_id'] ? 'selected' : '' ?>><?= $cl->client_name ?> (<?= $cl->company ?>)</option>
@@ -310,7 +395,7 @@
                                                 </select>
                                             </td>
                                             <td class="rounded-r-lg px-4 py-3 sm:px-5">
-                                                <input type="text"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purch['aid'] ?>" style="font-size: 11px;" value="<?= $purch['assigned_notes'] ?>">
+                                                <input type="text"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purch['aid'] ?>" style="font-size: 11px; width: 300px" value="<?= $purch['assigned_notes'] ?>">
                                             </td>
                                             <td class="text-right addmore_<?= $purch['id'] ?>">
                                                 <div>                                                
@@ -338,19 +423,25 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script>
+    $(document).ready(function() {
+        $(".get-boxname").attr("autocomplete", "off");
+    });
     $(document).ready(function() {
         var formStat = false;
 
 
         $( "#assignmentForm" ).on( "submit", function( event ) {
             event.preventDefault();                        
-            $.post('/b2b/shipments', $( "#assignmentForm" ).serialize() )
+            $.post('/pnp/shipments', $( "#assignmentForm" ).serialize() )
                 .done(function(data) {
                     formStat = false;                   
                     const resp = JSON.parse(data);
                     if (resp['result'] == 'success') {
-                        swal("Good Job!", "Your changes have been successfully saved.", "success");
+                        swal("Good Job!", "These Boxes have been successfully added to NTU, please refresh the page.", "success");
+                        
                     } else {
                         swal("Error!", "There is no data.", "warning");
                     }
@@ -391,7 +482,7 @@
             const remaining = $(this).data('remaining');
             
 
-            $.post('/b2b/save-qty-assigned', {id: id, pid: pid, qty: qty, received: received})
+            $.post('/pnp/save-qty-assigned', {id: id, pid: pid, qty: qty, received: received})
                 .done(function(data) { 
                     const remainder = JSON.parse(data);
 
@@ -420,7 +511,7 @@
             const item = $(this).data('id');
             const notes = $(this).val();            
 
-            $.post('/b2b/save-assigned-notes', {item: item, notes: notes})
+            $.post('/pnp/save-assigned-notes', {item: item, notes: notes})
                 .done(function(data) {
                     
                 });
@@ -433,7 +524,7 @@
             const asin = $(this).data('asin');
             const clientID = $(this).val();
 
-            $.post('/b2b/save-client-order', {id: id, item: item, client_id: clientID, asin: asin})
+            $.post('/pnp/save-client-order', {id: id, item: item, client_id: clientID, asin: asin})
                 .done(function(data) {
                     const resp = JSON.parse(data);
                     if (resp['status'] == 'warning') {
@@ -448,7 +539,7 @@
             const id = $(this).data('id');
             const client = $(this).val();
 
-            $.get('/b2b/get-client-list')
+            $.get('/pnp/get-client-list')
                 .done(function(data) {
                     const resp = JSON.parse(data);   
                     
@@ -474,18 +565,33 @@
                 }); 
             
         });
+        
         $(document).on('change', '.select-client-add-more', function(data) {
             const id = $(this).data('id');
             const item = $(this).data('item');
             const orderID = $(this).val();
 
-            $.post('/b2b/save-client-order', {id: id, item: item, order_id: orderID})
+            $.post('/pnp/save-client-order', {id: id, item: item, order_id: orderID})
                 .done(function(data) {
                     $.notify("Your changes have been saved!", "success");
                 });
             formStat = true;
         });
 
+
+
+        $(document).on('change', '.select-client-add-more', function(data) {
+            const id = $(this).data('id');
+            const item = $(this).data('item');
+            const orderID = $(this).val();
+
+            $.post('/pnp/save-client-order', {id: id, item: item, order_id: orderID})
+                .done(function(data) {
+                    $.notify("Your changes have been saved!", "success");
+                });
+            formStat = true;
+        });
+        
         $(document).on('click', '.add-more', function(data) {
             const id = $(this).data('id');
             const pid = $(this).data('pid');
@@ -495,7 +601,7 @@
             const received = $(this).data('received');
             const remaining = $(this).data('remaining');
             
-            $.post('/b2b/add-new-assign', {pid: pid})
+            $.post('/pnp/add-new-assign', {pid: pid})
                 .done(function(data) {                    
                     const client = JSON.parse(data);                                     
                     if (client['remaining'] != 0) {
@@ -514,7 +620,7 @@
             const pid = $(this).data('pid');
 
             $(this).closest("tr").remove();
-            $.post('/b2b/delete-assign-data', {id: id})
+            $.post('/pnp/delete-assign-data', {id: id})
                 .done(function(data) {
                     const qty = JSON.parse(data);
                     const remain = $('.qty_remain_' + pid).html();
@@ -554,7 +660,7 @@
                 .done(function( data ) {                          
                     $.notify("Your changes have been saved!", "success");
                     
-                    $.get('/b2b/get-client-list', {id: id, order_id: orderID})
+                    $.get('/pnp/get-client-list', {id: id, order_id: orderID})
                         .done(function(data) {
                         const resp = JSON.parse(data);          
                         
@@ -585,7 +691,7 @@
                 .done(function( data ) {                          
                     $.notify("Your changes have been saved!", "success");
                     // $('.select-client').find('option').remove();
-                    // $.get('/b2b/get-client-list', {id: id})
+                    // $.get('/pnp/get-client-list', {id: id})
                     //     .done(function(data) {
                     //     const resp = JSON.parse(data);          
                         
@@ -618,25 +724,167 @@
             // @todo: for IE parseFloat(0.55).toFixed(0) = 0;
             s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.')
             if (s[0].length > 3) {
-            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep)
+                s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep)
             }
             if ((s[1] || '').length < prec) {
-            s[1] = s[1] || ''
-            s[1] += new Array(prec - s[1].length + 1).join('0')
+                s[1] = s[1] || ''
+                s[1] += new Array(prec - s[1].length + 1).join('0')
             }
 
             return s.join(dec)
         }
 
     });
-    <?php 
-            if (isset($_GET['date'])) {
-                ?>                
-                swal("Data Information", "You are viewing data on <?= $_GET['date'] ?>", "info");
-                <?php 
-            }            
-        ?>
 
+    let inputTimer;
+    
+    $(document).on("change", ".box-name", function() {
+        const id = $(this).data('id');
+        const boxName = $(this).val();
+        const boxId =  $(this).closest('div').find('.box_id' + id).val();
+        
+        $.post('/update-box-name', {id: id, box: boxName, box_id: boxId})
+            .done( function(data) {
+                const resp = JSON.parse(data);                        
+                $(this).data('box_id', resp['box_id']);                 
+                $('.box_id' + id).val(resp['box_id']);
+                
+            })
+        // clearTimeout(inputTimer);
+
+        // // Set a new timer to execute after 500 milliseconds (adjust as needed)
+        // inputTimer = setTimeout(function() {
+        //     // The user has stopped inputting for 500 milliseconds
+            
+        // }, 200);
+        
+
+    })  
+    var allocation = 0;
+    $(document).on("input propertychange", ".total-allocation", function() {    
+        const id = $(this).data('id');
+        allocation = $(this).data('allocation');
+        const qty = $(this).val();
+        const boxId =  $(this).closest('div').find('.box_id' + id).val();
+        const qtyAssign = $('.qty_assigned'+ id).val();                
+        const getAlloc = $('.total-allocation'+id).map(function() {
+            return parseInt($(this).val()) || 0; 
+        }).get();
+
+
+        var totalAlloc = getAlloc.reduce(function(a, b) {
+            return a + b;
+        }, 0);
+
+        clearTimeout(inputTimer);
+
+        if (boxId === undefined) {            
+            if (totalAlloc > qtyAssign) {
+                $(this).val(allocation);                             
+                swal("Warning", "The total allocation exceeds the Quantity Assigned to this client", "warning");                
+            } else {                
+                inputTimer = setTimeout(function() {
+                    $.post('/update-total-allocation', {id: id, total: qty, box_id: null})
+                            .then(function(data) {                    
+                                const resp = JSON.parse(data);                        
+                                $(this).data('box_id', resp['box_id']); 
+                                $(this).data('allocation', resp['allocation']);
+                                $('.box_id' + id).val(resp['box_id']);
+                        }.bind(this))
+                            .fail(function(error) {
+                                console.error("Error:", error);
+                        });
+                }, 500);            
+            }
+        } else {            
+            if (totalAlloc > qtyAssign) {
+                $(this).val(allocation);
+                swal("Warning", "The total allocation exceeds the Quantity Assigned to this client", "warning");                
+            } else {
+                inputTimer = setTimeout(function() {
+                    $.post('/update-total-allocation', {id: id, total: qty, box_id: boxId})
+                        .then(function(data) {                    
+                            const resp = JSON.parse(data);                        
+                            $(this).data('box_id', resp['box_id']); 
+                            $(this).data('allocation', resp['allocation']);
+                            $('.box_id' + id).val(resp['box_id']);
+                    }.bind(this))
+                        .fail(function(error) {
+                            console.error("Error:", error);
+                    });
+                }, 500);                  
+            }
+        }
+    })
+
+    $(document).on('click', '.new-box', function() {
+        const id = $(this).data('id');
+        const qtyAssign = $('.qty_assigned'+ id).val();        
+        const getAlloc = $('.total-allocation'+id).map(function() {
+            return parseInt($(this).val()) || 0; 
+        }).get();
+
+        var totalAlloc = getAlloc.reduce(function(a, b) {
+            return a + b;
+        }, 0);
+        
+        if (totalAlloc >= qtyAssign) {
+            swal("Warning", "The total allocation exceeds the Quantity Assigned to this client", "warning");
+            
+        } else {
+            $.post('/add-new-box', {id: id})
+                .done( function(data) {
+                    const resp = JSON.parse(data);
+                    $('.box-section'+id).append('<div class="grid grid-cols-3 gap-2 box-'+ resp['box_id'] +'"><label class="block"><span>B&zwnj;ox N&zwnj;ame</span><input type="hidden" name="box_id[]" class="box_id'+id+'" value="'+ resp['box_id'] +'"> <input names="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" placeholder="BOX#12345..." type="text"></label><label class="block"><span>Allocation</span><input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" data-qty="" placeholder="..." type="number" min="1" ></label><label for="" class="flex items-center justify-center"><button type="button" class="delete-box btn h-9 w-9 p-0 font-medium text-error hover:bg-error/20 focus:bg-error/20 active:bg-error/25" data-id="'+id+'" data-box_id="'+resp['box_id']+'"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button></label></div>');
+                })
+        }
+
+        
+        
+        
+    })
+
+    $(document).on('click', '.delete-box', function() {
+        const id = $(this).data('box_id');        
+        $.post('/delete-box', {id: id})
+            .done( function(data) {
+                $.notify("Box successfully deleted!", "error");       
+                $('.box-'+ id).remove()
+            })
+    })
+    $(document).on('focus', '.get-boxname', function() {
+        $(this).autocomplete({
+            source: function(request, response) {
+                // Ajax request to fetch suggestions based on user input
+                $.ajax({
+                    url: "/get-all-box-name", // Replace with your actual server endpoint
+                    dataType: "json",
+                    data: {
+                        term: request.term
+                    },
+                    success: function(data) {
+                        response(data); // Pass the received suggestions to the autocomplete
+                    }
+                });
+            },
+            minLength: 2, // Minimum characters before triggering autocomplete
+            select: function(event, ui) {
+                // This function will be triggered when an item is selected from the suggestion list
+                var selectedValue = ui.item.value;
+                const id = $(this).data('id');
+                const boxId =  $(this).closest('div').find('.box_id' + id).val();
+                $.post('/update-box-name', {id: id, box: selectedValue, box_id: boxId})
+                    .done( function(data) {
+                        const resp = JSON.parse(data);                                                      
+                        $('.box_id' + id).val(resp['box_id']);
+                        
+                    })
+                // You can perform additional actions here based on the selected value
+                // For example, update another field or make an Ajax call
+            },
+        });
+    });
+   
 
 </script>
 <?= $this->endSection() ?>

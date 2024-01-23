@@ -1,5 +1,4 @@
 <?= $this->extend('b2b/layout/component') ?>
-
 <?= $this->section('content') ?>
 <?php
     use function App\Helpers\timeSpan;
@@ -362,7 +361,7 @@
         </div>
     </div>
     
-    <div class="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-3">
+    <div class="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-4">
         <div class="relative flex flex-col overflow-hidden rounded-lg bg-gradient-to-br from-info to-info-focus p-3.5">
             <p class="text-xs uppercase text-sky-100">Total Purchase Amount Today</p>                        
             <div class="flex items-end justify-between space-x-2">
@@ -426,6 +425,30 @@
                 </div>
             </div>
             <div class="mask is-hexagon-2 absolute top-0 right-0 -m-3 h-16 w-16 bg-white/20"></div>
+        </div>
+        <div class="relative flex flex-col overflow-hidden rounded-lg bg-gradient-to-br from-fuchsia-600  to-info-focus p-3.5">
+            <p class="text-xs uppercase text-sky-100">Total Qty Received Today                 
+            </p>                        
+            
+            <div class="flex items-end justify-between space-x-2">
+                <p class="mt-2 text-2xl font-medium text-white"><?= (is_null($totalReceivedToday)) ? '-' : $totalReceivedToday->total_received ?></p>                                           
+            </div>            
+            <div class="flex justify-end">                
+                <div class="mr-4">
+                    <p class="text-xs uppercase text-sky-100">Refund Today</p>
+                    <div class="flex items-end justify-between space-x-2">
+                        <p class="text-xl font-medium text-white"><?= (is_null($totalRefundToday)) ? '-' : $totalRefundToday->total_refund  ?></p>                
+                    </div>
+                </div>
+                <div>
+                    <p class="text-xs uppercase text-sky-100">Not Received Today</p>
+                    <div class="flex items-end justify-between space-x-2">
+                        <p class="text-xl font-medium text-white"><?= (is_null($totalUnreceivedToday)) ? '-' : $totalUnreceivedToday->total_unreceived ?></p>                
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mask is-reuleaux-triangle absolute top-0 right-0 -m-3 h-16 w-16 bg-white/20"></div>
         </div>
     </div>
     
@@ -1033,7 +1056,7 @@
             
         </div>
     </div>
-    <form action="/dashboard/" method="GET" id="summaryForm">
+    <form action="/b2b/dashboard/" method="GET" id="summaryForm">
     <?php csrf_field() ?>
         <div class="card px-4 pb-4 sm:px-5">
         
@@ -1087,7 +1110,7 @@
                                         </svg>
                                         </span>
                                     </label>            
-                            </div>
+                                </div>
                             <div>
                                 <button type="submit" class="btn border border-info/30 bg-info/10 font-medium text-info hover:bg-info/20 focus:bg-info/20 active:bg-info/25">Apply</button>
                             </div>                    
@@ -1342,7 +1365,7 @@
                         </select>                        
                     </label>                
                 </div> 
-                <div class="grid grid-cols-3 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-3"> 
+                <div class="grid grid-cols-3 gap-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-2"> 
                     <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
                         <div class="flex justify-between space-x-1">
                             <div class="flex">
@@ -1393,35 +1416,7 @@
                         </div>
                         <p class="mt-1 text-xs+">Total Profit</p>
                     </div>
-                    <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
-                        <div class="flex justify-between space-x-1">
-                            <div class="flex">
-                                <p class="text-xl font-semibold text-slate-700 dark:text-navy-100">
-                                    <?= (!empty($getMonthlySummary->getResultObject())) ? number_format($getAnnualuSummary['margin']/$getMonthlySummary->getNumRows(), 2) : '-' ?>%
-                                </p>
-                                
-                            </div>
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary dark:text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <p class="mt-1 text-xs+">Total AVG Margin</p>
-                    </div>
-                    <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
-                        <div class="flex justify-between space-x-1">
-                            <div class="flex">
-                                <p class="text-xl font-semibold text-slate-700 dark:text-navy-100">
-                                    <?= (!empty($getMonthlySummary->getResultObject())) ? number_format($getAnnualuSummary['roi']/$getMonthlySummary->getNumRows(), 2) : '-' ?>%
-                                </p>
-                            </div>
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary dark:text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <p class="mt-1 text-xs+">TOTAL AVG ROI</p>
-                    </div>
+
                     <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
                         <div class="flex justify-between">
                             <div class="flex">
@@ -1898,6 +1893,127 @@
                 chart.render();
             </script>
             
+        </div>
+    </div>
+    <div class="card px-4 pb-4 sm:px-5">
+        <div class="my-3 max-w-full">
+            <div class="my-2 flex justify-between">
+                <div>
+                    <h2 class="font-medium my-1 tracking-wide text-slate-700 line-clamp-1 mb-2 dark:text-navy-100 lg:text-base">
+                        Qty Overview
+                    </h2>
+                </div>
+                <div class="flex">                   
+                    <div class="mr-4">
+                        <?php $firstDate = date('m-01-Y') ?>
+                        <?php $now = date('m-d-Y') ?>                          
+                         
+                            <label class="relative flex" style="width: 420px;">
+                                <input
+                                
+                                <?php if (!is_null($startQty)) : ?>
+                                    <?php if (!is_null($endQty)) : ?>                                    
+                                        x-init="$el._x_flatpickr = flatpickr($el,{mode: 'range',dateFormat: 'm-d-Y',defaultDate: ['<?= $endQty ?>', '<?= $startQty ?>'] })"
+                                    <?php else : ?>
+                                        x-init="$el._x_flatpickr = flatpickr($el,{mode: 'range',dateFormat: 'm-d-Y',defaultDate: ['<?= $startQty ?>', '<?= $startQty ?>'] })"
+                                    <?php endif ?>
+                                <?php else : ?>
+                                    x-init="$el._x_flatpickr = flatpickr($el,{mode: 'range',dateFormat: 'm-d-Y',defaultDate: ['<?= $firstDate ?>', '<?= $now ?>'] })"
+                                <?php endif ?>
+                                class="text-center form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                placeholder="Choose date..."
+                                type="text"
+                                name="dateQty"
+                                
+                                />
+                                <span
+                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent"
+                                >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 transition-colors duration-200"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                >
+                                    <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                    />
+                                </svg>
+                                </span>
+                            </label>            
+                        </div>
+                    <div>
+                        <button type="submit" class="btn border border-info/30 bg-info/10 font-medium text-info hover:bg-info/20 focus:bg-info/20 active:bg-info/25">Apply</button>
+                    </div>                    
+                </div> 
+                
+            </div>
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-3" style="margin-bottom: 20px;"> 
+                <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
+                    <div class="flex justify-between space-x-1">
+                        <p class="text-xl font-semibold text-slate-700 dark:text-navy-100">
+                        <?= (is_null($qtyTotalQtyOverview)) ? '-' : ((is_null($qtyTotalQtyOverview->total_received) || $qtyTotalQtyOverview->total_received == 0) ? '-' : $qtyTotalQtyOverview->total_received)  ?>
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary dark:text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <p class="mt-1 text-xs+">Total Received</p>
+                </div>
+                <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
+                    <div class="flex justify-between">
+                        <p class="text-xl font-semibold text-slate-700 dark:text-navy-100">
+                            <?= (is_null($qtyTotalQtyOverview)) ? '-' : ((is_null($qtyTotalQtyOverview->total_refund) || $qtyTotalQtyOverview->total_refund == 0) ? '-' : $qtyTotalQtyOverview->total_refund)  ?>
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <p class="mt-1 text-xs+">Total Refund</p>
+                </div>      
+                <div class="rounded-lg bg-slate-150 p-4 dark:bg-navy-700">
+                    <div class="flex justify-between">
+                        <p class="text-xl font-semibold text-slate-700 dark:text-navy-100">
+                        <?= (is_null($qtyTotalQtyOverview)) ? '-' : ((is_null($qtyTotalQtyOverview->total_unreceived) || $qtyTotalQtyOverview->total_unreceived == 0) ? '-' : $qtyTotalQtyOverview->total_unreceived)  ?>
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <p class="mt-1 text-xs+">Total Not Received</p>
+                </div>               
+            </div>
+            <table class="datatable-init2 stripe table" style="font-size: 11px; "> 
+                <thead>
+                    <tr>                        
+                        <th class="text-center" style="width: 5%; text-align:center">Purchase Date</th>                                 
+                        <th class="text-center" style="width: 5%; text-align:center">ASIN</th>                   
+                        <th style="width: 35%;">Item Description</th>                                                         
+                        <th class="text-center" style="width: 5%; text-align:center">Total Purchase</th> 
+                        <th class="text-center" style="width: 5%; text-align:center">Qty Received</th> 
+                        <th class="text-center" style="width: 5%; text-align:center">Qty Refund</th> 
+                        <th class="text-center" style="width: 5%; text-align:center">Qty Not Received</th>                         
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($qtyOverView->getResultObject() as $itemQty) : ?>
+                        <tr>
+                            <td class="text-center"><?= date('m/d/Y', strtotime($itemQty->purchased_date)) ?></td>
+                            <td class="text-center"><?= $itemQty->asin ?></td>
+                            <td><?= $itemQty->title ?></td>
+                            <td class="text-center"><?= (is_null($itemQty->qty) || $itemQty->qty == 0) ? '-' : $itemQty->qty ?></td>
+                            <td class="text-center"><?= (is_null($itemQty->total_received) || $itemQty->total_received == 0) ? '-' : $itemQty->total_received ?></td>
+                            <td class="text-center"><?= (is_null($itemQty->total_refund) || $itemQty->total_refund == 0) ? '-' : $itemQty->total_refund ?></td>
+                            <td class="text-center"><?= (is_null($itemQty->total_unreceived) || $itemQty->total_unreceived == 0) ? '-' : $itemQty->total_unreceived ?></td>
+                        </tr>
+                    <?php endforeach ?>
+
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

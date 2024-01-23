@@ -5,7 +5,7 @@
 <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
     <div class="card px-4 pb-4 sm:px-5">
         <div class="max-w-sm my-2">
-            <form action="/selections/" method="get">
+            <form action="/b2b/selections/" method="get">
                 <label class="block">
                     <span>Select Date: </span>
                     <span class="relative mt-1.5 flex">
@@ -21,8 +21,8 @@
         </div>
         <div class="max-w-full">
             <div style="margin-top: 1.5rem">
-                <form action="/save-purchase-list" class="leadlist" method="post">
-                    <?php csrf_field() ?>     
+                <form action="/b2b/save-purchase-list" class="leadlist" method="post">
+                    <?php csrf_field() ?>             
                     <?php if (session()->getFlashdata('error')) : ?>
                         <div class="my-4 alert flex space-x-2 rounded-lg border border-error px-4 py-4 text-error">
                             <svg
@@ -39,21 +39,35 @@
                             </svg>
                             <p><?= session()->getFlashdata('error') ?></p>
                         </div>
-                    <?php endif ?>                   
-                    <table class="datatable-init table stripe" style="font-size: 11px"> 
+                    <?php endif ?>
+                    <div style="float: right; margin-bottom: 10px">
+                        <button
+                            type="button"
+                            class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                            id="scroll-left"
+                            >
+                            <i class="fa-solid fas fa-angle-double-left"></i>                    
+                        </button>
+                        <button
+                            type="button"
+                            class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                            id="scroll-right"
+                            >
+                            <i class="fa-solid fas fa-angle-double-right"></i>                    
+                        </button>
+                    </div>
+                    <table class="datatable-init table stripe scroll-container" style="font-size: 11px; overflow-x: auto; white-space: nowrap; width: 100%">
                         <thead>
                             <tr>
                                 <th class="text-center">Title</th>
                                 <th class="text-center">ASIN</th>
                                 <th class="text-center">Retail Link</th>
                                 <th class="text-center">Promo Code</th>                                
-                                <th class="text-center">Amazon Link</th>                               
-                                <th class="text-center">BSR</th>      
+                                <th class="text-center">Amazon Link</th>                                
                                 <th class="text-center">Buy Cost</th>  
-                                <th class="text-center">Amazon Price</th>                                   
+                                <th class="text-center">Amazon Price</th>
                                 <th class="text-center">Net Profit</th>                                    
                                 <th class="text-center">ROI</th>        
-                                
                                 <th class="text-center">Status</th>        
                                 <!-- <th class="text-center">Notes</th>                                 -->
                                 <th class="text-center"><em class="icon ni ni-more-v-alt"></em></th>
@@ -68,7 +82,6 @@
                                     <td class="text-center align-middle"><a href="<?= $data->retail_link ?>" target="_blank"><em class="fas fa-external-link-alt"></em></a></td>
                                     <td class="align-middle text-center"><?= (is_null($data->promo_code)) ? '-' : substr($data->promo_code, 0, 10) ?><?= (strlen($data->promo_code) > 10) ? '..' : '' ?></td>                                        
                                     <td class="text-center align-middle"><a href="<?= $data->amazon_link ?>" target="_blank"><em class="fas fa-external-link-alt"></em></a></td>                                        
-                                    <td class="align-middle text-center"><?= $data->best_sales_rank ?></td>
                                     <td class="align-middle text-center">$<?= round($data->buy_cost, 2) ?></td>
                                     <td class="align-middle text-center">$<?= round($data->market_price, 2) ?></td>
                                     <td class="align-middle text-center">$<?= round($data->profit, 2) ?></td>
@@ -95,13 +108,12 @@
                                     </td> -->
                                     <td class="text-center align-middle">
                                         <div class="custom-control custom-control-sm custom-checkbox">
-                                            <input type="checkbox" name="leads[]" value='<?= json_encode($data) ?>' data-id="<?= $data->id ?>" class="custom-control-input tick" id="customCheck<?= $data->id ?>">  
+                                            <input type="checkbox" name="leads[]" value="<?= htmlspecialchars(json_encode($data), ENT_QUOTES, 'UTF-8'); ?>" data-id="<?= $data->id ?>" class="custom-control-input tick" id="customCheck<?= $data->id ?>">  
                                             <label class="custom-control-label" for="customCheck<?= $data->id ?>"></label>                                                                          
                                         </div>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>  
-                        </tbody>
                     </table>
                     <div class="text-center">
                         <input type="hidden" name="date" value="<?= (isset($_GET['date']) ? $_GET['date'] : date('m-d-Y')) ?>" class="file-id">
@@ -128,11 +140,29 @@
         <div class="my-3 flex h-8 items-center justify-between">
             <h2 class="font-medium tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100 lg:text-base">
                 Purchase List [  <span class="font-bold"><?= date('F jS, Y') ?></span> ]
+                
             </h2>            
+            
         </div>
         <div class="max-w-full">
+            <div style="float: right; margin-bottom: 10px">
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-left2"
+                    >
+                    <i class="fa-solid fas fa-angle-double-left"></i>                    
+                </button>
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-right2"
+                    >
+                    <i class="fa-solid fas fa-angle-double-right"></i>                    
+                </button>
+            </div>
             <div class="my-2">
-                <table class="datatable-init table stripe" style="font-size: 11px"> 
+                <table class="datatable-init table stripe scroll-container2" style="font-size: 11px"> 
                     <thead>
                         <tr>                                                            
                             <th class="text-center">ASIN</th>
@@ -1176,20 +1206,17 @@
         </div>                
     </template>
 </div> 
+
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <?= $this->endSection() ?>
 <?= $this->section('js') ?>
 <script>
     $(document).ready(function() {        
         var availDates = new Array();
-        $.get('/b2b/get-avail-dates')
+        $.get('/get-avail-dates-b2b')
             .done(function(data) {
-                const resp = JSON.parse(data);
-                
-                if (resp['data'].length > 0) {
-                    for (var i = 0; i < resp['data'].length; i++) {
-                        availDates.push(resp['data'][i]['avail_date']);
-                    }                   
+                for (var i = 0; i < data['data'].length; i++) {
+                    availDates.push(data['data'][i]['avail_date']);
                 }
                 $(".filter-date").flatpickr({
                     disable: [
@@ -1206,7 +1233,28 @@
                 });
             });            
 
-            
+            const scrollContainer = $(".scroll-container");
+            const scrollLeftButton = $("#scroll-left");
+            const scrollRightButton = $("#scroll-right");
+            const scrollContainer2 = $(".scroll-container2");
+            const scrollLeftButton2 = $("#scroll-left2");
+            const scrollRightButton2 = $("#scroll-right2");
+
+            scrollLeftButton.on("click", function() {
+                scrollContainer.scrollLeft(scrollContainer.scrollLeft() - 100); 
+            });
+
+            scrollRightButton.on("click", function() {
+                scrollContainer.scrollLeft(scrollContainer.scrollLeft() + 100); 
+            });
+
+            scrollLeftButton2.on("click", function() {
+                scrollContainer2.scrollLeft(scrollContainer2.scrollLeft() - 100); 
+            });
+
+            scrollRightButton2.on("click", function() {
+                scrollContainer2.scrollLeft(scrollContainer2.scrollLeft() + 100); 
+            });    
     });
 
     $(document).on("change",".tick",function() {
@@ -1220,7 +1268,7 @@
         $(document).on("input propertychange",".notes",function() {
             const id = $(this).data('id');
             const notes = $(this).val();
-            $.post( "/b2b/save-notes", {id: id, notes: notes})
+            $.post( "/save-notes", {id: id, notes: notes})
                 .done(function( data ) {
                     const resp = JSON.parse(data);                                                            
                     if (resp['notes'] != "") {                        
@@ -1231,7 +1279,7 @@
         });
 
         $(".save-note").click(function() {
-            $.post( "/b2b/save-notes", $( "#note-form" ).serialize())
+            $.post( "/save-notes", $( "#note-form" ).serialize())
                 .done(function( data ) {
                     const resp = JSON.parse(data);                                        
                     
@@ -1292,7 +1340,7 @@
         })
 
         $(document).on("click", ".save-buyers", function() {
-            const id = $(this).data('id');        
+            const id = $(this).data('id');                        
             var formData = new FormData($("#buyer_form")[0]);
             $.ajax({
                 type: "POST",
@@ -1383,7 +1431,7 @@
             $(".total_price").html("$0.00");
             $(".qty-buyer").attr('data-id', id); //setter
             $(".save-buyers").attr('data-id', id);
-            $.get("/pnp/get-purchase-item", {id : id})
+            $.get("/b2b/get-purchase-item", {id : id})
                 .done(function( data ) {
                     const resp = JSON.parse(data);      
                     var j = 1;

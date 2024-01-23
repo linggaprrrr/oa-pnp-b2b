@@ -167,12 +167,12 @@
             <hr>
             <div class="my-3 max-w-full">
                 <div class="overflow-x-auto">
-                    <table class="is-hoverable w-full text-left" style="font-size: 12px">
+                    <table class="is-hoverable w-full text-left" style="font-size: 12px; display: block; overflow-x: auto; white-space: nowrap;">
                         <thead>
                             <tr>                        
                                 <th class="rounded-l-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 ">#</th>
                                 <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 ">ASIN</th>
-                                <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 30%;">Item Description</th>
+                                <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 20%;">Item Description</th>
                                 <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 5%;">Buy Cost</th>
                                 <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 7%;">Qty Assign</th>
                                 <th class="bg-slate-200 text-center px-4 py-1 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 " style="width: 5%;">Qty Remaining</th>
@@ -241,11 +241,13 @@
                                                                     <?php endif ?>
                                                                     </span>
                                                                     <input type="hidden" name="box_id[]" class="box_id<?= $purch['aid'] ?>" value="<?= $purch['boxes'][$i]->id ?>">
-                                                                    <input name="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="<?= $purch['boxes'][$i]->id ?>" data-allocation="<?= $purch['boxes'][$i]->allocation ?>" value="<?= $purch['boxes'][$i]->box_name ?>" type="text" autocomplete="nope">
+                                                                    <br>
+                                                                    <input name="box" style="width: 150px;" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="<?= $purch['boxes'][$i]->id ?>" data-allocation="<?= $purch['boxes'][$i]->allocation ?>" value="<?= $purch['boxes'][$i]->box_name ?>" type="text" autocomplete="nope">
                                                                 </label>
                                                                 <label class="block">
-                                                                    <span>Total Allocation</span>
-                                                                    <input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="<?= $purch['boxes'][$i]->id ?>" data-allocation="<?= $purch['boxes'][$i]->allocation ?>"  placeholder="..." value="<?= $purch['boxes'][$i]->allocation ?>" type="number" min="1">
+                                                                    <span>Allocation</span>
+                                                                    <br>
+                                                                    <input style="width: 150px;" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="<?= $purch['boxes'][$i]->id ?>" data-allocation="<?= $purch['boxes'][$i]->allocation ?>"  placeholder="..." value="<?= $purch['boxes'][$i]->allocation ?>" type="number" min="1">
                                                                 </label>
                                                                 <label for="" class="flex items-center justify-center">                                                        
                                                                     <?php if ($i == 0) : ?>
@@ -291,12 +293,14 @@
                                                                 <span>B&zwnj;ox N&zwnj;ame </span>
                                                                 <span class="ntu-icon<?= $purch['aid'] ?>">
                                                                 </span>
-                                                                <input type="hidden" name="box_id[]" class="box_id<?= $purch['aid'] ?>">                                                                
-                                                                <input name="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="" data-allocation="" type="text" autocomplete="nope">
+                                                                <input type="hidden" name="box_id[]" class="box_id<?= $purch['aid'] ?>">   
+                                                                <br>                                                             
+                                                                <input name="box" style="width: 150px;" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id="" data-allocation="" type="text" autocomplete="nope">
                                                             </label>
                                                             <label class="block">
-                                                                <span>Total Allocation</span>
-                                                                <input  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id=""  data-allocation="" placeholder="..." type="number" min="1">
+                                                                <span>Allocation</span>
+                                                                <br>
+                                                                <input style="width: 150px;"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-box_id=""  data-allocation="" placeholder="..." type="number" min="1">
                                                             </label>
                                                             <label for="" class="flex items-center justify-center">                                                        
                                                                 <button
@@ -319,7 +323,7 @@
                                             <td class="px-4 py-3 sm:px-5">
                                                 <div class="form-group">                                            
                                                     <div class="form-control-wrap number-spinner-wrap">                                
-                                                        <input type="number" name="qty[]" min="0" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center qty_assigned qty_assigned<?= $purch['aid'] ?>" data-received="<?= $purch['qty_received'] ?>" data-pid="<?= $purch['id'] ?>" data-id="<?= $purch['aid'] ?>" data-cost="<?= $purch['buy_cost'] ?>" data-asin="<?= $purch['asin'] ?>" data-title="<?= $purch['title'] ?>" data-remaining="<?= $purch['qty_remaining'] ?>" data-price="<?= $purch['price'] ?>" value="<?= ($purch['qty_assigned'] == 0) ? '0' : $purch['qty_assigned']  ?>">                                                
+                                                        <input type="number" name="qty[]" min="0" style="width: 75px;" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center qty_assigned qty_assigned<?= $purch['aid'] ?>" data-received="<?= $purch['qty_received'] ?>" data-pid="<?= $purch['id'] ?>" data-id="<?= $purch['aid'] ?>" data-cost="<?= $purch['buy_cost'] ?>" data-asin="<?= $purch['asin'] ?>" data-title="<?= $purch['title'] ?>" data-remaining="<?= $purch['qty_remaining'] ?>" data-price="<?= $purch['price'] ?>" value="<?= ($purch['qty_assigned'] == 0) ? '0' : $purch['qty_assigned']  ?>">                                                
                                                     </div>
                                                 </div>    
                                             </td>
@@ -334,7 +338,7 @@
                                                 $<?= round(($purch['buy_cost'] * $purch['qty_assigned']), 2)  ?>
                                             </td>
                                             <td class="rounded-r-lg px-4 py-3 sm:px-5">
-                                                <select name="client[]" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent select-client select-client_<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-item="<?= $purch['purchased_item_id'] ?>" style="font-size: 10px" id="">
+                                                <select name="client[]" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent select-client select-client_<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-item="<?= $purch['purchased_item_id'] ?>" style="font-size: 10px; width: 240px" id="">
                                                     <option value="">...</option>
                                                     <?php foreach ($clients->getResultObject() as $cl) : ?>
                                                         <option value="<?= $cl->id ?>" <?= $cl->id == $purch['order_id'] ? 'selected' : '' ?>><?= $cl->client_name ?> (<?= $cl->company ?>)</option>
@@ -342,7 +346,7 @@
                                                 </select>
                                             </td>
                                             <td class="rounded-r-lg px-4 py-3 sm:px-5">
-                                                <input type="text"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purch['aid'] ?>" style="font-size: 11px;" value="<?= $purch['assigned_notes'] ?>">
+                                                <input type="text"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purch['aid'] ?>" style="font-size: 11px; width: 300px" value="<?= $purch['assigned_notes'] ?>">
                                             </td>
                                             <td class="text-right addmore_<?= $purch['id'] ?>">
                                                 <div>                                                
@@ -371,7 +375,7 @@
                                             <td class="px-4 py-3 sm:px-5">
                                                 <div class="form-group">                                            
                                                     <div class="form-control-wrap number-spinner-wrap">                                
-                                                        <input type="number" name="qty[]" min="0" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center qty_assigned qty_assigned<?= $purch['aid'] ?>" data-received="<?= $purch['qty_received'] ?>" data-pid="<?= $purch['id'] ?>" data-id="<?= $purch['aid'] ?>" data-cost="<?= $purch['buy_cost'] ?>"  data-price="<?= $purch['price'] ?>" value="<?= ($purch['qty_assigned'] == 0) ? '0' : $purch['qty_assigned']  ?>">                                                
+                                                        <input type="number" name="qty[]" min="0" style="width: 75px;" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent text-center qty_assigned qty_assigned<?= $purch['aid'] ?>" data-received="<?= $purch['qty_received'] ?>" data-pid="<?= $purch['id'] ?>" data-id="<?= $purch['aid'] ?>" data-cost="<?= $purch['buy_cost'] ?>"  data-price="<?= $purch['price'] ?>" value="<?= ($purch['qty_assigned'] == 0) ? '0' : $purch['qty_assigned']  ?>">                                                
                                                     </div>
                                                 </div>    
                                             </td>
@@ -383,7 +387,7 @@
                                                 <?php endif ?>
                                             </td>
                                             <td class="rounded-r-lg px-4 py-3 sm:px-5">
-                                                <select name="client[]" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent select-client select-client_<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-item="<?= $purch['purchased_item_id'] ?>" data-asin="<?= $purch['asin'] ?>" style="font-size: 10px" id="">
+                                                <select name="client[]" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent select-client select-client_<?= $purch['aid'] ?>" data-id="<?= $purch['aid'] ?>" data-item="<?= $purch['purchased_item_id'] ?>" data-asin="<?= $purch['asin'] ?>" style="font-size: 10px; width: 240px" id="">
                                                     <option value="">...</option>
                                                     <?php foreach ($clients->getResultObject() as $cl) : ?>
                                                         <option value="<?= $cl->id ?>" <?= $cl->id == $purch['order_id'] ? 'selected' : '' ?>><?= $cl->client_name ?> (<?= $cl->company ?>)</option>
@@ -391,7 +395,7 @@
                                                 </select>
                                             </td>
                                             <td class="rounded-r-lg px-4 py-3 sm:px-5">
-                                                <input type="text"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purch['aid'] ?>" style="font-size: 11px;" value="<?= $purch['assigned_notes'] ?>">
+                                                <input type="text"  class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent assigned_notes" data-id="<?= $purch['aid'] ?>" style="font-size: 11px; width: 300px" value="<?= $purch['assigned_notes'] ?>">
                                             </td>
                                             <td class="text-right addmore_<?= $purch['id'] ?>">
                                                 <div>                                                
@@ -831,7 +835,7 @@
             $.post('/add-new-box', {id: id})
                 .done( function(data) {
                     const resp = JSON.parse(data);
-                    $('.box-section'+id).append('<div class="grid grid-cols-3 gap-2 box-'+ resp['box_id'] +'"><label class="block"><span>B&zwnj;ox N&zwnj;ame</span><input type="hidden" name="box_id[]" class="box_id'+id+'" value="'+ resp['box_id'] +'"> <input names="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" placeholder="BOX#12345..." type="text"></label><label class="block"><span>Total Allocation</span><input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" data-qty="" placeholder="..." type="number" min="1" ></label><label for="" class="flex items-center justify-center"><button type="button" class="delete-box btn h-9 w-9 p-0 font-medium text-error hover:bg-error/20 focus:bg-error/20 active:bg-error/25" data-id="'+id+'" data-box_id="'+resp['box_id']+'"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button></label></div>');
+                    $('.box-section'+id).append('<div class="grid grid-cols-3 gap-2 box-'+ resp['box_id'] +'"><label class="block"><span>B&zwnj;ox N&zwnj;ame</span><input type="hidden" name="box_id[]" class="box_id'+id+'" value="'+ resp['box_id'] +'"> <input names="box" class="get-boxname form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent box-name box-name'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" placeholder="BOX#12345..." type="text"></label><label class="block"><span>Allocation</span><input class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent total-allocation total-allocation'+id+'" data-id="'+id+'" data-box_id="'+resp['box_id']+'" data-qty="" placeholder="..." type="number" min="1" ></label><label for="" class="flex items-center justify-center"><button type="button" class="delete-box btn h-9 w-9 p-0 font-medium text-error hover:bg-error/20 focus:bg-error/20 active:bg-error/25" data-id="'+id+'" data-box_id="'+resp['box_id']+'"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button></label></div>');
                 })
         }
 

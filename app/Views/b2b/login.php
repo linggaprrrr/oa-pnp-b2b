@@ -68,7 +68,7 @@
                         </ul>
                     </nav>
         
-                    <a href="/login" class="btn_buy"> Login </a>
+                    <a href="/b2b/login" class="btn_buy"> Login </a>
         
                     <!-- overly for small devices -->
                     <div class="overly" uk-toggle="target: .header_menu ; cls: is-visible"></div>
@@ -114,10 +114,10 @@
                     <?php endif ?>
                         <div>
                             <label for="email">Username or Email Address </label>
-                            <?php if (isset($_COOKIE['username'])) : ?>
+                            <?php if (isset($_COOKIE['email'])) : ?>
                               <div class="input-with-icon">
                                   <i class="uil-envelope-alt"></i>
-                                  <input type="text" class="input-text with-border" name="email" id="email" autocomplete="nope" value="<?= $_COOKIE['username'] ?>">
+                                  <input type="text" class="input-text with-border" name="email" id="email" autocomplete="nope" value="<?= $_COOKIE['email'] ?>">
                               </div>                              
                             <?php else : ?>
                               <div class="input-with-icon">
@@ -142,6 +142,7 @@
                             <?php endif ?>   
                             
                         </div>
+                        
                         <div class="checkbox">
                         <?php if (isset($_COOKIE['remember'])) : ?>
                           <input type="checkbox" id="chekcbox2" name="rememberme" checked>

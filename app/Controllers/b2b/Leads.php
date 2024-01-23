@@ -174,37 +174,23 @@ class Leads extends ResourceController
     }
 
     public function getAvailDates() {
-        $userId = session()->get('email');
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://oaclients.com/get-avail-dates/'. $userId ,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-        ));
-        
-        $response = curl_exec($curl);        
-        curl_close($curl);
-        
-        // $result = json_encode($response);
-        echo $response;
-    }
+        $user = session()->get('oauth_uid');
 
-    public function getAvailDates2() {
-        $userId = session()->get('user_id');
-        $getDate = $this->leadModel->getAvailDate($userId);
-            
+        
+        $leads = $this->fileModel
+                ->select('DATE(files.created_at) as avail_date')
+                ->join('lead_lists', 'lead_lists.file_id = files.id')                
+                ->where('files.oauth_uid', $user)
+                ->groupBy('DATE(files.created_at)')
+                ->orderBy('files.created_at', 'DESC')->get();
         $data = [
             'message' => 'success',
-            'data' => $getDate->getResultObject(),
+            'data' => $leads->getResultObject(),
             
-        ];        
-        echo json_encode($data);
+        ];
+        return $this->respond($data, 200);
     }
+
 
     public function readExcel() {
         $file = $this->request->getFile('file');        
@@ -217,7 +203,7 @@ class Leads extends ResourceController
             $render = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
         }
         $spreadsheet = $render->load($file);
-        $data = $spreadsheet->getActiveSheet()->toArray();
+        $data = $spreadsheet->getActiveSheet()->toArray(null, true, false,false);
         echo json_encode($data);
     }
 
