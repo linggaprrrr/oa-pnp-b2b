@@ -15,7 +15,23 @@
                     Purchase List
                 </h2>            
             </div>
-            <table class="datatable-init table stripe" style="font-size: 11px"> 
+            <div style="float: right; margin-bottom: 10px">
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-left"
+                    >
+                    <i class="fa-solid fas fa-angle-double-left"></i>                    
+                </button>
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-right"
+                    >
+                    <i class="fa-solid fas fa-angle-double-right"></i>                    
+                </button>
+            </div>
+            <table class="datatable-init table stripe scroll-container" style="font-size: 11px; overflow-x: auto; white-space: nowrap; width: 100%">
                 <thead>
                     <tr>                                                            
                         <th class="text-center">ASIN</th>
@@ -59,7 +75,18 @@
                                 <?php endif ?>
                                 
                             </td>
-                            <td class="text-center align-middle">$<?= round($purch->buy_cost, 2) ?></td>                                    
+                            <td class="text-center align-middle">
+                                <span>
+                                    <input type="text" class="currency-field form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" 
+                                        name="currency-field" id="currency-field" 
+                                        data-id="<?= $purch->id ?>"
+                                        data-uid="<?= $purch->uid ?>"
+                                        pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" 
+                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                        value="<?= round($purch->buy_cost, 2) ?>" 
+                                        data-type="currency" placeholder="$0.00" />
+                                </span>
+                            </td>                                    
                             <td class="text-center align-middle"><span class="total_buy_cost_<?= $purch->uid ?>">$<?= round($purch->qty * $purch->buy_cost, 2) ?></span></td>
                             <td class="text-center align-middle">$<?= round($purch->market_price, 2) ?></td>
                             <td class="text-center align-middle"><span class="total_selling_<?= $purch->uid ?>">$<?= round($purch->qty * $purch->market_price, 2) ?></span></td>
@@ -1062,6 +1089,21 @@
 
 <?= $this->section('js') ?>
 <script>
+    $(document).ready(function() {        
+       
+       const scrollContainer = $(".scroll-container");
+       const scrollLeftButton = $("#scroll-left");
+       const scrollRightButton = $("#scroll-right");
+
+       scrollLeftButton.on("click", function() {
+           scrollContainer.scrollLeft(scrollContainer.scrollLeft() - 100); 
+       });
+
+       scrollRightButton.on("click", function() {
+           scrollContainer.scrollLeft(scrollContainer.scrollLeft() + 100); 
+       });
+
+   });
     $(document).on("change",".tick",function() {
             const id = $(this).data('id');
             // $.post( "/tick-item", { id: id })
@@ -1082,6 +1124,16 @@
                     }                                        
                 });
         });
+
+        $(document).on('change', '.currency-field', function() {
+            const id = $(this).data('id');
+            const uid = $(this).data('uid');
+            const val = $(this).val();
+            $.post('/change-buycost', {id: id, value: val})
+                .done(function(data) {
+                    $(".qty_"+uid).data("cost", val);
+                })
+        })
 
         $(".save-note").click(function() {
             $.post( "/save-notes", $( "#note-form" ).serialize())

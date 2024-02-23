@@ -207,7 +207,21 @@
                                         <?php endif ?>
                                         
                                     </td>
-                                    <td class="text-center align-middle">$<?= round($purch->buy_cost, 2) ?></td>                                    
+                                    <td class="text-center align-middle">
+                                        <span>
+                                            <label>$</label>
+                                        </span>
+                                        <span>
+                                            <input type="text" class="currency-field form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" 
+                                                name="currency-field" id="currency-field" 
+                                                data-id="<?= $purch->id ?>"
+                                                data-uid="<?= $purch->uid ?>"
+                                                pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" 
+                                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                                value="<?= round($purch->buy_cost, 2) ?>" 
+                                                data-type="currency" placeholder="$0.00" />
+                                        </span>
+                                    </td>                                    
                                     <td class="text-center align-middle"><span class="total_buy_cost_<?= $purch->uid ?>">$<?= round($purch->qty * $purch->buy_cost, 2) ?></span></td>
                                     <td class="text-center align-middle">$<?= round($purch->market_price, 2) ?></td>
                                     <td class="text-center align-middle"><span class="total_selling_<?= $purch->uid ?>">$<?= round($purch->qty * $purch->market_price, 2) ?></span></td>
@@ -1256,6 +1270,16 @@
                 scrollContainer2.scrollLeft(scrollContainer2.scrollLeft() + 100); 
             });    
     });
+
+    $(document).on('change', '.currency-field', function() {
+        const id = $(this).data('id');
+        const uid = $(this).data('uid');
+        const val = $(this).val();
+        $.post('/change-buycost', {id: id, value: val})
+            .done(function(data) {
+                $(".qty_"+uid).data("cost", val);
+            })
+    })
 
     $(document).on("change",".tick",function() {
             const id = $(this).data('id');

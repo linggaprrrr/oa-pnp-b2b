@@ -19,6 +19,7 @@ use App\Models\b2b\ShipmentModel;
 use App\Models\b2b\SubscriptionModel;
 use App\Models\b2b\TrackingModel;
 use App\Models\b2b\UPCLookupModel;
+use App\Models\pnp\MessageModel;
 use App\Models\UserModel;
 
 use function App\Helpers\timeSpan;
@@ -43,6 +44,7 @@ class Home extends BaseController
     protected $subsModel = "";
     protected $boxModel = "";
     protected $refundModel = "";
+    protected $messageModel = "";
 
     public function __construct()
     {
@@ -69,6 +71,7 @@ class Home extends BaseController
         $this->subsModel = new SubscriptionModel();
         $this->boxModel = new BoxModel();
         $this->refundModel = new RefundModel();
+        $this->messageModel = new MessageModel();
     }
 
     public function index()
@@ -1629,6 +1632,16 @@ class Home extends BaseController
             
         ];
         return view('admin/master-lists', $data);
+    }
+
+    public function chat() {
+        $user = session()->get('oauth_uid');
+        $messages = $this->messageModel->getUserMessage($user);
+        $data = [            
+            'title' => 'Chat',
+            'messages' => $messages            
+        ];
+        return view('pnp/chat', $data);
     }
     
 }

@@ -165,9 +165,26 @@
                 </div>
             </div>
             <hr>
+            <br>
+            <div style="margin-bottom: 10px">
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-left"
+                    >
+                    <i class="fa-solid fas fa-angle-double-left"></i>                    
+                </button>
+                <button
+                    type="button"
+                    class="btn h-9 w-9 rounded-full bg-slate-150 p-0 font-medium text-slate-800 hover:bg-slate-200 hover:shadow-lg hover:shadow-slate-200/50 focus:bg-slate-200 focus:shadow-lg focus:shadow-slate-200/50 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:hover:shadow-navy-450/50 dark:focus:bg-navy-450 dark:focus:shadow-navy-450/50 dark:active:bg-navy-450/90"
+                    id="scroll-right"
+                    >
+                    <i class="fa-solid fas fa-angle-double-right"></i>                    
+                </button>
+            </div>     
             <div class="my-3 max-w-full">
                 <div class="overflow-x-auto">
-                    <table class="is-hoverable w-full text-left" style="font-size: 12px; display: block; overflow-x: auto; white-space: nowrap;">
+                    <table class="is-hoverable w-full text-left scroll-container" style="font-size: 12px; display: block; overflow-x: auto; white-space: nowrap;">
                         <thead>
                             <tr>                        
                                 <th class="rounded-l-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 ">#</th>
@@ -428,6 +445,18 @@
 <script>
     $(document).ready(function() {
         $(".get-boxname").attr("autocomplete", "off");
+        const scrollContainer = $(".scroll-container");
+        const scrollLeftButton = $("#scroll-left");
+        const scrollRightButton = $("#scroll-right");
+
+        scrollLeftButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() - 100); // Ubah nilai scroll sesuai kebutuhan
+
+        });
+
+        scrollRightButton.on("click", function() {
+            scrollContainer.scrollLeft(scrollContainer.scrollLeft() + 100); // Ubah nilai scroll sesuai kebutuhan
+        });
     });
     $(document).ready(function() {
         var formStat = false;

@@ -1,0 +1,58 @@
+ERROR - 2024-02-12 06:03:17 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+AND assigned_items.order_id is NOT NULL
+AND `assigned_items`.`order_id` ' at line 10 in /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Models/pnp/BoxModel.php(94): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Controllers/pnp/Home.php(726): App\Models\pnp\BoxModel->getAllBox()
+#6 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+#7 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/quickprep/htdocs/quickprep.ai/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-02-12 06:03:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+AND assigned_items.order_id is NOT NULL
+AND `assigned_items`.`order_id` ' at line 10
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/pnp/BoxModel.php(94): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/pnp/Home.php(726): App\Models\pnp\BoxModel->getAllBox()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-12 06:03:20 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+AND assigned_items.order_id is NOT NULL
+AND `assigned_items`.`order_id` ' at line 10 in /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Models/pnp/BoxModel.php(94): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Controllers/pnp/Home.php(726): App\Models\pnp\BoxModel->getAllBox()
+#6 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+#7 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/quickprep/htdocs/quickprep.ai/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-02-12 06:03:20 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+AND assigned_items.order_id is NOT NULL
+AND `assigned_items`.`order_id` ' at line 10
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/pnp/BoxModel.php(94): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/pnp/Home.php(726): App\Models\pnp\BoxModel->getAllBox()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

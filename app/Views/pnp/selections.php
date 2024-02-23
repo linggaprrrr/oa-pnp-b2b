@@ -56,7 +56,7 @@
                             <i class="fa-solid fas fa-angle-double-right"></i>                    
                         </button>
                     </div>
-                    <table class="datatable-init table stripe scroll-container" style="font-size: 11px; display: block; overflow-x: auto; white-space: nowrap;">
+                    <table class="datatable-init table stripe scroll-container" style="font-size: 11px; overflow-x: auto; white-space: nowrap; width: 100%">
                         <thead>
                             <tr>
                                 <th class="text-center" style="width: 25%">Title</th>
@@ -116,6 +116,45 @@
                                     </tr>
                                 <?php endforeach; ?>  
                             <?php endif ?>
+                            <?php foreach ($byUpload->getResultObject() as $data2) : ?>                              
+                                <tr class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
+                                    <td class="align-middle text-justify"><?= substr($data2->title, 0, 55) ?><?= (strlen($data2->title) > 55) ? '..' : '' ?></td>
+                                    <td class="align-middle text-center" style="font-weight: bold;"><?= $data2->asin ?></td>
+                                    <td class="text-center align-middle"><a href="<?= $data2->retail_link ?>" target="_blank"><em class="fas fa-external-link-alt"></em></a></td>
+                                    <td class="align-middle text-center"><?= (is_null($data2->promo_code)) ? '-' : substr($data2->promo_code, 0, 10) ?><?= (strlen($data2->promo_code) > 10) ? '..' : '' ?></td>                                        
+                                    <td class="text-center align-middle"><a href="<?= $data2->amazon_link ?>" target="_blank"><em class="fas fa-external-link-alt"></em></a></td>                                        
+                                    <td class="align-middle text-center">$<?= round($data2->buy_cost, 2) ?></td>
+                                    <td class="align-middle text-center">$<?= round($data2->market_price, 2) ?></td>
+                                    <td class="align-middle text-center">$<?= round($data2->profit, 2) ?></td>
+                                    <td class="align-middle text-center"><?= round($data2->roi,2) ?>%</td>                                                                                 
+                                    <td class="text-center align-middle">
+                                        <?php if (!empty($data2->status)) : ?>
+                                            <?php if (strtolower($data2->status) == 'unrestricted') : ?>
+                                                <div class="badge bg-success text-white shadow-soft shadow-success/50"  style="font-size: 11px;">
+                                                    <?= strtoupper($data2->status) ?>
+                                                </div>
+                                            <?php elseif (strtolower($data2->status) == 'restricted') : ?>
+                                                <div class="badge bg-error text-white shadow-soft shadow-error/50"  style="font-size: 11px;">
+                                                    <?= strtoupper($data2->status) ?>
+                                                </div>                                                
+                                            <?php else : ?>
+                                                <?= strtoupper($data2->status) ?>
+                                            <?php endif ?>
+                                        <?php else : ?>
+                                            -
+                                        <?php endif ?>
+                                    </td>
+                                    <!-- <td class="text-center align-middle">
+                                        <input name="notes[]" class="form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" placeholder="Notes" type="text" data2-id="<?= $data2->id ?>" >                                            
+                                    </td> -->
+                                    <td class="text-center align-middle">
+                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                            <input type="checkbox" name="leads[]" value="<?= htmlspecialchars(json_encode($data2), ENT_QUOTES, 'UTF-8'); ?>" data2-id="<?= $data2->id ?>" class="custom-control-input tick" id="customCheck<?= $data2->id ?>">  
+                                            <label class="custom-control-label" for="customCheck<?= $data2->id ?>"></label>                                                                          
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>                              
                         </tbody>
                     </table>
                     <div class="text-center">
@@ -210,7 +249,22 @@
                                         <?php endif ?>
                                         
                                     </td>
-                                    <td class="text-center align-middle">$<?= round($purch->buy_cost, 2) ?></td>                                    
+                                    <td class="text-center align-middle">
+                                        <span>
+                                            <label>$</label>
+                                        </span>
+                                        <span>
+                                            <input type="text" class="currency-field form-input w-full rounded-lg border border-slate-300 bg-transparent px-3 py-1 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent" 
+                                                name="currency-field" id="currency-field" 
+                                                data-id="<?= $purch->id ?>"
+                                                data-uid="<?= $purch->uid ?>"
+                                                pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" 
+                                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                                value="<?= round($purch->buy_cost, 2) ?>" 
+                                                data-type="currency" placeholder="$0.00" />
+                                        </span>
+                                        
+                                    </td>                                    
                                     <td class="text-center align-middle"><span class="total_buy_cost_<?= $purch->uid ?>">$<?= round($purch->qty * $purch->buy_cost, 2) ?></span></td>
                                     <td class="text-center align-middle">$<?= round($purch->market_price, 2) ?></td>
                                     <td class="text-center align-middle"><span class="total_selling_<?= $purch->uid ?>">$<?= round($purch->qty * $purch->market_price, 2) ?></span></td>
@@ -246,7 +300,8 @@
                                     </td>
                                 </tr>
                             <?php endif ?>
-                        <?php endforeach ?>                                                    
+                        <?php endforeach ?>   
+                                                                         
                     </tbody>
                 </table>
             </div>
@@ -1260,6 +1315,16 @@
             scrollContainer2.scrollLeft(scrollContainer2.scrollLeft() + 100); 
         });    
     });
+
+    $(document).on('change', '.currency-field', function() {
+        const id = $(this).data('id');
+        const uid = $(this).data('uid');
+        const val = $(this).val();
+        $.post('/change-buycost', {id: id, value: val})
+            .done(function(data) {
+                $(".qty_"+uid).data("cost", val);
+            })
+    })
 
     $(document).on("change",".tick",function() {
             const id = $(this).data('id');

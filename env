@@ -1,4 +1,4 @@
-#--------------------------------------------------------------------
+uda#--------------------------------------------------------------------
 # Example Environment Configuration file
 #
 # This file can be used as a starting point for your own
@@ -20,7 +20,7 @@ CI_ENVIRONMENT = production
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = ''
+app.baseURL = 'https://quickprep.ai'
 # If you have trouble with `.`, you could also use `_`.
 # app_baseURL = ''
 # app.forceGlobalSecureRequests = false
@@ -30,7 +30,7 @@ CI_ENVIRONMENT = production
 # DATABASE
 #--------------------------------------------------------------------
 
-database.default.hostname = localhost
+database.default.hostname = 127.0.0.1
 database.default.database = oa-app-api
 database.default.username = root
 database.default.password = root

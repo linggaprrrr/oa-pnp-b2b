@@ -177,7 +177,7 @@ class Leads extends ResourceController
         $userId = session()->get('email');
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://oaclients.com/get-avail-dates/'. $userId ,
+            CURLOPT_URL => 'https://oaclients.com/get-avail-dates-email/'. $userId ,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

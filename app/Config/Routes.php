@@ -116,11 +116,7 @@ $routes->get('/pnp/export-need-to-upload/(:any)', 'pnp\Order::exportNeedToUpload
 $routes->post('/pnp/save-assign-item', 'pnp\Order::saveItems');
 
 // admin
-$routes->get('/pnp/admin/users', 'pnp\Home::users');
-$routes->get('/pnp/admin/master-lists', 'pnp\Home::masterListAll');
-$routes->get('/pnp/get-user', 'Auth::getUser');
-$routes->post('/pnp/update-subscription', 'pnp\Payments::updateSubscription');
-$routes->post('/pnp/create-paypal-order', 'pnp\Payments::transaction');
+
 
 // Client Page
 $routes->get('/pnp/dashboard', 'pnp\Home::dashboard');
@@ -144,6 +140,7 @@ $routes->get('/pnp/history', 'pnp\Home::history');
 $routes->get('/pnp/refunds', 'pnp\Home::refunds');
 $routes->get('/pnp/export-refunds', 'pnp\API::exportRefund');
 $routes->get('/pnp/export-refunds/(:any)', 'pnp\API::exportRefund/$1');
+$routes->get('/pnp/chat', 'pnp\Home::chat');
 
 
 $routes->get('/pnp/uploader/upload-file', 'pnp\Home::leadsList');
@@ -172,6 +169,8 @@ $routes->get('/encrypt-file', 'pnp\Files::test');
 $routes->get('/download-backup/(:any)/(:any)', 'pnp\Files::downloadBackUp/$1/$2');
 $routes->post('/restore-data', 'pnp\Files::restoreData');
 $routes->post('/add-new-client', 'Clients::addClient');
+
+$routes->post('/send-message', 'pnp\Messages::sendMessage');
 
 // PnP End
 
@@ -228,6 +227,7 @@ $routes->post('/b2b/save-shipment-number', 'b2b\Order::saveShipmentNumber');
 $routes->get('/b2b/export-need-to-upload', 'b2b\Order::exportNeedToUpload');
 $routes->get('/b2b/export-need-to-upload/(:any)', 'b2b\Order::exportNeedToUpload/$1');
 $routes->post('/b2b/save-assign-item', 'b2b\Order::saveItems');
+$routes->get('/b2b/chat', 'b2b\Home::chat');
 
 // admin
 $routes->get('/b2b/admin/users', 'b2b\Home::users');
@@ -279,7 +279,14 @@ $routes->get('/get-lead-data', 'pnp\API::getLeadData');
 $routes->post('/split-data', 'pnp\API::splitData');
 $routes->post('/update-shipping-cost', 'pnp\API::updateShippingCost');
 $routes->post('/update-shipping-notes', 'pnp\API::updateShippingNotes');
+$routes->post('/change-buycost', 'pnp\API::changeBuyCost');
 
+$routes->get('/admin/users', 'Home::users');
+$routes->get('/admin/history', 'Home::history');
+$routes->get('/admin/chat', 'Home::chat');
+$routes->get('/admin/chat/(:any)', 'Home::chat/$1');
+$routes->get('/admin/master-lists', 'Home::masterListAll');
+$routes->get('/get-user', 'Auth::getUser');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

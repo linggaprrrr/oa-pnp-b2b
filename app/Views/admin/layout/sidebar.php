@@ -7,10 +7,10 @@
         >
         <!-- Application Logo -->
             <div class="flex pt-4">
-                <a href="/">
+                <a href="/admin/users">
                 <img
                     class="h-11 w-11 transition-transform duration-500 ease-in-out hover:rotate-[360deg]"
-                    src="/lineone/images/sw.jpeg"
+                    src="/assets/img/quickprep-logo-only.png"
                     alt="logo"
                     style="border-radius: 50%"
                 />
@@ -29,6 +29,28 @@
                     >
                     <i class="fas fa-users fa-xl"></i>
                 </a>
+                <!-- <a
+                    href="/admin/master-lists"
+                    class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                    id="master-list"
+                    x-tooltip.placement.right="'Master List'"
+                    >
+                    <i class="fas fa-tasks fa-xl"></i>
+                </a> -->
+
+            </div>
+
+            <!-- <div
+                class="is-scrollbar-hidden flex grow flex-col space-y-4 overflow-y-auto pt-6"
+            >
+                <a
+                    href="/admin/chat"
+                    id="users"
+                    class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                    x-tooltip.placement.right="'Users'"
+                    >
+                    <i class="fas fa-users fa-xl"></i>
+                </a>
                 <a
                     href="/admin/master-lists"
                     class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
@@ -38,13 +60,25 @@
                     <i class="fas fa-tasks fa-xl"></i>
                 </a>
 
-            </div>
+            </div> -->
 
             <!-- Bottom Links -->
             <div class="flex flex-col items-center space-y-3 py-3">
+                <!-- Chat  -->
+                <a
+                    href="/admin/chat"
+                    class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                    id="backup-restore"
+                    x-tooltip.placement.right="'Chat With Users'"
+                >
+                    <i class="fab fa-rocketchat fa-xl"></i>
+                </a>
+                     
+            </div>
+            <div class="flex flex-col items-center space-y-3 py-3">
                 <!-- History -->
                 <a
-                href="/history"
+                href="/admin/history"
                 class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
                 id="history"
                 >

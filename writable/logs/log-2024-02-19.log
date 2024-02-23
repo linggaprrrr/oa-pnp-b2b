@@ -1,0 +1,955 @@
+CRITICAL - 2024-02-19 18:41:01 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:41:26 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:42:26 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:43:12 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:45:28 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:45:51 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:46:00 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(36): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:46:19 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:46:24 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:46:49 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 18:46:55 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:48:20 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-02-19 18:48:29 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 879.
+ 1 APPPATH/Controllers/pnp/Home.php(879): strtotime(null)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-02-19 18:48:29 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
+ 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
+ 5 APPPATH/Controllers/pnp/Home.php(1253): view('pnp/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:48:32 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:48:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:48:55 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:00 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-02-19 18:49:02 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 879.
+ 1 APPPATH/Controllers/pnp/Home.php(879): strtotime(null)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-02-19 18:49:02 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
+ 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
+ 5 APPPATH/Controllers/pnp/Home.php(1253): view('pnp/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:05 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:15 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:23 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:46 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:48 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:48 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:48 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:48 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:49:48 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:50:35 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:50:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:50:51 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:51:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:51:13 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:51:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:51:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:51:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:52:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:52:09 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(38): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:52:31 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:52:49 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:53:27 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-02-19 18:53:31 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 879.
+ 1 APPPATH/Controllers/pnp/Home.php(879): strtotime(null)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-02-19 18:53:31 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
+ 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
+ 5 APPPATH/Controllers/pnp/Home.php(1253): view('pnp/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:53:34 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:54:01 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:54:03 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:54:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:54:15 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:54:17 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:54:18 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:54:19 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:54:19 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:54:20 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:55:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:55:01 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:55:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:55:34 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:55:58 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:56:41 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 18:57:07 --> Undefined variable $subscription
+in APPPATH/Views/pnp/layout/topbar.php on line 3.
+ 1 APPPATH/Views/pnp/layout/topbar.php(3): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render()
+ 5 APPPATH/Views/pnp/chat.php(34): CodeIgniter\View\View->include()
+ 6 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/chat.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 9 APPPATH/Controllers/pnp/Home.php(1681): view()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->chat()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-02-19 18:58:14 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 879.
+ 1 APPPATH/Controllers/pnp/Home.php(879): strtotime(null)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-02-19 18:58:14 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
+ 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
+ 5 APPPATH/Controllers/pnp/Home.php(1253): view('pnp/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 18:58:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:59:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:59:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 18:59:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 19:00:07 --> Undefined property: stdClass::$plan
+in APPPATH/Views/admin/users.php on line 83.
+ 1 APPPATH/Views/admin/users.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/admin/users.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Home.php(37): view()
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->users()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 19:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 19:00:37 --> Undefined property: stdClass::$plan
+in APPPATH/Views/admin/users.php on line 83.
+ 1 APPPATH/Views/admin/users.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/admin/users.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Home.php(37): view()
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->users()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 19:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 19:00:38 --> Undefined property: stdClass::$plan
+in APPPATH/Views/admin/users.php on line 83.
+ 1 APPPATH/Views/admin/users.php(83): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/admin/users.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Home.php(37): view()
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->users()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 19:00:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:00:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:01:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-02-19 19:01:33 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 879.
+ 1 APPPATH/Controllers/pnp/Home.php(879): strtotime(null)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-02-19 19:01:33 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
+ 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
+ 5 APPPATH/Controllers/pnp/Home.php(1253): view('pnp/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 19:01:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:01:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:01:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:03:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:03:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:04:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:04:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-02-19 19:10:41 --> mysqli_sql_exception: Not unique table/alias: 'users' in /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+#4 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Models/pnp/MessageModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Controllers/Home.php(48): App\Models\pnp\MessageModel->getUsers()
+#6 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Home->chat()
+#7 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/quickprep/htdocs/quickprep.ai/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-02-19 19:10:41 --> Not unique table/alias: 'users'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Models/pnp/MessageModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Home.php(48): App\Models\pnp\MessageModel->getUsers()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->chat()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 19:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:14:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:14:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-02-19 19:14:17 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 879.
+ 1 APPPATH/Controllers/pnp/Home.php(879): strtotime(null)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+WARNING - 2024-02-19 19:14:17 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
+ 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
+ 2 SYSTEMPATH/View/View.php(213): include('/home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Views/pnp/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
+ 5 APPPATH/Controllers/pnp/Home.php(1253): view('pnp/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 19:14:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 19:28:29 --> Too few arguments to function App\Controllers\pnp\Messages::greetingEmail(), 0 passed in /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Controllers/pnp/Messages.php on line 38 and exactly 2 expected
+in APPPATH/Controllers/pnp/Messages.php on line 56.
+ 1 APPPATH/Controllers/pnp/Messages.php(38): App\Controllers\pnp\Messages->greetingEmail()
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Messages->sendMessage()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-02-19 19:29:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-19 19:30:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-19 19:39:03 --> syntax error, unexpected token "="
+in APPPATH/Controllers/pnp/Messages.php on line 28.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(892): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 19:39:28 --> syntax error, unexpected token "="
+in APPPATH/Controllers/pnp/Messages.php on line 28.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(892): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-19 19:39:55 --> syntax error, unexpected token "="
+in APPPATH/Controllers/pnp/Messages.php on line 28.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(892): class_exists()
+ 5 SYSTEMPATH/CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

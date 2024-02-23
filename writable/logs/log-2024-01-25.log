@@ -1,0 +1,14 @@
+CRITICAL - 2024-01-25 15:28:27 --> Undefined array key "buyer1"
+in APPPATH/Controllers/pnp/Order.php on line 191.
+ 1 APPPATH/Controllers/pnp/Order.php(191): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Order->saveBuyersItem()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-25 20:21:26 --> Undefined array key 2
+in APPPATH/Controllers/pnp/Home.php on line 680.
+ 1 APPPATH/Controllers/pnp/Home.php(680): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->needToUpload()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

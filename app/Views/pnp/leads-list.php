@@ -15,19 +15,11 @@
         <div class="my-3  max-w-full">
             <div class="flex justify-between">                
                 <div x-data="{showModal:false}">
-                    <?php if (date('Y-m-d') > $subscription['exp']) : ?>
-                        <button disabled="" class="btn bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 disabled:pointer-events-none disabled:select-none disabled:opacity-60 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                            Upload File
-                        </button>
-                    <?php else : ?>
-                        <button
+                    <button
                         @click="showModal = true"
                         class="btn bg-primary font-medium text-white shadow-lg shadow-primary/50 hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90"
                         > Upload File
-                        </button>
-                    <?php endif ?>
-                    
-                    
+                    </button>
                     <template x-teleport="#x-teleport-target">
                         <div
                             class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
@@ -84,7 +76,10 @@
                             </div>
                             <form id="upload-form" enctype="multipart/form-data">
                                 <div class="mx-5 my-2 grid grid-cols-1 gap-4">                           
-                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Leads List File</label>
+                                    <div class="flex">
+                                        <label class="block mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Leads List File</label>
+                                        <small>Download for template: <a class="underline" href="/template_upload.xlsx" download>template_upload.xlsx</a></small>
+                                    </div>                                    
                                     <input class="files block w-full text-sm text-gray-900 border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="leads[]" type="file" multiple required>                                                            
                                 </div>
                                 <hr>

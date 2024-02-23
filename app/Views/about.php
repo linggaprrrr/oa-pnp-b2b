@@ -2,10 +2,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
     <head> 
+
         <!-- Basic Page Needs
         ================================================== -->
-        <title>OA App</title>
+        <title>Quickprep</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Flex is - Professional A unique and beautiful collection of UI elements">
@@ -58,9 +60,7 @@
                             <li> 
                               <a href="/features"  class="flex block font-medium text-center text-gray-400 text-lg hover:text-blue-600 duration-500">Features</a>                                
                             </li>
-                            <li> 
-                              <a href="/pricing"  class="flex block font-medium text-center text-gray-400 text-lg hover:text-blue-600 duration-500">Pricing</a>                                
-                            </li>
+        
                             <li> 
                               <a href="/about"  class="flex block font-medium text-center text-gray-400 text-lg hover:text-blue-600 duration-500">About</a>                                
                             </li>
@@ -198,7 +198,7 @@
 
                     <div class="lg:col-span-2 sm:col-span-4 col-span-2">
                         <img src="landing-page/assets/images/logo.svg" alt="" class="mb-4 md:mb-6 md:w-36 w-24">
-                        <p class="md:text-xl md:leading-9 text-base"> AO App is an innovative software designed specifically to help businesses manage and optimize their operations. With a combination of outstanding features.
+                        <p class="md:text-xl md:leading-9 text-base"> Quickprep is an innovative software designed specifically to help businesses manage and optimize their operations. With a combination of outstanding features.
                         </p>
 
                         <!-- social icons  -->

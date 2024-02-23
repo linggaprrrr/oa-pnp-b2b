@@ -1,0 +1,40 @@
+CRITICAL - 2024-02-07 04:56:20 --> Invalid file: "forgot-password.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Auth.php(439): view()
+ 4 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Auth->forgotPassword()
+ 5 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-07 14:06:27 --> mysqli_sql_exception: Column 'file_id' cannot be null in /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query()
+#4 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/BaseModel.php(782): CodeIgniter\Model->doInsert()
+#6 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Model.php(730): CodeIgniter\BaseModel->insert()
+#7 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/BaseModel.php(692): CodeIgniter\Model->insert()
+#8 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Controllers/pnp/Order.php(105): CodeIgniter\BaseModel->save()
+#9 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\pnp\Order->savePurchaseList()
+#10 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#11 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/quickprep/htdocs/quickprep.ai/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-02-07 14:06:27 --> Column 'file_id' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert()
+ 8 SYSTEMPATH/BaseModel.php(692): CodeIgniter\Model->insert()
+ 9 APPPATH/Controllers/pnp/Order.php(105): CodeIgniter\BaseModel->save()
+10 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Order->savePurchaseList()
+11 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()

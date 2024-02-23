@@ -20,6 +20,8 @@ use App\Models\pnp\SubscriptionModel;
 use App\Models\pnp\TrackingModel;
 use App\Models\pnp\UPCLookupModel;
 use App\Models\UserModel;
+use App\Models\MessageModel;
+use App\Models\pnp\MessageModel as PnpMessageModel;
 
 use function App\Helpers\timeSpan;
 
@@ -43,12 +45,18 @@ class Home extends BaseController
     protected $subsModel = "";
     protected $boxModel = "";
     protected $refundModel = "";
+    protected $messageModel = "";
 
     public function __construct()
     {
         $userId = session()->get('user_id');
         if (is_null($userId)) {
             header("Location: ".base_url('/pnp/login'));
+            die();            
+        }
+
+        if (session()->get('role') == 'superadministrator') {
+            header("Location: ".base_url('/admin/users'));
             die();            
         }
         $this->leadModel = new LeadModel();
@@ -69,6 +77,7 @@ class Home extends BaseController
         $this->subsModel = new SubscriptionModel();
         $this->boxModel = new BoxModel();
         $this->refundModel = new RefundModel();
+        $this->messageModel = new PnpMessageModel();
     }
 
     public function index()
@@ -86,31 +95,15 @@ class Home extends BaseController
         }
 
         $historyUpload = $this->fileModel
-            ->join('lead_lists', 'lead_lists.file_id = files.id')     
-            ->where('files.status', 1)   
+            ->join('lead_lists', 'lead_lists.file_id = files.id')                 
             ->where('files.oauth_uid', session()->get('oauth_uid'))
             ->groupBy('files.id')    
-            ->orderBy('created_at', 'DESC')->get();     
-        // check payment
-        $getPaymentData = $this->subsModel
-            ->where('user_id', session()->get('oauth_uid'))
-            ->where('expire_date >=', date('Y-m-d'))            
-            ->get();
-        $getPaymentData = $getPaymentData->getFirstRow();
+            ->orderBy('created_at', 'DESC')->get();      
+        // check payment     
         $startSub = null;
         $expSub = null;
-        if (!is_null($getPaymentData) != 0) {
-            $currDate = date_create(date('Y-m-d'));
-            $expireDate = date_create(date('Y-m-d', strtotime($getPaymentData->expire_date)));            
-            $days = date_diff($currDate,$expireDate);
-            $days = $days->days;
-            $plan = $getPaymentData->plan;
-            $startSub = $getPaymentData->valid_date;
-            $expSub = $getPaymentData->expire_date; 
-        } else {            
-            $plan = 0;
-            $days = 0;
-        }
+        $plan = 0;
+        $days = 0;
         $data = [
             'subscription' => [
                 'plan' => $plan,
@@ -163,21 +156,61 @@ class Home extends BaseController
         }        
         
         $date = $this->request->getVar('date');        
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://oaclients.com/get-leads-by-date-email/'.$date.'/'.$email,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-        ));
-        $response = curl_exec($curl);
-        
-        curl_close($curl);
-        $result = json_decode($response);        
+
+        if (is_null($date)) {
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://oaclients.com/get-avail-dates-email/'. $email ,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'GET',
+            ));
+            
+            $response = curl_exec($curl);        
+            curl_close($curl);
+            $dates = json_decode($response);
+            
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://oaclients.com/get-leads-by-date-email/'.$dates->data[0]->avail_date.'/'.$email,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'GET',
+            ));
+            $response = curl_exec($curl);
+            
+            curl_close($curl);
+            $result = json_decode($response);   
+            
+        } else {
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://oaclients.com/get-leads-by-date-email/'.$date.'/'.$email,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'GET',
+            ));
+            $response = curl_exec($curl);
+            
+            curl_close($curl);
+            $result = json_decode($response);   
+        }
+
+
+
+             
 
         // dd();
         if ($userRole == 'uploader') {
@@ -189,13 +222,14 @@ class Home extends BaseController
         $historyUpload = $this->fileModel->orderBy('created_at', 'DESC')->get();
         if ($date == null) {
             $date = date('Y-m-d');
-            // $selections = $this->leadModel->getSelectionData($date, $target);              
+            $selections = $this->leadModel->getSelectionData($date);              
             
         } else {
             // $temp = explode('-', $date);            
             // $date = $temp[2].'-'.$temp[0].'-'.$temp[1];
-            // $selections = $this->leadModel->getSelectionData($date, $target);     
+            $selections = $this->leadModel->getSelectionData($date);     
         }   
+        
         
         
         $purchases = $this->orderModel->getPurchaseData(date('Y-m-d')); 
@@ -232,6 +266,7 @@ class Home extends BaseController
             'title' => 'Leads List Files',
             'historyUpload' => $historyUpload,
             'selections' => $result,
+            'byUpload' => $selections,
             'purchases' => $purchases,
             'staffs' => $staffs,
             'buyers' => $buyers,            
@@ -1640,5 +1675,15 @@ class Home extends BaseController
         ];
         return view('admin/master-lists', $data);
     }
+
+    public function chat() {
+        $user = session()->get('oauth_uid');
+        $messages = $this->messageModel->getUserMessage($user);
+        $data = [            
+            'title' => 'Chat',
+            'messages' => $messages            
+        ];
+        return view('pnp/chat', $data);
+    }
     
-}
+} 

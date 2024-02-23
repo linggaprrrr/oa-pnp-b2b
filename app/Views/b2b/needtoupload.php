@@ -91,7 +91,7 @@
                     <i class="fa-solid fas fa-angle-double-right"></i>                    
                 </button>
             </div>
-            <table class="datatable-init stripe table scroll-container" style="font-size: 11px; display: block; overflow-x: auto; white-space: nowrap; width: 100%"> 
+            <table class="datatable-init stripe table scroll-container" style="font-size: 11px; overflow-x: auto; white-space: nowrap; width: 100%"> 
                 <thead>
                     <tr class="table-warning">
                         <th class="text-center align-middle" style="width: 15%">></th>                                 

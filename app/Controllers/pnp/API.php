@@ -327,6 +327,16 @@ class API extends BaseController
                 ->update();
         }
     }
+
+    public function changeBuyCost() {
+        $id = $this->request->getVar('id');
+        $cost = $this->request->getVar('value');
+
+
+        $this->leadModel->set('buy_cost', $cost)
+            ->where('id', $id)
+            ->update();
+    }
 }
 
 ?>

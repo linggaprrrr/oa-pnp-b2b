@@ -65,8 +65,7 @@
                         <th class="tb-tnx-id" style="width: 5%; text-align: center">#</th>
                         <th class="tb-tnx-info">Name</th>
                         <th class="tb-tnx-info">Email</th>
-                        <th class="tb-tnx-info">Plan</th>
-                        <th class="tb-tnx-info">Valid Date</th>
+                        
                         <th class="tb-tnx-info" style="width: 5%; text-align: right"><em class="fas fa-caret-down"></em></th>
                     </tr>                        
                 </thead>
@@ -80,8 +79,7 @@
                             
                             <td class="tb-tnx-info"><span class="date"><?= $user->name ?></span></td>
                             <td class="tb-tnx-info"><span class="date"><?= $user->email ?></span></td>
-                            <td class="tb-tnx-info"><span class="date"><?= (is_null($user->plan)) ? 'FREE' : strtoupper($user->plan) ?></span></td>
-                            <td class="tb-tnx-info"><span class="date"><?= (is_null($user->plan)) ? '-' : date('d M Y', strtotime($user->valid_date)) .' - '. date('d M Y', strtotime($user->expire_date)) ?></span></td>
+                            
                             <td class="tb-tnx-info text-center"><a href="#" class="edit-user-btn" data-id="<?= $user->id ?>"><em class="fas fa-pen-square fa-lg"></em></a></td>
                         </tr><!-- .tb-tnx-item -->
                     <?php endforeach; ?>

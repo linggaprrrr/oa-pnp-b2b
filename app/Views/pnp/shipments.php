@@ -58,12 +58,6 @@
             </div>
             <div>
                 <div x-data="{showModal:false}">
-                <?php if (date('Y-m-d') > $subscription['exp']) : ?>
-                    <button disabled="" class="btn bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 disabled:pointer-events-none disabled:select-none disabled:opacity-60 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                        Track Shipment Manually
-                        <em class="fas fa-shipping-fast ml-2"></em> 
-                    </button>  
-                <?php else : ?>
                     <button
                         @click="showModal = true"
                         class="btn space-x-2 bg-warning font-medium text-white shadow-lg shadow-warning/50 hover:bg-warning-focus focus:bg-warning-focus active:bg-warning-focus/90"
@@ -71,7 +65,6 @@
                         Track Shipment Manually
                         <em class="fas fa-shipping-fast ml-2"></em> 
                     </button>
-                <?php endif ?>
                     
                     <template x-teleport="#x-teleport-target">
                         <div

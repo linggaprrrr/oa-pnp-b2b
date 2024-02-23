@@ -76,7 +76,10 @@
                             </div>
                             <form id="upload-form" enctype="multipart/form-data">
                                 <div class="mx-5 my-2 grid grid-cols-1 gap-4">                           
-                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Leads List File</label>
+                                    <div class="flex">
+                                        <label class="block mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Leads List File</label>
+                                        <small>Download for template: <a class="underline" href="/template_upload.xlsx" download>template_upload.xlsx</a></small>
+                                    </div>
                                     <input class="files block w-full text-sm text-gray-900 border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="leads[]" type="file" multiple required>                                                            
                                 </div>
                                 <hr>

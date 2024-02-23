@@ -160,6 +160,25 @@
 
             <!-- Bottom Links -->
             <div class="flex flex-col items-center space-y-3 py-3">
+                <!-- Chat  -->
+                <a
+                    href="/b2b/chat"
+                    class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                    id="backup-restore"
+                    x-tooltip.placement.right="'Chat With Our Team'"
+                >
+                    <i class="fab fa-rocketchat fa-xl"></i>
+                </a>
+                <!-- History -->                
+                <a
+                href="/pnp/history"
+                class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                id="history"
+                >
+                <i class="fas fa-history fa-xl"></i>
+                </a>                
+            </div>
+            <div class="flex flex-col items-center space-y-3 py-3">
                 <!-- History -->                
                 <a
                 href="/b2b/history"

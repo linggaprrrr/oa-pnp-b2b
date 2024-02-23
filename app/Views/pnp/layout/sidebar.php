@@ -55,14 +55,14 @@
                 </a>
 
                 <!-- Upload File -->
-                <!-- <a
+                <a
                 href="/pnp/leads-list"
                 class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
                 id="leads-list"
                 x-tooltip.placement.right="'Upload Files'"
                 >
                     <i class="fas fa-file-upload fa-xl"></i>
-                </a> -->
+                </a>
 
                 <!-- Selection -->
                 <a
@@ -160,6 +160,15 @@
 
             <!-- Bottom Links -->
             <div class="flex flex-col items-center space-y-3 py-3">
+                <!-- Chat  -->
+                <a
+                    href="/pnp/chat"
+                    class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
+                    id="backup-restore"
+                    x-tooltip.placement.right="'Chat With Our Team'"
+                >
+                    <i class="fab fa-rocketchat fa-xl"></i>
+                </a>
                 <!-- History -->                
                 <a
                 href="/pnp/history"

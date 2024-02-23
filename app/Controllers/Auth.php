@@ -241,19 +241,15 @@ class Auth extends BaseController
         $post = $this->request->getVar();
         $user = $this->userModel->getWhere(['email' => $post['email'], 'type' => 'pnp'])->getRow();
         
-        
         if ($user) {
             if (isset($post['rememberme'])) {            
                 setcookie("email", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
                 setcookie("password", $post['password'], time()+ (10 * 365 * 24 * 60 * 60)); 
                 setcookie("remember", "checked", time()+ (10 * 365 * 24 * 60 * 60));            
             } else {
-                delete_cookie("email");
-                delete_cookie("password");
-                delete_cookie("remember");
-                setcookie("email", "", time() - 3600);
-                setcookie("password", "", time() - 3600);
-                setcookie("remember", "", time() - 3600);
+                setcookie("email", "", time() - 3600, "/");
+                setcookie("password", "", time() - 3600, "/");
+                setcookie("remember", "", time() - 3600, "/");
             }
             // dd(password_verify($post['password'], $user->password));
             if (password_verify($post['password'], $user->password)) {
@@ -306,19 +302,15 @@ class Auth extends BaseController
         $post = $this->request->getVar();
         $user = $this->userModel->getWhere(['email' => $post['email'], 'type' => 'b2b'])->getRow();
         
-        
         if ($user) {
             if (isset($post['rememberme'])) {            
                 setcookie("email", $post['email'], time()+ (10 * 365 * 24 * 60 * 60));            
                 setcookie("password", $post['password'], time()+ (10 * 365 * 24 * 60 * 60)); 
                 setcookie("remember", "checked", time()+ (10 * 365 * 24 * 60 * 60));            
             } else {
-                delete_cookie("email");
-                delete_cookie("password");
-                delete_cookie("remember");
-                setcookie("email", "", time() - 3600);
-                setcookie("password", "", time() - 3600);
-                setcookie("remember", "", time() - 3600);
+                setcookie("email", "", time() - 3600, "/");
+                setcookie("password", "", time() - 3600, "/");
+                setcookie("remember", "", time() - 3600, "/");
             }
             // dd(password_verify($post['password'], $user->password));
             if (password_verify($post['password'], $user->password)) {

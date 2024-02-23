@@ -1,107 +1,75 @@
-INFO - 2023-12-17 19:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 19:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 19:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 19:21:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2023-12-17 19:21:16 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 1373.
- 1 APPPATH/Controllers/pnp/Home.php(1373): strtotime(null)
- 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
- 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
- 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
-WARNING - 2023-12-17 19:21:16 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
- 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
- 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/pnp/dashboard.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
- 5 APPPATH/Controllers/pnp/Home.php(1705): view('pnp/dashboard', [...])
- 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
- 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
- 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
-INFO - 2023-12-17 19:21:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 19:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 19:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 19:21:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:21:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2023-12-17 23:22:19 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 1373.
- 1 APPPATH/Controllers/pnp/Home.php(1373): strtotime(null)
- 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
- 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
- 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
-WARNING - 2023-12-17 23:22:19 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
- 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
- 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/pnp/dashboard.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
- 5 APPPATH/Controllers/pnp/Home.php(1705): view('pnp/dashboard', [...])
- 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
- 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
- 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
-INFO - 2023-12-17 23:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:23:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:36:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2023-12-17 23:58:02 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 1373.
- 1 APPPATH/Controllers/pnp/Home.php(1373): strtotime(null)
- 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
- 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
- 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
-WARNING - 2023-12-17 23:58:02 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
- 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
- 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/pnp/dashboard.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
- 5 APPPATH/Controllers/pnp/Home.php(1705): view('pnp/dashboard', [...])
- 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
- 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
- 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
-INFO - 2023-12-17 23:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-WARNING - 2023-12-17 23:58:22 --> [DEPRECATED] strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in APPPATH/Controllers/pnp/Home.php on line 1373.
- 1 APPPATH/Controllers/pnp/Home.php(1373): strtotime(null)
- 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
- 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
- 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
- 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
-WARNING - 2023-12-17 23:58:22 --> [DEPRECATED] round(): Passing null to parameter #1 ($num) of type int|float is deprecated in APPPATH/Views/pnp/dashboard.php on line 17.
- 1 APPPATH/Views/pnp/dashboard.php(17): round(null, 2)
- 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/pnp/dashboard.php')
- 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('pnp/dashboard', [], true)
- 5 APPPATH/Controllers/pnp/Home.php(1705): view('pnp/dashboard', [...])
- 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\pnp\Home->dashboard()
- 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\pnp\Home))
- 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
-INFO - 2023-12-17 23:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:59:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2023-12-17 23:59:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-17 23:36:35 --> mysqli_sql_exception: Unknown column 'type' in 'where clause' in /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query()
+#4 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->getWhere()
+#5 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Controllers/Auth.php(242): CodeIgniter\Model->__call()
+#6 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Auth->pnpLoginProcess()
+#7 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/quickprep/htdocs/quickprep.ai/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-17 23:36:35 --> Unknown column 'type' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->getWhere()
+ 6 APPPATH/Controllers/Auth.php(242): CodeIgniter\Model->__call()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Auth->pnpLoginProcess()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-17 23:37:12 --> mysqli_sql_exception: Unknown column 'type' in 'where clause' in /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query()
+#4 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->getWhere()
+#5 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Controllers/Auth.php(242): CodeIgniter\Model->__call()
+#6 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Auth->pnpLoginProcess()
+#7 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/quickprep/htdocs/quickprep.ai/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-17 23:37:12 --> Unknown column 'type' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->getWhere()
+ 6 APPPATH/Controllers/Auth.php(242): CodeIgniter\Model->__call()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Auth->pnpLoginProcess()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-17 23:37:14 --> mysqli_sql_exception: Unknown column 'type' in 'where clause' in /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query()
+#1 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query()
+#4 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/Model.php(840): CodeIgniter\Database\BaseBuilder->getWhere()
+#5 /home/quickprep/htdocs/quickprep.ai/public/oa-app/app/Controllers/Auth.php(242): CodeIgniter\Model->__call()
+#6 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Auth->pnpLoginProcess()
+#7 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+#8 /home/quickprep/htdocs/quickprep.ai/public/oa-app/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/quickprep/htdocs/quickprep.ai/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-17 23:37:14 --> Unknown column 'type' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1749): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(840): CodeIgniter\Database\BaseBuilder->getWhere()
+ 6 APPPATH/Controllers/Auth.php(242): CodeIgniter\Model->__call()
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Auth->pnpLoginProcess()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
