@@ -1,0 +1,99 @@
+INFO - 2024-03-24 21:15:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 21:16:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 21:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 21:16:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 21:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 21:17:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 21:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:29:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-24 22:30:20 --> Call to undefined method App\Models\pnp\ClientModel::getClientTotalUnit
+in SYSTEMPATH/Model.php on line 842.
+ 1 APPPATH/Controllers/Invoices.php(20): CodeIgniter\Model->__call('getClientTotalUnit', [...])
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->getClientTotalUnit()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2024-03-24 22:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-24 22:31:07 --> mysqli_sql_exception: Unknown column 'client.id' in 'where clause' in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `clients...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `clients...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `clients...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `clients...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/pnp/ClientModel.php(55): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/Invoices.php(20): App\Models\pnp\ClientModel->getClientUnits('19')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Invoices->getClientTotalUnit()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2024-03-24 22:31:07 --> Unknown column 'client.id' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `clients`.*, SUM(assigned_items.qty) as total_unit
+FROM `clients`
+JOIN `assigned_items` ON `assigned_items`.`order_id` = `clients`.`id`
+WHERE `client`.`id` = \'19\'
+GROUP BY `clients`.`id`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `clients`.*, SUM(assigned_items.qty) as total_unit
+FROM `clients`
+JOIN `assigned_items` ON `assigned_items`.`order_id` = `clients`.`id`
+WHERE `client`.`id` = \'19\'
+GROUP BY `clients`.`id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `clients`.*, SUM(assigned_items.qty) as total_unit
+FROM `clients`
+JOIN `assigned_items` ON `assigned_items`.`order_id` = `clients`.`id`
+WHERE `client`.`id` = \'19\'
+GROUP BY `clients`.`id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `clients`.*, SUM(assigned_items.qty) as total_unit
+FROM `clients`
+JOIN `assigned_items` ON `assigned_items`.`order_id` = `clients`.`id`
+WHERE `client`.`id` = :client.id:
+GROUP BY `clients`.`id`', [...], false)
+ 5 APPPATH/Models/pnp/ClientModel.php(55): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Invoices.php(20): App\Models\pnp\ClientModel->getClientUnits('19')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->getClientTotalUnit()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2024-03-24 22:32:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-24 22:34:44 --> Attempt to read property "total_unit" on null
+in APPPATH/Controllers/Invoices.php on line 22.
+ 1 APPPATH/Controllers/Invoices.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "total_unit" on null', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/Invoices.php', 22)
+ 2 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->getClientTotalUnit()
+ 3 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 4 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2024-03-24 22:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:46:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 22:55:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:10:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:23:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:24:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:37:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:38:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:40:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:45:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:47:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-24 23:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

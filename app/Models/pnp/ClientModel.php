@@ -46,4 +46,26 @@ class ClientModel extends Model
         return $query->getFirstRow();
     }
 
+    public function getClientUnits($id, $start, $end) {
+        if (is_null($end)) {
+            $query = $this->db->table('purchase_items')
+                ->select('SUM(qty_received) as total_unit, SUM(qty_returned) as total_return')
+                ->join('orders_status', 'orders_status.purchased_item_id = purchase_items.id')
+                ->where('purchase_items.order_staff', $id)
+                ->where('purchase_items.created_at', $start)
+                ->groupBy('purchase_items.order_staff')
+                ->get();
+        } else {
+            $query = $this->db->table('purchase_items')
+                ->select('SUM(qty_received) as total_unit, SUM(qty_returned) as total_return')
+                ->join('orders_status', 'orders_status.purchased_item_id = purchase_items.id')
+                ->where('purchase_items.order_staff', $id)
+                ->where('purchase_items.created_at >=', $start)
+                ->where('purchase_items.created_at <=', $end)
+                ->groupBy('purchase_items.order_staff')
+                ->get();
+        }
+        return $query->getFirstRow();
+    }
+
 }

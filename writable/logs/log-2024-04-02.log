@@ -1,0 +1,477 @@
+INFO - 2024-04-02 00:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:14:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:14:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:15:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:15:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:31:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:32:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:32:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:35:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:36:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:36:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:48:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:51:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:51:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:52:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:53:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:57:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:58:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 00:59:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:07:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:12:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:13:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-02 01:28:48 --> mysqli_sql_exception: Unknown column 'lead_lists.upc' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_li...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_li...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_li...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_li...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-01-01', '2024-04-02')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2024-04-02 01:28:48 --> Unknown column 'lead_lists.upc' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_lists`.`upc`, `lead_lists`.`title`, `purchase_items`.`qty`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-01-01\'
+AND `purchase_items`.`created_at` <= \'2024-04-02\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_lists`.`upc`, `lead_lists`.`title`, `purchase_items`.`qty`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-01-01\'
+AND `purchase_items`.`created_at` <= \'2024-04-02\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_lists`.`upc`, `lead_lists`.`title`, `purchase_items`.`qty`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-01-01\'
+AND `purchase_items`.`created_at` <= \'2024-04-02\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_lists`.`upc`, `lead_lists`.`title`, `purchase_items`.`qty`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = :purchase_items.order_staff:
+AND `purchase_items`.`created_at` >= :purchase_items.created_at:
+AND `purchase_items`.`created_at` <= :purchase_items.created_at.1:', [...], false)
+ 5 APPPATH/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-01-01', '2024-04-02')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+ERROR - 2024-04-02 01:29:13 --> mysqli_sql_exception: Unknown column 'lead_lists.upc' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_li...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_li...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_li...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_li...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-01-01', '2024-04-02')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2024-04-02 01:29:13 --> Unknown column 'lead_lists.upc' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_lists`.`upc`, `lead_lists`.`title`, `purchase_items`.`qty`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-01-01\'
+AND `purchase_items`.`created_at` <= \'2024-04-02\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_lists`.`upc`, `lead_lists`.`title`, `purchase_items`.`qty`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-01-01\'
+AND `purchase_items`.`created_at` <= \'2024-04-02\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_lists`.`upc`, `lead_lists`.`title`, `purchase_items`.`qty`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-01-01\'
+AND `purchase_items`.`created_at` <= \'2024-04-02\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_lists`.`upc`, `lead_lists`.`title`, `purchase_items`.`qty`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = :purchase_items.order_staff:
+AND `purchase_items`.`created_at` >= :purchase_items.created_at:
+AND `purchase_items`.`created_at` <= :purchase_items.created_at.1:', [...], false)
+ 5 APPPATH/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-01-01', '2024-04-02')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+CRITICAL - 2024-04-02 01:29:43 --> Undefined variable $upc
+in APPPATH/Views/invoice-pdf.php on line 330.
+ 1 APPPATH/Views/invoice-pdf.php(330): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $upc', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/invoice-pdf.php', 330)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/invoice-pdf.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('invoice-pdf', [], true)
+ 5 APPPATH/Controllers/Invoices.php(112): view('invoice-pdf', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+CRITICAL - 2024-04-02 01:30:02 --> Undefined variable $asin
+in APPPATH/Views/invoice-pdf.php on line 330.
+ 1 APPPATH/Views/invoice-pdf.php(330): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $asin', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/invoice-pdf.php', 330)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/invoice-pdf.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('invoice-pdf', [], true)
+ 5 APPPATH/Controllers/Invoices.php(112): view('invoice-pdf', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+CRITICAL - 2024-04-02 01:30:43 --> Undefined property: stdClass::$client_name
+in APPPATH/Views/admin/invoices.php on line 845.
+ 1 APPPATH/Views/admin/invoices.php(845): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$client_name', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/invoices.php', 845)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/invoices.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/invoices', [], true)
+ 5 APPPATH/Controllers/Home.php(104): view('admin/invoices', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->invoices()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+CRITICAL - 2024-04-02 01:31:08 --> Undefined property: stdClass::$client_name
+in APPPATH/Views/admin/invoices.php on line 845.
+ 1 APPPATH/Views/admin/invoices.php(845): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$client_name', '/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/invoices.php', 845)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/invoices.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/invoices', [], true)
+ 5 APPPATH/Controllers/Home.php(104): view('admin/invoices', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->invoices()
+ 7 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2024-04-02 01:31:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-02 01:47:22 --> mysqli_sql_exception: Unknown column 'purchase_items.qty_received' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_li...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_li...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_li...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_li...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-02-01', '2024-03-31')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2024-04-02 01:47:22 --> Unknown column 'purchase_items.qty_received' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-02-01\'
+AND `purchase_items`.`created_at` <= \'2024-03-31\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-02-01\'
+AND `purchase_items`.`created_at` <= \'2024-03-31\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-02-01\'
+AND `purchase_items`.`created_at` <= \'2024-03-31\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = :purchase_items.order_staff:
+AND `purchase_items`.`created_at` >= :purchase_items.created_at:
+AND `purchase_items`.`created_at` <= :purchase_items.created_at.1:', [...], false)
+ 5 APPPATH/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-02-01', '2024-03-31')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+ERROR - 2024-04-02 01:47:25 --> mysqli_sql_exception: Unknown column 'purchase_items.qty_received' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_li...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_li...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_li...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_li...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-02-01', '2024-03-31')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2024-04-02 01:47:25 --> Unknown column 'purchase_items.qty_received' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-02-01\'
+AND `purchase_items`.`created_at` <= \'2024-03-31\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-02-01\'
+AND `purchase_items`.`created_at` <= \'2024-03-31\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-02-01\'
+AND `purchase_items`.`created_at` <= \'2024-03-31\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = :purchase_items.order_staff:
+AND `purchase_items`.`created_at` >= :purchase_items.created_at:
+AND `purchase_items`.`created_at` <= :purchase_items.created_at.1:', [...], false)
+ 5 APPPATH/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-02-01', '2024-03-31')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+ERROR - 2024-04-02 01:47:40 --> mysqli_sql_exception: Unknown column 'purchase_items.qty_received' in 'field list' in /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_li...', 0)
+#1 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_li...')
+#2 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_li...')
+#3 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_li...', Array, false)
+#4 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-02-01', '2024-03-31')
+#6 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+#7 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+#8 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/smartwholesale/oa-app-api/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/Applications/M...')
+#11 {main}
+CRITICAL - 2024-04-02 01:47:40 --> Unknown column 'purchase_items.qty_received' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-02-01\'
+AND `purchase_items`.`created_at` <= \'2024-03-31\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-02-01\'
+AND `purchase_items`.`created_at` <= \'2024-03-31\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = \'41\'
+AND `purchase_items`.`created_at` >= \'2024-02-01\'
+AND `purchase_items`.`created_at` <= \'2024-03-31\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `lead_lists`.`asin`, `lead_lists`.`title`, `purchase_items`.`qty_received`
+FROM `purchase_items`
+JOIN `orders_status` ON `orders_status`.`purchased_item_id` = `purchase_items`.`id`
+JOIN `lead_lists` ON `lead_lists`.`id` = `purchase_items`.`lead_id`
+WHERE `purchase_items`.`order_staff` = :purchase_items.order_staff:
+AND `purchase_items`.`created_at` >= :purchase_items.created_at:
+AND `purchase_items`.`created_at` <= :purchase_items.created_at.1:', [...], false)
+ 5 APPPATH/Models/InvoiceModel.php(92): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Invoices.php(95): App\Models\InvoiceModel->getItems('41', '2024-02-01', '2024-03-31')
+ 7 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Invoices->saveInvoice()
+ 8 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Invoices))
+ 9 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2024-04-02 01:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:49:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:54:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:55:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:58:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:58:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:58:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 01:58:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 02:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 02:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 02:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 02:13:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 02:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 02:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 02:15:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 02:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 02:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 03:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 03:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 03:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 03:27:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-02 05:31:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-02 05:31:58 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Views/admin/layout/topbar.php on line 104.
+ 1 APPPATH/Views/admin/layout/topbar.php(104): ucfirst(null)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render('admin/layout/topbar', null, true)
+ 5 APPPATH/Views/admin/layout/component.php(38): CodeIgniter\View\View->include('admin/layout/topbar')
+ 6 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/component.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->render('admin/layout/component', [], true)
+ 9 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/invoices', [], true)
+10 APPPATH/Controllers/Home.php(104): view('admin/invoices', [...])
+11 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->invoices()
+12 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+WARNING - 2024-04-02 05:31:58 --> [DEPRECATED] strtoupper(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Views/admin/layout/topbar.php on line 107.
+ 1 APPPATH/Views/admin/layout/topbar.php(107): strtoupper(null)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render('admin/layout/topbar', null, true)
+ 5 APPPATH/Views/admin/layout/component.php(38): CodeIgniter\View\View->include('admin/layout/topbar')
+ 6 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/component.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->render('admin/layout/component', [], true)
+ 9 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/invoices', [], true)
+10 APPPATH/Controllers/Home.php(104): view('admin/invoices', [...])
+11 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->invoices()
+12 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2024-04-02 05:35:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-02 05:35:48 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Views/admin/layout/topbar.php on line 104.
+ 1 APPPATH/Views/admin/layout/topbar.php(104): ucfirst(null)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render('admin/layout/topbar', null, true)
+ 5 APPPATH/Views/admin/layout/component.php(38): CodeIgniter\View\View->include('admin/layout/topbar')
+ 6 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/component.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->render('admin/layout/component', [], true)
+ 9 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/invoices', [], true)
+10 APPPATH/Controllers/Home.php(104): view('admin/invoices', [...])
+11 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->invoices()
+12 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+WARNING - 2024-04-02 05:35:48 --> [DEPRECATED] strtoupper(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Views/admin/layout/topbar.php on line 107.
+ 1 APPPATH/Views/admin/layout/topbar.php(107): strtoupper(null)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render('admin/layout/topbar', null, true)
+ 5 APPPATH/Views/admin/layout/component.php(38): CodeIgniter\View\View->include('admin/layout/topbar')
+ 6 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/component.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->render('admin/layout/component', [], true)
+ 9 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/invoices', [], true)
+10 APPPATH/Controllers/Home.php(104): view('admin/invoices', [...])
+11 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->invoices()
+12 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+INFO - 2024-04-02 05:35:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-04-02 05:35:50 --> [DEPRECATED] ucfirst(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Views/admin/layout/topbar.php on line 104.
+ 1 APPPATH/Views/admin/layout/topbar.php(104): ucfirst(null)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render('admin/layout/topbar', null, true)
+ 5 APPPATH/Views/admin/layout/component.php(38): CodeIgniter\View\View->include('admin/layout/topbar')
+ 6 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/component.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->render('admin/layout/component', [], true)
+ 9 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/invoices', [], true)
+10 APPPATH/Controllers/Home.php(104): view('admin/invoices', [...])
+11 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->invoices()
+12 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')
+WARNING - 2024-04-02 05:35:50 --> [DEPRECATED] strtoupper(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Views/admin/layout/topbar.php on line 107.
+ 1 APPPATH/Views/admin/layout/topbar.php(107): strtoupper(null)
+ 2 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/topbar.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(431): CodeIgniter\View\View->render('admin/layout/topbar', null, true)
+ 5 APPPATH/Views/admin/layout/component.php(38): CodeIgniter\View\View->include('admin/layout/topbar')
+ 6 SYSTEMPATH/View/View.php(213): include('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/app/Views/admin/layout/component.php')
+ 7 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->render('admin/layout/component', [], true)
+ 9 SYSTEMPATH/Common.php(1184): CodeIgniter\View\View->render('admin/invoices', [], true)
+10 APPPATH/Controllers/Home.php(104): view('admin/invoices', [...])
+11 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Home->invoices()
+12 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Applications/MAMP/htdocs/smartwholesale/oa-app-api/public/index.php')

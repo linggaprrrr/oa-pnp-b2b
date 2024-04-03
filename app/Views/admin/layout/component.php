@@ -110,9 +110,9 @@
                     $('#users').removeClass();
                     $('#users').addClass('flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:bg-navy-600 dark:text-accent-light dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90');   
                 break;          
-            case url.includes('master-list') :                            
-                    $('#master-list').removeClass();
-                    $('#master-list').addClass('flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:bg-navy-600 dark:text-accent-light dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90');
+            case url.includes('invoices') :                            
+                    $('#invoices').removeClass();
+                    $('#invoices').addClass('flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:bg-navy-600 dark:text-accent-light dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90');
                 break;
            
         }
@@ -189,32 +189,5 @@
 
 
     
-    paypal.Buttons({
-        style: {                
-            label:  'pay'
-        },
-        // Order is created on the server and the order id is returned
-        createOrder: (data, actions) => {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: price
-                    }
-                }]
-            })
-        },
-        // Finalize the transaction on the server after payer approval
-        onApprove: (data, actions) => {
-            return actions.order.capture().then(function(orderData) {
-                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                const transaction = orderData.purchase_units[0].payments.captures[0];
-                // alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
-
-                $.post('/create-paypal-order', {plan: plan, total: price, status: transaction.status, payment_id: transaction.id})
-                    .done(function(data) {
-                        swal("Good job!", "Your payment has been successful, please refresh the page", "success");
-                    })
-            });
-        }
-    }).render('#paypal-button-container');
+    
 </script>

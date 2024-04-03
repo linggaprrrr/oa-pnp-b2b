@@ -81,8 +81,8 @@
                                         <td class="align-middle text-justify"><?= substr($data->title, 0, 55) ?><?= (strlen($data->title) > 55) ? '..' : '' ?></td>
                                         <td class="align-middle text-center" style="font-weight: bold;"><?= $data->asin ?></td>
                                         <td class="text-center align-middle"><a href="<?= $data->retail_link ?>" target="_blank"><em class="fas fa-external-link-alt"></em></a></td>
-                                        <td class="align-middle text-center"><?= (is_null($data->promo_code)) ? '-' : substr($data->promo_code, 0, 10) ?><?= (strlen($data->promo_code) > 10) ? '..' : '' ?></td>                                        
-                                        <td class="text-center align-middle"><a href="<?= $data->amazon_link ?>" target="_blank"><em class="fas fa-external-link-alt"></em></a></td>                                        
+                                        <td class="align-middle text-center"><?= (is_null($data->promo_code)) ? '-' : $data->promo_code ?></td>                                        
+                                        <td class="text-center align-middle"><a href="<?= $data->amazon_link ?>" target="_blank"><em class="fas fa-external-link-alt"></em></a></td>
                                         <td class="align-middle text-center">$<?= round($data->buy_cost, 2) ?></td>
                                         <td class="align-middle text-center">$<?= round($data->market_price, 2) ?></td>
                                         <td class="align-middle text-center">$<?= round($data->profit, 2) ?></td>

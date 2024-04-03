@@ -284,9 +284,13 @@ $routes->post('/change-buycost', 'pnp\API::changeBuyCost');
 $routes->get('/admin/users', 'Home::users');
 $routes->get('/admin/history', 'Home::history');
 $routes->get('/admin/chat', 'Home::chat');
+$routes->get('/admin/invoices', 'Home::invoices');
 $routes->get('/admin/chat/(:any)', 'Home::chat/$1');
 $routes->get('/admin/master-lists', 'Home::masterListAll');
 $routes->get('/get-user', 'Auth::getUser');
+$routes->get('/get-total-unit-client', 'Invoices::getClientTotalUnit');
+$routes->post('/save-invoice', 'Invoices::saveInvoice');
+$routes->get('/get-client/(:any)', 'Invoices::getClientData/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

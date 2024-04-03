@@ -2,9 +2,11 @@
 
 namespace App\Controllers;
 
+use App\Models\InvoiceModel;
 use App\Models\LogModel;
 use App\Models\UserModel;
 use App\Models\MessageModel;
+use App\Models\pnp\ClientModel;
 use App\Models\pnp\MessageModel as PnpMessageModel;
 
 use function App\Helpers\timeSpan;
@@ -14,11 +16,15 @@ class Home extends BaseController
     protected $userModel = '';
     protected $messageModel = '';
     protected $logModel = "";
+    protected $clientModel = "";
+    protected $invoiceModel = "";
 
     public function __construct() {
         $this->userModel = new UserModel();
         $this->messageModel = new PnpMessageModel();
         $this->logModel = new LogModel();
+        $this->clientModel = new ClientModel();
+        $this->invoiceModel = new InvoiceModel();
     }
 
     public function users() {
@@ -82,6 +88,20 @@ class Home extends BaseController
             'messages' => $messages            
         ];
         return view('admin/chat', $data);
+    }
+
+    public function invoices() {
+        
+        $invoices = $this->invoiceModel->getInvoicesData();
+        $users = $this->userModel
+            ->where('role', '')
+            ->orderBy('id', 'DESC')->get();
+        $data = [
+            'title' => 'Invoices',
+            'clients' => $users,
+            'invoices' => $invoices,
+        ];
+        return view('admin/invoices', $data);   
     }
     
 }

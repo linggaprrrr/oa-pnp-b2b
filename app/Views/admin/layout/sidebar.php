@@ -29,14 +29,14 @@
                     >
                     <i class="fas fa-users fa-xl"></i>
                 </a>
-                <!-- <a
-                    href="/admin/master-lists"
+                <a
+                    href="/admin/invoices"
                     class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
-                    id="master-list"
-                    x-tooltip.placement.right="'Master List'"
+                    id="invoices"
+                    x-tooltip.placement.right="'Invoices'"
                     >
-                    <i class="fas fa-tasks fa-xl"></i>
-                </a> -->
+                    <i class="fas fa-file-invoice fa-xl"></i>
+                </a>
 
             </div>
 
